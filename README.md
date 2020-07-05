@@ -1,2 +1,2 @@
 # ReFOLIO
-A Researcher's Collaborative working station
+A researcher's collaborative working station
