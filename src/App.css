@@ -1,26 +1,22 @@
 .login-form {
-  width: 100%;
-  max-width: 330px;
-  padding: 15px;
+  max-width: 350px;
   margin: auto;
-  height: 100%;
 }
 
 .box {
 position: relative;
 width: 550px;
-height: 750px;
-top: 250px;
+height: 550px;
+top: 150px;
 left: 685px;
-
 background: #E5E5E5;
 }
 
-.footer {
+/*.footer {
 position: absolute;
 width: 1440px;
 height: 48px;
 left: 0px;
 top: 976px;
 background: #686565;
-}
+}*/
