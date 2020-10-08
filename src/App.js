@@ -5,7 +5,6 @@ import {
   Route,
   Link
 } from "react-router-dom";
-
 import LoginPage from './pages/LoginPage.js';
 import SignUpPage from './pages/SignUpPage.js';
 import './App.css';
@@ -16,12 +15,8 @@ function App() {
       <div>    
         <nav>
           <ul>
-            <li>
-              <Link to="/login">Login</Link>
-            </li>
-            <li>
-              <Link to="/signup">SignUp</Link>
-            </li>
+              <Link to="/login"></Link>
+              <Link to="/signup"></Link>
           </ul>
         </nav>
         <Switch>
@@ -29,6 +24,9 @@ function App() {
             <SignUpPage />
           </Route>
           <Route path="/login">
+            <LoginPage/>
+          </Route>
+          <Route path="/">
             <LoginPage/>
           </Route>
         </Switch>
