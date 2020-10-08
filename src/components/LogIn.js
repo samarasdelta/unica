@@ -15,6 +15,8 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
+import DashboardPage from '../pages/DashboardPage';
+
 
 function Copyright() {
   return (
@@ -95,8 +97,9 @@ export default function LogIn() {
             variant="contained"
             color="primary"
             className={classes.submit}
+            onClick="DashboardPage()"
           >
-            Log In
+              Log In
           </Button>
           <Grid container>
             <Grid item xs>
@@ -104,7 +107,7 @@ export default function LogIn() {
                 Forgot password?
               </Link>
             </Grid>
-            <Grid item>
+            <Grid item >
               <RouteLink to="/signup">
                 <Link variant="body2">
                   Don't have an account? Sign Up
