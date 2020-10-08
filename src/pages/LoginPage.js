@@ -1,10 +1,10 @@
 import React from 'react';
-import MyForm from '../components/MyForm';
+import LogIn from '../components/LogIn';
 
 function LoginPage() {
   return (
     <div>
-      <MyForm/>
+      <LogIn/>
     </div>
   );
 };
