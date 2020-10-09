@@ -22,6 +22,8 @@ import HelpIcon from '@material-ui/icons/Help';
 import InvertColorsIcon from '@material-ui/icons/InvertColors';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import { discoverListItems, mainListItems, secondaryListItems } from './ListItems';
+import ProjectListItem from './ProjectListItem';
+import { Grid, Paper } from '@material-ui/core';
 
 
 function Copyright() {
@@ -185,6 +187,29 @@ export default function Dashboard() {
       <main className={classes.content}>
         <div className={classes.appBarSpacer} />
         <Container maxWidth="lg" className={classes.container}>
+          <Grid container spacing={3}>
+            {/* Project */}
+            <Grid item xs={12} md={4} lg={3}>
+              <Paper className={fixedHeightPaper}>
+                <ProjectListItem />
+              </Paper>
+            </Grid>
+            <Grid item xs={12} md={4} lg={3}>
+              <Paper className={fixedHeightPaper}>
+                <ProjectListItem />
+              </Paper>
+            </Grid>
+            <Grid item xs={12} md={4} lg={3}>
+              <Paper className={fixedHeightPaper}>
+                <ProjectListItem />
+              </Paper>
+            </Grid>
+              <Grid item xs={12} md={4} lg={3}>
+              <Paper className={fixedHeightPaper}>
+                <ProjectListItem />
+              </Paper>
+            </Grid>
+          </Grid>
           <Box pt={4}>
             <Copyright />
           </Box>

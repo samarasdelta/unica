@@ -12,14 +12,14 @@ import './App.css';
 
 function App() {
 
-  const theme = createMuiTheme({
-    palette: {
-      type: 'dark',
-    },
-  });
+ // const theme = createMuiTheme({
+    //palette: {
+     // type: 'dark'
+   // },
+ // });
 
   return (
-    <ThemeProvider theme={theme}>
+  //  <ThemeProvider theme={theme}>
       <Paper style={{height: "100vh"}}>
         <Router> 
           <div>   
@@ -54,7 +54,7 @@ function App() {
           </div>
         </Router>
       </Paper>
-    </ThemeProvider>
+   // </ThemeProvider>
   );
 }
 
