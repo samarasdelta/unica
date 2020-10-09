@@ -110,6 +110,8 @@ export default function SignUp() {
             </Grid>
           </Grid>
           <Button
+            component={RouteLink}
+            to="/Dashboard"
             type="submit"
             fullWidth
             variant="contained"

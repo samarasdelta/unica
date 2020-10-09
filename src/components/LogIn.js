@@ -92,12 +92,13 @@ export default function LogIn() {
             label="Remember me"
           />
           <Button
+            component={RouteLink}
+            to="Dashboard"
             type="submit"
             fullWidth
             variant="contained"
             color="primary"
             className={classes.submit}
-            onClick="DashboardPage()"
           >
               Log In
           </Button>

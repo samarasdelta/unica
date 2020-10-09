@@ -19,7 +19,7 @@ import Link from '@material-ui/core/Link';
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import NotificationsIcon from '@material-ui/icons/Notifications';
-import { mainListItems, secondaryListItems } from './ListItems';
+import { discoverListItems, mainListItems, secondaryListItems } from './ListItems';
 
 
 function Copyright() {
@@ -163,6 +163,8 @@ export default function Dashboard() {
             <ChevronLeftIcon />
           </IconButton>
         </div>
+        <Divider />
+        <List>{discoverListItems}</List>
         <Divider />
         <List>{mainListItems}</List>
         <Divider />

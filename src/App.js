@@ -14,8 +14,17 @@ function App() {
   return (
       <Router>
         <div>   
-          <Link to="/dashboard">Dashboard</Link>            
-          
+          <nav>
+            <li>
+              <Link to="login">LogIn</Link>
+            </li>
+            <li>
+              <Link to="/signup">SignUp</Link>
+            </li>
+            <li>
+              <Link to="/dashboard">Dashboard</Link>
+            </li>
+          </nav>
           <Switch>
             <Route path="/dashboard">
               <DashboardPage />

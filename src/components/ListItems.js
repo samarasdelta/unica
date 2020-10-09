@@ -4,14 +4,23 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import ListSubheader from '@material-ui/core/ListSubheader';
 import DashboardIcon from '@material-ui/icons/Dashboard';
-import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
-import PeopleIcon from '@material-ui/icons/People';
-import BarChartIcon from '@material-ui/icons/BarChart';
-import LayersIcon from '@material-ui/icons/Layers';
-import AssignmentIcon from '@material-ui/icons/Assignment';
 import DeleteIcon from '@material-ui/icons/Delete';
-import DraftsIcon from '@material-ui/icons/Drafts';
 import AllInboxIcon from '@material-ui/icons/AllInbox';
+import PersonIcon from '@material-ui/icons/Person';
+import GroupWorkIcon from '@material-ui/icons/GroupWork';
+import InsertDriveFileIcon from '@material-ui/icons/InsertDriveFile';
+import FindInPageIcon from '@material-ui/icons/FindInPage';
+
+export const discoverListItems = (
+  <div>
+    <ListItem button>
+        <ListItemIcon>
+          <FindInPageIcon />
+        </ListItemIcon>
+      <ListItemText primary="Discover" />
+    </ListItem>
+  </div>
+);
 
 export const mainListItems = (
   <div>
@@ -30,13 +39,13 @@ export const mainListItems = (
     </ListItem>
     <ListItem button>
       <ListItemIcon>
-        <DraftsIcon />
+        <InsertDriveFileIcon />
       </ListItemIcon>
       <ListItemText primary="Drafts" />
     </ListItem>
     <ListItem button>
       <ListItemIcon>
-        <PeopleIcon />
+        <PersonIcon />
       </ListItemIcon>
       <ListItemText primary="Your's" />
     </ListItem>
@@ -54,21 +63,21 @@ export const secondaryListItems = (
     <ListSubheader inset>User's Team</ListSubheader>
     <ListItem button>
       <ListItemIcon>
-        <AssignmentIcon />
+        <GroupWorkIcon />
       </ListItemIcon>
-      <ListItemText primary="Current month" />
+      <ListItemText primary="1st team" />
     </ListItem>
     <ListItem button>
       <ListItemIcon>
-        <AssignmentIcon />
+        <GroupWorkIcon />
       </ListItemIcon>
-      <ListItemText primary="Last quarter" />
+      <ListItemText primary="2nd team" />
     </ListItem>
     <ListItem button>
       <ListItemIcon>
-        <AssignmentIcon />
+        <GroupWorkIcon />
       </ListItemIcon>
-      <ListItemText primary="Year-end sale" />
+      <ListItemText primary="New team" />
     </ListItem>
   </div>
 );
