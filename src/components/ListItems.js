@@ -14,9 +14,9 @@ import FindInPageIcon from '@material-ui/icons/FindInPage';
 export const discoverListItems = (
   <div>
     <ListItem button>
-        <ListItemIcon>
-          <FindInPageIcon />
-        </ListItemIcon>
+      <ListItemIcon>
+        <FindInPageIcon />
+      </ListItemIcon>
       <ListItemText primary="Discover" />
     </ListItem>
   </div>

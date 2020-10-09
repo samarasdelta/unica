@@ -18,6 +18,8 @@ import Container from '@material-ui/core/Container';
 import Link from '@material-ui/core/Link';
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
+import HelpIcon from '@material-ui/icons/Help';
+import InvertColorsIcon from '@material-ui/icons/InvertColors';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import { discoverListItems, mainListItems, secondaryListItems } from './ListItems';
 
@@ -26,7 +28,7 @@ function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
       {'Copyright © '}
-      <Link color="inherit" href="https://material-ui.com/">
+      <Link color="inherit">
         UNICA
       </Link>{' '}
       {new Date().getFullYear()}
@@ -145,8 +147,18 @@ export default function Dashboard() {
             Dashboard
           </Typography>
           <IconButton color="inherit">
-            <Badge badgeContent={0} color="secondary">
+            <Badge badgeContent={1} color="secondary">
               <NotificationsIcon />
+            </Badge>
+          </IconButton>
+          <IconButton color="inherit">
+            <Badge badgeContent={0} color="secondary">
+              <HelpIcon />
+            </Badge>
+          </IconButton>
+          <IconButton color="inherit">
+            <Badge badgeContent={0} color="secondary">
+              <InvertColorsIcon />
             </Badge>
           </IconButton>
         </Toolbar>
