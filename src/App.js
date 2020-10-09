@@ -5,6 +5,8 @@ import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import LoginPage from './pages/LoginPage.js';
 import SignUpPage from './pages/SignUpPage.js';
 import DashboardPage from './pages/DashboardPage.js';
+import ForgotPassPage from './pages/ForgotPassPage.js';
+
 import './App.css';
 
 
@@ -33,6 +35,9 @@ function App() {
               </li>
             </nav>
             <Switch>
+              <Route path="/forgotpass">
+                <ForgotPassPage />
+              </Route>
               <Route path="/dashboard">
                 <DashboardPage />
               </Route>

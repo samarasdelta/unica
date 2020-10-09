@@ -49,7 +49,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function LogIn() {
+export default function ForgotPass() {
   const classes = useStyles();
 
   return (
@@ -60,7 +60,7 @@ export default function LogIn() {
           <LockOutlinedIcon />
         </Avatar>
         <Typography component="h1" variant="h5">
-          Log in
+          Code Recovery
         </Typography>
         <form className={classes.form} noValidate>
           <TextField
@@ -74,21 +74,6 @@ export default function LogIn() {
             autoComplete="email"
             autoFocus
           />
-          <TextField
-            variant="outlined"
-            margin="normal"
-            required
-            fullWidth
-            name="password"
-            label="Password"
-            type="password"
-            id="password"
-            autoComplete="current-password"
-          />
-          <FormControlLabel
-            control={<Checkbox value="remember" color="primary" />}
-            label="Remember me"
-          />
           <Button
             component={RouteLink}
             to="Dashboard"
@@ -98,22 +83,13 @@ export default function LogIn() {
             color="primary"
             className={classes.submit}
           >
-              Log In
+              Next
           </Button>
           <Grid container>
             <Grid item xs>
-              <RouteLink to="/forgotpass">
-                <Link variant="body2">
-                  Forgot password?
-                </Link>
-              </RouteLink>
-            </Grid>
-            <Grid item >
-              <RouteLink to="/signup">
-                <Link variant="body2">
-                  Don't have an account? Sign Up
-                </Link>
-              </RouteLink>
+              <Link href="#" variant="body2">
+                Forgot email?
+              </Link>
             </Grid>
           </Grid>
         </form>
