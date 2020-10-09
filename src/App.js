@@ -1,14 +1,16 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { Paper } from "@material-ui/core";
-import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+//import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import LoginPage from './pages/LoginPage.js';
 import SignUpPage from './pages/SignUpPage.js';
 import DashboardPage from './pages/DashboardPage.js';
 import ForgotPassPage from './pages/ForgotPassPage.js';
+import ForgotEmailPage from './pages/ForgotEmailPage.js';
 
 import './App.css';
 
+//DARK MODE
 
 function App() {
 
@@ -35,6 +37,9 @@ function App() {
               </li>
             </nav>
             <Switch>
+              <Route path="/forgotemail">
+                <ForgotEmailPage />
+              </Route>
               <Route path="/forgotpass">
                 <ForgotPassPage />
               </Route>

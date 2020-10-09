@@ -7,7 +7,6 @@ import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
 import Link from '@material-ui/core/Link';
-import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
@@ -47,7 +46,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function ForgotPass() {
+export default function ForgotEmail() {
   const classes = useStyles();
 
   return (
@@ -58,7 +57,7 @@ export default function ForgotPass() {
           <LockOutlinedIcon />
         </Avatar>
         <Typography component="h1" variant="h5">
-          Password Recovery
+          Email Recovery
         </Typography>
         <form className={classes.form} noValidate>
           <TextField
@@ -66,10 +65,10 @@ export default function ForgotPass() {
             margin="normal"
             required
             fullWidth
-            id="email"
-            label="Email Address"
-            name="email"
-            autoComplete="email"
+            id="phonenumber"
+            label="Phone Number"
+            name="phonenumber"
+            autoComplete="phonenumber"
             autoFocus
           />
           <Button
@@ -83,13 +82,6 @@ export default function ForgotPass() {
           >
               Next
           </Button>
-          <Grid item >
-              <RouteLink to="/forgotemail">
-                <Link variant="body2">
-                  Forgot Email?
-                </Link>
-              </RouteLink>
-            </Grid>
         </form>
       </div>
       <Box mt={8}>
