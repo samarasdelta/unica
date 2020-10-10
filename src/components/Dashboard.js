@@ -19,12 +19,12 @@ import Link from '@material-ui/core/Link';
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import HelpIcon from '@material-ui/icons/Help';
-import InvertColorsIcon from '@material-ui/icons/InvertColors';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import { discoverListItems, mainListItems, secondaryListItems } from './ListItems';
 import ProjectListItem from './ProjectListItem';
 import { Grid, Paper } from '@material-ui/core';
-
+import Switch from '@material-ui/core/Switch';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
 
 function Copyright() {
   return (
@@ -154,15 +154,16 @@ export default function Dashboard() {
             </Badge>
           </IconButton>
           <IconButton color="inherit">
-            <Badge badgeContent={0} color="secondary">
+            <Badge color="secondary">
               <HelpIcon />
             </Badge>
           </IconButton>
-          <IconButton color="inherit">
-            <Badge badgeContent={0} color="secondary">
-              <InvertColorsIcon />
-            </Badge>
-          </IconButton>
+          <FormControlLabel
+          //value="top"
+          control={<Switch color="secondary" />}
+          //label ="Dark mode"
+          labelPlacement="end"
+        />
         </Toolbar>
       </AppBar>
       <Drawer

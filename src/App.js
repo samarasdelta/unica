@@ -1,13 +1,11 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import { Paper } from "@material-ui/core";
 //import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import LoginPage from './pages/LoginPage.js';
 import SignUpPage from './pages/SignUpPage.js';
 import DashboardPage from './pages/DashboardPage.js';
 import ForgotPassPage from './pages/ForgotPassPage.js';
 import ForgotEmailPage from './pages/ForgotEmailPage.js';
-
 import './App.css';
 
 //DARK MODE
@@ -22,7 +20,6 @@ function App() {
 
   return (
   //  <ThemeProvider theme={theme}>
-      <Paper style={{height: "100vh"}}>
         <Router> 
           <div>   
             <nav>
@@ -58,7 +55,6 @@ function App() {
             </Switch>
           </div>
         </Router>
-      </Paper>
    // </ThemeProvider>
   );
 }
