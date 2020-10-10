@@ -12,6 +12,7 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
+import Grid from '@material-ui/core/Grid';
 
 function Copyright() {
   return (
@@ -82,6 +83,21 @@ export default function ForgotEmail() {
           >
               Next
           </Button>
+          <Grid container>
+           <Grid item xs>
+              <RouteLink to="">
+                <Link variant="body2">
+                 </Link>
+              </RouteLink>
+            </Grid>
+            <Grid item >
+              <RouteLink to="/forgotpass">
+                <Link variant="body2">
+                  Go back
+                 </Link>
+              </RouteLink>
+            </Grid>
+          </Grid>
         </form>
       </div>
       <Box mt={8}>

@@ -83,13 +83,22 @@ export default function ForgotPass() {
           >
               Next
           </Button>
-          <Grid item >
+          <Grid container>
+            <Grid item xs>
               <RouteLink to="/forgotemail">
                 <Link variant="body2">
                   Forgot Email?
                 </Link>
               </RouteLink>
             </Grid>
+            <Grid item >
+              <RouteLink to="/login">
+                <Link variant="body2">
+                  Go back
+                 </Link>
+              </RouteLink>
+            </Grid>
+         </Grid>
         </form>
       </div>
       <Box mt={8}>
