@@ -103,7 +103,6 @@ export default function Intro() {
         </Toolbar>
       </AppBar>
       {/* Hero unit */}
-      
       <Container component="main" className={classes.heroContent}>
         <Typography align="center">
           <img src={Logo} alt="logo" />
@@ -112,7 +111,7 @@ export default function Intro() {
           University Cooperation Articles
         </Typography>
         <Typography variant="h5" align="center" color="textSecondary" component="p" gutterBottom>
-          Unica is a researcher&apos;s collaborative web site. Here a writer of scientific articles can find other writers, all over the world, who want to work on the same article and publsh it together. 
+          Unica is a researcher&apos;s collaborative web site. Here a writer of scientific articles can find other writers, all over the world, who want to work on the same article and publish it together. 
           The first author propose his article (an idea or even semi-finished work) by giving a title and a short abstarct.
           He gives also an e-mail and, possibly, a phone number.  
           Then these two persons can contact in any way and work together till the finishing of their article.
@@ -125,7 +124,7 @@ export default function Intro() {
           <Button 
             variant="contained"
             component={RouteLink}
-            to="SignUp"
+            to="signup"
             type="submit"
             color="primary"
             className={classes.link}

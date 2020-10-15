@@ -52,9 +52,9 @@ const useStyles = makeStyles((theme) => ({
 export default function LogIn() {
   const classes = useStyles();
 
-  return (
-    <Container component="main" maxWidth="xs">
-      <CssBaseline />
+return (
+  <Container component="main" maxWidth="xs">
+    <CssBaseline />
       <div className={classes.paper}>
         <Avatar className={classes.avatar}>
           <LockOutlinedIcon />
@@ -91,7 +91,7 @@ export default function LogIn() {
           />
           <Button
             component={RouteLink}
-            to="Dashboard"
+            to="dashboard"
             type="submit"
             fullWidth
             variant="contained"

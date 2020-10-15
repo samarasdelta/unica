@@ -74,7 +74,7 @@ export default function ForgotPass() {
           />
           <Button
             component={RouteLink}
-            to="Dashboard"
+            to="dashboard"
             type="submit"
             fullWidth
             variant="contained"
