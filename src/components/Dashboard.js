@@ -205,7 +205,7 @@ export default function Dashboard() {
                 <ProjectListItem />
               </Paper>
             </Grid>
-              <Grid item xs={12} md={4} lg={3}>
+            <Grid item xs={12} md={4} lg={3}>
               <Paper className={fixedHeightPaper}>
                 <ProjectListItem />
               </Paper>
