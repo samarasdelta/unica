@@ -1,7 +1,7 @@
 import React from 'react';
 import {
-    Link as RouteLink
-  } from "react-router-dom";
+  Link as RouteLink
+} from "react-router-dom";
 import AppBar from '@material-ui/core/AppBar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -47,8 +47,14 @@ const useStyles = makeStyles((theme) => ({
   link: {
     margin: theme.spacing(1, 1.5),
   },
+  submit: {
+    margin: theme.spacing(1, 1.5),
+  },
   heroContent: {
-    padding: theme.spacing(8, 0, 6),
+    padding: theme.spacing(2, 0, 2),
+  },
+  form: {
+    marginTop: theme.spacing(4),
   },
   footer: {
     borderTop: `1px solid ${theme.palette.divider}`,
@@ -56,8 +62,8 @@ const useStyles = makeStyles((theme) => ({
     paddingTop: theme.spacing(3),
     paddingBottom: theme.spacing(3),
     [theme.breakpoints.up('sm')]: {
-    paddingTop: theme.spacing(6),
-    paddingBottom: theme.spacing(6),
+    paddingTop: theme.spacing(5),
+    paddingBottom: theme.spacing(0),
     },
   },
 }));
@@ -93,13 +99,17 @@ export default function Intro() {
             UNICA
           </Typography>
           <nav>
-            <Link variant="button" color="textPrimary" href="/dashboard" className={classes.link}>
+            <RouteLink to="/dashboard">
+              <Link variant="button" color="textPrimary" className={classes.submit}>
                 Discover
-            </Link>
+              </Link>
+            </RouteLink>
           </nav>
-          <Button href="/login" color="primary" variant="outlined" className={classes.link}>
-            Login
-          </Button>
+          <RouteLink to="/login">
+            <Button color="primary" variant="outlined" className={classes.submit} noValidate>
+              Login
+            </Button>
+          </RouteLink>
         </Toolbar>
       </AppBar>
       {/* Hero unit */}
@@ -111,27 +121,29 @@ export default function Intro() {
           University Cooperation Articles
         </Typography>
         <Typography variant="h5" align="center" color="textSecondary" component="p" gutterBottom>
-          Unica is a researcher&apos;s collaborative web site. Here a writer of scientific articles can find other writers, all over the world, who want to work on the same article and publish it together. 
-          The first author propose his article (an idea or even semi-finished work) by giving a title and a short abstarct.
-          He gives also an e-mail and, possibly, a phone number.  
+          Unica is a researcher&apos;s collaborative web site. Here a writer of scientific articles can find other writers,
+          all over the world, who want to work on the same article and publish it together. 
+          The first author proposes his article (an idea or even semi-finished work) by giving a title and a short abstract.
+          He also gives an email and possibly a phone number.  
           Then these two persons can contact in any way and work together till the finishing of their article.
         </Typography>
         <Typography variant="h6" align="center" color="textSecondary" component="p" gutterBottom>
           All scientific fields are served in this web-site :
-          Philosophy, Mathematics, Geometry, Litterature, Engineering, Mecanics, Informatics, Theology, Medicin, Physics, Fine Arts etc
+          Philosophy, Mathematics, Geometry, Litterature, Engineering, Computer Science, Mechanics, Informatics, Theology, Medicin, Physics, Fine Arts etc.
         </Typography>
-        <Typography variant="h5" align="center" color="textSecondary" component="p" gutterBottom>
+        <form className={classes.form} align="center" noValidate>
           <Button 
-            variant="contained"
+            margin="center"
             component={RouteLink}
             to="signup"
             type="submit"
+            variant="contained"
             color="primary"
-            className={classes.link}
+            className={classes.submit}
             >
               GET STARTED
           </Button>
-        </Typography>
+        </form>
       </Container>
       {/* End hero unit */}
       {/* Footer */}

@@ -2,7 +2,6 @@ import React from 'react';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import ListSubheader from '@material-ui/core/ListSubheader';
 import DashboardIcon from '@material-ui/icons/Dashboard';
 import DeleteIcon from '@material-ui/icons/Delete';
 import AllInboxIcon from '@material-ui/icons/AllInbox';
@@ -24,7 +23,6 @@ export const discoverListItems = (
 
 export const mainListItems = (
   <div>
-    <ListSubheader inset>Projects</ListSubheader>
     <ListItem button>
       <ListItemIcon>
         <DashboardIcon />
@@ -60,7 +58,6 @@ export const mainListItems = (
 
 export const secondaryListItems = (
   <div>
-    <ListSubheader inset>User's Team</ListSubheader>
     <ListItem button>
       <ListItemIcon>
         <GroupWorkIcon />
