@@ -6,7 +6,6 @@ import SignUpPage from './pages/SignUpPage.js';
 import DashboardPage from './pages/DashboardPage.js';
 import ForgotPassPage from './pages/ForgotPassPage.js';
 import ForgotEmailPage from './pages/ForgotEmailPage.js';
-import './App.css';
 
 function App() {
  return (
