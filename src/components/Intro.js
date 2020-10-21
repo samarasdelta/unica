@@ -18,7 +18,7 @@ function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
       {'Copyright © '}
-      <Link color="inherit">
+      <Link color="inherit" style={{ textDecoration: 'none' }}> 
         UNICA
       </Link>{' '}
       {new Date().getFullYear()}
@@ -100,7 +100,7 @@ export default function Intro() {
           </Typography>
           <nav>
             <RouteLink to="/discover" style={{ textDecoration: 'none' }}>
-              <Link variant="button" color="textPrimary" className={classes.submit} >
+              <Link variant="button" color="textPrimary" className={classes.submit} style={{ textDecoration: 'none' }}>
                 Discover
               </Link>
             </RouteLink>

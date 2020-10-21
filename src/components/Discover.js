@@ -1,28 +1,22 @@
 import React,{ useState } from 'react';
-/*import {
- Link as RouteLink
-} from "react-router-dom";*/
 import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Drawer from '@material-ui/core/Drawer';
-import Box from '@material-ui/core/Box';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import List from '@material-ui/core/List';
+import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
 import IconButton from '@material-ui/core/IconButton';
 import Badge from '@material-ui/core/Badge';
-import Container from '@material-ui/core/Container';
 import Link from '@material-ui/core/Link';
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import HelpIcon from '@material-ui/icons/Help';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import { discoverListItems, mainListItems, secondaryListItems } from './ListItems';
-import ProjectListItem from './ProjectListItem';
-import { Grid, Paper } from '@material-ui/core';
 import Switch from '@material-ui/core/Switch';
 import {
   blue,
@@ -36,7 +30,7 @@ function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
       {'Copyright © '}
-      <Link color="inherit">
+      <Link color="inherit" style={{ textDecoration: 'none' }}>
         UNICA
       </Link>{' '}
       {new Date().getFullYear()}
@@ -210,7 +204,9 @@ export default function Discover() {
       </Drawer>
      <main className={classes.content}>
         <div className={classes.appBarSpacer} />
-    
+        <Box pt={4}>
+            <Copyright />
+          </Box>
       </main>
     </div>
   </ThemeProvider>

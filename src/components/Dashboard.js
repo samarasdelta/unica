@@ -1,7 +1,4 @@
 import React,{ useState } from 'react';
-/*import {
- Link as RouteLink
-} from "react-router-dom";*/
 import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -36,7 +33,7 @@ function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
       {'Copyright © '}
-      <Link color="inherit">
+      <Link color="inherit" style={{ textDecoration: 'none' }}> 
         UNICA
       </Link>{' '}
       {new Date().getFullYear()}

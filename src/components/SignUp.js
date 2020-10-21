@@ -16,9 +16,9 @@ import Container from '@material-ui/core/Container';
 
 function Copyright() {
   return (
-    <Typography variant="body2" color="textSecondary" align="center">
+    <Typography variant="body2" color="textSecondary" align="center" >
       {'Copyright © '}
-      <Link color="inherit">
+      <Link color="inherit" style={{ textDecoration: 'none' }}>
         UNICA
       </Link>{' '}
       {new Date().getFullYear()}
@@ -122,8 +122,8 @@ export default function SignUp() {
           </Button>
           <Grid container justify="flex-end">
             <Grid item>
-                <RouteLink to="/login">
-                    <Link variant="body2">
+                <RouteLink to="/login" style={{ textDecoration: 'none' }}>
+                    <Link variant="body2" style={{ textDecoration: 'none' }}>
                         Already have an account? Log in
                     </Link>
                 </RouteLink>
@@ -131,8 +131,8 @@ export default function SignUp() {
           </Grid>
         </form>
       </div>
-      <Box mt={8}>
-        <Copyright />
+      <Box mt={8} >
+        <Copyright  />
       </Box>
     </Container>
   );

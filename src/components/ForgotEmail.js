@@ -18,7 +18,7 @@ function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
       {'Copyright © '}
-      <Link color="inherit">
+      <Link color="inherit" style={{ textDecoration: 'none' }}>
         UNICA
       </Link>{' '}
       {new Date().getFullYear()}
@@ -91,8 +91,8 @@ export default function ForgotEmail() {
               </RouteLink>
             </Grid>
             <Grid item >
-              <RouteLink to="/forgotpass">
-                <Link variant="body2">
+              <RouteLink to="/forgotpass" style={{ textDecoration: 'none' }}>
+                <Link variant="body2" style={{ textDecoration: 'none' }}>
                   Go back
                  </Link>
               </RouteLink>
