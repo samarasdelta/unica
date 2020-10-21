@@ -99,7 +99,7 @@ export default function Intro() {
             UNICA
           </Typography>
           <nav>
-            <RouteLink to="/dashboard" style={{ textDecoration: 'none' }}>
+            <RouteLink to="/discover" style={{ textDecoration: 'none' }}>
               <Link variant="button" color="textPrimary" className={classes.submit} >
                 Discover
               </Link>

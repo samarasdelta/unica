@@ -1,4 +1,7 @@
 import React from 'react';
+import {
+  Link as RouteLink
+} from "react-router-dom";
 import ListItem from '@material-ui/core/ListItem';
 import ListSubheader from '@material-ui/core/ListSubheader';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
@@ -10,26 +13,35 @@ import PersonIcon from '@material-ui/icons/Person';
 import GroupWorkIcon from '@material-ui/icons/GroupWork';
 import InsertDriveFileIcon from '@material-ui/icons/InsertDriveFile';
 import FindInPageIcon from '@material-ui/icons/FindInPage';
+import Link from '@material-ui/core/Link';
 
 export const discoverListItems = (
   <div>
-    <ListItem button>
-      <ListItemIcon>
-        <FindInPageIcon />
-      </ListItemIcon>
-      <ListItemText primary="Discover" />
-    </ListItem>
+    <RouteLink to="/discover" style={{ textDecoration: 'none' }}>
+      <Link color="textPrimary" style={{ textDecoration: 'none' }}>
+        <ListItem button>
+          <ListItemIcon>
+            <FindInPageIcon />
+          </ListItemIcon>
+          <ListItemText primary="Discover" />
+        </ListItem>
+      </Link>
+    </RouteLink>
   </div>
 );
 
 export const mainListItems = (
   <div>
-    <ListItem button>
-      <ListItemIcon>
-        <DashboardIcon />
-      </ListItemIcon>
-      <ListItemText primary="Dashboard" />
-    </ListItem>
+    <RouteLink to="/dashboard" style={{ textDecoration: 'none' }}>
+      <Link color="textPrimary" style={{ textDecoration: 'none' }}>
+        <ListItem button >
+          <ListItemIcon>
+            <DashboardIcon />
+          </ListItemIcon>
+          <ListItemText primary="Dashboard" />
+        </ListItem>
+      </Link>
+    </RouteLink>
     <ListItem button>
       <ListItemIcon>
         <AllInboxIcon />
