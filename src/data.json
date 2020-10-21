@@ -1,0 +1,29 @@
+{
+    "paper": [
+        {
+            title: "id"
+            dateCreated: "20.10.2020",
+        },
+        {
+            title: "dateCreated"
+            dateCreated: "20.10.2020",
+        },
+        {
+            title: "lastModified"
+            dateCreated: "20.10.2020",
+        }, 
+        {
+            title: "ownerId"
+            dateCreated: "20.10.2020",
+        }, 
+        {
+            title: "contentType"
+            dateCreated: "20.10.2020",
+        }, 
+        {
+            title: "coAuthors"
+            dateCreated: "20.10.2020",
+        }
+
+    ]
+}

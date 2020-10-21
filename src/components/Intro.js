@@ -99,14 +99,14 @@ export default function Intro() {
             UNICA
           </Typography>
           <nav>
-            <RouteLink to="/dashboard">
-              <Link variant="button" color="textPrimary" className={classes.submit}>
+            <RouteLink to="/dashboard" style={{ textDecoration: 'none' }}>
+              <Link variant="button" color="textPrimary" className={classes.submit} >
                 Discover
               </Link>
             </RouteLink>
           </nav>
-          <RouteLink to="/login">
-            <Button color="primary" variant="outlined" className={classes.submit} noValidate>
+          <RouteLink to="/login" style={{ textDecoration: 'none' }} >
+            <Button color="primary" variant="outlined" className={classes.submit} >
               Login
             </Button>
           </RouteLink>
@@ -133,14 +133,13 @@ export default function Intro() {
         </Typography>
         <form className={classes.form} align="center" noValidate>
           <Button 
-            margin="center"
             component={RouteLink}
             to="signup"
             type="submit"
             variant="contained"
             color="primary"
             className={classes.submit}
-            >
+          >
               GET STARTED
           </Button>
         </form>

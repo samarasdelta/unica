@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{ useState } from 'react';
 /*import {
  Link as RouteLink
 } from "react-router-dom";*/
@@ -24,7 +24,13 @@ import { discoverListItems, mainListItems, secondaryListItems } from './ListItem
 import ProjectListItem from './ProjectListItem';
 import { Grid, Paper } from '@material-ui/core';
 import Switch from '@material-ui/core/Switch';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
+import {
+  blue,
+  red
+} from "@material-ui/core/colors";
+
+import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
+
 
 function Copyright() {
   return (
@@ -121,8 +127,27 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Dashboard() {
-  const classes = useStyles();
   const [open, setOpen] = React.useState(true);
+  const [darkState, setDarkState] = useState(false);
+  const palletType = darkState ? "dark" : "light";
+  const mainPrimaryColor = darkState ? blue[200] : blue[800];
+  const mainSecondaryColor = darkState ? red[600] : red[500];
+  const darkTheme = createMuiTheme({
+    palette: {
+      type: palletType,
+      primary: {
+        main: mainPrimaryColor
+      },
+      secondary: {
+        main: mainSecondaryColor
+      }
+    }
+  });
+ 
+  const classes = useStyles();
+  const handleThemeChange = () => {
+    setDarkState(!darkState);
+  };
   const handleDrawerOpen = () => {
     setOpen(true);
   };
@@ -132,6 +157,7 @@ export default function Dashboard() {
   const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
 
   return (
+  <ThemeProvider theme={darkTheme}>
     <div className={classes.root}>
       <CssBaseline />
       <AppBar position="absolute" className={clsx(classes.appBar, open && classes.appBarShift)}>
@@ -158,12 +184,9 @@ export default function Dashboard() {
               <HelpIcon />
             </Badge>
           </IconButton>
-          <FormControlLabel
-          //value="top"
-          control={<Switch color="secondary" />}
-          //label ="Dark mode"
-          labelPlacement="end"
-        />
+          <Switch checked={darkState} onChange={handleThemeChange} />
+
+
         </Toolbar>
       </AppBar>
       <Drawer
@@ -217,5 +240,6 @@ export default function Dashboard() {
         </Container>
       </main>
     </div>
+  </ThemeProvider>
   );
 }
