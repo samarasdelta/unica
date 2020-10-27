@@ -17,7 +17,7 @@ import Link from '@material-ui/core/Link';
 
 export const discoverListItems = (
   <div>
-    <RouteLink to="/discover" style={{ textDecoration: 'none' }}>
+    <RouteLink to="discover" style={{ textDecoration: 'none' }}>
       <Link color="textPrimary" style={{ textDecoration: 'none' }}>
         <ListItem button>
           <ListItemIcon>
@@ -30,11 +30,11 @@ export const discoverListItems = (
   </div>
 );
 
-export const mainListItems = (
+export const dashboardListItems = (
   <div>
-    <RouteLink to="/dashboard" style={{ textDecoration: 'none' }}>
+    <RouteLink to="dashboard" style={{ textDecoration: 'none' }}>
       <Link color="textPrimary" style={{ textDecoration: 'none' }}>
-        <ListItem button >
+        <ListItem button>
           <ListItemIcon>
             <DashboardIcon />
           </ListItemIcon>
@@ -42,6 +42,11 @@ export const mainListItems = (
         </ListItem>
       </Link>
     </RouteLink>
+  </div>
+);
+
+export const mainListItems = (
+  <div>
     <ListItem button>
       <ListItemIcon>
         <AllInboxIcon />
@@ -71,7 +76,6 @@ export const mainListItems = (
 
 export const secondaryListItems = (
   <div>
-    <ListSubheader inset>User's teams</ListSubheader>
     <ListItem button>
       <ListItemIcon>
         <GroupWorkIcon />
@@ -90,5 +94,6 @@ export const secondaryListItems = (
       </ListItemIcon>
       <ListItemText primary="New team" />
     </ListItem>
+    <ListSubheader inset >User's teams</ListSubheader>
   </div>
 );

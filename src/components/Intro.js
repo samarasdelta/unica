@@ -13,19 +13,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Box from '@material-ui/core/Box';
 import Logo from './images/unicalogo.png';
-
-function Copyright() {
-  return (
-    <Typography variant="body2" color="textSecondary" align="center">
-      {'Copyright © '}
-      <Link color="inherit" style={{ textDecoration: 'none' }}> 
-        UNICA
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
+import CopyrightUnica from './CopyrightUnica';
+//import '../App.css';
 
 const useStyles = makeStyles((theme) => ({
   '@global': {
@@ -58,7 +47,7 @@ const useStyles = makeStyles((theme) => ({
   },
   footer: {
     borderTop: `1px solid ${theme.palette.divider}`,
-    marginTop: theme.spacing(8),
+    marginTop: theme.spacing(30),
     paddingTop: theme.spacing(3),
     paddingBottom: theme.spacing(3),
     [theme.breakpoints.up('sm')]: {
@@ -117,24 +106,16 @@ export default function Intro() {
         <Typography align="center">
           <img src={Logo} alt="logo" />
         </Typography>
-        <Typography variant="h4" align="center" color="textSecondary" gutterBottom>
+        <Typography variant="h5" align="center" color="textSecondary" component="p" gutterBottom>
           University Cooperation Articles
         </Typography>
-        <Typography variant="h5" align="center" color="textSecondary" component="p" gutterBottom>
-          Unica is a researcher&apos;s collaborative web site. Here a writer of scientific articles can find other writers,
-          all over the world, who want to work on the same article and publish it together. 
-          The first author proposes his article (an idea or even semi-finished work) by giving a title and a short abstract.
-          He also gives an email and possibly a phone number.  
-          Then these two persons can contact in any way and work together till the finishing of their article.
-        </Typography>
-        <Typography variant="h6" align="center" color="textSecondary" component="p" gutterBottom>
-          All scientific fields are served in this web-site :
-          Philosophy, Mathematics, Geometry, Litterature, Engineering, Computer Science, Mechanics, Informatics, Theology, Medicin, Physics, Fine Arts etc.
+        <Typography variant="h4" align="center" color="textSecondary"  gutterBottom>
+          Unica is a researcher&apos;s collaborative web site
         </Typography>
         <form className={classes.form} align="center" noValidate>
           <Button 
             component={RouteLink}
-            to="signup"
+            to="/signup"
             type="submit"
             variant="contained"
             color="primary"
@@ -166,7 +147,7 @@ export default function Intro() {
           ))}
         </Grid>
         <Box mt={5}>
-          <Copyright />
+          <CopyrightUnica />
         </Box>
       </Container>
       {/* End footer */}

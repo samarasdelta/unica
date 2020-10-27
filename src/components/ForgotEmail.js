@@ -13,19 +13,7 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
-
-function Copyright() {
-  return (
-    <Typography variant="body2" color="textSecondary" align="center">
-      {'Copyright © '}
-      <Link color="inherit" style={{ textDecoration: 'none' }}>
-        UNICA
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
+import CopyrightUnica from './CopyrightUnica';
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -91,7 +79,7 @@ export default function ForgotEmail() {
               </RouteLink>
             </Grid>
             <Grid item >
-              <RouteLink to="/forgotpass" style={{ textDecoration: 'none' }}>
+              <RouteLink to="forgotpass" style={{ textDecoration: 'none' }}>
                 <Link variant="body2" style={{ textDecoration: 'none' }}>
                   Go back
                  </Link>
@@ -101,7 +89,7 @@ export default function ForgotEmail() {
         </form>
       </div>
       <Box mt={8}>
-        <Copyright />
+        <CopyrightUnica />
       </Box>
     </Container>
   );

@@ -12,12 +12,12 @@ import Divider from '@material-ui/core/Divider';
 import IconButton from '@material-ui/core/IconButton';
 import Badge from '@material-ui/core/Badge';
 import Container from '@material-ui/core/Container';
-import Link from '@material-ui/core/Link';
+//import Link from '@material-ui/core/Link';
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import HelpIcon from '@material-ui/icons/Help';
 import NotificationsIcon from '@material-ui/icons/Notifications';
-import { discoverListItems, mainListItems, secondaryListItems } from './ListItems';
+import { discoverListItems, dashboardListItems, mainListItems, secondaryListItems } from './ListItems';
 import ProjectListItem from './ProjectListItem';
 import { Grid, Paper } from '@material-ui/core';
 import Switch from '@material-ui/core/Switch';
@@ -25,22 +25,8 @@ import {
   blue,
   red
 } from "@material-ui/core/colors";
-
+import CopyrightUnica from './CopyrightUnica';
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
-
-
-function Copyright() {
-  return (
-    <Typography variant="body2" color="textSecondary" align="center">
-      {'Copyright © '}
-      <Link color="inherit" style={{ textDecoration: 'none' }}> 
-        UNICA
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
 
 const drawerWidth = 240;
 
@@ -99,7 +85,7 @@ const useStyles = makeStyles((theme) => ({
     }),
     width: theme.spacing(7),
     [theme.breakpoints.up('sm')]: {
-      width: theme.spacing(9),
+      width: theme.spacing(7),
     },
   },
   appBarSpacer: theme.mixins.toolbar,
@@ -182,8 +168,6 @@ export default function Dashboard() {
             </Badge>
           </IconButton>
           <Switch checked={darkState} onChange={handleThemeChange} />
-
-
         </Toolbar>
       </AppBar>
       <Drawer
@@ -200,6 +184,8 @@ export default function Dashboard() {
         </div>
         <Divider />
         <List>{discoverListItems}</List>
+        <Divider />
+        <List>{dashboardListItems}</List>
         <Divider />
         <List>{mainListItems}</List>
         <Divider />
@@ -232,7 +218,7 @@ export default function Dashboard() {
             </Grid>
           </Grid>
           <Box pt={4}>
-            <Copyright />
+            <CopyrightUnica />
           </Box>
         </Container>
       </main>

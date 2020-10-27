@@ -13,19 +13,8 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
+import CopyrightUnica from './CopyrightUnica';
 
-function Copyright() {
-  return (
-    <Typography variant="body2" color="textSecondary" align="center">
-      {'Copyright © '}
-      <Link color="inherit" style={{ textDecoration: 'none' }}>
-        UNICA
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -85,14 +74,14 @@ export default function ForgotPass() {
           </Button>
           <Grid container>
             <Grid item xs>
-              <RouteLink to="/forgotemail" style={{ textDecoration: 'none' }}>
+              <RouteLink to="forgotemail" style={{ textDecoration: 'none' }}>
                 <Link variant="body2" style={{ textDecoration: 'none' }}>
                   Forgot Email?
                 </Link>
               </RouteLink>
             </Grid>
             <Grid item >
-              <RouteLink to="/login" style={{ textDecoration: 'none' }}>
+              <RouteLink to="login" style={{ textDecoration: 'none' }}>
                 <Link variant="body2" style={{ textDecoration: 'none' }}>
                   Go back
                  </Link>
@@ -102,7 +91,7 @@ export default function ForgotPass() {
         </form>
       </div>
       <Box mt={8}>
-        <Copyright />
+        <CopyrightUnica />
       </Box>
     </Container>
   );
