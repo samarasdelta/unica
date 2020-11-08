@@ -1,12 +1,12 @@
-import React from 'react';
-import Discover from '../components/Discover';
+import React from "react";
+import Discover from "../components/Discover";
 
 function DiscoverPage() {
   return (
     <div>
-      <Discover/>
+      <Discover />
     </div>
   );
-};
+}
 
 export default DiscoverPage;

@@ -1,12 +1,12 @@
-import React from 'react';
-import ForgotEmail from '../components/ForgotEmail';
+import React from "react";
+import ForgotEmail from "../components/ForgotEmail";
 
 function ForgotEmailPage() {
   return (
     <div>
-      <ForgotEmail/>
+      <ForgotEmail />
     </div>
   );
-};
+}
 
 export default ForgotEmailPage;

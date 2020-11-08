@@ -1,24 +1,22 @@
-import React from 'react';
-import {
-  Link as RouteLink
-} from "react-router-dom";
-import ListItem from '@material-ui/core/ListItem';
-import ListSubheader from '@material-ui/core/ListSubheader';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
-import DashboardIcon from '@material-ui/icons/Dashboard';
-import DeleteIcon from '@material-ui/icons/Delete';
-import AllInboxIcon from '@material-ui/icons/AllInbox';
-import PersonIcon from '@material-ui/icons/Person';
-import GroupWorkIcon from '@material-ui/icons/GroupWork';
-import InsertDriveFileIcon from '@material-ui/icons/InsertDriveFile';
-import FindInPageIcon from '@material-ui/icons/FindInPage';
-import Link from '@material-ui/core/Link';
+import React from "react";
+import { Link as RouteLink } from "react-router-dom";
+import ListItem from "@material-ui/core/ListItem";
+import ListSubheader from "@material-ui/core/ListSubheader";
+import ListItemIcon from "@material-ui/core/ListItemIcon";
+import ListItemText from "@material-ui/core/ListItemText";
+import DashboardIcon from "@material-ui/icons/Dashboard";
+import DeleteIcon from "@material-ui/icons/Delete";
+import AllInboxIcon from "@material-ui/icons/AllInbox";
+import PersonIcon from "@material-ui/icons/Person";
+import GroupWorkIcon from "@material-ui/icons/GroupWork";
+import InsertDriveFileIcon from "@material-ui/icons/InsertDriveFile";
+import FindInPageIcon from "@material-ui/icons/FindInPage";
+import Link from "@material-ui/core/Link";
 
 export const discoverListItems = (
   <div>
-    <RouteLink to="discover" style={{ textDecoration: 'none' }}>
-      <Link color="textPrimary" style={{ textDecoration: 'none' }}>
+    <RouteLink to="discover" style={{ textDecoration: "none" }}>
+      <Link color="textPrimary" style={{ textDecoration: "none" }}>
         <ListItem button>
           <ListItemIcon>
             <FindInPageIcon />
@@ -32,8 +30,8 @@ export const discoverListItems = (
 
 export const dashboardListItems = (
   <div>
-    <RouteLink to="dashboard" style={{ textDecoration: 'none' }}>
-      <Link color="textPrimary" style={{ textDecoration: 'none' }}>
+    <RouteLink to="dashboard" style={{ textDecoration: "none" }}>
+      <Link color="textPrimary" style={{ textDecoration: "none" }}>
         <ListItem button>
           <ListItemIcon>
             <DashboardIcon />
@@ -94,6 +92,6 @@ export const secondaryListItems = (
       </ListItemIcon>
       <ListItemText primary="New team" />
     </ListItem>
-    <ListSubheader inset >User's teams</ListSubheader>
+    <ListSubheader inset>User's teams</ListSubheader>
   </div>
 );

@@ -16,16 +16,33 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3",
     "react-social-login-buttons": "^3.1.0",
-    "reactstrap": "^8.5.1"
+    "reactstrap": "^8.5.1",
+    "eslint": "^7.12.1",
+    "eslint-config-prettier": "^6.15.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.21.5",
+    "prettier": "2.1.2",
+    "prettier-eslint-cli": "^5.0.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "eslint ./src/**/*.js"
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": [
+      "react-app",
+      "eslint:recommended",
+      "plugin:react/recommended",
+      "prettier",
+      "plugin:prettier/recommended"
+    ],
+    "plugins": [
+      "react",
+      "prettier"
+    ]
   },
   "browserslist": {
     "production": [

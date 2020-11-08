@@ -1,12 +1,12 @@
-import React from 'react';
-import Intro from '../components/Intro';
+import React from "react";
+import Intro from "../components/Intro";
 
 function IntroPage() {
   return (
     <div>
-      <Intro/>
+      <Intro />
     </div>
   );
-};
+}
 
 export default IntroPage;
