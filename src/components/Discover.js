@@ -13,6 +13,7 @@ import IconButton from '@material-ui/core/IconButton';
 import Badge from '@material-ui/core/Badge';
 //import Link from '@material-ui/core/Link';
 import MenuIcon from '@material-ui/icons/Menu';
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import HelpIcon from '@material-ui/icons/Help';
 import NotificationsIcon from '@material-ui/icons/Notifications';
@@ -24,8 +25,10 @@ import {
 } from "@material-ui/core/colors";
 import CopyrightUnica from './CopyrightUnica';
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
+import Logo from './images/unicasmall.png';
 
-const drawerWidth = 240;
+
+const drawerWidth = 200;
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -164,6 +167,11 @@ export default function Discover() {
               <HelpIcon />
             </Badge>
           </IconButton>
+          <IconButton color="inherit">
+            <Badge color="secondary">
+              <AccountCircleIcon />
+            </Badge>
+          </IconButton>
           <Switch checked={darkState} onChange={handleThemeChange} />
         </Toolbar>
       </AppBar>
@@ -175,6 +183,9 @@ export default function Discover() {
         open={open}
       >
         <div className={classes.toolbarIcon}>
+          <Typography align="center">
+            <img src={Logo} alt="logo" />
+          </Typography>
           <IconButton onClick={handleDrawerClose}>
             <ChevronLeftIcon />
           </IconButton>

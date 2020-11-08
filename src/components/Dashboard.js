@@ -16,6 +16,7 @@ import Container from '@material-ui/core/Container';
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import HelpIcon from '@material-ui/icons/Help';
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import { discoverListItems, dashboardListItems, mainListItems, secondaryListItems } from './ListItems';
 import ProjectListItem from './ProjectListItem';
@@ -27,8 +28,12 @@ import {
 } from "@material-ui/core/colors";
 import CopyrightUnica from './CopyrightUnica';
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
+import Logo from './images/unicasmall.png';
+import data from '../data.json' 
 
-const drawerWidth = 240;
+console.log(data);
+
+const drawerWidth = 200;
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -167,6 +172,11 @@ export default function Dashboard() {
               <HelpIcon />
             </Badge>
           </IconButton>
+          <IconButton color="inherit">
+            <Badge color="secondary">
+              <AccountCircleIcon />
+            </Badge>
+          </IconButton>
           <Switch checked={darkState} onChange={handleThemeChange} />
         </Toolbar>
       </AppBar>
@@ -178,6 +188,9 @@ export default function Dashboard() {
         open={open}
       >
         <div className={classes.toolbarIcon}>
+          <Typography align="center">
+            <img src={Logo} alt="logo" />
+          </Typography>
           <IconButton onClick={handleDrawerClose}>
             <ChevronLeftIcon />
           </IconButton>
@@ -196,7 +209,21 @@ export default function Dashboard() {
         <Container maxWidth="lg" className={classes.container}>
           <Grid container spacing={3}>
             {/* Project */}
-            <Grid item xs={12} md={4} lg={3}>
+            {
+            data.papers.map(function(paper){
+            return <Grid item xs={12} md={4} lg={3}>
+            <Paper className={fixedHeightPaper}>
+              <ProjectListItem 
+              title={paper.title}
+              dateCreated={paper.dateCreated} 
+
+              />
+            </Paper>
+          </Grid>
+            
+            })
+            }
+            {/* <Grid item xs={12} md={4} lg={3}>
               <Paper className={fixedHeightPaper}>
                 <ProjectListItem />
               </Paper>
@@ -215,7 +242,7 @@ export default function Dashboard() {
               <Paper className={fixedHeightPaper}>
                 <ProjectListItem />
               </Paper>
-            </Grid>
+            </Grid> */}
           </Grid>
           <Box pt={4}>
             <CopyrightUnica />

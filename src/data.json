@@ -1,28 +1,28 @@
 {
-    "paper": [
+    "papers": [
         {
-            title: "id"
-            dateCreated: "20.10.2020",
+            "title": "Psychics",
+            "dateCreated": "20.10.2020"
         },
         {
-            title: "dateCreated"
-            dateCreated: "20.10.2020",
+            "title": "Math",
+            "dateCreated": "20.10.2020"
         },
         {
-            title: "lastModified"
-            dateCreated: "20.10.2020",
+            "title": "Programming",
+            "dateCreated": "20.10.2020"
         }, 
         {
-            title: "ownerId"
-            dateCreated: "20.10.2020",
+            "title": "Literature",
+            "dateCreated": "20.10.2020"
         }, 
         {
-            title: "contentType"
-            dateCreated: "20.10.2020",
+            "title": "History",
+            "dateCreated": "20.10.2020"
         }, 
         {
-            title: "coAuthors"
-            dateCreated: "20.10.2020",
+            "title": "Chemistry",
+            "dateCreated": "20.10.2020"
         }
 
     ]

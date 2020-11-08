@@ -22,16 +22,17 @@ const useStyles = makeStyles({
     },
 });
 
-export default function ProjectListItem() {
+export default function ProjectListItem(props) {
   const classes = useStyles();
+  console.log(props);
   return (
     <React.Fragment>
       <Title>Recent Project</Title>
       <Typography component="p" variant="h6">
-        Title
+        {props.title}
       </Typography>
       <Typography color="textSecondary" className={classes.projectContext}>
-        on date
+        {props.dateCreated} 
       </Typography>
       <div>
         <Link color="primary" href="#" onClick={preventDefault}>
