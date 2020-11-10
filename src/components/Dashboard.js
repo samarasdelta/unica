@@ -12,7 +12,6 @@ import Divider from "@material-ui/core/Divider";
 import IconButton from "@material-ui/core/IconButton";
 import Badge from "@material-ui/core/Badge";
 import Container from "@material-ui/core/Container";
-//import Link from '@material-ui/core/Link';
 import MenuIcon from "@material-ui/icons/Menu";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import HelpIcon from "@material-ui/icons/Help";
@@ -225,36 +224,17 @@ export default function Dashboard() {
               {/* Project */}
               {data.papers.map(function (paper) {
                 return (
-                  <Grid item xs={12} md={4} lg={3}>
+                  <Grid item xs={12} md={4} lg={4} >
                     <Paper className={fixedHeightPaper}>
                       <ProjectListItem
                         title={paper.title}
+                        category={paper.category}
                         dateCreated={paper.dateCreated}
                       />
                     </Paper>
                   </Grid>
                 );
               })}
-              {/* <Grid item xs={12} md={4} lg={3}>
-              <Paper className={fixedHeightPaper}>
-                <ProjectListItem />
-              </Paper>
-            </Grid>
-            <Grid item xs={12} md={4} lg={3}>
-              <Paper className={fixedHeightPaper}>
-                <ProjectListItem />
-              </Paper>
-            </Grid>
-            <Grid item xs={12} md={4} lg={3}>
-              <Paper className={fixedHeightPaper}>
-                <ProjectListItem />
-              </Paper>
-            </Grid>
-            <Grid item xs={12} md={4} lg={3}>
-              <Paper className={fixedHeightPaper}>
-                <ProjectListItem />
-              </Paper>
-            </Grid> */}
             </Grid>
             <Box pt={4}>
               <CopyrightUnica />

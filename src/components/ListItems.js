@@ -92,6 +92,6 @@ export const secondaryListItems = (
       </ListItemIcon>
       <ListItemText primary="New team" />
     </ListItem>
-    <ListSubheader inset>User's teams</ListSubheader>
+    <ListSubheader inset>User&apos;s teams</ListSubheader>
   </div>
 );

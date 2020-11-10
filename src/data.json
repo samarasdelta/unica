@@ -1,29 +1,35 @@
 {
     "papers": [
         {
-            "title": "Psychics",
-            "dateCreated": "20.10.2020"
+            "title": "Paper Title 1sdf",
+            "category": "Psychics",
+            "dateCreated": "13/09/2020"
         },
         {
-            "title": "Math",
-            "dateCreated": "20.10.2020"
+            "title": "Paper Title 2qfd",
+            "category": "Math",
+            "dateCreated": "03/10/2020"
         },
         {
-            "title": "Programming",
-            "dateCreated": "20.10.2020"
+            "title": "Paper Title 3ijg",
+            "category": "Programming",
+            "dateCreated": "09/06/2020"
         }, 
         {
-            "title": "Literature",
-            "dateCreated": "20.10.2020"
+            "title": "Paper Title 4pof",
+            "category": "Literature",
+            "dateCreated": "02/03/2020"
         }, 
         {
-            "title": "History",
-            "dateCreated": "20.10.2020"
+            "title": "Paper Title 5frd",
+            "category": "History",
+            "dateCreated": "21/09/2020"
         }, 
         {
-            "title": "Chemistry",
-            "dateCreated": "20.10.2020"
+            "title": "Paper Title 6sgd",
+            "category": "Chemistry",
+            "dateCreated": "08/11/2020"
         }
-
+        
     ]
 }

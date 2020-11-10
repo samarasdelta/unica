@@ -12,24 +12,15 @@ const useStyles = makeStyles({
   projectContext: {
     flex: 1,
   },
-  palette: {
-    primary: {
-      // light: will be calculated from palette.primary.main,
-      main: "#ff4400",
-      // dark: will be calculated from palette.primary.main,
-      // contrastText: will be calculated to contrast with palette.primary.main
-    },
-  },
 });
 
 export default function ProjectListItem(props) {
   const classes = useStyles();
-  console.log(props);
   return (
     <React.Fragment>
-      <Title>Recent Project</Title>
+      <Title>{props.title}</Title>
       <Typography component="p" variant="h6">
-        {props.title}
+        {props.category}
       </Typography>
       <Typography color="textSecondary" className={classes.projectContext}>
         {props.dateCreated}

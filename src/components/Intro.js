@@ -12,7 +12,6 @@ import Container from "@material-ui/core/Container";
 import Box from "@material-ui/core/Box";
 import Logo from "./images/unicalogo.png";
 import CopyrightUnica from "./CopyrightUnica";
-//import '../App.css';
 
 const useStyles = makeStyles((theme) => ({
   "@global": {
@@ -38,14 +37,14 @@ const useStyles = makeStyles((theme) => ({
     margin: theme.spacing(1, 1.5),
   },
   heroContent: {
-    padding: theme.spacing(2, 0, 2),
+    padding: theme.spacing(4, 0, 4),
   },
   form: {
     marginTop: theme.spacing(4),
   },
   footer: {
     borderTop: `1px solid ${theme.palette.divider}`,
-    marginTop: theme.spacing(30),
+    marginTop: theme.spacing(25),
     paddingTop: theme.spacing(3),
     paddingBottom: theme.spacing(3),
     [theme.breakpoints.up("sm")]: {
@@ -160,7 +159,7 @@ export default function Intro() {
             color="primary"
             className={classes.submit}
           >
-            GET STARTED
+            GET STARTED HERE
           </Button>
         </form>
       </Container>

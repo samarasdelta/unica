@@ -7,12 +7,20 @@ import DashboardPage from "./pages/DashboardPage.js";
 import DiscoverPage from "./pages/DiscoverPage.js";
 import ForgotPassPage from "./pages/ForgotPassPage.js";
 import ForgotEmailPage from "./pages/ForgotEmailPage.js";
+import NotFoundPage from "./pages/NotFoundPage.js";
+import BadGatewayPage from "./pages/BadGatewayPage.js";
 
 function App() {
   return (
     <Router>
       <div>
         <Switch>
+          <Route path="/502">
+            <BadGatewayPage />
+          </Route>
+          <Route path="/404">
+            <NotFoundPage />
+          </Route>
           <Route path="/forgotemail">
             <ForgotEmailPage />
           </Route>
