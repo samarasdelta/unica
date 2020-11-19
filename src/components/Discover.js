@@ -28,6 +28,7 @@ import CopyrightUnica from "./CopyrightUnica";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import Logo from "./images/unicasmall.png";
 import SearchBar from "./SearchBar";
+import DiscoverResults from "./DiscoverListItem";
 
 const drawerWidth = 200;
 
@@ -215,6 +216,7 @@ export default function Discover() {
         </Drawer>
         <main className={classes.content}>
           <div className={classes.appBarSpacer} />
+          <DiscoverResults />
           <Box pt={4}>
             <CopyrightUnica />
           </Box>

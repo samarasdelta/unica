@@ -220,11 +220,12 @@ export default function Dashboard() {
         <main className={classes.content}>
           <div className={classes.appBarSpacer} />
           <Container maxWidth="lg" className={classes.container}>
-            <Grid container spacing={3}>
+            <Grid container spacing={4}>
               {/* Project */}
               {data.papers.map(function (paper) {
                 return (
-                  <Grid item xs={12} md={4} lg={4} >
+                  // eslint-disable-next-line react/jsx-key
+                  <Grid item xs={4} md={4} lg={4}>
                     <Paper className={fixedHeightPaper}>
                       <ProjectListItem
                         title={paper.title}
