@@ -1,18 +1,18 @@
-import React from 'react';
+import React from "react";
 import { Link as RouteLink } from "react-router-dom";
-import { Box, Container, Typography, makeStyles } from '@material-ui/core';
+import { Box, Container, Typography, makeStyles } from "@material-ui/core";
 import Logo from "./images/error404.png";
 
 const useStyles = makeStyles((theme) => ({
   root: {
     backgroundColor: theme.palette.background.dark,
-    height: '100%',
+    height: "100%",
     paddingBottom: theme.spacing(3),
-    paddingTop: theme.spacing(10)
-    },
+    paddingTop: theme.spacing(10),
+  },
   image: {
     maxWidth: "100%",
-  }
+  },
 }));
 
 export default function NotFound() {
@@ -40,10 +40,11 @@ export default function NotFound() {
             Go home by
             <RouteLink to="/dashboard" style={{ textDecoration: "none" }}>
               &nbsp;clicking here
-            </RouteLink>!
+            </RouteLink>
+            !
           </Typography>
         </Container>
       </Box>
     </div>
   );
-};
+}

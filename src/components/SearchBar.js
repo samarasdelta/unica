@@ -52,7 +52,7 @@ const styles = (theme) => ({
  * @see [Search patterns](https://material.io/archive/guidelines/patterns/search.html)
  */
 const SearchBar = React.forwardRef(
-(
+  (
     {
       cancelOnEscape,
       className,

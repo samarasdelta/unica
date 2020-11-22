@@ -80,7 +80,8 @@ const DiscoverResults = ({ className, customers }) => {
                 <Box
                   className={classes.namespace}
                   alignItems="center"
-                  display="flex">
+                  display="flex"
+                >
                   <Typography color="textPrimary" variant="body1">
                     Design and Implementation of a researcher&apos;s
                     collaborative web site
