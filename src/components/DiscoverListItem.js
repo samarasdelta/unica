@@ -14,7 +14,7 @@ import {
   Typography,
   makeStyles,
 } from "@material-ui/core";
-//import data from "../data.json";
+import data from "../data.json";
 
 const useStyles = makeStyles((theme) => ({
   box: {
@@ -36,10 +36,6 @@ const DiscoverResults = ({ className, customers }) => {
   const [limit, setLimit] = useState(10);
   const [page, setPage] = useState(0);
 
-  const handleSelectAll = (event) => {
-    let newSelectedCustomerIds;
-  };
-
   const handleLimitChange = (event) => {
     setLimit(event.target.value);
   };
@@ -55,7 +51,7 @@ const DiscoverResults = ({ className, customers }) => {
           <TableHead>
             <TableRow>
               <TableCell padding="checkbox">
-                <Checkbox color="primary" onClick={handleSelectAll} />
+                <Checkbox color="primary" />
               </TableCell>
               <TableCell>
                 <Typography>Title</Typography>
@@ -72,44 +68,48 @@ const DiscoverResults = ({ className, customers }) => {
             </TableRow>
           </TableHead>
           <TableBody>
-            <TableRow hover>
-              <TableCell padding="checkbox">
-                <Checkbox color="primary" value="true" />
-              </TableCell>
-              <TableCell>
-                <Box
-                  className={classes.namespace}
-                  alignItems="center"
-                  display="flex"
-                >
-                  <Typography color="textPrimary" variant="body1">
-                    Design and Implementation of a researcher&apos;s
-                    collaborative web site
-                  </Typography>
-                </Box>
-              </TableCell>
-              <TableCell>
-                <Box alignItems="center" display="flex">
-                  <Typography color="textPrimary" variant="body1">
-                    Dimitrios Samaras
-                  </Typography>
-                </Box>
-              </TableCell>
-              <TableCell>
-                <Box alignItems="center" display="flex">
-                  <Typography color="textPrimary" variant="body1">
-                    Computer science
-                  </Typography>
-                </Box>
-              </TableCell>
-              <TableCell>
-                <Box alignItems="center" display="flex">
-                  <Typography color="textPrimary" variant="body1">
-                    25/02/2020
-                  </Typography>
-                </Box>
-              </TableCell>
-            </TableRow>
+            {data.papers.map(function (paper, i) {
+              return (
+                <TableRow hover key={i}>
+                  <TableCell padding="checkbox">
+                    <Checkbox color="primary" value="true" />
+                  </TableCell>
+                  <TableCell>
+                    <Box
+                      className={classes.namespace}
+                      alignItems="center"
+                      display="flex"
+                      title={paper.title}
+                    >
+                      <Typography color="textPrimary" variant="body1">
+                        {paper.title}
+                      </Typography>
+                    </Box>
+                  </TableCell>
+                  <TableCell>
+                    <Box alignItems="center" display="flex">
+                      <Typography color="textPrimary" variant="body1">
+                        {paper.owner}
+                      </Typography>
+                    </Box>
+                  </TableCell>
+                  <TableCell>
+                    <Box alignItems="center" display="flex">
+                      <Typography color="textPrimary" variant="body1">
+                        {paper.category}
+                      </Typography>
+                    </Box>
+                  </TableCell>
+                  <TableCell>
+                    <Box alignItems="center" display="flex">
+                      <Typography color="textPrimary" variant="body1">
+                        {paper.dateCreated}
+                      </Typography>
+                    </Box>
+                  </TableCell>
+                </TableRow>
+              );
+            })}
           </TableBody>
         </Table>
       </Box>
