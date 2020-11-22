@@ -14,6 +14,7 @@ import {
   Typography,
   makeStyles,
 } from "@material-ui/core";
+//import data from "../data.json";
 
 const useStyles = makeStyles((theme) => ({
   box: {
@@ -57,10 +58,13 @@ const DiscoverResults = ({ className, customers }) => {
                 <Checkbox color="primary" onClick={handleSelectAll} />
               </TableCell>
               <TableCell>
-                <Typography>Name</Typography>
+                <Typography>Title</Typography>
               </TableCell>
               <TableCell>
                 <Typography>Owner</Typography>
+              </TableCell>
+              <TableCell>
+                <Typography>Category</Typography>
               </TableCell>
               <TableCell>
                 <Typography>Last Modified</Typography>
@@ -93,7 +97,14 @@ const DiscoverResults = ({ className, customers }) => {
               <TableCell>
                 <Box alignItems="center" display="flex">
                   <Typography color="textPrimary" variant="body1">
-                    25/25/2020
+                    Computer science
+                  </Typography>
+                </Box>
+              </TableCell>
+              <TableCell>
+                <Box alignItems="center" display="flex">
+                  <Typography color="textPrimary" variant="body1">
+                    25/02/2020
                   </Typography>
                 </Box>
               </TableCell>

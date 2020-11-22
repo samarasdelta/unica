@@ -43,7 +43,10 @@
     "plugins": [
       "react",
       "prettier"
-    ]
+    ],
+    "rules": {
+      "linebreak-style": ["error", "windows"]
+    }
   },
   "browserslist": {
     "production": [

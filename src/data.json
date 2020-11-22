@@ -2,31 +2,37 @@
     "papers": [
         {
             "title": "Paper Title 1sdf",
+            "owner": "Dimitrios Samaras",
             "category": "Psychics",
             "dateCreated": "13/09/2020"
         },
         {
             "title": "Paper Title 2qfd",
+            "owner": "Dimitrios Samaras",
             "category": "Math",
             "dateCreated": "03/10/2020"
         },
         {
             "title": "Paper Title 3ijg",
+            "owner": "Dimitrios Samaras",
             "category": "Programming",
             "dateCreated": "09/06/2020"
         }, 
         {
             "title": "Paper Title 4pof",
+            "owner": "Dimitrios Samaras",
             "category": "Literature",
             "dateCreated": "02/03/2020"
         }, 
         {
             "title": "Paper Title 5frd",
+            "owner": "Dimitrios Samaras",
             "category": "History",
             "dateCreated": "21/09/2020"
         }, 
         {
             "title": "Paper Title 6sgd",
+            "owner": "Dimitrios Samaras",
             "category": "Chemistry",
             "dateCreated": "08/11/2020"
         }
