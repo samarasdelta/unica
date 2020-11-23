@@ -6,7 +6,6 @@ import Drawer from "@material-ui/core/Drawer";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import List from "@material-ui/core/List";
-import Box from "@material-ui/core/Box";
 import Typography from "@material-ui/core/Typography";
 import Divider from "@material-ui/core/Divider";
 import IconButton from "@material-ui/core/IconButton";
@@ -24,7 +23,6 @@ import {
 } from "./ListItems";
 import Switch from "@material-ui/core/Switch";
 import { blue, red } from "@material-ui/core/colors";
-import CopyrightUnica from "./CopyrightUnica";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import Logo from "./images/unicasmall.png";
 import SearchBar from "./SearchBar";
@@ -217,9 +215,6 @@ export default function Discover() {
         <main className={classes.content}>
           <div className={classes.appBarSpacer} />
           <DiscoverResults />
-          <Box pt={4}>
-            <CopyrightUnica />
-          </Box>
         </main>
       </div>
     </ThemeProvider>

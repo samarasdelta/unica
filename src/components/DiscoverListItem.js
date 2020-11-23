@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-//import clsx from "clsx";
 import PropTypes from "prop-types";
 import {
   Box,
@@ -18,7 +17,7 @@ import data from "../data.json";
 
 const useStyles = makeStyles((theme) => ({
   box: {
-    padding: theme.spacing(1),
+    padding: theme.spacing(0),
   },
   namespace: {
     marginRight: theme.spacing(0),
@@ -54,16 +53,24 @@ const DiscoverResults = ({ className, customers }) => {
                 <Checkbox color="primary" />
               </TableCell>
               <TableCell>
-                <Typography>Title</Typography>
+                <Typography variant="h5" color="textPrimary">
+                  Title
+                </Typography>
               </TableCell>
               <TableCell>
-                <Typography>Owner</Typography>
+                <Typography variant="h6" color="textPrimary">
+                  Owner
+                </Typography>
               </TableCell>
               <TableCell>
-                <Typography>Category</Typography>
+                <Typography variant="h6" color="textPrimary">
+                  Category
+                </Typography>
               </TableCell>
               <TableCell>
-                <Typography>Last Modified</Typography>
+                <Typography variant="h6" color="textPrimary">
+                  Last Modified
+                </Typography>
               </TableCell>
             </TableRow>
           </TableHead>

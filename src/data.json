@@ -1,115 +1,49 @@
     {
     "papers": [
         {
-            "title": "Paper Title 1sdf",
-            "owner": "Dimitrios Samaras",
+            "title": "Design and implementation of robotic system to collect falling objects using machine vision",
+            "owner": "Ιωάννης Παπαχρήστου",
             "category": "Psychics",
             "dateCreated": "13/09/2020"
         },
         {
-            "title": "Paper Title 2qfd",
-            "owner": "Dimitrios Samaras",
+            "title": "Viewshed analysis supporting ecosystem recreational services|open source programming for ecologists and protected areas managers",
+            "owner": "Αλέξανδρος Χρήστου",
             "category": "Math",
             "dateCreated": "03/10/2020"
         },
         {
-            "title": "Paper Title 3ijg",
-            "owner": "Lazaros Samaras",
+            "title": "An android application and supporting website for creating travel guides and application to the Kozani Perfecture ",
+            "owner": "Lazaros Kazakis",
             "category": "Programming",
             "dateCreated": "09/06/2020"
         }, 
         {
-            "title": "Paper Title 4pof",
-            "owner": "Kwstas Samaras",
+            "title": "Design and Implementation of a researchers web site",
+            "owner": "Δημήτριος Σαμαράς",
             "category": "Literature",
             "dateCreated": "02/03/2020"
-        }, 
+        },
         {
-            "title": "Paper Title 5frd",
-            "owner": "Ioannis Samaras",
-            "category": "History",
-            "dateCreated": "21/09/2020"
-        }, 
-        {
-            "title": "Paper Title 6sgd",
+            "title": "Design of a networking game in the iphone ios platform",
             "owner": "Dimitrios Samaras",
             "category": "Chemistry",
             "dateCreated": "08/11/2020"
         },
         {
-            "title": "Paper Title 1sdf",
+            "title": "Design and Implementation of a Personal Response System",
             "owner": "Dimitrios Samaras",
             "category": "Psychics",
             "dateCreated": "13/09/2020"
         },
         {
-            "title": "Paper Title 2qfd",
+            "title": "Design and implementation of a smart car/follower with avoid obstacles function",
             "owner": "Dimitrios Samaras",
             "category": "Math",
             "dateCreated": "03/10/2020"
         },
         {
-            "title": "Paper Title 3ijg",
-            "owner": "Lazaros Samaras",
-            "category": "Programming",
-            "dateCreated": "09/06/2020"
-        }, 
-        {
-            "title": "Paper Title 4pof",
-            "owner": "Kwstas Samaras",
-            "category": "Literature",
-            "dateCreated": "02/03/2020"
-        }, 
-        {
-            "title": "Paper Title 5frd",
-            "owner": "Ioannis Samaras",
-            "category": "History",
-            "dateCreated": "21/09/2020"
-        }, 
-        {
-            "title": "Paper Title 6sgd",
-            "owner": "Dimitrios Samaras",
-            "category": "Chemistry",
-            "dateCreated": "08/11/2020"
-        },
-        {
-            "title": "Paper Title 1sdf",
-            "owner": "Dimitrios Samaras",
-            "category": "Psychics",
-            "dateCreated": "13/09/2020"
-        },
-        {
-            "title": "Paper Title 2qfd",
-            "owner": "Dimitrios Samaras",
-            "category": "Math",
-            "dateCreated": "03/10/2020"
-        },
-        {
-            "title": "Paper Title 3ijg",
-            "owner": "Lazaros Samaras",
-            "category": "Programming",
-            "dateCreated": "09/06/2020"
-        }, 
-        {
-            "title": "Paper Title 4pof",
-            "owner": "Kwstas Samaras",
-            "category": "Literature",
-            "dateCreated": "02/03/2020"
-        }, 
-        {
-            "title": "Paper Title 5frd",
-            "owner": "Ioannis Samaras",
-            "category": "History",
-            "dateCreated": "21/09/2020"
-        }, 
-        {
-            "title": "Paper Title 6sgd",
-            "owner": "Dimitrios Samaras",
-            "category": "Chemistry",
-            "dateCreated": "08/11/2020"
-        },
-        {
-            "title": "Paper Title 1sdf",
+            "title": "Design and development of information system for management of internship positions at University of Western Macedonia",
             "owner": "Dimitrios Samaras",
             "category": "Psychics",
             "dateCreated": "13/09/2020"
@@ -119,31 +53,6 @@
             "owner": "Dimitrios Samaras",
             "category": "Math",
             "dateCreated": "03/10/2020"
-        },
-        {
-            "title": "Paper Title 3ijg",
-            "owner": "Lazaros Samaras",
-            "category": "Programming",
-            "dateCreated": "09/06/2020"
-        }, 
-        {
-            "title": "Paper Title 4pof",
-            "owner": "Kwstas Samaras",
-            "category": "Literature",
-            "dateCreated": "02/03/2020"
-        }, 
-        {
-            "title": "Paper Title 5frd",
-            "owner": "Ioannis Samaras",
-            "category": "History",
-            "dateCreated": "21/09/2020"
-        }, 
-        {
-            "title": "Paper Title 6sgd",
-            "owner": "Dimitrios Samaras",
-            "category": "Chemistry",
-            "dateCreated": "08/11/2020"
         }
-        
     ]
 }

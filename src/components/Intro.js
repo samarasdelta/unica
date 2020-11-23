@@ -44,12 +44,12 @@ const useStyles = makeStyles((theme) => ({
   },
   footer: {
     borderTop: `1px solid ${theme.palette.divider}`,
-    marginTop: theme.spacing(25),
-    paddingTop: theme.spacing(3),
-    paddingBottom: theme.spacing(3),
+    marginTop: theme.spacing(10),
+    paddingTop: theme.spacing(0),
+    paddingBottom: theme.spacing(0),
     [theme.breakpoints.up("sm")]: {
-      paddingTop: theme.spacing(5),
-      paddingBottom: theme.spacing(0),
+      paddingTop: theme.spacing(2),
+      paddingBottom: theme.spacing(2),
     },
   },
 }));
@@ -130,9 +130,11 @@ export default function Intro() {
       </AppBar>
       {/* Hero unit */}
       <Container component="main" className={classes.heroContent}>
-        <Typography align="center">
-          <img src={Logo} alt="logo" />
-        </Typography>
+        <Box pt={6}>
+          <Typography align="center">
+            <img src={Logo} alt="logo" />
+          </Typography>
+        </Box>
         <Typography
           variant="h5"
           align="center"
@@ -159,8 +161,21 @@ export default function Intro() {
             color="primary"
             className={classes.submit}
           >
-            GET STARTED HERE
+            SIGN UP
           </Button>
+          <Box mt={2}>OR</Box>
+          <Box mt={2}>
+            <Button
+              component={RouteLink}
+              to="/discover"
+              type="submit"
+              variant="contained"
+              color="primary"
+              className={classes.submit}
+            >
+              GUEST SIGN IN
+            </Button>
+          </Box>
         </form>
       </Container>
       {/* End hero unit */}
@@ -175,7 +190,7 @@ export default function Intro() {
               <ul>
                 {footer.description.map((item) => (
                   <li key={item}>
-                    <Link href="#" variant="subtitle1" color="textSecondary">
+                    <Link href="" variant="subtitle1" color="textSecondary">
                       {item}
                     </Link>
                   </li>
@@ -184,7 +199,7 @@ export default function Intro() {
             </Grid>
           ))}
         </Grid>
-        <Box mt={5}>
+        <Box pt={4}>
           <CopyrightUnica />
         </Box>
       </Container>
