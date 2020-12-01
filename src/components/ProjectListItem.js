@@ -4,7 +4,6 @@ import { makeStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import Title from "./Title";
 import Box from "@material-ui/core/Box";
-import { positions } from "@material-ui/system";
 
 function preventDefault(event) {
   event.preventDefault();

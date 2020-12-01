@@ -44,7 +44,7 @@ const useStyles = makeStyles((theme) => ({
   },
   footer: {
     borderTop: `1px solid ${theme.palette.divider}`,
-    marginTop: theme.spacing(10),
+    marginTop: theme.spacing(18),
     paddingTop: theme.spacing(0),
     paddingBottom: theme.spacing(0),
     [theme.breakpoints.up("sm")]: {
@@ -152,30 +152,40 @@ export default function Intro() {
         >
           Unica is a researcher&apos;s collaborative web site
         </Typography>
-        <form className={classes.form} align="center" noValidate>
-          <Button
-            component={RouteLink}
-            to="/signup"
-            type="submit"
-            variant="contained"
-            color="primary"
-            className={classes.submit}
+        <form className={classes.form} noValidate>
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
           >
-            SIGN UP
-          </Button>
-          <Box mt={2}>OR</Box>
-          <Box mt={2}>
-            <Button
-              component={RouteLink}
-              to="/discover"
-              type="submit"
-              variant="contained"
-              color="primary"
-              className={classes.submit}
-            >
-              GUEST SIGN IN
-            </Button>
-          </Box>
+            <Box p={1} m={1}>
+              <Button
+                component={RouteLink}
+                to="/signup"
+                type="submit"
+                variant="contained"
+                color="primary"
+                className={classes.submit}
+              >
+                SIGN UP
+              </Button>
+            </Box>
+            <Box>OR</Box>
+            <Box p={1} m={1}>
+              <Button
+                component={RouteLink}
+                to="/discover"
+                type="submit"
+                variant="contained"
+                color="primary"
+                className={classes.submit}
+              >
+                GUEST SIGN IN
+              </Button>
+            </Box>
+          </div>
         </form>
       </Container>
       {/* End hero unit */}
