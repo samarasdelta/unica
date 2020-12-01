@@ -34,7 +34,7 @@ export default function NotFound() {
             The page you are looking for isn’t here
           </Typography>
           <Box textAlign="center">
-            <img className={classes.image} src={Logo} />
+            <img className={classes.image} alt="/" src={Logo} />
           </Box>
           <Typography align="center" color="textSecondary" variant="subtitle1">
             Go home by

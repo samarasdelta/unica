@@ -3,7 +3,6 @@ import clsx from "clsx";
 import { makeStyles } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Drawer from "@material-ui/core/Drawer";
-import Box from "@material-ui/core/Box";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import List from "@material-ui/core/List";
@@ -27,18 +26,17 @@ import ProjectListItem from "./ProjectListItem";
 import { Grid, Paper } from "@material-ui/core";
 import Switch from "@material-ui/core/Switch";
 import { blue, red } from "@material-ui/core/colors";
-import CopyrightUnica from "./CopyrightUnica";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import Logo from "./images/unicasmall.png";
 import data from "../data.json";
-
-console.log(data);
 
 const drawerWidth = 200;
 
 const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
+    flexGrow: 1,
+    overflow: "hidden",
   },
   toolbar: {
     paddingRight: 24, // keep right padding when drawer closed
@@ -219,12 +217,12 @@ export default function Dashboard() {
         </Drawer>
         <main className={classes.content}>
           <div className={classes.appBarSpacer} />
-          <Container maxWidth="lg" className={classes.container}>
+          <Container className={classes.container}>
             <Grid container spacing={4}>
               {/* Project */}
               {data.papers.map(function (paper, i) {
                 return (
-                  <Grid item xs={4} md={4} lg={4} key={i}>
+                  <Grid item xs={4} zeroMinWidth md={4} lg={4} key={i}>
                     <Paper className={fixedHeightPaper}>
                       <ProjectListItem
                         title={paper.title}
@@ -236,9 +234,6 @@ export default function Dashboard() {
                 );
               })}
             </Grid>
-            <Box pt={4}>
-              <CopyrightUnica />
-            </Box>
           </Container>
         </main>
       </div>

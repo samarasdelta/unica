@@ -11,27 +11,10 @@ import {
   TablePagination,
   TableRow,
   Typography,
-  makeStyles,
 } from "@material-ui/core";
 import data from "../data.json";
 
-const useStyles = makeStyles((theme) => ({
-  box: {
-    padding: theme.spacing(0),
-  },
-  namespace: {
-    marginRight: theme.spacing(0),
-  },
-  spaceR: {
-    marginRight: theme.spacing(0),
-  },
-  spaceL: {
-    marginLeft: theme.spacing(0),
-  },
-}));
-
-const DiscoverResults = ({ className, customers }) => {
-  const classes = useStyles();
+const DiscoverResults = () => {
   const [limit, setLimit] = useState(10);
   const [page, setPage] = useState(0);
 
@@ -44,7 +27,7 @@ const DiscoverResults = ({ className, customers }) => {
   };
 
   return (
-    <Card className={classes.box}>
+    <Card>
       <Box minWidth={1050}>
         <Table>
           <TableHead>
@@ -82,12 +65,7 @@ const DiscoverResults = ({ className, customers }) => {
                     <Checkbox color="primary" value="true" />
                   </TableCell>
                   <TableCell>
-                    <Box
-                      className={classes.namespace}
-                      alignItems="center"
-                      display="flex"
-                      title={paper.title}
-                    >
+                    <Box alignItems="center" display="flex" title={paper.title}>
                       <Typography color="textPrimary" variant="body1">
                         {paper.title}
                       </Typography>

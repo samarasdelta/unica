@@ -97,7 +97,7 @@ export default function LogIn() {
             <Grid item>
               <RouteLink to="signup" style={{ textDecoration: "none" }}>
                 <Link variant="body2" style={{ textDecoration: "none" }}>
-                  Don't have an account? Sign Up
+                  Don&apos;t have an account? Sign Up
                 </Link>
               </RouteLink>
             </Grid>
