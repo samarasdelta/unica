@@ -27,8 +27,9 @@ import { Grid, Paper } from "@material-ui/core";
 import Switch from "@material-ui/core/Switch";
 import { blue, red } from "@material-ui/core/colors";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
-import Logo from "./images/unicasmall.png";
+import Logo from "./images/unicasmall1.png";
 import data from "../data.json";
+import Box from "@material-ui/core/Box";
 
 const drawerWidth = 200;
 
@@ -199,9 +200,9 @@ export default function Dashboard() {
           open={open}
         >
           <div className={classes.toolbarIcon}>
-            <Typography align="center">
+            <Box mx="auto">
               <img src={Logo} alt="logo" />
-            </Typography>
+            </Box>
             <IconButton onClick={handleDrawerClose}>
               <ChevronLeftIcon />
             </IconButton>

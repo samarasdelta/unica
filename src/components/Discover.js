@@ -24,10 +24,11 @@ import {
 import Switch from "@material-ui/core/Switch";
 import { blue, red } from "@material-ui/core/colors";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
-import Logo from "./images/unicasmall.png";
+import Logo from "./images/unicasmall1.png";
 import SearchBar from "./SearchBar";
 import DiscoverResults from "./DiscoverListItem";
 import Container from "@material-ui/core/Container";
+import Box from "@material-ui/core/Box";
 
 const drawerWidth = 200;
 
@@ -199,9 +200,9 @@ export default function Discover() {
           open={open}
         >
           <div className={classes.toolbarIcon}>
-            <Typography align="center">
+            <Box mx="auto">
               <img src={Logo} alt="logo" />
-            </Typography>
+            </Box>
             <IconButton onClick={handleDrawerClose}>
               <ChevronLeftIcon />
             </IconButton>
