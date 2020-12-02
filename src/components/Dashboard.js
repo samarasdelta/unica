@@ -222,7 +222,7 @@ export default function Dashboard() {
               {/* Project */}
               {data.papers.map(function (paper, i) {
                 return (
-                  <Grid item xs={4} zeroMinWidth md={4} lg={4} key={i}>
+                  <Grid item xs={4} key={i}>
                     <Paper className={fixedHeightPaper}>
                       <ProjectListItem
                         title={paper.title}

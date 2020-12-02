@@ -27,6 +27,7 @@ import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import Logo from "./images/unicasmall.png";
 import SearchBar from "./SearchBar";
 import DiscoverResults from "./DiscoverListItem";
+import Container from "@material-ui/core/Container";
 
 const drawerWidth = 200;
 
@@ -95,8 +96,10 @@ const useStyles = makeStyles((theme) => ({
     overflow: "auto",
   },
   container: {
-    paddingTop: theme.spacing(4),
-    paddingBottom: theme.spacing(4),
+    paddingRight: theme.spacing(2),
+    paddingLeft: theme.spacing(2),
+    paddingTop: theme.spacing(5),
+    paddingBottom: theme.spacing(5),
   },
   paper: {
     padding: theme.spacing(2),
@@ -214,7 +217,9 @@ export default function Discover() {
         </Drawer>
         <main className={classes.content}>
           <div className={classes.appBarSpacer} />
-          <DiscoverResults />
+          <Container className={classes.container} maxWidth="xl">
+            <DiscoverResults />
+          </Container>
         </main>
       </div>
     </ThemeProvider>
