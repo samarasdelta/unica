@@ -200,7 +200,7 @@ export default function Dashboard() {
           open={open}
         >
           <div className={classes.toolbarIcon}>
-            <Box mx="auto">
+            <Box pr={10}>
               <img src={Logo} alt="logo" />
             </Box>
             <IconButton onClick={handleDrawerClose}>
