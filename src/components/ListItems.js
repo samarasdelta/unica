@@ -11,6 +11,7 @@ import PersonIcon from "@material-ui/icons/Person";
 import GroupWorkIcon from "@material-ui/icons/GroupWork";
 import InsertDriveFileIcon from "@material-ui/icons/InsertDriveFile";
 import FindInPageIcon from "@material-ui/icons/FindInPage";
+import AddIcon from "@material-ui/icons/Add";
 import Link from "@material-ui/core/Link";
 
 export const discoverListItems = (
@@ -21,7 +22,7 @@ export const discoverListItems = (
           <ListItemIcon>
             <FindInPageIcon />
           </ListItemIcon>
-          <ListItemText primary="Discover" />
+          <ListItemText secondary="Discover" />
         </ListItem>
       </Link>
     </RouteLink>
@@ -36,7 +37,7 @@ export const dashboardListItems = (
           <ListItemIcon>
             <DashboardIcon />
           </ListItemIcon>
-          <ListItemText primary="Dashboard" />
+          <ListItemText secondary="Dashboard" />
         </ListItem>
       </Link>
     </RouteLink>
@@ -49,25 +50,25 @@ export const mainListItems = (
       <ListItemIcon>
         <AllInboxIcon />
       </ListItemIcon>
-      <ListItemText primary="All" />
+      <ListItemText secondary="All" />
     </ListItem>
     <ListItem button>
       <ListItemIcon>
         <InsertDriveFileIcon />
       </ListItemIcon>
-      <ListItemText primary="Drafts" />
+      <ListItemText secondary="Drafts" />
     </ListItem>
     <ListItem button>
       <ListItemIcon>
         <PersonIcon />
       </ListItemIcon>
-      <ListItemText primary="Your's" />
+      <ListItemText secondary="Your's" />
     </ListItem>
     <ListItem button>
       <ListItemIcon>
         <DeleteIcon />
       </ListItemIcon>
-      <ListItemText primary="Deleted" />
+      <ListItemText secondary="Deleted" />
     </ListItem>
   </div>
 );
@@ -76,22 +77,17 @@ export const secondaryListItems = (
   <div>
     <ListItem button>
       <ListItemIcon>
-        <GroupWorkIcon />
+        <AddIcon />
       </ListItemIcon>
-      <ListItemText primary="1st team" />
+      <ListItemText secondary="New team" />
     </ListItem>
     <ListItem button>
       <ListItemIcon>
         <GroupWorkIcon />
       </ListItemIcon>
-      <ListItemText primary="2nd team" />
+      <ListItemText secondary="My Team's Name" />
     </ListItem>
-    <ListItem button>
-      <ListItemIcon>
-        <GroupWorkIcon />
-      </ListItemIcon>
-      <ListItemText primary="New team" />
-    </ListItem>
+
     <ListSubheader inset>User&apos;s teams</ListSubheader>
   </div>
 );

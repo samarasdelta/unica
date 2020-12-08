@@ -41,17 +41,17 @@ const DiscoverResults = () => {
                 </Typography>
               </TableCell>
               <TableCell>
-                <Typography variant="h6" color="textPrimary">
+                <Typography variant="h6" color="textSecondary">
                   Owner
                 </Typography>
               </TableCell>
               <TableCell>
-                <Typography variant="h6" color="textPrimary">
+                <Typography variant="h6" color="textSecondary">
                   Category
                 </Typography>
               </TableCell>
               <TableCell>
-                <Typography variant="h6" color="textPrimary">
+                <Typography variant="h6" color="textSecondary">
                   Last Modified
                 </Typography>
               </TableCell>
@@ -73,21 +73,21 @@ const DiscoverResults = () => {
                   </TableCell>
                   <TableCell>
                     <Box alignItems="center" display="flex">
-                      <Typography color="textPrimary" variant="body1">
+                      <Typography color="textSecondary" variant="body1">
                         {paper.owner}
                       </Typography>
                     </Box>
                   </TableCell>
                   <TableCell>
                     <Box alignItems="center" display="flex">
-                      <Typography color="textPrimary" variant="body1">
+                      <Typography color="textSecondary" variant="body1">
                         {paper.category}
                       </Typography>
                     </Box>
                   </TableCell>
                   <TableCell>
                     <Box alignItems="center" display="flex">
-                      <Typography color="textPrimary" variant="body1">
+                      <Typography color="textSecondary" variant="body1">
                         {paper.dateCreated}
                       </Typography>
                     </Box>

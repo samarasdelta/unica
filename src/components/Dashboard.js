@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import clsx from "clsx";
 import { makeStyles } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
+import { Link as RouteLink } from "react-router-dom";
 import Drawer from "@material-ui/core/Drawer";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
@@ -9,6 +10,7 @@ import List from "@material-ui/core/List";
 import Typography from "@material-ui/core/Typography";
 import Divider from "@material-ui/core/Divider";
 import IconButton from "@material-ui/core/IconButton";
+import PublishIcon from "@material-ui/icons/Publish";
 import Badge from "@material-ui/core/Badge";
 import Container from "@material-ui/core/Container";
 import MenuIcon from "@material-ui/icons/Menu";
@@ -16,6 +18,7 @@ import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import HelpIcon from "@material-ui/icons/Help";
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import NotificationsIcon from "@material-ui/icons/Notifications";
+import AddIcon from "@material-ui/icons/Add";
 import {
   discoverListItems,
   dashboardListItems,
@@ -23,7 +26,7 @@ import {
   secondaryListItems,
 } from "./ListItems";
 import ProjectListItem from "./ProjectListItem";
-import { Grid, Paper } from "@material-ui/core";
+import { Button, Grid, Paper } from "@material-ui/core";
 import Switch from "@material-ui/core/Switch";
 import { blue, red } from "@material-ui/core/colors";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
@@ -38,6 +41,7 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     flexGrow: 1,
     overflow: "hidden",
+    width: "auto",
   },
   toolbar: {
     paddingRight: 24, // keep right padding when drawer closed
@@ -95,13 +99,13 @@ const useStyles = makeStyles((theme) => ({
   },
   appBarSpacer: theme.mixins.toolbar,
   content: {
-    flexGrow: 1,
     height: "100vh",
     overflow: "auto",
   },
   container: {
-    paddingTop: theme.spacing(4),
-    paddingBottom: theme.spacing(4),
+    paddingTop: theme.spacing(2),
+    paddingBottom: theme.spacing(2),
+    maxWidth: "100vw",
   },
   paper: {
     padding: theme.spacing(2),
@@ -110,7 +114,11 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: "column",
   },
   fixedHeight: {
-    height: 240,
+    height: 220,
+  },
+  Box: {
+    paddingTop: 1,
+    scrollPaddingBottom: 1,
   },
 }));
 
@@ -218,7 +226,41 @@ export default function Dashboard() {
         </Drawer>
         <main className={classes.content}>
           <div className={classes.appBarSpacer} />
-          <Container className={classes.container}>
+          <Container noWrap className={classes.container}>
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                paddingBottom: "20px",
+              }}
+            >
+              <Box>
+                <Button
+                  component={RouteLink}
+                  //to=""
+                  type="submit"
+                  variant="contained"
+                  color="primary"
+                  startIcon={<PublishIcon />}
+                  className={classes.submit}
+                >
+                  Upload a file
+                </Button>
+              </Box>
+              <Box m={1}>
+                <Button
+                  component={RouteLink}
+                  //to=""
+                  type="submit"
+                  variant="contained"
+                  color="default"
+                  startIcon={<AddIcon />}
+                  className={classes.submit}
+                >
+                  New Project
+                </Button>
+              </Box>
+            </div>
             <Grid container spacing={4}>
               {/* Project */}
               {data.papers.map(function (paper, i) {
