@@ -24,14 +24,14 @@ import {
   dashboardListItems,
   mainListItems,
   secondaryListItems,
-} from "./ListItems";
+} from "../tools/ListItems";
 import ProjectListItem from "./ProjectListItem";
 import { Button, Grid, Paper } from "@material-ui/core";
 import Switch from "@material-ui/core/Switch";
 import { blue, red } from "@material-ui/core/colors";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
-import Logo from "./images/unicasmall1.png";
-import data from "../data.json";
+import Logo from "../images/unicasmall1.png";
+import data from "../tools/data.json";
 import Box from "@material-ui/core/Box";
 
 const drawerWidth = 200;
@@ -129,6 +129,7 @@ export default function Dashboard() {
   const mainPrimaryColor = darkState ? blue[200] : blue[800];
   const mainSecondaryColor = darkState ? red[600] : red[500];
   const darkTheme = createMuiTheme({
+    backgroundColor: "#212121",
     palette: {
       type: palletType,
       primary: {

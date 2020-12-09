@@ -1,5 +1,5 @@
 import React from "react";
-import NotFound from "../components/NotFound.js";
+import NotFound from "../components/error/NotFound.js";
 
 function NotFoundPage() {
   return (

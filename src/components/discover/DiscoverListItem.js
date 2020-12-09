@@ -12,7 +12,7 @@ import {
   TableRow,
   Typography,
 } from "@material-ui/core";
-import data from "../data.json";
+import data from "../tools/data.json";
 
 const DiscoverResults = () => {
   const [limit, setLimit] = useState(10);

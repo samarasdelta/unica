@@ -24,12 +24,12 @@ import {
   dashboardListItems,
   mainListItems,
   secondaryListItems,
-} from "./ListItems";
+} from "../tools/ListItems";
 import Switch from "@material-ui/core/Switch";
 import { blue, red } from "@material-ui/core/colors";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
-import Logo from "./images/unicasmall1.png";
-import SearchBar from "./SearchBar";
+import Logo from "../images/unicasmall1.png";
+import SearchBar from "../tools/SearchBar";
 import DiscoverResults from "./DiscoverListItem";
 import Container from "@material-ui/core/Container";
 import Box from "@material-ui/core/Box";
@@ -145,7 +145,6 @@ export default function Discover() {
   const handleDrawerClose = () => {
     setOpen(false);
   };
-  //const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
 
   return (
     <ThemeProvider theme={darkTheme}>

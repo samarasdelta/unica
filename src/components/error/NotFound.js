@@ -1,7 +1,7 @@
 import React from "react";
 import { Link as RouteLink } from "react-router-dom";
 import { Box, Container, Typography, makeStyles } from "@material-ui/core";
-import Logo from "./images/error502.png";
+import Logo from "../images/error404.png";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function BadGateway() {
+export default function NotFound() {
   const classes = useStyles();
 
   return (
@@ -28,10 +28,10 @@ export default function BadGateway() {
       >
         <Container maxWidth="md">
           <Typography align="center" color="textPrimary" variant="h4">
-            Error 502:
+            Error 404:
           </Typography>
           <Typography align="center" color="textSecondary" variant="h4">
-            Bad Gateway
+            The page you are looking for isn’t here
           </Typography>
           <Box textAlign="center">
             <img className={classes.image} alt="/" src={Logo} />

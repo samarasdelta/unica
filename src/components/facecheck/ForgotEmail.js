@@ -5,13 +5,13 @@ import Button from "@material-ui/core/Button";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import TextField from "@material-ui/core/TextField";
 import Link from "@material-ui/core/Link";
-import Grid from "@material-ui/core/Grid";
 import Box from "@material-ui/core/Box";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
-import CopyrightUnica from "./CopyrightUnica";
+import Grid from "@material-ui/core/Grid";
+import CopyrightUnica from "../tools/CopyrightUnica";
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -33,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function ForgotPass() {
+export default function ForgotEmail() {
   const classes = useStyles();
 
   return (
@@ -44,7 +44,7 @@ export default function ForgotPass() {
           <LockOutlinedIcon />
         </Avatar>
         <Typography component="h1" variant="h5">
-          Password Recovery
+          Email Recovery
         </Typography>
         <form className={classes.form} noValidate>
           <TextField
@@ -52,10 +52,10 @@ export default function ForgotPass() {
             margin="normal"
             required
             fullWidth
-            id="email"
-            label="Email Address"
-            name="email"
-            autoComplete="email"
+            id="phonenumber"
+            label="Phone Number"
+            name="phonenumber"
+            autoComplete="phonenumber"
             autoFocus
           />
           <Button
@@ -71,14 +71,12 @@ export default function ForgotPass() {
           </Button>
           <Grid container>
             <Grid item xs>
-              <RouteLink to="forgotemail" style={{ textDecoration: "none" }}>
-                <Link variant="body2" style={{ textDecoration: "none" }}>
-                  Forgot Email?
-                </Link>
+              <RouteLink to="">
+                <Link variant="body2"></Link>
               </RouteLink>
             </Grid>
             <Grid item>
-              <RouteLink to="login" style={{ textDecoration: "none" }}>
+              <RouteLink to="forgotpass" style={{ textDecoration: "none" }}>
                 <Link variant="body2" style={{ textDecoration: "none" }}>
                   Go back
                 </Link>

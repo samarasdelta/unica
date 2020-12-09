@@ -1,5 +1,5 @@
 import React from "react";
-import ForgotEmail from "../components/ForgotEmail";
+import ForgotEmail from "../components/facecheck/ForgotEmail";
 
 function ForgotEmailPage() {
   return (

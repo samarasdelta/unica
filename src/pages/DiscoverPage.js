@@ -1,5 +1,5 @@
 import React from "react";
-import Discover from "../components/Discover";
+import Discover from "../components/discover/Discover";
 
 function DiscoverPage() {
   return (

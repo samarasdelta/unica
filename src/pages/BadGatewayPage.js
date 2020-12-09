@@ -1,5 +1,5 @@
 import React from "react";
-import BadGateway from "../components/BadGateway.js";
+import BadGateway from "../components/error/BadGateway.js";
 
 function BadGatewayPage() {
   return (
