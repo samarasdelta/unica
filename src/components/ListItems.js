@@ -11,7 +11,7 @@ import PersonIcon from "@material-ui/icons/Person";
 import GroupWorkIcon from "@material-ui/icons/GroupWork";
 import InsertDriveFileIcon from "@material-ui/icons/InsertDriveFile";
 import FindInPageIcon from "@material-ui/icons/FindInPage";
-import AddIcon from "@material-ui/icons/Add";
+import AddBoxIcon from "@material-ui/icons/AddBox";
 import Link from "@material-ui/core/Link";
 
 export const discoverListItems = (
@@ -77,7 +77,7 @@ export const secondaryListItems = (
   <div>
     <ListItem button>
       <ListItemIcon>
-        <AddIcon />
+        <AddBoxIcon />
       </ListItemIcon>
       <ListItemText secondary="New team" />
     </ListItem>

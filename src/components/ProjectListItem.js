@@ -23,10 +23,10 @@ export default function ProjectListItem(props) {
       <Box>
         <Title>{props.title}</Title>
       </Box>
-      <Box my={2}>
+      <Box my={4}>
         <Typography variant="h6">{props.category}</Typography>
       </Box>
-      <Box pt={1}>
+      <Box pt={2}>
         <Typography color="textSecondary" className={classes.projectContext}>
           Last Modified: {props.dateCreated}
         </Typography>

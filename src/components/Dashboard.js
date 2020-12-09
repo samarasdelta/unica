@@ -215,11 +215,8 @@ export default function Dashboard() {
               <ChevronLeftIcon />
             </IconButton>
           </div>
-          <Divider />
           <List>{discoverListItems}</List>
-          <Divider />
           <List>{dashboardListItems}</List>
-          <Divider />
           <List>{mainListItems}</List>
           <Divider />
           <List>{secondaryListItems}</List>
@@ -266,7 +263,7 @@ export default function Dashboard() {
               {data.papers.map(function (paper, i) {
                 return (
                   <Grid item xs={4} key={i}>
-                    <Paper className={fixedHeightPaper}>
+                    <Paper hover className={fixedHeightPaper}>
                       <ProjectListItem
                         title={paper.title}
                         category={paper.category}

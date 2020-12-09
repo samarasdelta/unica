@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import clsx from "clsx";
 import { makeStyles } from "@material-ui/core/styles";
+import { Link as RouteLink } from "react-router-dom";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Drawer from "@material-ui/core/Drawer";
 import AppBar from "@material-ui/core/AppBar";
@@ -10,6 +11,9 @@ import Typography from "@material-ui/core/Typography";
 import Divider from "@material-ui/core/Divider";
 import IconButton from "@material-ui/core/IconButton";
 import Badge from "@material-ui/core/Badge";
+import PublishIcon from "@material-ui/icons/Publish";
+import AddIcon from "@material-ui/icons/Add";
+import Button from "@material-ui/core/Button";
 import MenuIcon from "@material-ui/icons/Menu";
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
@@ -207,11 +211,8 @@ export default function Discover() {
               <ChevronLeftIcon />
             </IconButton>
           </div>
-          <Divider />
           <List>{discoverListItems}</List>
-          <Divider />
           <List>{dashboardListItems}</List>
-          <Divider />
           <List>{mainListItems}</List>
           <Divider />
           <List>{secondaryListItems}</List>
@@ -220,6 +221,41 @@ export default function Discover() {
           <div className={classes.appBarSpacer} />
           <Container className={classes.container} maxWidth="xl">
             <DiscoverResults />
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                paddingBottom: "20px",
+                paddingTop: "20px",
+              }}
+            >
+              <Box>
+                <Button
+                  component={RouteLink}
+                  //to=""
+                  type="submit"
+                  variant="contained"
+                  color="primary"
+                  startIcon={<PublishIcon />}
+                  className={classes.submit}
+                >
+                  Button 1
+                </Button>
+              </Box>
+              <Box m={1}>
+                <Button
+                  component={RouteLink}
+                  //to=""
+                  type="submit"
+                  variant="contained"
+                  color="default"
+                  startIcon={<AddIcon />}
+                  className={classes.submit}
+                >
+                  Button 2
+                </Button>
+              </Box>
+            </div>
           </Container>
         </main>
       </div>
