@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import {
   Box,
@@ -12,11 +12,23 @@ import {
   TableRow,
   Typography,
 } from "@material-ui/core";
-import data from "../tools/data.json";
 
 const DiscoverResults = () => {
   const [limit, setLimit] = useState(10);
   const [page, setPage] = useState(0);
+  const [projects, setProjects] = useState([]);
+
+  useEffect(() => {
+    fetch("/api/projects")
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        setProjects(data);
+      })
+      .catch((error) => {
+        console.log("Error: ", error);
+      });
+  }, []);
 
   const handleLimitChange = (event) => {
     setLimit(event.target.value);
@@ -58,7 +70,7 @@ const DiscoverResults = () => {
             </TableRow>
           </TableHead>
           <TableBody>
-            {data.papers.map(function (paper, i) {
+            {projects.map(function (paper, i) {
               return (
                 <TableRow hover key={i}>
                   <TableCell padding="checkbox">

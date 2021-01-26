@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import clsx from "clsx";
 import { makeStyles } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
@@ -31,8 +31,8 @@ import Switch from "@material-ui/core/Switch";
 import { blue, red } from "@material-ui/core/colors";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import Logo from "../images/unicasmall1.png";
-import data from "../tools/data.json";
 import Box from "@material-ui/core/Box";
+//import data from "../tools/data.json";
 
 const drawerWidth = 200;
 
@@ -125,6 +125,20 @@ const useStyles = makeStyles((theme) => ({
 export default function Dashboard() {
   const [open, setOpen] = React.useState(true);
   const [darkState, setDarkState] = useState(false);
+  const [projects, setProjects] = useState([]);
+
+  useEffect(() => {
+    fetch("/api/projects")
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        setProjects(data);
+      })
+      .catch((error) => {
+        console.log("Error: ", error);
+      });
+  }, []);
+
   const palletType = darkState ? "dark" : "light";
   const mainPrimaryColor = darkState ? blue[200] : blue[800];
   const mainSecondaryColor = darkState ? red[600] : red[500];
@@ -261,7 +275,7 @@ export default function Dashboard() {
             </div>
             <Grid container spacing={4}>
               {/* Project */}
-              {data.papers.map(function (paper, i) {
+              {projects.map(function (paper, i) {
                 return (
                   <Grid item xs={4} key={i}>
                     <Paper hover className={fixedHeightPaper}>
