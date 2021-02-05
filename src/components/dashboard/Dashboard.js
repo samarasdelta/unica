@@ -32,7 +32,6 @@ import { blue, red } from "@material-ui/core/colors";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import Logo from "../images/unicasmall1.png";
 import Box from "@material-ui/core/Box";
-//import data from "../tools/data.json";
 
 const drawerWidth = 200;
 
@@ -128,7 +127,7 @@ export default function Dashboard() {
   const [projects, setProjects] = useState([]);
 
   useEffect(() => {
-    fetch("/api/projects")
+    fetch("/projects")
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
@@ -280,9 +279,9 @@ export default function Dashboard() {
                   <Grid item xs={4} key={i}>
                     <Paper hover className={fixedHeightPaper}>
                       <ProjectListItem
-                        title={paper.title}
-                        category={paper.category}
-                        dateCreated={paper.dateCreated}
+                        title={paper.projectTitle}
+                        category={paper.projectCategory}
+                        dateCreated={paper.projectDateCreated}
                       />
                     </Paper>
                   </Grid>

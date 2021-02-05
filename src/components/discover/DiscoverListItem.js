@@ -19,7 +19,7 @@ const DiscoverResults = () => {
   const [projects, setProjects] = useState([]);
 
   useEffect(() => {
-    fetch("/api/projects")
+    fetch("/projects")
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
@@ -77,30 +77,30 @@ const DiscoverResults = () => {
                     <Checkbox color="primary" value="true" />
                   </TableCell>
                   <TableCell>
-                    <Box alignItems="center" display="flex" title={paper.title}>
+                    <Box alignItems="center" display="flex">
                       <Typography color="textPrimary" variant="body1">
-                        {paper.title}
+                        {paper.projectTitle}
                       </Typography>
                     </Box>
                   </TableCell>
                   <TableCell>
                     <Box alignItems="center" display="flex">
                       <Typography color="textSecondary" variant="body1">
-                        {paper.owner}
+                        {paper.projectOwnerId}
                       </Typography>
                     </Box>
                   </TableCell>
                   <TableCell>
                     <Box alignItems="center" display="flex">
                       <Typography color="textSecondary" variant="body1">
-                        {paper.category}
+                        {paper.projectCategory}
                       </Typography>
                     </Box>
                   </TableCell>
                   <TableCell>
                     <Box alignItems="center" display="flex">
                       <Typography color="textSecondary" variant="body1">
-                        {paper.dateCreated}
+                        {paper.projectDateCreated}
                       </Typography>
                     </Box>
                   </TableCell>
