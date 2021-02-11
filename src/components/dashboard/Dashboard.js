@@ -127,7 +127,7 @@ export default function Dashboard() {
   const [projects, setProjects] = useState([]);
 
   useEffect(() => {
-    fetch("/projects")
+    fetch("/api/projects")
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
