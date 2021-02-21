@@ -8,8 +8,8 @@ import DashboardIcon from "@material-ui/icons/Dashboard";
 import DeleteIcon from "@material-ui/icons/Delete";
 import AllInboxIcon from "@material-ui/icons/AllInbox";
 import PersonIcon from "@material-ui/icons/Person";
+import ShareIcon from "@material-ui/icons/Share";
 import GroupWorkIcon from "@material-ui/icons/GroupWork";
-import InsertDriveFileIcon from "@material-ui/icons/InsertDriveFile";
 import FindInPageIcon from "@material-ui/icons/FindInPage";
 import AddBoxIcon from "@material-ui/icons/AddBox";
 import Link from "@material-ui/core/Link";
@@ -54,15 +54,15 @@ export const mainListItems = (
     </ListItem>
     <ListItem button>
       <ListItemIcon>
-        <InsertDriveFileIcon />
-      </ListItemIcon>
-      <ListItemText secondary="Drafts" />
-    </ListItem>
-    <ListItem button>
-      <ListItemIcon>
         <PersonIcon />
       </ListItemIcon>
       <ListItemText secondary="Your's" />
+    </ListItem>
+    <ListItem button>
+      <ListItemIcon>
+        <ShareIcon />
+      </ListItemIcon>
+      <ListItemText secondary="Shared" />
     </ListItem>
     <ListItem button>
       <ListItemIcon>

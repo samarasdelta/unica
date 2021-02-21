@@ -12,6 +12,7 @@ import Container from "@material-ui/core/Container";
 import Box from "@material-ui/core/Box";
 import Logo from "./images/unicalogo.png";
 import CopyrightUnica from "./tools/CopyrightUnica";
+import Logosmall from "./images/unicasmall1.png";
 
 const useStyles = makeStyles((theme) => ({
   "@global": {
@@ -97,14 +98,15 @@ export default function Intro() {
         className={classes.appBar}
       >
         <Toolbar className={classes.toolbar}>
+          <Box>
+            <img src={Logosmall} alt="logo" />
+          </Box>
           <Typography
             variant="h6"
             color="inherit"
             noWrap
             className={classes.toolbarTitle}
-          >
-            UNICA
-          </Typography>
+          ></Typography>
           <nav>
             <RouteLink to="/discover" style={{ textDecoration: "none" }}>
               <Link
@@ -150,7 +152,7 @@ export default function Intro() {
           color="textSecondary"
           gutterBottom
         >
-          Unica is a researcher&apos;s collaborative web site
+          The Collaboration Platform for Project writing
         </Typography>
         <form className={classes.form} noValidate>
           <div

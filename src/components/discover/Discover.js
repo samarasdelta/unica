@@ -73,6 +73,8 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     flexGrow: 1,
+
+    flex: "1 1 100%",
   },
   drawerPaper: {
     position: "relative",
@@ -169,7 +171,7 @@ export default function Discover() {
             </IconButton>
             <Typography
               component="h1"
-              variant="h6"
+              variant="h5"
               color="inherit"
               noWrap
               className={classes.title}
@@ -219,6 +221,16 @@ export default function Discover() {
         <main className={classes.content}>
           <div className={classes.appBarSpacer} />
           <Container className={classes.container} maxWidth="xl">
+            <Typography
+              className={classes.title}
+              variant="h5"
+              align="center"
+              color="textSecondary"
+              gutterBottom
+            >
+              Articles available for collaboration
+            </Typography>
+
             <DiscoverResults />
             <div
               style={{
