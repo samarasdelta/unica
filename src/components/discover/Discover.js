@@ -1,21 +1,28 @@
 import React, { useState } from "react";
-import clsx from "clsx";
-import { makeStyles } from "@material-ui/core/styles";
 import { Link as RouteLink } from "react-router-dom";
-import CssBaseline from "@material-ui/core/CssBaseline";
-import Drawer from "@material-ui/core/Drawer";
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
-import List from "@material-ui/core/List";
-import Typography from "@material-ui/core/Typography";
-import Divider from "@material-ui/core/Divider";
-import IconButton from "@material-ui/core/IconButton";
-import Badge from "@material-ui/core/Badge";
-import PublishIcon from "@material-ui/icons/Publish";
+import {
+  createMuiTheme,
+  ThemeProvider,
+  makeStyles,
+  Button,
+  Badge,
+  Container,
+  Divider,
+  Box,
+  Switch,
+  Typography,
+  Toolbar,
+  AppBar,
+  Drawer,
+  List,
+  CssBaseline,
+} from "@material-ui/core";
+import clsx from "clsx";
+import { blue, red } from "@material-ui/core/colors";
 import AddIcon from "@material-ui/icons/Add";
-import Button from "@material-ui/core/Button";
+import IconButton from "@material-ui/core/IconButton";
+import PublishIcon from "@material-ui/icons/Publish";
 import MenuIcon from "@material-ui/icons/Menu";
-import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import HelpIcon from "@material-ui/icons/Help";
 import NotificationsIcon from "@material-ui/icons/Notifications";
@@ -25,14 +32,10 @@ import {
   mainListItems,
   secondaryListItems,
 } from "../tools/ListItems";
-import Switch from "@material-ui/core/Switch";
-import { blue, red } from "@material-ui/core/colors";
-import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import Logo from "../images/unicasmall1.png";
 import SearchBar from "../tools/SearchBar";
 import DiscoverResults from "./DiscoverListItem";
-import Container from "@material-ui/core/Container";
-import Box from "@material-ui/core/Box";
+import MyToolbar from "../tools/Account";
 
 const drawerWidth = 200;
 
@@ -73,8 +76,10 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     flexGrow: 1,
-
     flex: "1 1 100%",
+  },
+  section2: {
+    margin: theme.spacing(2, 0, 3),
   },
   drawerPaper: {
     position: "relative",
@@ -189,11 +194,7 @@ export default function Discover() {
                 <HelpIcon />
               </Badge>
             </IconButton>
-            <IconButton color="inherit">
-              <Badge color="secondary">
-                <AccountCircleIcon />
-              </Badge>
-            </IconButton>
+            <MyToolbar />
             <Switch checked={darkState} onChange={handleThemeChange} />
           </Toolbar>
         </AppBar>
@@ -221,16 +222,12 @@ export default function Discover() {
         <main className={classes.content}>
           <div className={classes.appBarSpacer} />
           <Container className={classes.container} maxWidth="xl">
-            <Typography
-              className={classes.title}
-              variant="h5"
-              align="center"
-              color="textSecondary"
-              gutterBottom
-            >
-              Articles available for collaboration
+            <Typography variant="h6">Available Projects</Typography>
+            <Typography variant="h7" color="textSecondary">
+              Here, you&apos;ll find a list with the available projects for
+              collaboration{"."}
             </Typography>
-
+            <Divider className={classes.section2} />
             <DiscoverResults />
             <div
               style={{

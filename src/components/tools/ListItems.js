@@ -6,13 +6,13 @@ import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import DashboardIcon from "@material-ui/icons/Dashboard";
 import DeleteIcon from "@material-ui/icons/Delete";
-import AllInboxIcon from "@material-ui/icons/AllInbox";
 import PersonIcon from "@material-ui/icons/Person";
 import ShareIcon from "@material-ui/icons/Share";
 import GroupWorkIcon from "@material-ui/icons/GroupWork";
 import FindInPageIcon from "@material-ui/icons/FindInPage";
 import AddBoxIcon from "@material-ui/icons/AddBox";
 import Link from "@material-ui/core/Link";
+import Divider from "@material-ui/core/Divider";
 
 export const discoverListItems = (
   <div>
@@ -46,12 +46,7 @@ export const dashboardListItems = (
 
 export const mainListItems = (
   <div>
-    <ListItem button>
-      <ListItemIcon>
-        <AllInboxIcon />
-      </ListItemIcon>
-      <ListItemText secondary="All" />
-    </ListItem>
+    <Divider />
     <ListItem button>
       <ListItemIcon>
         <PersonIcon />

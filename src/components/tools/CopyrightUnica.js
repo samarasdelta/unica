@@ -6,7 +6,6 @@ export default function CopyrightUnica() {
     <Typography variant="body2" color="textSecondary" align="center">
       {"Copyright © "}
       UNICA {new Date().getFullYear()}
-      {"."}
     </Typography>
   );
 }

@@ -1,37 +1,42 @@
 import React, { useState, useEffect } from "react";
-import clsx from "clsx";
-import { makeStyles } from "@material-ui/core/styles";
-import CssBaseline from "@material-ui/core/CssBaseline";
 import { Link as RouteLink } from "react-router-dom";
-import Drawer from "@material-ui/core/Drawer";
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
-import List from "@material-ui/core/List";
-import Typography from "@material-ui/core/Typography";
-import Divider from "@material-ui/core/Divider";
-import IconButton from "@material-ui/core/IconButton";
+import {
+  createMuiTheme,
+  ThemeProvider,
+  makeStyles,
+  Button,
+  Grid,
+  Paper,
+  Badge,
+  Container,
+  IconButton,
+  Divider,
+  Box,
+  Switch,
+  Typography,
+  Toolbar,
+  AppBar,
+  Drawer,
+  List,
+  CssBaseline,
+} from "@material-ui/core";
+import clsx from "clsx";
+import { blue, red } from "@material-ui/core/colors";
+import AddIcon from "@material-ui/icons/Add";
 import PublishIcon from "@material-ui/icons/Publish";
-import Badge from "@material-ui/core/Badge";
-import Container from "@material-ui/core/Container";
 import MenuIcon from "@material-ui/icons/Menu";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import HelpIcon from "@material-ui/icons/Help";
-import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import NotificationsIcon from "@material-ui/icons/Notifications";
-import AddIcon from "@material-ui/icons/Add";
 import {
   discoverListItems,
   dashboardListItems,
   mainListItems,
   secondaryListItems,
 } from "../tools/ListItems";
-import ProjectListItem from "./ProjectListItem";
-import { Button, Grid, Paper } from "@material-ui/core";
-import Switch from "@material-ui/core/Switch";
-import { blue, red } from "@material-ui/core/colors";
-import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import Logo from "../images/unicasmall1.png";
-import Box from "@material-ui/core/Box";
+import ProjectListItem from "./ProjectListItem";
+import MyToolbar from "../tools/Account";
 
 const drawerWidth = 200;
 
@@ -206,11 +211,7 @@ export default function Dashboard() {
                 <HelpIcon />
               </Badge>
             </IconButton>
-            <IconButton color="inherit">
-              <Badge color="secondary">
-                <AccountCircleIcon />
-              </Badge>
-            </IconButton>
+            <MyToolbar />
             <Switch checked={darkState} onChange={handleThemeChange} />
           </Toolbar>
         </AppBar>
@@ -247,15 +248,13 @@ export default function Dashboard() {
             >
               <Box>
                 <Button
-                  component={RouteLink}
-                  //to=""
-                  type="submit"
                   variant="contained"
+                  component="label"
                   color="primary"
                   startIcon={<PublishIcon />}
-                  className={classes.submit}
                 >
                   Upload a file
+                  <input type="file" hidden />
                 </Button>
               </Box>
               <Box m={1}>
