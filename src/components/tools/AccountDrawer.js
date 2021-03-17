@@ -10,6 +10,8 @@ import IconButton from "@material-ui/core/IconButton";
 import { Button, ListItem } from "@material-ui/core";
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import Grid from "@material-ui/core/Grid";
+import SettingsIcon from "@material-ui/icons/Settings";
+import ExitToAppSharpIcon from "@material-ui/icons/ExitToAppSharp";
 
 const drawerWidth = 200;
 
@@ -19,11 +21,9 @@ const styles = (theme) => ({
     width: drawerWidth,
     top: theme.spacing(8),
   },
-  logoutContainer: {
-    width: drawerWidth,
-  },
+
   listContent: {
-    justifyContent: "center",
+    marginBottom: theme.spacing(1),
   },
 });
 
@@ -53,15 +53,32 @@ class PersistentDrawer extends React.Component {
         }}
       >
         <div>
+          <ListSubheader align="center">ece00792@uowm.gr</ListSubheader>
+          <Divider />
           <List className={classes.listContent}>
-            <ListSubheader>User Acoount</ListSubheader>
-            <ListSubheader>User email</ListSubheader>
-            <Divider />
-            <ListSubheader>Settings</ListSubheader>
-            <Divider />
-            <ListItem className={classes.logoutContainer}>
+            <ListItem>
               <Grid container justify="center">
-                <Button component={RouteLink} to="/" variant="contained">
+                <Button
+                  fullWidth
+                  //component={RouteLink}
+                  //to="/"
+                  variant="contained"
+                  color="primary"
+                  startIcon={<SettingsIcon />}
+                >
+                  Settings
+                </Button>
+              </Grid>
+            </ListItem>
+            <ListItem>
+              <Grid container justify="center">
+                <Button
+                  fullWidth
+                  component={RouteLink}
+                  to="/"
+                  variant="contained"
+                  startIcon={<ExitToAppSharpIcon />}
+                >
                   Logout
                 </Button>
               </Grid>

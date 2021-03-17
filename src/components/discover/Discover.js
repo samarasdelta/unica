@@ -35,7 +35,7 @@ import {
 import Logo from "../images/unicasmall1.png";
 import SearchBar from "../tools/SearchBar";
 import DiscoverResults from "./DiscoverListItem";
-import MyToolbar from "../tools/Account";
+import MyToolbar from "../tools/AccountDrawer";
 
 const drawerWidth = 200;
 

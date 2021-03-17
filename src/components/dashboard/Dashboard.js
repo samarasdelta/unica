@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link as RouteLink } from "react-router-dom";
+//import { Link as RouteLink } from "react-router-dom";
 import {
   createMuiTheme,
   ThemeProvider,
@@ -22,7 +22,6 @@ import {
 } from "@material-ui/core";
 import clsx from "clsx";
 import { blue, red } from "@material-ui/core/colors";
-import AddIcon from "@material-ui/icons/Add";
 import PublishIcon from "@material-ui/icons/Publish";
 import MenuIcon from "@material-ui/icons/Menu";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
@@ -36,7 +35,9 @@ import {
 } from "../tools/ListItems";
 import Logo from "../images/unicasmall1.png";
 import ProjectListItem from "./ProjectListItem";
-import MyToolbar from "../tools/Account";
+import MyToolbar from "../tools/AccountDrawer";
+import SimpleDialog from "../tools/Dialog";
+import NewProjectButtonAPI from "../tools/NewProjecButton";
 
 const drawerWidth = 200;
 
@@ -258,17 +259,10 @@ export default function Dashboard() {
                 </Button>
               </Box>
               <Box m={1}>
-                <Button
-                  component={RouteLink}
-                  //to=""
-                  type="submit"
-                  variant="contained"
-                  color="default"
-                  startIcon={<AddIcon />}
-                  className={classes.submit}
-                >
-                  New Project
-                </Button>
+                <NewProjectButtonAPI />
+              </Box>
+              <Box>
+                <SimpleDialog />
               </Box>
             </div>
             <Grid container spacing={4}>
