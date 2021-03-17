@@ -56,7 +56,7 @@ function SimpleDialog(props) {
           button
           onClick={() => handleListItemClick("addAccount")}
         >
-          <ListItemText primary="Item w/o icon button" />
+          <ListItemText primary="Hover item w/o icon button" />
         </ListItem>
         <ListItem autoFocus button>
           <ListItemAvatar>

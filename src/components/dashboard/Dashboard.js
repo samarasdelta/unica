@@ -248,19 +248,20 @@ export default function Dashboard() {
               }}
             >
               <Box>
+                <NewProjectButtonAPI />
+              </Box>
+              <Box m={1}>
                 <Button
                   variant="contained"
                   component="label"
-                  color="primary"
+                  color="disabled"
                   startIcon={<PublishIcon />}
                 >
                   Upload a file
                   <input type="file" hidden />
                 </Button>
               </Box>
-              <Box m={1}>
-                <NewProjectButtonAPI />
-              </Box>
+
               <Box>
                 <SimpleDialog />
               </Box>

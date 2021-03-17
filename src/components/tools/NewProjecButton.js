@@ -15,13 +15,15 @@ import Select from "@material-ui/core/Select";
 import InputLabel from "@material-ui/core/InputLabel";
 import FormControl from "@material-ui/core/FormControl";
 import Divider from "@material-ui/core/Divider";
+import FormControlLabel from "@material-ui/core/FormControlLabel";
+import Switch from "@material-ui/core/Switch";
+import Box from "@material-ui/core/Box";
+import { positions } from "@material-ui/system";
+import { Typography } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
-    minWidth: 160,
-  },
-  selectEmpty: {
-    marginTop: theme.spacing(2),
+    minWidth: 220,
   },
 }));
 
@@ -53,7 +55,7 @@ export default function NewProjectButtonAPI() {
       <Button
         type="submit"
         variant="contained"
-        color="default"
+        color="primary"
         startIcon={<AddIcon />}
         onClick={handleClickOpen}
       >
@@ -76,7 +78,6 @@ export default function NewProjectButtonAPI() {
             Please, fill out a title and a category for your project.
           </DialogContentText>
           <TextField
-            autoFocus
             required
             margin="dense"
             id="title"
@@ -85,7 +86,11 @@ export default function NewProjectButtonAPI() {
             fullWidth
           />
 
-          <div>
+          <div
+            style={{
+              display: "flex",
+            }}
+          >
             <FormControl className={classes.formControl}>
               <InputLabel required id="demo-simple-select-label">
                 Category
@@ -112,6 +117,15 @@ export default function NewProjectButtonAPI() {
                 <MenuItem value="Fine Art's">Fine Art&apos;s</MenuItem>
               </Select>
             </FormControl>
+            <Box p={2}>
+              <FormControl>
+                <FormControlLabel
+                  control={<Switch color="primary" />}
+                  label="Public"
+                  labelPlacement="start"
+                />
+              </FormControl>
+            </Box>
           </div>
         </DialogContent>
         <DialogActions>
