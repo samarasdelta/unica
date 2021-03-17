@@ -18,8 +18,6 @@ import Divider from "@material-ui/core/Divider";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Switch from "@material-ui/core/Switch";
 import Box from "@material-ui/core/Box";
-import { positions } from "@material-ui/system";
-import { Typography } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
