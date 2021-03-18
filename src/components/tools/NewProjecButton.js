@@ -18,6 +18,7 @@ import Divider from "@material-ui/core/Divider";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Switch from "@material-ui/core/Switch";
 import Box from "@material-ui/core/Box";
+import ComboBox from "./Category";
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -84,38 +85,11 @@ export default function NewProjectButtonAPI() {
             fullWidth
           />
 
-          <div
-            style={{
-              display: "flex",
-            }}
-          >
-            <FormControl className={classes.formControl}>
-              <InputLabel required id="demo-simple-select-label">
-                Category
-              </InputLabel>
-              <Select
-                //value={maxWidth}
-                //onChange={handleMaxWidthChange}
-                inputProps={{
-                  name: "max-width",
-                  id: "max-width",
-                }}
-              >
-                <MenuItem value="Other">Other</MenuItem>
-                <MenuItem value="Medicin">Medicin</MenuItem>
-                <MenuItem value="Physics">Physics</MenuItem>
-                <MenuItem value="Geometry">Geometry</MenuItem>
-                <MenuItem value="Mecanics">Mecanics</MenuItem>
-                <MenuItem value="Theology">Theology</MenuItem>
-                <MenuItem value="Philosophy">Philosophy</MenuItem>
-                <MenuItem value="Engineering">Engineering</MenuItem>
-                <MenuItem value="Informatics">Informatics</MenuItem>
-                <MenuItem value="Litterature">Litterature</MenuItem>
-                <MenuItem value="Mathematics">Mathematics</MenuItem>
-                <MenuItem value="Fine Art's">Fine Art&apos;s</MenuItem>
-              </Select>
-            </FormControl>
-            <Box p={2}>
+          <Box display="flex" mt={2}>
+            <Box flexGrow={1}>
+              <ComboBox />
+            </Box>
+            <Box mt={1}>
               <FormControl>
                 <FormControlLabel
                   control={<Switch color="primary" />}
@@ -124,7 +98,7 @@ export default function NewProjectButtonAPI() {
                 />
               </FormControl>
             </Box>
-          </div>
+          </Box>
         </DialogContent>
         <DialogActions>
           <Button autoFocus onClick={handleClose} color="disabled">

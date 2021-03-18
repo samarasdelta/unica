@@ -276,6 +276,7 @@ export default function Dashboard() {
                         title={paper.projectTitle}
                         category={paper.projectCategory}
                         dateCreated={paper.projectDateCreated}
+                        projectState={paper.projectState}
                       />
                     </Paper>
                   </Grid>
