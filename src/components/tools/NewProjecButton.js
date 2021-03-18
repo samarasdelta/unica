@@ -73,7 +73,7 @@ export default function NewProjectButtonAPI() {
         </DialogTitle>
         <Divider />
         <DialogContent>
-          <DialogContentText>
+          <DialogContentText variant="subtitle2">
             Please, fill out a title and a category for your project.
           </DialogContentText>
           <TextField

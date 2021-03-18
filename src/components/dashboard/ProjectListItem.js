@@ -19,6 +19,7 @@ const useStyles = makeStyles({
   },
   boxSpace: {
     flex: 1,
+    //marginTop: "2px",
   },
 });
 
@@ -32,15 +33,17 @@ export default function ProjectListItem(props) {
       <Box className={classes.boxSpace}>
         <Typography variant="h6">{props.category}</Typography>
       </Box>
-      <Box className={classes.boxSpace}>
-        <Typography color="textSecondary">
-          Public: {props.projectState}
-        </Typography>
-      </Box>
-      <Box className={classes.boxSpace}>
-        <Typography color="textSecondary">
-          Last Modified: {props.dateCreated}
-        </Typography>
+      <Box display="flex">
+        <Box flexGrow={1}>
+          <Typography color="textSecondary">
+            Last Modified: {props.dateCreated}
+          </Typography>
+        </Box>
+        <Box>
+          <Typography color="textSecondary">
+            Public: {props.projectState}
+          </Typography>
+        </Box>
       </Box>
       <Box display="flex">
         <Box flexGrow={1} mt={1}>
