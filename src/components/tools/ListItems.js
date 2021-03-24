@@ -16,6 +16,7 @@ import Divider from "@material-ui/core/Divider";
 
 export const discoverListItems = (
   <div>
+    <Divider />
     <RouteLink to="discover" style={{ textDecoration: "none" }}>
       <Link color="textPrimary" style={{ textDecoration: "none" }}>
         <ListItem button>
@@ -26,6 +27,7 @@ export const discoverListItems = (
         </ListItem>
       </Link>
     </RouteLink>
+    <Divider />
   </div>
 );
 
@@ -46,7 +48,6 @@ export const dashboardListItems = (
 
 export const mainListItems = (
   <div>
-    <Divider />
     <ListItem button>
       <ListItemIcon>
         <PersonIcon />
@@ -82,7 +83,6 @@ export const secondaryListItems = (
       </ListItemIcon>
       <ListItemText secondary="My Team's Name" />
     </ListItem>
-
     <ListSubheader inset>User&apos;s teams</ListSubheader>
   </div>
 );

@@ -239,7 +239,7 @@ export default function Dashboard() {
         </Drawer>
         <main className={classes.content}>
           <div className={classes.appBarSpacer} />
-          <Container noWrap className={classes.container}>
+          <Container className={classes.container}>
             <div
               style={{
                 display: "flex",
