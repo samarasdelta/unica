@@ -71,20 +71,12 @@ export const mainListItems = (
 export const secondaryListItems = (
   <div>
     <NewTeamButtonAPI />
-
     <ListItem button>
       <ListItemIcon>
         <GroupWorkIcon />
       </ListItemIcon>
-      <ListItemText secondary="'Team's name 1'" />
+      <ListItemText secondary="'Team's name'" />
     </ListItem>
-    <ListItem button>
-      <ListItemIcon>
-        <GroupWorkIcon />
-      </ListItemIcon>
-      <ListItemText secondary="'Team's name 2'" />
-    </ListItem>
-
     <ListSubheader inset>User&apos;s teams</ListSubheader>
   </div>
 );

@@ -13,14 +13,14 @@ function preventDefault(event) {
 
 const useStyles = makeStyles({
   projectContext: {
-    flex: 1,
+    //flex: 1,
   },
   boxSpace: {
     flex: 1,
   },
 
   customWidth: {
-    maxWidth: 500,
+    maxWidth: "none",
   },
 });
 
@@ -35,6 +35,8 @@ export default function ProjectListItem(props) {
           placement="bottom"
           arrow
           interactive
+          enterDelay={1000}
+          leaveDelay={500}
         >
           <div>
             <Title>{props.title}</Title>
@@ -49,9 +51,11 @@ export default function ProjectListItem(props) {
       </Box>
       <Box display="flex">
         <Box flexGrow={1}>
-          <Link color="primary" href="#" onClick={preventDefault}>
-            {"View full project"}
-          </Link>
+          <Box mt={1}>
+            <Typography color="textSecondary">
+              {"Public:"} {props.projectState}
+            </Typography>
+          </Box>
         </Box>
       </Box>
       <Box display="flex">
@@ -61,9 +65,9 @@ export default function ProjectListItem(props) {
           </Typography>
         </Box>
         <Box mt={1}>
-          <Typography color="textSecondary">
-            {"Public:"} {props.projectState}
-          </Typography>
+          <Link color="primary" href="#" onClick={preventDefault}>
+            {"View full project"}
+          </Link>
         </Box>
       </Box>
     </React.Fragment>

@@ -270,7 +270,7 @@ export default function Dashboard() {
               {/* Project */}
               {projects.map(function (paper, i) {
                 return (
-                  <Grid item xs={4} key={i}>
+                  <Grid item xs={6} key={i}>
                     <Paper hover className={fixedHeightPaper}>
                       <ProjectListItem
                         title={paper.projectTitle}
