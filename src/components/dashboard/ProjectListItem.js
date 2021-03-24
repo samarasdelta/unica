@@ -5,9 +5,7 @@ import Typography from "@material-ui/core/Typography";
 import Title from "../tools/Title";
 import Box from "@material-ui/core/Box";
 import PropTypes from "prop-types";
-import FormControl from "@material-ui/core/FormControl";
-import FormControlLabel from "@material-ui/core/FormControlLabel";
-import Switch from "@material-ui/core/Switch";
+import Tooltip from "@material-ui/core/Tooltip";
 
 function preventDefault(event) {
   event.preventDefault();
@@ -21,6 +19,12 @@ const useStyles = makeStyles({
     flex: 1,
     //marginTop: "2px",
   },
+  space: {
+    flexGrow: 1,
+  },
+  customWidth: {
+    maxWidth: 500,
+  },
 });
 
 export default function ProjectListItem(props) {
@@ -28,20 +32,31 @@ export default function ProjectListItem(props) {
   return (
     <React.Fragment>
       <Box className={classes.boxSpace}>
-        <Title>{props.title}</Title>
+        <Tooltip
+          classes={{ tooltip: classes.customWidth }}
+          title={props.title}
+          placement="bottom"
+          arrow
+          interactive
+          enterDelay={1000}
+          leaveDelay={500}
+        >
+          <div>
+            <Title>{props.title}</Title>
+          </div>
+        </Tooltip>
       </Box>
-      <Box className={classes.boxSpace}>
+
+      <Box display="flex" className={classes.boxSpace}>
+        <Typography variant="h6" color="textSecondary">
+          {"Category: "}
+        </Typography>
         <Typography variant="h6">{props.category}</Typography>
       </Box>
       <Box display="flex">
         <Box flexGrow={1}>
           <Typography color="textSecondary">
             Last Modified: {props.dateCreated}
-          </Typography>
-        </Box>
-        <Box>
-          <Typography color="textSecondary">
-            Public: {props.projectState}
           </Typography>
         </Box>
       </Box>
@@ -51,15 +66,10 @@ export default function ProjectListItem(props) {
             View full project
           </Link>
         </Box>
-        <Box>
-          <FormControl>
-            <FormControlLabel
-              control={<Switch color="primary" />}
-              label="Public"
-              color="textSecondary"
-              labelPlacement="start"
-            />
-          </FormControl>
+        <Box mt={1}>
+          <Typography color="textSecondary">
+            Public: {props.projectState}
+          </Typography>
         </Box>
       </Box>
     </React.Fragment>

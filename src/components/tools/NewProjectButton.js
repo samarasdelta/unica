@@ -63,7 +63,8 @@ export default function NewProjectButtonAPI() {
         <Divider />
         <DialogContent>
           <DialogContentText variant="subtitle2">
-            Please, fill out a title and a category for your project.
+            Please, fill out a title and a category for your project. Also, you{" "}
+            can set your public state preference{"."}
           </DialogContentText>
           <TextField
             required
@@ -78,7 +79,7 @@ export default function NewProjectButtonAPI() {
             <Box flexGrow={1}>
               <ComboBox />
             </Box>
-            <Box mt={1}>
+            <Box mt={1} pr={3}>
               <FormControl>
                 <FormControlLabel
                   control={<Switch color="primary" />}

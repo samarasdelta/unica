@@ -10,13 +10,12 @@ import PersonIcon from "@material-ui/icons/Person";
 import ShareIcon from "@material-ui/icons/Share";
 import GroupWorkIcon from "@material-ui/icons/GroupWork";
 import FindInPageIcon from "@material-ui/icons/FindInPage";
-import AddBoxIcon from "@material-ui/icons/AddBox";
 import Link from "@material-ui/core/Link";
 import Divider from "@material-ui/core/Divider";
+import NewTeamButtonAPI from "../tools/NewTeamButton";
 
 export const discoverListItems = (
   <div>
-    <Divider />
     <RouteLink to="discover" style={{ textDecoration: "none" }}>
       <Link color="textPrimary" style={{ textDecoration: "none" }}>
         <ListItem button>
@@ -71,18 +70,21 @@ export const mainListItems = (
 
 export const secondaryListItems = (
   <div>
+    <NewTeamButtonAPI />
+
     <ListItem button>
       <ListItemIcon>
-        <AddBoxIcon />
+        <GroupWorkIcon />
       </ListItemIcon>
-      <ListItemText secondary="New team" />
+      <ListItemText secondary="'Team's name 1'" />
     </ListItem>
     <ListItem button>
       <ListItemIcon>
         <GroupWorkIcon />
       </ListItemIcon>
-      <ListItemText secondary="My Team's Name" />
+      <ListItemText secondary="'Team's name 2'" />
     </ListItem>
+
     <ListSubheader inset>User&apos;s teams</ListSubheader>
   </div>
 );

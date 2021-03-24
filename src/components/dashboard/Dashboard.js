@@ -37,7 +37,7 @@ import Logo from "../images/unicasmall1.png";
 import ProjectListItem from "./ProjectListItem";
 import MyToolbar from "../tools/AccountDrawer";
 import SimpleDialog from "../tools/Dialog";
-import NewProjectButtonAPI from "../tools/NewProjecButton";
+import NewProjectButtonAPI from "../tools/NewProjectButton";
 
 const drawerWidth = 200;
 
