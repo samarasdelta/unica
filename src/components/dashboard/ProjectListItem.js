@@ -17,11 +17,8 @@ const useStyles = makeStyles({
   },
   boxSpace: {
     flex: 1,
-    //marginTop: "2px",
   },
-  space: {
-    flexGrow: 1,
-  },
+
   customWidth: {
     maxWidth: 500,
   },
@@ -38,8 +35,6 @@ export default function ProjectListItem(props) {
           placement="bottom"
           arrow
           interactive
-          enterDelay={1000}
-          leaveDelay={500}
         >
           <div>
             <Title>{props.title}</Title>
@@ -48,27 +43,26 @@ export default function ProjectListItem(props) {
       </Box>
 
       <Box display="flex" className={classes.boxSpace}>
-        <Typography variant="h6" color="textSecondary">
-          {"Category: "}
+        <Typography variant="h6">
+          {"Category:"} {props.category}
         </Typography>
-        <Typography variant="h6">{props.category}</Typography>
       </Box>
       <Box display="flex">
         <Box flexGrow={1}>
-          <Typography color="textSecondary">
-            Last Modified: {props.dateCreated}
-          </Typography>
+          <Link color="primary" href="#" onClick={preventDefault}>
+            {"View full project"}
+          </Link>
         </Box>
       </Box>
       <Box display="flex">
         <Box flexGrow={1} mt={1}>
-          <Link color="primary" href="#" onClick={preventDefault}>
-            View full project
-          </Link>
+          <Typography color="textSecondary">
+            {"Last Modified:"} {props.dateCreated}
+          </Typography>
         </Box>
         <Box mt={1}>
           <Typography color="textSecondary">
-            Public: {props.projectState}
+            {"Public:"} {props.projectState}
           </Typography>
         </Box>
       </Box>

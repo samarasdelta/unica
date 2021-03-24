@@ -47,7 +47,7 @@ export default function NewProjectButtonAPI() {
         startIcon={<AddIcon />}
         onClick={handleClickOpen}
       >
-        New Project
+        {"New Project"}
       </Button>
       <Dialog
         fullWidth
@@ -58,13 +58,14 @@ export default function NewProjectButtonAPI() {
         aria-labelledby="draggable-dialog-title"
       >
         <DialogTitle style={{ cursor: "move" }} id="draggable-dialog-title">
-          Create a new project
+          {"Create a new project"}
         </DialogTitle>
         <Divider />
         <DialogContent>
           <DialogContentText variant="subtitle2">
-            Please, fill out a title and a category for your project. Also, you{" "}
-            can set your public state preference{"."}
+            {
+              "Please, fill out a title and a category for your project. Also, you can set your public state preference."
+            }
           </DialogContentText>
           <TextField
             required
@@ -92,10 +93,10 @@ export default function NewProjectButtonAPI() {
         </DialogContent>
         <DialogActions>
           <Button autoFocus onClick={handleClose} color="disabled">
-            Cancel
+            {"Cancel"}
           </Button>
           <Button onClick={handleClose} color="primary">
-            Create
+            {"Create"}
           </Button>
         </DialogActions>
       </Dialog>
