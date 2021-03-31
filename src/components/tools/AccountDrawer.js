@@ -12,6 +12,7 @@ import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import Grid from "@material-ui/core/Grid";
 import SettingsIcon from "@material-ui/icons/Settings";
 import ExitToAppSharpIcon from "@material-ui/icons/ExitToAppSharp";
+import ClickAwayListener from "@material-ui/core/ClickAwayListener";
 
 const drawerWidth = 200;
 
@@ -41,51 +42,53 @@ class PersistentDrawer extends React.Component {
     const { open } = this.state;
 
     const drawer = (
-      <Drawer
-        variant="persistent"
-        anchor="right"
-        open={open}
-        PaperProps={{
-          variant: "outlined",
-        }}
-        classes={{
-          paper: classes.drawerPaper,
-        }}
-      >
-        <div>
-          <ListSubheader align="center">ece00792@uowm.gr</ListSubheader>
-          <Divider />
-          <List className={classes.listContent}>
-            <ListItem>
-              <Grid container justify="center">
-                <Button
-                  fullWidth
-                  //component={RouteLink}
-                  //to="/"
-                  variant="contained"
-                  color="primary"
-                  startIcon={<SettingsIcon />}
-                >
-                  Settings
-                </Button>
-              </Grid>
-            </ListItem>
-            <ListItem>
-              <Grid container justify="center">
-                <Button
-                  fullWidth
-                  component={RouteLink}
-                  to="/"
-                  variant="contained"
-                  startIcon={<ExitToAppSharpIcon />}
-                >
-                  Logout
-                </Button>
-              </Grid>
-            </ListItem>
-          </List>
-        </div>
-      </Drawer>
+      <ClickAwayListener>
+        <Drawer
+          variant="persistent"
+          anchor="right"
+          open={open}
+          PaperProps={{
+            variant: "outlined",
+          }}
+          classes={{
+            paper: classes.drawerPaper,
+          }}
+        >
+          <div>
+            <ListSubheader align="center">ece00792@uowm.gr</ListSubheader>
+            <Divider />
+            <List className={classes.listContent}>
+              <ListItem>
+                <Grid container justify="center">
+                  <Button
+                    fullWidth
+                    //component={RouteLink}
+                    //to="/"
+                    variant="contained"
+                    color="primary"
+                    startIcon={<SettingsIcon />}
+                  >
+                    Settings
+                  </Button>
+                </Grid>
+              </ListItem>
+              <ListItem>
+                <Grid container justify="center">
+                  <Button
+                    fullWidth
+                    component={RouteLink}
+                    to="/"
+                    variant="contained"
+                    startIcon={<ExitToAppSharpIcon />}
+                  >
+                    Logout
+                  </Button>
+                </Grid>
+              </ListItem>
+            </List>
+          </div>
+        </Drawer>
+      </ClickAwayListener>
     );
 
     return (

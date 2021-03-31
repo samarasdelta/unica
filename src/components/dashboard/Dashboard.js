@@ -125,6 +125,9 @@ const useStyles = makeStyles((theme) => ({
     paddingTop: 1,
     scrollPaddingBottom: 1,
   },
+  Top: {
+    paddingTop: "8 !important",
+  },
 }));
 
 export default function Dashboard() {
@@ -200,7 +203,7 @@ export default function Dashboard() {
               noWrap
               className={classes.title}
             >
-              Dashboard
+              {"Dashboard"}
             </Typography>
             <IconButton color="inherit">
               <Badge badgeContent={1} color="secondary">
@@ -231,11 +234,12 @@ export default function Dashboard() {
               <ChevronLeftIcon />
             </IconButton>
           </div>
-          <List>{discoverListItems}</List>
-          <List>{dashboardListItems}</List>
-          <List>{mainListItems}</List>
-          <Divider />
-          <List>{secondaryListItems}</List>
+          <div className={classes.Top}>
+            <List>{discoverListItems}</List>
+            <List>{dashboardListItems}</List>
+            <List>{mainListItems}</List>
+            <List>{secondaryListItems}</List>
+          </div>
         </Drawer>
         <main className={classes.content}>
           <div className={classes.appBarSpacer} />
@@ -257,7 +261,7 @@ export default function Dashboard() {
                   color="disabled"
                   startIcon={<PublishIcon />}
                 >
-                  Upload a file
+                  {"Upload a file"}
                   <input type="file" hidden />
                 </Button>
               </Box>

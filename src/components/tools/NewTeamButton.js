@@ -1,4 +1,5 @@
 import React from "react";
+import { makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
 import Dialog from "@material-ui/core/Dialog";
@@ -13,7 +14,15 @@ import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 
+const useStyles = makeStyles({
+  Bgcolor: {
+    backgroundColor: "#1565C0",
+    color: "#ffffff",
+  },
+});
+
 export default function NewTeamButtonAPI() {
+  const classes = useStyles();
   const [open, setOpen] = React.useState(false);
 
   const handleClickOpen = () => {
@@ -44,8 +53,9 @@ export default function NewTeamButtonAPI() {
         onClose={handleClose}
         aria-labelledby="draggable-dialog-title"
       >
-        <DialogTitle>{"Create a new team"}</DialogTitle>
-        <Divider />
+        <div className={classes.Bgcolor}>
+          <DialogTitle>{"Create a new team"}</DialogTitle>{" "}
+        </div>
         <DialogContent>
           <DialogContentText variant="subtitle2">
             {"Please, set a title for your team."}
@@ -56,6 +66,9 @@ export default function NewTeamButtonAPI() {
               id="title"
               label="Team name"
               type="title"
+              multiline
+              rows={2}
+              variant="outlined"
               fullWidth
             />
           </Box>

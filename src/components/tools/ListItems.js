@@ -70,6 +70,8 @@ export const mainListItems = (
 
 export const secondaryListItems = (
   <div>
+    <Divider />
+
     <NewTeamButtonAPI />
     <ListItem button>
       <ListItemIcon>

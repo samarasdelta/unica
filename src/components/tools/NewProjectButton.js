@@ -1,4 +1,5 @@
 import React from "react";
+import { makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
 import Dialog from "@material-ui/core/Dialog";
@@ -16,6 +17,13 @@ import Switch from "@material-ui/core/Switch";
 import Box from "@material-ui/core/Box";
 import ComboBox from "./Category";
 
+const useStyles = makeStyles({
+  Bgcolor: {
+    backgroundColor: "#1565C0",
+    color: "#ffffff",
+  },
+});
+
 function PaperComponent(props) {
   return (
     <Draggable
@@ -28,6 +36,7 @@ function PaperComponent(props) {
 }
 
 export default function NewProjectButtonAPI() {
+  const classes = useStyles();
   const [open, setOpen] = React.useState(false);
 
   const handleClickOpen = () => {
@@ -57,14 +66,16 @@ export default function NewProjectButtonAPI() {
         PaperComponent={PaperComponent}
         aria-labelledby="draggable-dialog-title"
       >
-        <DialogTitle style={{ cursor: "move" }} id="draggable-dialog-title">
-          {"Create a new project"}
-        </DialogTitle>
+        <div className={classes.Bgcolor}>
+          <DialogTitle style={{ cursor: "move" }} id="draggable-dialog-title">
+            {"Create a new project"}
+          </DialogTitle>
+        </div>
         <Divider />
         <DialogContent>
           <DialogContentText variant="subtitle2">
             {
-              "Please, fill out a title and a category for your project. Also, you can set your public state preference."
+              "Please, fill out a title and a category for your project. Also, you can set its public state preference."
             }
           </DialogContentText>
           <TextField
@@ -73,6 +84,9 @@ export default function NewProjectButtonAPI() {
             id="title"
             label="Title"
             type="title"
+            multiline
+            rows={2}
+            variant="outlined"
             fullWidth
           />
 

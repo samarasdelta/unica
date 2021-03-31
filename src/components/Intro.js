@@ -115,7 +115,7 @@ export default function Intro() {
                 className={classes.submit}
                 style={{ textDecoration: "none" }}
               >
-                Discover
+                {"Discover"}
               </Link>
             </RouteLink>
           </nav>
@@ -125,7 +125,7 @@ export default function Intro() {
               variant="outlined"
               className={classes.submit}
             >
-              Login
+              {"Login"}
             </Button>
           </RouteLink>
         </Toolbar>
@@ -144,7 +144,7 @@ export default function Intro() {
           component="p"
           gutterBottom
         >
-          University Cooperation Articles
+          {"University Cooperation Articles"}
         </Typography>
         <Typography
           variant="h4"
@@ -152,7 +152,7 @@ export default function Intro() {
           color="textSecondary"
           gutterBottom
         >
-          The Collaboration Platform for Project writing
+          {"The Collaboration Platform for Project Writing"}
         </Typography>
         <form className={classes.form} noValidate>
           <div
@@ -171,10 +171,10 @@ export default function Intro() {
                 color="primary"
                 className={classes.submit}
               >
-                SIGN UP
+                {"SIGN UP"}
               </Button>
             </Box>
-            <Box>OR</Box>
+            <Box>{"OR"}</Box>
             <Box p={1} m={1}>
               <Button
                 component={RouteLink}
@@ -184,7 +184,7 @@ export default function Intro() {
                 color="primary"
                 className={classes.submit}
               >
-                GUEST SIGN IN
+                {"GUEST SIGN IN"}
               </Button>
             </Box>
           </div>
