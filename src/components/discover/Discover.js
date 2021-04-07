@@ -216,7 +216,6 @@ export default function Discover() {
           <List>{discoverListItems}</List>
           <List>{dashboardListItems}</List>
           <List>{mainListItems}</List>
-          <Divider />
           <List>{secondaryListItems}</List>
         </Drawer>
         <main className={classes.content}>

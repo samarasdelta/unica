@@ -10,7 +10,6 @@ import {
   Badge,
   Container,
   IconButton,
-  Divider,
   Box,
   Switch,
   Typography,
