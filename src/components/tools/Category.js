@@ -1,23 +1,19 @@
 import React from "react";
 import TextField from "@material-ui/core/TextField";
 import Autocomplete from "@material-ui/lab/Autocomplete";
+import PropTypes from "prop-types";
 
-export default function ComboBox() {
+export default function ComboBox({ onSelect }) {
   return (
     <Autocomplete
       options={categories}
       getOptionLabel={(option) => option.category}
+      onChange={(e, newValue) => {
+        onSelect(newValue.category);
+      }}
       style={{ width: 220 }}
       renderInput={(params) => (
-        <TextField
-          onInput={(e) => {
-            console.log("ee-->", e.target.value);
-          }}
-          {...params}
-          label="Category"
-          required
-          variant="outlined"
-        />
+        <TextField {...params} label="Category" required variant="outlined" />
       )}
     />
   );
@@ -37,3 +33,7 @@ const categories = [
   { category: "Fine Art's" },
   { category: "Other" },
 ];
+
+ComboBox.propTypes = {
+  onSelect: PropTypes.func.isRequired,
+};

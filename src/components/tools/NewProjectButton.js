@@ -39,6 +39,8 @@ export default function NewProjectButtonAPI() {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
   const [title, setTitle] = React.useState("");
+  const [category, setCategory] = React.useState("");
+  const [publicSwitch, setPublic] = React.useState(false);
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -49,13 +51,23 @@ export default function NewProjectButtonAPI() {
   };
 
   const handleTitleChange = (e) => {
-    console.log("handleTitleChange", e.target.value);
     setTitle(e.target.value);
+  };
+
+  const handleCategory = (category) => {
+    setCategory(category);
+  };
+
+  const handlePublicSwitch = (e) => {
+    console.log("kwstas", e.target.checked);
+    setPublic(e.target.checked);
   };
 
   const createProject = () => {
     console.log("create Project", {
       title,
+      category,
+      publicSwitch,
     });
 
     setOpen(false);
@@ -107,7 +119,11 @@ export default function NewProjectButtonAPI() {
 
           <Box display="flex" mt={2}>
             <Box flexGrow={1}>
-              <ComboBox />
+              <ComboBox
+                onSelect={(category) => {
+                  handleCategory(category);
+                }}
+              />
             </Box>
             <Box mt={1} pr={3}>
               <FormControl>
@@ -115,6 +131,7 @@ export default function NewProjectButtonAPI() {
                   control={<Switch color="primary" />}
                   label="Public"
                   labelPlacement="start"
+                  onChange={handlePublicSwitch}
                 />
               </FormControl>
             </Box>
