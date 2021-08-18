@@ -40,7 +40,7 @@ export default function NewProjectButtonAPI() {
   const [open, setOpen] = React.useState(false);
   const [title, setTitle] = React.useState("");
   const [category, setCategory] = React.useState("");
-  const [publicSwitch, setPublic] = React.useState(false);
+  const [isPublic, setPublic] = React.useState(false);
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -59,7 +59,6 @@ export default function NewProjectButtonAPI() {
   };
 
   const handlePublicSwitch = (e) => {
-    console.log("kwstas", e.target.checked);
     setPublic(e.target.checked);
   };
 
@@ -67,7 +66,19 @@ export default function NewProjectButtonAPI() {
     console.log("create Project", {
       title,
       category,
-      publicSwitch,
+      public: isPublic,
+    });
+
+    fetch("api/projects", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        title,
+        category,
+        public: isPublic ? 1 : 0,
+      }),
     });
 
     setOpen(false);
