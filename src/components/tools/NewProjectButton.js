@@ -75,7 +75,7 @@ export default function NewProjectButtonAPI() {
         <DialogContent>
           <DialogContentText variant="subtitle2">
             {
-              "Please, fill out a title and a category for your project. Also, you can set its public state preference."
+              "Please, fill out a title and a category for your project. Also, you can set your public state preference."
             }
           </DialogContentText>
           <TextField
