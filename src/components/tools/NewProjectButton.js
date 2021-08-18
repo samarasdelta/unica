@@ -38,12 +38,26 @@ function PaperComponent(props) {
 export default function NewProjectButtonAPI() {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
+  const [title, setTitle] = React.useState("");
 
   const handleClickOpen = () => {
     setOpen(true);
   };
 
   const handleClose = () => {
+    setOpen(false);
+  };
+
+  const handleTitleChange = (e) => {
+    console.log("handleTitleChange", e.target.value);
+    setTitle(e.target.value);
+  };
+
+  const createProject = () => {
+    console.log("create Project", {
+      title,
+    });
+
     setOpen(false);
   };
 
@@ -88,6 +102,7 @@ export default function NewProjectButtonAPI() {
             rows={2}
             variant="outlined"
             fullWidth
+            onInput={handleTitleChange}
           />
 
           <Box display="flex" mt={2}>
@@ -109,7 +124,7 @@ export default function NewProjectButtonAPI() {
           <Button autoFocus onClick={handleClose} color="disabled">
             {"Cancel"}
           </Button>
-          <Button onClick={handleClose} color="primary">
+          <Button onClick={createProject} color="primary">
             {"Create"}
           </Button>
         </DialogActions>

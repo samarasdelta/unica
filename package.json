@@ -34,22 +34,6 @@
     "eject": "react-scripts eject",
     "lint": "eslint ./src/**/*.js"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "eslint:recommended",
-      "plugin:react/recommended",
-      "prettier",
-      "plugin:prettier/recommended"
-    ],
-    "plugins": [
-      "react",
-      "prettier"
-    ],
-    "rules": {
-      "linebreak-style": "off"
-    }
-  },
   "browserslist": {
     "production": [
       ">0.2%",
