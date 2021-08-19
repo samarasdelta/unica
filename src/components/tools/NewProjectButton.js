@@ -62,14 +62,14 @@ export default function NewProjectButtonAPI() {
     setPublic(e.target.checked);
   };
 
-  const createProject = () => {
+  const createProject = async () => {
     console.log("create Project", {
       title,
       category,
       public: isPublic,
     });
 
-    fetch("api/projects", {
+    await fetch("api/projects", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -81,7 +81,7 @@ export default function NewProjectButtonAPI() {
       }),
     });
 
-    setOpen(false);
+    window.location.reload();
   };
 
   return (
