@@ -135,7 +135,7 @@ export default function Project() {
   const [projects, setProjects] = useState([]);
 
   useEffect(() => {
-    fetch("/api/projects/")
+    fetch(`/api/projects/`)
       .then((response) => response.json())
       .then((data) => {
         console.log(data);

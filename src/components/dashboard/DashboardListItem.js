@@ -7,6 +7,7 @@ import Box from "@material-ui/core/Box";
 import PropTypes from "prop-types";
 import Tooltip from "@material-ui/core/Tooltip";
 import DeleteIcon from "@material-ui/icons/Delete";
+import Zoom from "@material-ui/core/Zoom";
 
 function preventDefault(event) {
   event.preventDefault();
@@ -19,6 +20,14 @@ const deleteProject = async (id) => {
 
   window.location.reload();
 };
+
+// const getProjectId = async (id) => {
+//   await fetch(`api/projects/${id}`, {
+//     method: "GET",
+//   });
+
+//   window.location.reload();
+// };
 
 const useStyles = makeStyles({
   projectContext: {
@@ -41,14 +50,15 @@ export default function DashboardListItem(props) {
         <Tooltip
           classes={{ tooltip: classes.customWidth }}
           title={props.title}
-          placement="bottom"
-          arrow
           interactive
-          enterDelay={1000}
+          TransitionComponent={Zoom}
+          enterDelay={1200}
           leaveDelay={500}
         >
           <div>
-            <Title>{props.title}</Title>
+            <Link href="/project">
+              <Title>{props.title}</Title>
+            </Link>
           </div>
         </Tooltip>
       </Box>

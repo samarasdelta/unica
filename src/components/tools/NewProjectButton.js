@@ -63,12 +63,6 @@ export default function NewProjectButtonAPI() {
   };
 
   const createProject = async () => {
-    // console.log("create Project", {
-    //   title,
-    //   category,
-    //   public: isPublic,
-    // });
-
     await fetch("api/projects", {
       method: "POST",
       headers: {
