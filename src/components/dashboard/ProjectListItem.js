@@ -12,6 +12,15 @@ function preventDefault(event) {
   event.preventDefault();
 }
 
+const deleteProject = async (id) => {
+  console.log(id, "id");
+  await fetch(`api/projects/${id}`, {
+    method: "DELETE",
+  });
+
+  window.location.reload();
+};
+
 const useStyles = makeStyles({
   projectContext: {
     //flex: 1,
@@ -69,10 +78,16 @@ export default function ProjectListItem(props) {
           <Link color="primary" href="#" onClick={preventDefault}>
             {"View full project"}
           </Link>
-          {" | "}
         </Box>
+        <Box m={1}>{"|"}</Box>
         <Box mt={1}>
-          <Link color="primary" href="#" onClick={preventDefault}>
+          <Link
+            color="primary"
+            href="#"
+            onClick={() => {
+              deleteProject(props.id);
+            }}
+          >
             <DeleteIcon fontSize="small" />
           </Link>
         </Box>
@@ -82,6 +97,7 @@ export default function ProjectListItem(props) {
 }
 
 ProjectListItem.propTypes = {
+  id: PropTypes.node,
   title: PropTypes.node,
   category: PropTypes.node,
   dateCreated: PropTypes.node,

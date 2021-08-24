@@ -276,6 +276,7 @@ export default function Dashboard() {
                   <Grid item xs={6} key={i}>
                     <Paper hover className={fixedHeightPaper}>
                       <ProjectListItem
+                        id={paper.projectId}
                         title={paper.projectTitle}
                         category={paper.projectCategory}
                         dateCreated={paper.projectDateCreated}

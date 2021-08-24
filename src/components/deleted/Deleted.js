@@ -134,11 +134,10 @@ export default function Dashboard() {
     fetch("/api/projects/deleted")
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
         setProjects(data);
       })
       .catch((error) => {
-        console.log("Error: ", error);
+        alert("Error: ", error.message);
       });
   }, []);
 
@@ -257,6 +256,7 @@ export default function Dashboard() {
                   <Grid item xs={6} key={i}>
                     <Paper hover className={fixedHeightPaper}>
                       <DeletedListItem
+                        id={paper.projectId}
                         title={paper.projectTitle}
                         category={paper.projectCategory}
                         dateCreated={paper.projectDateCreated}
