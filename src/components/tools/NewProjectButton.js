@@ -77,7 +77,7 @@ export default function NewProjectButtonAPI() {
       body: JSON.stringify({
         title,
         category,
-        public: isPublic ? 1 : 0,
+        public: isPublic ? true : false,
       }),
     });
 

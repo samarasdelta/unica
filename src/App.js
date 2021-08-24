@@ -9,6 +9,7 @@ import ForgotPassPage from "./pages/ForgotPassPage.js";
 import ForgotEmailPage from "./pages/ForgotEmailPage.js";
 import NotFoundPage from "./pages/NotFoundPage.js";
 import BadGatewayPage from "./pages/BadGatewayPage.js";
+import DeletedPage from "./pages/DeletedPage.js";
 
 function App() {
   return (
@@ -32,6 +33,9 @@ function App() {
           </Route>
           <Route path="/dashboard">
             <DashboardPage />
+          </Route>
+          <Route path="/deleted">
+            <DeletedPage />
           </Route>
           <Route path="/signup">
             <SignUpPage />

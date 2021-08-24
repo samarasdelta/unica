@@ -59,12 +59,16 @@ export const mainListItems = (
       </ListItemIcon>
       <ListItemText secondary="Shared" />
     </ListItem>
-    <ListItem button>
-      <ListItemIcon>
-        <DeleteIcon />
-      </ListItemIcon>
-      <ListItemText secondary="Deleted" />
-    </ListItem>
+    <RouteLink to="deleted" style={{ textDecoration: "none" }}>
+      <Link color="textPrimary" style={{ textDecoration: "none" }}>
+        <ListItem button>
+          <ListItemIcon>
+            <DeleteIcon />
+          </ListItemIcon>
+          <ListItemText secondary="Deleted" />
+        </ListItem>
+      </Link>
+    </RouteLink>
   </div>
 );
 
