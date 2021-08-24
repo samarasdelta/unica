@@ -13,7 +13,6 @@ function preventDefault(event) {
 }
 
 const deletePermaProject = async (id) => {
-  console.log(id, "id");
   await fetch(`api/projects/${id}`, {
     method: "DELETE",
   });

@@ -130,12 +130,12 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Project() {
-  const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = React.useState(false);
   const [darkState, setDarkState] = useState(false);
   const [projects, setProjects] = useState([]);
 
   useEffect(() => {
-    fetch("/api/projects")
+    fetch("/api/projects/")
       .then((response) => response.json())
       .then((data) => {
         console.log(data);

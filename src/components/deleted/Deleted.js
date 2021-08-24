@@ -125,7 +125,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Dashboard() {
+export default function Deleted() {
   const [open, setOpen] = React.useState(true);
   const [darkState, setDarkState] = useState(false);
   const [projects, setProjects] = useState([]);
