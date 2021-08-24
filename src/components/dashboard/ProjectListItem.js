@@ -6,6 +6,7 @@ import Title from "../tools/Title";
 import Box from "@material-ui/core/Box";
 import PropTypes from "prop-types";
 import Tooltip from "@material-ui/core/Tooltip";
+import DeleteIcon from "@material-ui/icons/Delete";
 
 function preventDefault(event) {
   event.preventDefault();
@@ -67,6 +68,12 @@ export default function ProjectListItem(props) {
         <Box mt={1}>
           <Link color="primary" href="#" onClick={preventDefault}>
             {"View full project"}
+          </Link>
+          {" | "}
+        </Box>
+        <Box mt={1}>
+          <Link color="primary" href="#" onClick={preventDefault}>
+            <DeleteIcon fontSize="small" />
           </Link>
         </Box>
       </Box>
