@@ -10,6 +10,7 @@ import ForgotEmailPage from "./pages/ForgotEmailPage.js";
 import NotFoundPage from "./pages/NotFoundPage.js";
 import BadGatewayPage from "./pages/BadGatewayPage.js";
 import DeletedPage from "./pages/DeletedPage.js";
+import ProjectPage from "./pages/ProjectPage.js";
 
 function App() {
   return (
@@ -33,6 +34,9 @@ function App() {
           </Route>
           <Route path="/dashboard">
             <DashboardPage />
+          </Route>
+          <Route path="/project">
+            <ProjectPage />
           </Route>
           <Route path="/deleted">
             <DeletedPage />

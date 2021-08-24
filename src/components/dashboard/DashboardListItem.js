@@ -6,13 +6,13 @@ import Title from "../tools/Title";
 import Box from "@material-ui/core/Box";
 import PropTypes from "prop-types";
 import Tooltip from "@material-ui/core/Tooltip";
-import DeleteForeverIcon from "@material-ui/icons/DeleteForever";
+import DeleteIcon from "@material-ui/icons/Delete";
 
 function preventDefault(event) {
   event.preventDefault();
 }
 
-const deletePermaProject = async (id) => {
+const deleteProject = async (id) => {
   console.log(id, "id");
   await fetch(`api/projects/${id}`, {
     method: "DELETE",
@@ -34,7 +34,7 @@ const useStyles = makeStyles({
   },
 });
 
-export default function DeleteListItem(props) {
+export default function DashboardListItem(props) {
   const classes = useStyles();
   return (
     <React.Fragment>
@@ -76,7 +76,7 @@ export default function DeleteListItem(props) {
         </Box>
         <Box mt={1}>
           <Link color="primary" href="#" onClick={preventDefault}>
-            {"View full project "}
+            {"View full project"}
           </Link>
         </Box>
         <Box m={1}>{"|"}</Box>
@@ -85,10 +85,10 @@ export default function DeleteListItem(props) {
             color="primary"
             href="#"
             onClick={() => {
-              deletePermaProject(props.id);
+              deleteProject(props.id);
             }}
           >
-            <DeleteForeverIcon fontSize="small" />
+            <DeleteIcon fontSize="small" />
           </Link>
         </Box>
       </Box>
@@ -96,7 +96,7 @@ export default function DeleteListItem(props) {
   );
 }
 
-DeleteListItem.propTypes = {
+DashboardListItem.propTypes = {
   id: PropTypes.node,
   title: PropTypes.node,
   category: PropTypes.node,

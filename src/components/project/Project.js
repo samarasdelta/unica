@@ -33,7 +33,7 @@ import {
   secondaryListItems,
 } from "../tools/ListItems";
 import Logo from "../images/unicasmall1.png";
-import DashboardListItem from "./DashboardListItem";
+import ProjectListItem from "./ProjectListItem";
 import MyToolbar from "../tools/AccountDrawer";
 import SimpleDialog from "../tools/Dialog";
 import NewProjectButtonAPI from "../tools/NewProjectButton";
@@ -129,7 +129,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Dashboard() {
+export default function Project() {
   const [open, setOpen] = React.useState(true);
   const [darkState, setDarkState] = useState(false);
   const [projects, setProjects] = useState([]);
@@ -202,7 +202,7 @@ export default function Dashboard() {
               noWrap
               className={classes.title}
             >
-              {"Dashboard"}
+              {"Project Title"}
             </Typography>
             <IconButton color="inherit">
               <Badge badgeContent={1} color="secondary">
@@ -275,7 +275,7 @@ export default function Dashboard() {
                 return (
                   <Grid item xs={6} key={i}>
                     <Paper hover className={fixedHeightPaper}>
-                      <DashboardListItem
+                      <ProjectListItem
                         id={paper.projectId}
                         title={paper.projectTitle}
                         category={paper.projectCategory}
