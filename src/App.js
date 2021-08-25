@@ -35,7 +35,9 @@ function App() {
           <Route path="/dashboard">
             <DashboardPage />
           </Route>
-          <Route path="/project/:id" children={<ProjectPage />} />
+          <Route path="/project/:id">
+            <ProjectPage />
+          </Route>
           <Route path="/deleted">
             <DeletedPage />
           </Route>
