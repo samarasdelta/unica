@@ -56,7 +56,7 @@ export default function DashboardListItem(props) {
           leaveDelay={500}
         >
           <div>
-            <Link href="/project">
+            <Link href={`/project/${props.id}`}>
               <Title>{props.title}</Title>
             </Link>
           </div>
