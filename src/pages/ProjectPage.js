@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Project from "../components/project/Project.js";
 import { useParams } from "react-router";
-import PropTypes from "prop-types";
 
-function ProjectPage(props) {
+function ProjectPage() {
   let { id } = useParams();
   const [project, setProject] = useState({});
 
@@ -27,7 +26,3 @@ function ProjectPage(props) {
 }
 
 export default ProjectPage;
-
-ProjectPage.propTypes = {
-  id: PropTypes.node,
-};
