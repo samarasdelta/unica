@@ -1,47 +1,32 @@
 import React, { useState } from "react";
-import { Link as RouteLink } from "react-router-dom";
 import {
   createMuiTheme,
   ThemeProvider,
   makeStyles,
-  Button,
   Badge,
-  Container,
-  Divider,
-  Box,
+  IconButton,
   Switch,
   Typography,
   Toolbar,
   AppBar,
-  Drawer,
-  List,
   CssBaseline,
 } from "@material-ui/core";
 import clsx from "clsx";
 import { blue, red } from "@material-ui/core/colors";
-import AddIcon from "@material-ui/icons/Add";
-import IconButton from "@material-ui/core/IconButton";
-import PublishIcon from "@material-ui/icons/Publish";
 import MenuIcon from "@material-ui/icons/Menu";
-import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import HelpIcon from "@material-ui/icons/Help";
-import NotificationsIcon from "@material-ui/icons/Notifications";
-import {
-  discoverListItems,
-  dashboardListItems,
-  mainListItems,
-  secondaryListItems,
-} from "../tools/ListItems";
-import Logo from "../images/unicasmall1.png";
-import SearchBar from "../tools/SearchBar";
-import DiscoverResults from "./DiscoverListItem";
 import MyToolbar from "../tools/AccountDrawer";
+import NotificationsIcon from "@material-ui/icons/Notifications";
+import PropTypes from "prop-types";
 
 const drawerWidth = 200;
 
 const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
+    flexGrow: 1,
+    overflow: "hidden",
+    width: "auto",
   },
   toolbar: {
     paddingRight: 20, // keep right padding when drawer closed
@@ -61,7 +46,6 @@ const useStyles = makeStyles((theme) => ({
     }),
   },
   appBarShift: {
-    marginLeft: drawerWidth,
     width: `calc(100% - ${drawerWidth}px)`,
     transition: theme.transitions.create(["width", "margin"], {
       easing: theme.transitions.easing.sharp,
@@ -76,10 +60,6 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     flexGrow: 1,
-    flex: "1 1 100%",
-  },
-  section2: {
-    margin: theme.spacing(2, 0, 3),
   },
   drawerPaper: {
     position: "relative",
@@ -103,15 +83,13 @@ const useStyles = makeStyles((theme) => ({
   },
   appBarSpacer: theme.mixins.toolbar,
   content: {
-    flexGrow: 1,
     height: "100vh",
     overflow: "auto",
   },
   container: {
-    paddingRight: theme.spacing(2),
-    paddingLeft: theme.spacing(2),
-    paddingTop: theme.spacing(5),
-    paddingBottom: theme.spacing(5),
+    paddingTop: theme.spacing(2),
+    paddingBottom: theme.spacing(2),
+    maxWidth: "100vw",
   },
   paper: {
     padding: theme.spacing(2),
@@ -120,17 +98,25 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: "column",
   },
   fixedHeight: {
-    height: 240,
+    height: 220,
+  },
+  Box: {
+    paddingTop: 1,
+    scrollPaddingBottom: 1,
+  },
+  Top: {
+    paddingTop: "8 !important",
   },
 }));
 
-export default function Discover() {
+const AppBarCustom = (props) => {
   const [open, setOpen] = React.useState(true);
   const [darkState, setDarkState] = useState(false);
   const palletType = darkState ? "dark" : "light";
   const mainPrimaryColor = darkState ? blue[200] : blue[800];
   const mainSecondaryColor = darkState ? red[600] : red[500];
   const darkTheme = createMuiTheme({
+    backgroundColor: "#212121",
     palette: {
       type: palletType,
       primary: {
@@ -149,18 +135,12 @@ export default function Discover() {
   const handleDrawerOpen = () => {
     setOpen(true);
   };
-  const handleDrawerClose = () => {
-    setOpen(false);
-  };
 
   return (
     <ThemeProvider theme={darkTheme}>
       <div className={classes.root}>
         <CssBaseline />
-        <AppBar
-          position="absolute"
-          className={clsx(classes.appBar, open && classes.appBarShift)}
-        >
+        <AppBar position="absolute">
           <Toolbar className={classes.toolbar}>
             <IconButton
               edge="start"
@@ -181,9 +161,8 @@ export default function Discover() {
               noWrap
               className={classes.title}
             >
-              {"Discover"}
+              Project Title:
             </Typography>
-            <SearchBar />
             <IconButton color="inherit">
               <Badge badgeContent={1} color="secondary">
                 <NotificationsIcon />
@@ -195,77 +174,21 @@ export default function Discover() {
               </Badge>
             </IconButton>
             <MyToolbar />
+
             <Switch checked={darkState} onChange={handleThemeChange} />
           </Toolbar>
         </AppBar>
-        <Drawer
-          variant="permanent"
-          classes={{
-            paper: clsx(classes.drawerPaper, !open && classes.drawerPaperClose),
-          }}
-          open={open}
-        >
-          <div className={classes.toolbarIcon}>
-            <Box pr={10}>
-              <img src={Logo} alt="logo" />
-            </Box>
-            <IconButton onClick={handleDrawerClose}>
-              <ChevronLeftIcon />
-            </IconButton>
-          </div>
-          <List>{discoverListItems}</List>
-          <List>{dashboardListItems}</List>
-          <List>{mainListItems}</List>
-          <List>{secondaryListItems}</List>
-        </Drawer>
-        <main className={classes.content}>
-          <div className={classes.appBarSpacer} />
-          <Container className={classes.container} maxWidth="xl">
-            <Typography variant="h6">Available Projects</Typography>
-            <Typography variant="h7" color="textSecondary">
-              Here, you&apos;ll find a list with the available projects for
-              collaboration{"."}
-            </Typography>
-            <Divider className={classes.section2} />
-            <DiscoverResults />
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                paddingBottom: "20px",
-                paddingTop: "20px",
-              }}
-            >
-              <Box>
-                <Button
-                  component={RouteLink}
-                  //to=""
-                  type="submit"
-                  variant="contained"
-                  color="primary"
-                  startIcon={<PublishIcon />}
-                  className={classes.submit}
-                >
-                  Button 1
-                </Button>
-              </Box>
-              <Box m={1}>
-                <Button
-                  component={RouteLink}
-                  //to=""
-                  type="submit"
-                  variant="contained"
-                  color="default"
-                  startIcon={<AddIcon />}
-                  className={classes.submit}
-                >
-                  Button 2
-                </Button>
-              </Box>
-            </div>
-          </Container>
-        </main>
       </div>
     </ThemeProvider>
   );
-}
+};
+
+export default AppBarCustom;
+
+AppBarCustom.propTypes = {
+  id: PropTypes.string,
+  project: PropTypes.shape({
+    projectTitle: PropTypes.string,
+    projectCategory: PropTypes.string,
+  }),
+};
