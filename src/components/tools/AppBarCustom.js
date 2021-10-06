@@ -17,7 +17,6 @@ import MenuIcon from "@material-ui/icons/Menu";
 import HelpIcon from "@material-ui/icons/Help";
 import MyToolbar from "../tools/AccountDrawer";
 import NotificationsIcon from "@material-ui/icons/Notifications";
-import PropTypes from "prop-types";
 
 const drawerWidth = 200;
 
@@ -109,7 +108,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const AppBarCustom = (props) => {
+const AppBarCustom = () => {
   const [open, setOpen] = React.useState(true);
   const [darkState, setDarkState] = useState(false);
   const palletType = darkState ? "dark" : "light";
@@ -160,9 +159,7 @@ const AppBarCustom = (props) => {
               color="inherit"
               noWrap
               className={classes.title}
-            >
-              Project Title:
-            </Typography>
+            ></Typography>
             <IconButton color="inherit">
               <Badge badgeContent={1} color="secondary">
                 <NotificationsIcon />
@@ -184,11 +181,3 @@ const AppBarCustom = (props) => {
 };
 
 export default AppBarCustom;
-
-AppBarCustom.propTypes = {
-  id: PropTypes.string,
-  project: PropTypes.shape({
-    projectTitle: PropTypes.string,
-    projectCategory: PropTypes.string,
-  }),
-};

@@ -23,6 +23,7 @@ const useStyles = makeStyles({
 export default function NewTeamButtonAPI() {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
+  const [title, setTitle] = React.useState("");
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -30,6 +31,24 @@ export default function NewTeamButtonAPI() {
 
   const handleClose = () => {
     setOpen(false);
+  };
+
+  const handleTitleChange = (e) => {
+    setTitle(e.target.value);
+  };
+
+  const createGroup = async () => {
+    await fetch("api/groups", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        title,
+      }),
+    });
+
+    window.location.reload();
   };
 
   return (
@@ -69,6 +88,7 @@ export default function NewTeamButtonAPI() {
               rows={2}
               variant="outlined"
               fullWidth
+              onInput={handleTitleChange}
             />
           </Box>
         </DialogContent>
@@ -76,7 +96,7 @@ export default function NewTeamButtonAPI() {
           <Button onClick={handleClose} color="disabled">
             {"Cancel"}
           </Button>
-          <Button onClick={handleClose} color="primary">
+          <Button onClick={createGroup} color="primary">
             {"Create"}
           </Button>
         </DialogActions>
