@@ -45,6 +45,7 @@ export default function DashboardListItem(props) {
     <React.Fragment>
       <Box className={classes.boxSpace}>
         <Tooltip
+          arrow
           classes={{ tooltip: classes.customWidth }}
           title={props.title}
           interactive
@@ -99,7 +100,9 @@ export default function DashboardListItem(props) {
               deleteProject(props.id);
             }}
           >
-            <DeleteIcon fontSize="small" />
+            <Tooltip arrow title="Delete project">
+              <DeleteIcon fontSize="small" />
+            </Tooltip>
           </Link>
         </Box>
       </Box>

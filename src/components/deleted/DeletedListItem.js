@@ -95,7 +95,9 @@ export default function DeleteListItem(props) {
               deletePermaProject(props.id);
             }}
           >
-            <DeleteForeverIcon fontSize="small" />
+            <Tooltip arrow title="Permanent deletion project">
+              <DeleteForeverIcon fontSize="small" />
+            </Tooltip>
           </Link>
         </Box>
       </Box>
