@@ -9,10 +9,6 @@ import Tooltip from "@material-ui/core/Tooltip";
 import DeleteIcon from "@material-ui/icons/Delete";
 import Zoom from "@material-ui/core/Zoom";
 
-function preventDefault(event) {
-  event.preventDefault();
-}
-
 const deleteProject = async (id) => {
   await fetch(`api/projects/${id}`, {
     method: "DELETE",
@@ -84,7 +80,7 @@ export default function DashboardListItem(props) {
           </Typography>
         </Box>
         <Box mt={1}>
-          <Link color="primary" href="#" onClick={preventDefault}>
+          <Link color="primary" href={`/project/${props.id}`}>
             {"View full project"}
           </Link>
         </Box>

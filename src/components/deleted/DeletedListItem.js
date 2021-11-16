@@ -48,7 +48,9 @@ export default function DeleteListItem(props) {
           leaveDelay={500}
         >
           <div>
-            <Title>{props.title}</Title>
+            <Link href={`/project/${props.id}`}>
+              <Title>{props.title}</Title>
+            </Link>
           </div>
         </Tooltip>
       </Box>
@@ -74,7 +76,7 @@ export default function DeleteListItem(props) {
           </Typography>
         </Box>
         <Box mt={1}>
-          <Link color="primary" href="#" onClick={preventDefault}>
+          <Link color="primary" href={`/project/${props.id}`}>
             {"View full project "}
           </Link>
         </Box>
