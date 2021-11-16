@@ -19,7 +19,7 @@ const DiscoverResults = () => {
   const [projects, setProjects] = useState([]);
 
   useEffect(() => {
-    fetch("/api/projects")
+    fetch("/api/projects/public")
       .then((response) => response.json())
       .then((data) => {
         console.log(data);

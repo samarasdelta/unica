@@ -80,6 +80,12 @@ export default function DeleteListItem(props) {
         </Box>
         <Box m={1}>{"|"}</Box>
         <Box mt={1}>
+          <Link color="primary" href="#" onClick={preventDefault}>
+            {"Restore project "}
+          </Link>
+        </Box>
+        <Box m={1}>{"|"}</Box>
+        <Box mt={1}>
           <Link
             color="primary"
             href="#"
