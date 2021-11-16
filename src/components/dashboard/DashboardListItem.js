@@ -8,6 +8,7 @@ import PropTypes from "prop-types";
 import Tooltip from "@material-ui/core/Tooltip";
 import DeleteIcon from "@material-ui/icons/Delete";
 import Zoom from "@material-ui/core/Zoom";
+import Switch from "@material-ui/core/Switch";
 
 const deleteProject = async (id) => {
   await fetch(`api/projects/${id}`, {
@@ -64,6 +65,7 @@ export default function DashboardListItem(props) {
           {"Category:"} {props.category}
         </Typography>
       </Box>
+
       <Box display="flex">
         <Box flexGrow={1}>
           <Box mt={1}>
@@ -72,7 +74,11 @@ export default function DashboardListItem(props) {
             </Typography>
           </Box>
         </Box>
+        <Box>
+          <Switch color="primary" />
+        </Box>
       </Box>
+
       <Box display="flex">
         <Box flexGrow={1} mt={1}>
           <Typography color="textSecondary">
