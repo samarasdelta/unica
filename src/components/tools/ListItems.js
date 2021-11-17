@@ -13,7 +13,6 @@ import FindInPageIcon from "@material-ui/icons/FindInPage";
 import Link from "@material-ui/core/Link";
 import Divider from "@material-ui/core/Divider";
 import NewTeamButtonAPI from "../tools/NewTeamButton";
-import { DriveEta } from "@material-ui/icons";
 
 export const discoverListItems = (
   <div>
@@ -70,20 +69,6 @@ export const mainListItems = (
         </ListItem>
       </Link>
     </RouteLink>
-  </div>
-);
-
-export const secondaryListItems = (
-  <div>
-    <Divider />
-    <NewTeamButtonAPI />
-    <ListItem button>
-      <ListItemIcon>
-        <GroupWorkIcon />
-      </ListItemIcon>
-      <ListItemText secondary="'Team's name'" />
-    </ListItem>
-    <ListSubheader inset>User&apos;s teams</ListSubheader>
   </div>
 );
 
