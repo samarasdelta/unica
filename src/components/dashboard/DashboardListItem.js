@@ -93,6 +93,12 @@ export default function DashboardListItem(props) {
         </Box>
         <Box m={1}>{"|"}</Box>
         <Box mt={1}>
+          <Link color="primary" href={`/project/${props.id}`}>
+            {"Edit project"}
+          </Link>
+        </Box>
+        <Box m={1}>{"|"}</Box>
+        <Box mt={1}>
           <Link
             color="primary"
             href="#"

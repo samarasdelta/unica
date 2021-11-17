@@ -16,8 +16,6 @@ const deleteProject = async (id) => {
   await fetch(`api/projects/${id}`, {
     method: "DELETE",
   });
-
-  window.location.reload();
 };
 
 const useStyles = makeStyles({

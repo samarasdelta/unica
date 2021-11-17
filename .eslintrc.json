@@ -3,12 +3,10 @@
     "react-app",
     "eslint:recommended",
     "plugin:react/recommended",
-    "plugin:prettier/recommended"
+    "plugin:prettier/recommended",
+    "plugin:react-hooks/recommended"
   ],
-  "plugins": [
-    "react",
-    "prettier"
-  ],
+  "plugins": ["react", "prettier"],
   "rules": {
     "linebreak-style": "off",
     "prettier/prettier": "error"

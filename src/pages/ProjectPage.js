@@ -16,7 +16,7 @@ function ProjectPage() {
       .catch((error) => {
         console.log("Error: ", error);
       });
-  });
+  }, [id]);
 
   return (
     <div>
