@@ -30,7 +30,7 @@ import {
   discoverListItems,
   dashboardListItems,
   mainListItems,
-  secondaryListItems,
+  GroupsListItems,
 } from "../tools/ListItems";
 import Logo from "../images/unicasmall1.png";
 import DashboardListItem from "./DashboardListItem";
@@ -237,7 +237,9 @@ export default function Dashboard() {
             <List>{discoverListItems}</List>
             <List>{dashboardListItems}</List>
             <List>{mainListItems}</List>
-            <List>{secondaryListItems}</List>
+            <List>
+              <GroupsListItems />
+            </List>
           </div>
         </Drawer>
         <main className={classes.content}>

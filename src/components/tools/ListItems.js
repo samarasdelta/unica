@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link as RouteLink } from "react-router-dom";
 import ListItem from "@material-ui/core/ListItem";
 import ListSubheader from "@material-ui/core/ListSubheader";
@@ -13,6 +13,7 @@ import FindInPageIcon from "@material-ui/icons/FindInPage";
 import Link from "@material-ui/core/Link";
 import Divider from "@material-ui/core/Divider";
 import NewTeamButtonAPI from "../tools/NewTeamButton";
+import { DriveEta } from "@material-ui/icons";
 
 export const discoverListItems = (
   <div>
@@ -85,3 +86,37 @@ export const secondaryListItems = (
     <ListSubheader inset>User&apos;s teams</ListSubheader>
   </div>
 );
+
+export function GroupsListItems() {
+  const [groups, setGroups] = useState([]);
+
+  useEffect(() => {
+    fetch("/api/groups")
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        setGroups(data);
+      })
+      .catch((error) => {
+        console.log("Error: ", error);
+      });
+  }, []);
+
+  return (
+    <div>
+      <Divider />
+      <NewTeamButtonAPI />
+      {groups.map(function (group, i) {
+        return (
+          <ListItem button key={group.groupId}>
+            <ListItemIcon>
+              <GroupWorkIcon />
+            </ListItemIcon>
+            <ListItemText secondary={group.groupTitle} />
+          </ListItem>
+        );
+      })}
+      <ListSubheader inset>User&apos;s teams</ListSubheader>
+    </div>
+  );
+}
