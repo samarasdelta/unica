@@ -261,6 +261,7 @@ export default function Deleted() {
                         category={paper.projectCategory}
                         dateCreated={paper.projectDateCreated}
                         projectState={paper.projectState}
+                        projectIsDeleted={paper.projectDeleted}
                       />
                     </Paper>
                   </Grid>

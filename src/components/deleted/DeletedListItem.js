@@ -111,4 +111,5 @@ DeleteListItem.propTypes = {
   category: PropTypes.node,
   dateCreated: PropTypes.node,
   projectState: PropTypes.node,
+  projectIsDeleted: PropTypes.node,
 };
