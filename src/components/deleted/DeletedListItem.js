@@ -8,13 +8,27 @@ import PropTypes from "prop-types";
 import Tooltip from "@material-ui/core/Tooltip";
 import DeleteForeverIcon from "@material-ui/icons/DeleteForever";
 
-function preventDefault(event) {
-  event.preventDefault();
-}
+// function preventDefault(event) {
+//   event.preventDefault();
+// }
 
 const deletePermaProject = async (id) => {
   await fetch(`api/projects/${id}`, {
     method: "DELETE",
+  });
+
+  window.location.reload();
+};
+
+const restoreProject = async (id) => {
+  await fetch(`api/projects/${id}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      isDeleted: "0",
+    }),
   });
 
   window.location.reload();
@@ -82,7 +96,13 @@ export default function DeleteListItem(props) {
         </Box>
         <Box m={1}>{"|"}</Box>
         <Box mt={1}>
-          <Link color="primary" href="#" onClick={preventDefault}>
+          <Link
+            color="primary"
+            href="#"
+            onClick={() => {
+              restoreProject(props.id);
+            }}
+          >
             {"Restore project "}
           </Link>
         </Box>
