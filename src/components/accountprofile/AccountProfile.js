@@ -14,6 +14,13 @@ import {
   Drawer,
   List,
   CssBaseline,
+  Grid,
+  CardHeader,
+  Divider,
+  TextField,
+  CardContent,
+  Card,
+  Button,
 } from "@material-ui/core";
 import clsx from "clsx";
 import { blue, red } from "@material-ui/core/colors";
@@ -218,23 +225,100 @@ export default function AccountProfile() {
             <List>{mainListItems}</List>
             <List>
               <GroupsListItems />
-            </List>{" "}
+            </List>
           </div>
         </Drawer>
         <main className={classes.content}>
           <div className={classes.appBarSpacer} />
           <Container className={classes.container}>
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                paddingBottom: "20px",
-              }}
-            >
+            <div>
               <Box>
                 <SimpleDialog />
               </Box>
             </div>
+            <Grid justifyContent="center" alignItems="center">
+              <form autoComplete="off" noValidate>
+                <Card>
+                  <CardHeader
+                    subheader="The information can be edited"
+                    title="Profile"
+                  />
+                  <Divider />
+                  <CardContent>
+                    <Grid container spacing={3}>
+                      <Grid item md={6} xs={12}>
+                        <TextField
+                          fullWidth
+                          helperText="Please specify the first name"
+                          label="First name"
+                          name="firstName"
+                          required
+                          variant="outlined"
+                        />
+                      </Grid>
+                      <Grid item md={6} xs={12}>
+                        <TextField
+                          fullWidth
+                          label="Last name"
+                          name="lastName"
+                          required
+                          variant="outlined"
+                        />
+                      </Grid>
+                      <Grid item md={6} xs={12}>
+                        <TextField
+                          fullWidth
+                          label="Email Address"
+                          name="email"
+                          required
+                          variant="outlined"
+                        />
+                      </Grid>
+                      <Grid item md={6} xs={12}>
+                        <TextField
+                          fullWidth
+                          label="Phone Number"
+                          name="phone"
+                          type="number"
+                          variant="outlined"
+                        />
+                      </Grid>
+                      <Grid item md={6} xs={12}>
+                        <TextField
+                          fullWidth
+                          label="Country"
+                          name="country"
+                          required
+                          variant="outlined"
+                        />
+                      </Grid>
+                      <Grid item md={6} xs={12}>
+                        <TextField
+                          fullWidth
+                          label="Select State"
+                          name="state"
+                          required
+                          variant="outlined"
+                        ></TextField>
+                      </Grid>
+                    </Grid>
+                  </CardContent>
+                  <Box>
+                    <Button
+                      style={{
+                        marginBottom: "15px",
+                        marginRight: "15px",
+                        float: "right",
+                      }}
+                      color="primary"
+                      variant="contained"
+                    >
+                      Save details
+                    </Button>
+                  </Box>
+                </Card>
+              </form>
+            </Grid>
           </Container>
         </main>
       </div>

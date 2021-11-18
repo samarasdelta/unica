@@ -218,7 +218,7 @@ export default function SettingsProfile() {
             <List>{mainListItems}</List>
             <List>
               <GroupsListItems />
-            </List>{" "}
+            </List>
           </div>
         </Drawer>
         <main className={classes.content}>
