@@ -63,8 +63,8 @@ class PersistentDrawer extends React.Component {
                 <Grid container justify="center">
                   <Button
                     fullWidth
-                    //component={RouteLink}
-                    //to="/"
+                    component={RouteLink}
+                    to="/account"
                     variant="contained"
                     color="primary"
                     startIcon={<PersonIcon />}
@@ -77,8 +77,8 @@ class PersistentDrawer extends React.Component {
                 <Grid container justify="center">
                   <Button
                     fullWidth
-                    //component={RouteLink}
-                    //to="/"
+                    component={RouteLink}
+                    to="/settings"
                     variant="contained"
                     color="primary"
                     startIcon={<SettingsIcon />}

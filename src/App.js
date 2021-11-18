@@ -11,6 +11,8 @@ import NotFoundPage from "./pages/NotFoundPage.js";
 import BadGatewayPage from "./pages/BadGatewayPage.js";
 import DeletedPage from "./pages/DeletedPage.js";
 import ProjectPage from "./pages/ProjectPage.js";
+import AccountPage from "./pages/AccountPage.js";
+import SettingsPage from "./pages/SettingsPage.js";
 
 function App() {
   return (
@@ -37,6 +39,12 @@ function App() {
           </Route>
           <Route path="/project/:id">
             <ProjectPage />
+          </Route>
+          <Route path="/account">
+            <AccountPage />
+          </Route>
+          <Route path="/settings">
+            <SettingsPage />
           </Route>
           <Route path="/deleted">
             <DeletedPage />
