@@ -9,6 +9,7 @@ import Divider from "@material-ui/core/Divider";
 import IconButton from "@material-ui/core/IconButton";
 import { Button, ListItem } from "@material-ui/core";
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
+import PersonIcon from "@material-ui/icons/Person";
 import Grid from "@material-ui/core/Grid";
 import SettingsIcon from "@material-ui/icons/Settings";
 import ExitToAppSharpIcon from "@material-ui/icons/ExitToAppSharp";
@@ -58,6 +59,20 @@ class PersistentDrawer extends React.Component {
             <ListSubheader align="center">ece00792@uowm.gr</ListSubheader>
             <Divider />
             <List className={classes.listContent}>
+              <ListItem>
+                <Grid container justify="center">
+                  <Button
+                    fullWidth
+                    //component={RouteLink}
+                    //to="/"
+                    variant="contained"
+                    color="primary"
+                    startIcon={<PersonIcon />}
+                  >
+                    Account
+                  </Button>
+                </Grid>
+              </ListItem>
               <ListItem>
                 <Grid container justify="center">
                   <Button
