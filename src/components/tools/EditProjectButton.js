@@ -7,7 +7,7 @@ import DialogActions from "@material-ui/core/DialogActions";
 import DialogContent from "@material-ui/core/DialogContent";
 import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogTitle from "@material-ui/core/DialogTitle";
-import CreateIcon from "@mui/icons-material/Create";
+import CreateIcon from "@material-ui/icons/Create";
 import Paper from "@material-ui/core/Paper";
 import Draggable from "react-draggable";
 import FormControl from "@material-ui/core/FormControl";
@@ -35,7 +35,7 @@ function PaperComponent(props) {
   );
 }
 
-export default function NewProjectButtonAPI() {
+export default function EditProjectButtonAPI() {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
   const [title, setTitle] = React.useState("");
@@ -81,9 +81,11 @@ export default function NewProjectButtonAPI() {
   return (
     <div>
       <Button
+        style={{ textTransform: "none", height: "22px" }}
         type="submit"
-        variant="contained"
+        variant="outlined"
         color="primary"
+        size="small"
         startIcon={<CreateIcon />}
         onClick={handleClickOpen}
       >
@@ -99,7 +101,7 @@ export default function NewProjectButtonAPI() {
       >
         <div className={classes.Bgcolor}>
           <DialogTitle style={{ cursor: "move" }} id="draggable-dialog-title">
-            {"Create a new project"}
+            {"Edit project"}
           </DialogTitle>
         </div>
         <Divider />
@@ -147,7 +149,7 @@ export default function NewProjectButtonAPI() {
             {"Cancel"}
           </Button>
           <Button onClick={createProject} color="primary">
-            {"Done"}
+            {"Submit"}
           </Button>
         </DialogActions>
       </Dialog>
