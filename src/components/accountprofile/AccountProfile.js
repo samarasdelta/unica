@@ -306,6 +306,8 @@ export default function AccountProfile() {
                   <Box>
                     <Button
                       style={{
+                        fontWeight: "600",
+                        textTransform: "none",
                         marginBottom: "15px",
                         marginRight: "15px",
                         float: "right",
