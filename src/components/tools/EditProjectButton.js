@@ -1,4 +1,5 @@
 import React from "react";
+import { useParams } from "react-router";
 import { makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
@@ -36,6 +37,8 @@ function PaperComponent(props) {
 }
 
 export default function EditProjectButtonAPI() {
+  let { id } = useParams();
+
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
   const [title, setTitle] = React.useState("");
@@ -62,9 +65,9 @@ export default function EditProjectButtonAPI() {
     setPublic(e.target.checked);
   };
 
-  const createProject = async () => {
-    await fetch("api/projects", {
-      method: "POST",
+  const editProject = async () => {
+    await fetch(`/api/projects/${id}`, {
+      method: "PUT",
       headers: {
         "Content-Type": "application/json",
       },
@@ -108,7 +111,7 @@ export default function EditProjectButtonAPI() {
         <DialogContent>
           <DialogContentText variant="subtitle2">
             {
-              "Please, fill out a title and a category for your project. Also, you can set your public state preference."
+              "Here, you can edit your project preferences, such as it's title, the category or it's public state."
             }
           </DialogContentText>
           <TextField
@@ -148,7 +151,7 @@ export default function EditProjectButtonAPI() {
           <Button autoFocus onClick={handleClose} color="disabled">
             {"Cancel"}
           </Button>
-          <Button onClick={createProject} color="primary">
+          <Button onClick={editProject} color="primary">
             {"Submit"}
           </Button>
         </DialogActions>
@@ -156,3 +159,11 @@ export default function EditProjectButtonAPI() {
     </div>
   );
 }
+
+// EditProjectButtonAPI.propTypes = {
+//   id: PropTypes.string,
+//   project: PropTypes.shape({
+//     projectTitle: PropTypes.string,
+//     projectCategory: PropTypes.string,
+//   }),
+// };
