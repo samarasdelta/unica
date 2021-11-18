@@ -83,7 +83,7 @@ export default function EditProjectButtonAPI() {
       <Button
         style={{ textTransform: "none", height: "22px" }}
         type="submit"
-        variant="outlined"
+        variant="text"
         color="primary"
         size="small"
         startIcon={<CreateIcon />}
