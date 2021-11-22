@@ -1,6 +1,6 @@
 import React from "react";
-import { useParams } from "react-router";
 import { makeStyles } from "@material-ui/core/styles";
+import PropTypes from "prop-types";
 import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
 import Dialog from "@material-ui/core/Dialog";
@@ -36,8 +36,10 @@ function PaperComponent(props) {
   );
 }
 
-export default function EditProjectButtonAPI() {
-  let { id } = useParams();
+export default function EditProjectButtonAPI(props) {
+  console.log("props:", props);
+
+  const { id } = props;
 
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
@@ -47,6 +49,7 @@ export default function EditProjectButtonAPI() {
 
   const handleClickOpen = () => {
     setOpen(true);
+    console.log("id", id);
   };
 
   const handleClose = () => {
@@ -94,6 +97,7 @@ export default function EditProjectButtonAPI() {
       >
         {"Edit Project"}
       </Button>
+
       <Dialog
         fullWidth
         maxWidth="sm"
@@ -120,6 +124,7 @@ export default function EditProjectButtonAPI() {
             id="title"
             label="Title"
             type="title"
+            value={title}
             multiline
             rows={2}
             variant="outlined"
@@ -160,10 +165,6 @@ export default function EditProjectButtonAPI() {
   );
 }
 
-// EditProjectButtonAPI.propTypes = {
-//   id: PropTypes.string,
-//   project: PropTypes.shape({
-//     projectTitle: PropTypes.string,
-//     projectCategory: PropTypes.string,
-//   }),
-// };
+EditProjectButtonAPI.propTypes = {
+  id: PropTypes.string,
+};
