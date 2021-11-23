@@ -147,6 +147,7 @@ export default function EditProjectButtonAPI(props) {
           <Box display="flex" mt={2}>
             <Box flexGrow={1}>
               <ComboBox
+                // value={category.projectCategory}
                 onSelect={(category) => {
                   handleCategory(category);
                 }}
@@ -186,5 +187,6 @@ EditProjectButtonAPI.propTypes = {
   id: PropTypes.string,
   title: PropTypes.shape({
     projectTitle: PropTypes.string,
+    // projectCategory: PropTypes.string,
   }),
 };
