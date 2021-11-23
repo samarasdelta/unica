@@ -70,7 +70,7 @@ const DiscoverResults = () => {
             </TableRow>
           </TableHead>
           <TableBody>
-            {projects.map(function (paper, i) {
+            {projects.map(function (project, i) {
               return (
                 <TableRow hover key={i}>
                   <TableCell padding="checkbox">
@@ -79,28 +79,28 @@ const DiscoverResults = () => {
                   <TableCell>
                     <Box alignItems="center" display="flex">
                       <Typography color="textPrimary" variant="body1">
-                        {paper.projectTitle}
+                        {project.projectTitle}
                       </Typography>
                     </Box>
                   </TableCell>
                   <TableCell>
                     <Box alignItems="center" display="flex">
                       <Typography color="textSecondary" variant="body1">
-                        {paper.projectOwnerId}
+                        {project.projectOwnerId}
                       </Typography>
                     </Box>
                   </TableCell>
                   <TableCell>
                     <Box alignItems="center" display="flex">
                       <Typography color="textSecondary" variant="body1">
-                        {paper.projectCategory}
+                        {project.projectCategory}
                       </Typography>
                     </Box>
                   </TableCell>
                   <TableCell>
                     <Box alignItems="center" display="flex">
                       <Typography color="textSecondary" variant="body1">
-                        {paper.projectDateCreated}
+                        {project.projectDateCreated}
                       </Typography>
                     </Box>
                   </TableCell>

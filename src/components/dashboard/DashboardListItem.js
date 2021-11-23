@@ -90,7 +90,7 @@ export default function DashboardListItem(props) {
         </Box>
         <Box m={1}>{"|"}</Box>
         <Box mt={1}>
-          <EditProjectButtonAPI id={props.id} name="theo" />
+          <EditProjectButtonAPI id={props.id} title={props.title} />
         </Box>
         <Box m={1}>{"|"}</Box>
         <Box mt={1}>

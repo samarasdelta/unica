@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import PropTypes from "prop-types";
 import Button from "@material-ui/core/Button";
@@ -41,6 +41,18 @@ export default function EditProjectButtonAPI(props) {
 
   const { id } = props;
 
+  useEffect(() => {
+    fetch(`/api/projects/${id}`)
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("dataaa:", data);
+        setTitle(data);
+      })
+      .catch((error) => {
+        console.log("Error: ", error);
+      });
+  }, [id]);
+
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
   const [title, setTitle] = React.useState("");
@@ -68,7 +80,7 @@ export default function EditProjectButtonAPI(props) {
     setPublic(e.target.checked);
   };
 
-  const editProject = async () => {
+  const editProject = async (id) => {
     await fetch(`/api/projects/${id}`, {
       method: "PUT",
       headers: {
@@ -124,7 +136,7 @@ export default function EditProjectButtonAPI(props) {
             id="title"
             label="Title"
             type="title"
-            value={title}
+            value={title.projectTitle}
             multiline
             rows={2}
             variant="outlined"
@@ -156,7 +168,12 @@ export default function EditProjectButtonAPI(props) {
           <Button autoFocus onClick={handleClose} color="disabled">
             {"Cancel"}
           </Button>
-          <Button onClick={editProject} color="primary">
+          <Button
+            onClick={() => {
+              editProject(props.id);
+            }}
+            color="primary"
+          >
             {"Submit"}
           </Button>
         </DialogActions>
@@ -167,4 +184,7 @@ export default function EditProjectButtonAPI(props) {
 
 EditProjectButtonAPI.propTypes = {
   id: PropTypes.string,
+  title: PropTypes.shape({
+    projectTitle: PropTypes.string,
+  }),
 };

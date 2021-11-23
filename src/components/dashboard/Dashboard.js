@@ -273,17 +273,17 @@ export default function Dashboard() {
             </div>
             <Grid container spacing={4}>
               {/* Project */}
-              {projects.map(function (paper, i) {
+              {projects.map(function (project, i) {
                 return (
                   <Grid item xs={6} key={i}>
                     <Paper hover className={fixedHeightPaper}>
                       <DashboardListItem
-                        id={paper.projectId}
-                        title={paper.projectTitle}
-                        category={paper.projectCategory}
-                        dateCreated={paper.projectDateCreated}
-                        projectState={paper.projectState}
-                        projectIsDeleted={paper.projectDeleted}
+                        id={project.projectId}
+                        title={project.projectTitle}
+                        category={project.projectCategory}
+                        dateCreated={project.projectDateCreated}
+                        projectState={project.projectState}
+                        projectIsDeleted={project.projectDeleted}
                       />
                     </Paper>
                   </Grid>
