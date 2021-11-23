@@ -223,10 +223,13 @@ export default function Discover() {
         <main className={classes.content}>
           <div className={classes.appBarSpacer} />
           <Container className={classes.container} maxWidth="xl">
-            <Typography variant="h6">Available Projects</Typography>
+            <Typography variant="h6">
+              {"Available for collaboration projects"}
+            </Typography>
             <Typography variant="h7" color="textSecondary">
-              Here, you&apos;ll find a list with the available projects for
-              collaboration{"."}
+              {
+                "Here, you will find a list with the available projects to collaborate with other users"
+              }
             </Typography>
             <Divider className={classes.section2} />
             <DiscoverResults />
