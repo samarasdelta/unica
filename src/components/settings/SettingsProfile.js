@@ -29,7 +29,8 @@ import {
 } from "../tools/ListItems";
 import Logo from "../images/unicasmall1.png";
 import MyToolbar from "../tools/AccountDrawer";
-import SimpleDialog from "../tools/Dialog";
+import { SettingsNotifications } from "./settings-notifications";
+import { SettingsPassword } from "./settings-password";
 
 const drawerWidth = 200;
 
@@ -223,16 +224,16 @@ export default function SettingsProfile() {
         </Drawer>
         <main className={classes.content}>
           <div className={classes.appBarSpacer} />
-          <Container className={classes.container}>
+          <Container className={classes.container} maxWidth="lg">
             <div
               style={{
-                display: "flex",
+                display: "column",
                 alignItems: "center",
-                paddingBottom: "20px",
               }}
             >
-              <Box>
-                <SimpleDialog />
+              <SettingsNotifications />
+              <Box mt={5}>
+                <SettingsPassword />
               </Box>
             </div>
           </Container>
