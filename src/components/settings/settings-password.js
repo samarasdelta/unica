@@ -32,14 +32,17 @@ export const SettingsPassword = (props) => {
             fullWidth
             label="Password"
             margin="normal"
+            required
             name="password"
             onChange={handleChange}
             type="password"
+            InputLabelProps={{ shrink: true }}
             value={values.password}
             variant="outlined"
           />
           <TextField
             fullWidth
+            required
             label="Confirm password"
             margin="normal"
             name="confirm"

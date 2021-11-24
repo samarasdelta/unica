@@ -192,9 +192,20 @@ export default function AccountProfile() {
   };
 
   const UploadButton = () => (
-    <Button>
+    <Button
+      style={{
+        fontWeight: "500",
+        textTransform: "none",
+        backgroundColor: "transparent",
+        boxShadow: "none",
+      }}
+      variant="contained"
+      component="label"
+      color="disabled"
+      startIcon={<PublishIcon />}
+    >
+      {"Upload"}
       <input type="file" hidden />
-      <PublishIcon />
     </Button>
   );
 
@@ -311,6 +322,7 @@ export default function AccountProfile() {
                           label="Email Address"
                           name="email"
                           required
+                          type="email"
                           variant="outlined"
                           onInput={handleEmailChange}
                         />
@@ -343,6 +355,7 @@ export default function AccountProfile() {
                           style={{ display: "none" }}
                         />
                         <TextField
+                          disabled
                           fullWidth
                           label="CV"
                           name="state"
