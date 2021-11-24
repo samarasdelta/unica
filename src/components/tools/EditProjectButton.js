@@ -136,7 +136,8 @@ export default function EditProjectButtonAPI(props) {
             id="title"
             label="Title"
             type="title"
-            value={title.projectTitle}
+            InputLabelProps={{ shrink: true }}
+            defaultValue={title.projectTitle}
             multiline
             rows={2}
             variant="outlined"

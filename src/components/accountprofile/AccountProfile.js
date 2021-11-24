@@ -28,6 +28,7 @@ import MenuIcon from "@material-ui/icons/Menu";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import HelpIcon from "@material-ui/icons/Help";
 import NotificationsIcon from "@material-ui/icons/Notifications";
+import PublishIcon from "@material-ui/icons/Publish";
 import {
   discoverListItems,
   dashboardListItems,
@@ -136,6 +137,10 @@ export default function AccountProfile() {
   const palletType = darkState ? "dark" : "light";
   const mainPrimaryColor = darkState ? blue[200] : blue[800];
   const mainSecondaryColor = darkState ? red[600] : red[500];
+  const [fname, setFirstName] = React.useState("");
+  const [sname, setSurName] = React.useState("");
+  const [email, setEmail] = React.useState("");
+
   const darkTheme = createMuiTheme({
     backgroundColor: "#212121",
     palette: {
@@ -159,6 +164,39 @@ export default function AccountProfile() {
   const handleDrawerClose = () => {
     setOpen(false);
   };
+
+  const handleFirstNameChange = (e) => {
+    setFirstName(e.target.value);
+  };
+  const handleSurNameChange = (e) => {
+    setSurName(e.target.value);
+  };
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
+  };
+
+  const createUser = async () => {
+    await fetch("api/users", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        fname,
+        sname,
+        email,
+      }),
+    });
+
+    window.location.reload();
+  };
+
+  const UploadButton = () => (
+    <Button>
+      <input type="file" hidden />
+      <PublishIcon />
+    </Button>
+  );
 
   return (
     <ThemeProvider theme={darkTheme}>
@@ -251,18 +289,20 @@ export default function AccountProfile() {
                           fullWidth
                           helperText="Please specify the first name"
                           label="First name"
-                          name="firstName"
+                          name="fname"
                           required
                           variant="outlined"
+                          onInput={handleFirstNameChange}
                         />
                       </Grid>
                       <Grid item md={6} xs={12}>
                         <TextField
                           fullWidth
                           label="Last name"
-                          name="lastName"
+                          name="sname"
                           required
                           variant="outlined"
+                          onInput={handleSurNameChange}
                         />
                       </Grid>
                       <Grid item md={6} xs={12}>
@@ -272,6 +312,7 @@ export default function AccountProfile() {
                           name="email"
                           required
                           variant="outlined"
+                          onInput={handleEmailChange}
                         />
                       </Grid>
                       <Grid item md={6} xs={12}>
@@ -286,20 +327,33 @@ export default function AccountProfile() {
                       <Grid item md={6} xs={12}>
                         <TextField
                           fullWidth
-                          label="Country"
-                          name="country"
+                          label="Date of Birth"
+                          type="date"
+                          InputLabelProps={{ shrink: true }}
+                          name="dateofbirth"
                           required
                           variant="outlined"
                         />
                       </Grid>
                       <Grid item md={6} xs={12}>
+                        <input
+                          accept="image/*"
+                          id="icon-button-file"
+                          type="file"
+                          style={{ display: "none" }}
+                        />
                         <TextField
                           fullWidth
-                          label="Select State"
+                          label="CV"
                           name="state"
-                          required
+                          InputLabelProps={{ shrink: true }}
+                          InputProps={{
+                            endAdornment: <UploadButton />,
+                          }}
                           variant="outlined"
-                        ></TextField>
+                        >
+                          Upload File
+                        </TextField>
                       </Grid>
                     </Grid>
                   </CardContent>
@@ -314,6 +368,7 @@ export default function AccountProfile() {
                       }}
                       color="primary"
                       variant="contained"
+                      onClick={createUser}
                     >
                       Save details
                     </Button>
