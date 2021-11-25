@@ -140,6 +140,8 @@ export default function AccountProfile() {
   const [fname, setFirstName] = React.useState("");
   const [sname, setSurName] = React.useState("");
   const [email, setEmail] = React.useState("");
+  const [dob, setDob] = React.useState("");
+  const [telephone, setTelephone] = React.useState("");
 
   const darkTheme = createMuiTheme({
     backgroundColor: "#212121",
@@ -174,6 +176,12 @@ export default function AccountProfile() {
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
   };
+  const handleDobChange = (e) => {
+    setDob(e.target.value);
+  };
+  const handleTelephoneChange = (e) => {
+    setTelephone(e.target.value);
+  };
 
   const createUser = async () => {
     await fetch("api/users", {
@@ -185,6 +193,8 @@ export default function AccountProfile() {
         fname,
         sname,
         email,
+        dob,
+        telephone,
       }),
     });
 
@@ -335,6 +345,7 @@ export default function AccountProfile() {
                           name="phone"
                           type="number"
                           variant="outlined"
+                          onInput={handleTelephoneChange}
                         />
                       </Grid>
                       <Grid item md={6} xs={12}>
@@ -346,6 +357,7 @@ export default function AccountProfile() {
                           name="dateofbirth"
                           required
                           variant="outlined"
+                          onInput={handleDobChange}
                         />
                       </Grid>
                       <Grid item md={6} xs={12}>

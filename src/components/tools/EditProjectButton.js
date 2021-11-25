@@ -37,16 +37,15 @@ function PaperComponent(props) {
 }
 
 export default function EditProjectButtonAPI(props) {
-  console.log("props:", props);
-
   const { id } = props;
 
   useEffect(() => {
     fetch(`/api/projects/${id}`)
       .then((response) => response.json())
       .then((data) => {
-        console.log("dataaa:", data);
         setTitle(data);
+        setCategory(data);
+        setPublic(data);
       })
       .catch((error) => {
         console.log("Error: ", error);
@@ -57,7 +56,7 @@ export default function EditProjectButtonAPI(props) {
   const [open, setOpen] = React.useState(false);
   const [title, setTitle] = React.useState("");
   const [category, setCategory] = React.useState("");
-  const [isPublic, setPublic] = React.useState(false);
+  const [isPublic, setPublic] = React.useState("");
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -137,7 +136,7 @@ export default function EditProjectButtonAPI(props) {
             label="Title"
             type="title"
             InputLabelProps={{ shrink: true }}
-            defaultValue={title.projectTitle}
+            defaultValue={props.title}
             multiline
             rows={2}
             variant="outlined"
@@ -148,7 +147,7 @@ export default function EditProjectButtonAPI(props) {
           <Box display="flex" mt={2}>
             <Box flexGrow={1}>
               <ComboBox
-                // value={category.projectCategory}
+                defaultValue={props.category}
                 onSelect={(category) => {
                   handleCategory(category);
                 }}
@@ -159,6 +158,7 @@ export default function EditProjectButtonAPI(props) {
                 <FormControlLabel
                   control={<Switch color="primary" />}
                   label="Public"
+                  defaultValue={props.projectState}
                   labelPlacement="start"
                   onChange={handlePublicSwitch}
                 />
@@ -170,12 +170,7 @@ export default function EditProjectButtonAPI(props) {
           <Button autoFocus onClick={handleClose} color="disabled">
             {"Cancel"}
           </Button>
-          <Button
-            onClick={() => {
-              editProject(props.id);
-            }}
-            color="primary"
-          >
+          <Button onClick={editProject} color="primary">
             {"Submit"}
           </Button>
         </DialogActions>
@@ -184,10 +179,19 @@ export default function EditProjectButtonAPI(props) {
   );
 }
 
+// EditProjectButtonAPI.propTypes = {
+//   id: PropTypes.string,
+//   title: PropTypes.shape({
+//     projectTitle: PropTypes.string,
+//     // projectCategory: PropTypes.string,
+//   }),
+// };
+
 EditProjectButtonAPI.propTypes = {
-  id: PropTypes.string,
-  title: PropTypes.shape({
-    projectTitle: PropTypes.string,
-    // projectCategory: PropTypes.string,
-  }),
+  id: PropTypes.node,
+  title: PropTypes.node,
+  category: PropTypes.string,
+  // dateCreated: PropTypes.node,
+  projectState: PropTypes.node,
+  // projectIsDeleted: PropTypes.node,
 };
