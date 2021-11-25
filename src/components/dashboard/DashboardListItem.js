@@ -82,7 +82,7 @@ export default function DashboardListItem(props) {
         <Box flexGrow={1} mt={1}>
           <Typography color="textSecondary">
             {"Last Modified:"}{" "}
-            <Moment format=" HH:MM - DD/MM/YY">{props.dateCreated}</Moment>
+            <Moment format=" HH:MM - DD/MM/YYYY">{props.dateCreated}</Moment>
           </Typography>
         </Box>
         <Box mt={1}>
