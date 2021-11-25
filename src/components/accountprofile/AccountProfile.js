@@ -194,7 +194,8 @@ export default function AccountProfile() {
   const UploadButton = () => (
     <Button
       style={{
-        fontWeight: "500",
+        color: "red",
+        fontWeight: "600",
         textTransform: "none",
         backgroundColor: "transparent",
         boxShadow: "none",
