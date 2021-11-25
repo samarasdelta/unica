@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   Box,
   Button,
@@ -9,41 +9,9 @@ import {
   TextField,
 } from "@material-ui/core";
 
-export const SettingsPassword = (props) => {
-  const [pass, setPassword] = React.useState("");
-
-  const [values, setValues] = useState({
-    password: "",
-    confirm: "",
-  });
-
-  const handlePass = (e) => {
-    setPassword(e.target.value);
-  };
-
-  const handleChange = (event) => {
-    setValues({
-      ...values,
-      [event.target.name]: event.target.value,
-    });
-  };
-
-  const userPass = async () => {
-    await fetch("api/users", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        pass,
-      }),
-    });
-
-    window.location.reload();
-  };
-
+export const SettingsPassword = () => {
   return (
-    <form {...props}>
+    <form>
       <Card>
         <CardHeader subheader="Update password" title="Password" />
         <Divider />
@@ -54,12 +22,11 @@ export const SettingsPassword = (props) => {
             margin="normal"
             required
             name="password"
-            onChange={handleChange}
+            // onChange={}
             type="password"
             InputLabelProps={{ shrink: true }}
-            value={values.password}
+            // value={values.password}
             variant="outlined"
-            onInput={handlePass}
           />
           <TextField
             fullWidth
@@ -67,9 +34,9 @@ export const SettingsPassword = (props) => {
             label="Confirm password"
             margin="normal"
             name="confirm"
-            onChange={handleChange}
+            // onChange={}
             type="password"
-            value={values.confirm}
+            // value={values.confirm}
             variant="outlined"
           />
         </CardContent>
@@ -92,7 +59,6 @@ export const SettingsPassword = (props) => {
             }}
             color="primary"
             variant="contained"
-            onClick={userPass}
           >
             Update
           </Button>
