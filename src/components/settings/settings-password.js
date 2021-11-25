@@ -10,16 +10,36 @@ import {
 } from "@material-ui/core";
 
 export const SettingsPassword = (props) => {
+  const [pass, setPassword] = React.useState("");
+
   const [values, setValues] = useState({
     password: "",
     confirm: "",
   });
+
+  const handlePass = (e) => {
+    setPassword(e.target.value);
+  };
 
   const handleChange = (event) => {
     setValues({
       ...values,
       [event.target.name]: event.target.value,
     });
+  };
+
+  const userPass = async () => {
+    await fetch("api/users", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        pass,
+      }),
+    });
+
+    window.location.reload();
   };
 
   return (
@@ -39,6 +59,7 @@ export const SettingsPassword = (props) => {
             InputLabelProps={{ shrink: true }}
             value={values.password}
             variant="outlined"
+            onInput={handlePass}
           />
           <TextField
             fullWidth
@@ -71,7 +92,7 @@ export const SettingsPassword = (props) => {
             }}
             color="primary"
             variant="contained"
-            // onClick={createUser}
+            onClick={userPass}
           >
             Update
           </Button>
