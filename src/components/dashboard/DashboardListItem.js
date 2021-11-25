@@ -9,6 +9,7 @@ import Tooltip from "@material-ui/core/Tooltip";
 import DeleteIcon from "@material-ui/icons/Delete";
 import Zoom from "@material-ui/core/Zoom";
 import EditProjectButtonAPI from "../tools/EditProjectButton";
+import Moment from "react-moment";
 
 const deleteProject = async (id) => {
   await fetch(`api/projects/${id}`, {
@@ -80,7 +81,8 @@ export default function DashboardListItem(props) {
       <Box display="flex">
         <Box flexGrow={1} mt={1}>
           <Typography color="textSecondary">
-            {"Last Modified:"} {props.dateCreated}
+            {"Last Modified:"}{" "}
+            <Moment format=" HH:MM - DD/MM/YY">{props.dateCreated}</Moment>
           </Typography>
         </Box>
         <Box mt={1}>
