@@ -36,6 +36,7 @@ import Logo from "../images/unicasmall1.png";
 import SearchBar from "../tools/SearchBar";
 import DiscoverResults from "./DiscoverListItem";
 import MyToolbar from "../tools/AccountDrawer";
+import DataTable from "./DataTable";
 
 const drawerWidth = 200;
 
@@ -233,6 +234,7 @@ export default function Discover() {
             </Typography>
             <Divider className={classes.section2} />
             <DiscoverResults />
+            <DataTable />
             <div
               style={{
                 display: "flex",

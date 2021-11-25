@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import PropTypes from "prop-types";
+// import PropTypes from "prop-types";
 import {
   Box,
   Card,
@@ -14,8 +14,8 @@ import {
 } from "@material-ui/core";
 
 const DiscoverResults = () => {
-  const [limit, setLimit] = useState(10);
-  const [page, setPage] = useState(0);
+  const [limit, setLimit] = useState(5);
+  const [page, setPage] = useState(1);
   const [projects, setProjects] = useState([]);
 
   useEffect(() => {
@@ -45,7 +45,7 @@ const DiscoverResults = () => {
           <TableHead>
             <TableRow>
               <TableCell padding="checkbox">
-                <Checkbox color="primary" />
+                <Checkbox color="primary" disabled />
               </TableCell>
               <TableCell>
                 <Typography variant="h5" color="textPrimary">
@@ -54,12 +54,12 @@ const DiscoverResults = () => {
               </TableCell>
               <TableCell>
                 <Typography variant="h6" color="textSecondary">
-                  Owner
+                  Category
                 </Typography>
               </TableCell>
               <TableCell>
                 <Typography variant="h6" color="textSecondary">
-                  Category
+                  Owner
                 </Typography>
               </TableCell>
               <TableCell>
@@ -86,14 +86,14 @@ const DiscoverResults = () => {
                   <TableCell>
                     <Box alignItems="center" display="flex">
                       <Typography color="textSecondary" variant="body1">
-                        {project.projectOwnerId}
+                        {project.projectCategory}
                       </Typography>
                     </Box>
                   </TableCell>
                   <TableCell>
                     <Box alignItems="center" display="flex">
                       <Typography color="textSecondary" variant="body1">
-                        {project.projectCategory}
+                        {project.projectOwnerId}
                       </Typography>
                     </Box>
                   </TableCell>
@@ -120,11 +120,6 @@ const DiscoverResults = () => {
       />
     </Card>
   );
-};
-
-DiscoverResults.propTypes = {
-  className: PropTypes.string,
-  customers: PropTypes.array.isRequired,
 };
 
 export default DiscoverResults;
