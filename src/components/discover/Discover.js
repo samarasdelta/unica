@@ -35,7 +35,7 @@ import {
 import Logo from "../images/unicasmall1.png";
 import SearchBar from "../tools/SearchBar";
 import DiscoverResults from "./DiscoverListItem";
-import MyToolbar from "../tools/AccountDrawer";
+import MoreButton from "../tools/AccountProfileButton";
 import DataTable from "./DataTable";
 
 const drawerWidth = 200;
@@ -195,7 +195,7 @@ export default function Discover() {
                 <HelpIcon />
               </Badge>
             </IconButton>
-            <MyToolbar />
+            <MoreButton />
             <Switch checked={darkState} onChange={handleThemeChange} />
           </Toolbar>
         </AppBar>

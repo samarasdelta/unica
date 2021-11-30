@@ -79,7 +79,6 @@ export function GroupsListItems() {
     fetch("/api/groups")
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
         setGroups(data);
       })
       .catch((error) => {

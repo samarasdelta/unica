@@ -34,7 +34,7 @@ import {
 } from "../tools/ListItems";
 import Logo from "../images/unicasmall1.png";
 import DashboardListItem from "./DashboardListItem";
-import MyToolbar from "../tools/AccountDrawer";
+import MoreButton from "../tools/AccountProfileButton";
 import SimpleDialog from "../tools/Dialog";
 import NewProjectButtonAPI from "../tools/NewProjectButton";
 
@@ -214,7 +214,7 @@ export default function Dashboard() {
                 <HelpIcon />
               </Badge>
             </IconButton>
-            <MyToolbar />
+            <MoreButton />
             <Switch checked={darkState} onChange={handleThemeChange} />
           </Toolbar>
         </AppBar>

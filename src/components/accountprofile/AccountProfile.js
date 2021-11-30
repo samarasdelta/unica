@@ -36,7 +36,7 @@ import {
   GroupsListItems,
 } from "../tools/ListItems";
 import Logo from "../images/unicasmall1.png";
-import MyToolbar from "../tools/AccountDrawer";
+import MoreButton from "../tools/AccountProfileButton";
 import SimpleDialog from "../tools/Dialog";
 
 const drawerWidth = 200;
@@ -260,7 +260,7 @@ export default function AccountProfile() {
                 <HelpIcon />
               </Badge>
             </IconButton>
-            <MyToolbar />
+            <MoreButton />
             <Switch checked={darkState} onChange={handleThemeChange} />
           </Toolbar>
         </AppBar>
@@ -320,6 +320,7 @@ export default function AccountProfile() {
                       <Grid item md={6} xs={12}>
                         <TextField
                           fullWidth
+                          helperText="Please specify the last name"
                           label="Last name"
                           name="sname"
                           required
@@ -331,6 +332,7 @@ export default function AccountProfile() {
                         <TextField
                           fullWidth
                           label="Email Address"
+                          helperText="Please type your email adress"
                           name="email"
                           required
                           type="email"

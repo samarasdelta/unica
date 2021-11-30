@@ -15,8 +15,8 @@ import clsx from "clsx";
 import { blue, red } from "@material-ui/core/colors";
 import MenuIcon from "@material-ui/icons/Menu";
 import HelpIcon from "@material-ui/icons/Help";
-import MyToolbar from "../tools/AccountDrawer";
 import NotificationsIcon from "@material-ui/icons/Notifications";
+import MoreButton from "./AccountProfileButton";
 
 const drawerWidth = 200;
 
@@ -170,7 +170,7 @@ const AppBarCustom = () => {
                 <HelpIcon />
               </Badge>
             </IconButton>
-            <MyToolbar />
+            <MoreButton />
 
             <Switch checked={darkState} onChange={handleThemeChange} />
           </Toolbar>

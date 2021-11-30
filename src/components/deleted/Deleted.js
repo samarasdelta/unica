@@ -31,7 +31,7 @@ import {
 } from "../tools/ListItems";
 import Logo from "../images/unicasmall1.png";
 import DeletedListItem from "./DeletedListItem";
-import MyToolbar from "../tools/AccountDrawer";
+import MoreButton from "../tools/AccountProfileButton";
 import SimpleDialog from "../tools/Dialog";
 
 const drawerWidth = 200;
@@ -209,7 +209,7 @@ export default function Deleted() {
                 <HelpIcon />
               </Badge>
             </IconButton>
-            <MyToolbar />
+            <MoreButton />
             <Switch checked={darkState} onChange={handleThemeChange} />
           </Toolbar>
         </AppBar>

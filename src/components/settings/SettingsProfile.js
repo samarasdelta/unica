@@ -28,7 +28,7 @@ import {
   GroupsListItems,
 } from "../tools/ListItems";
 import Logo from "../images/unicasmall1.png";
-import MyToolbar from "../tools/AccountDrawer";
+import MoreButton from "../tools/AccountProfileButton";
 import { SettingsNotifications } from "./settings-notifications";
 import { SettingsPassword } from "./settings-password";
 
@@ -194,7 +194,7 @@ export default function SettingsProfile() {
                 <HelpIcon />
               </Badge>
             </IconButton>
-            <MyToolbar />
+            <MoreButton />
             <Switch checked={darkState} onChange={handleThemeChange} />
           </Toolbar>
         </AppBar>

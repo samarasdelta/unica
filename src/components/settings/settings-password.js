@@ -20,6 +20,7 @@ export const SettingsPassword = () => {
             fullWidth
             label="Password"
             margin="normal"
+            helperText="Please specify your password"
             required
             name="password"
             // onChange={}
