@@ -9,14 +9,18 @@ import {
   Typography,
   Toolbar,
   AppBar,
+  Box,
+  Link,
   CssBaseline,
 } from "@material-ui/core";
+import { Link as RouteLink } from "react-router-dom";
 import clsx from "clsx";
 import { blue, red } from "@material-ui/core/colors";
 import MenuIcon from "@material-ui/icons/Menu";
 import HelpIcon from "@material-ui/icons/Help";
 import NotificationsIcon from "@material-ui/icons/Notifications";
 import MoreButton from "./AccountProfileButton";
+import LogoUnica from "./favicon.ico";
 
 const drawerWidth = 200;
 
@@ -141,6 +145,13 @@ const AppBarCustom = () => {
         <CssBaseline />
         <AppBar position="absolute">
           <Toolbar className={classes.toolbar}>
+            <RouteLink to="/dashboard" style={{ textDecoration: "none" }}>
+              <Link href="/dashboard" style={{ textDecoration: "none" }}>
+                <Box className={classes.toolbar}>
+                  <img src={LogoUnica} alt="logo" className="appbarlogo" />
+                </Box>
+              </Link>
+            </RouteLink>
             <IconButton
               edge="start"
               color="inherit"
