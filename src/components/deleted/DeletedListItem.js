@@ -7,6 +7,7 @@ import Box from "@material-ui/core/Box";
 import PropTypes from "prop-types";
 import Tooltip from "@material-ui/core/Tooltip";
 import DeleteForeverIcon from "@material-ui/icons/DeleteForever";
+import Moment from "react-moment";
 
 // function preventDefault(event) {
 //   event.preventDefault();
@@ -78,7 +79,7 @@ export default function DeleteListItem(props) {
         <Box flexGrow={1}>
           <Box mt={1}>
             <Typography color="textSecondary">
-              {"Public:"} {props.projectState}
+              {"Public: "} {props.projectState ? "On" : "Off"}
             </Typography>
           </Box>
         </Box>
@@ -86,7 +87,8 @@ export default function DeleteListItem(props) {
       <Box display="flex">
         <Box flexGrow={1} mt={1}>
           <Typography color="textSecondary">
-            {"Last Modified:"} {props.dateCreated}
+            {"Last Modified: "}
+            <Moment format="DD/MM/YYYY - HH:MM">{props.dateCreated}</Moment>
           </Typography>
         </Box>
         <Box mt={1}>
