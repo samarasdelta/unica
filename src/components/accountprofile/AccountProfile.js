@@ -37,7 +37,6 @@ import {
 } from "../tools/ListItems";
 import Logo from "../images/unicasmall1.png";
 import MoreButton from "../tools/AccountProfileButton";
-import SimpleDialog from "../tools/Dialog";
 
 const drawerWidth = 200;
 
@@ -102,13 +101,8 @@ const useStyles = makeStyles((theme) => ({
       width: theme.spacing(7),
     },
   },
-  appBarSpacer: theme.mixins.toolbar,
-  content: {
-    height: "100vh",
-    overflow: "auto",
-  },
   container: {
-    paddingTop: theme.spacing(2),
+    paddingTop: theme.spacing(12),
     paddingBottom: theme.spacing(2),
     maxWidth: "100vw",
   },
@@ -131,7 +125,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function AccountProfile() {
-  const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = React.useState(false);
   const [darkState, setDarkState] = useState(false);
 
   const palletType = darkState ? "dark" : "light";
@@ -288,125 +282,115 @@ export default function AccountProfile() {
             </List>
           </div>
         </Drawer>
-        <main className={classes.content}>
-          <div className={classes.appBarSpacer} />
-          <Container className={classes.container}>
-            <div>
-              <Box>
-                <SimpleDialog />
-              </Box>
-            </div>
-            <Grid justifyContent="center" alignItems="center">
-              <form autoComplete="off" noValidate>
-                <Card>
-                  <CardHeader
-                    subheader="The information can be edited"
-                    title="Profile"
-                  />
-                  <Divider />
-                  <CardContent>
-                    <Grid container spacing={3}>
-                      <Grid item md={6} xs={12}>
-                        <TextField
-                          fullWidth
-                          helperText="Please specify the first name"
-                          label="First name"
-                          name="fname"
-                          required
-                          variant="outlined"
-                          onInput={handleFirstNameChange}
-                        />
-                      </Grid>
-                      <Grid item md={6} xs={12}>
-                        <TextField
-                          fullWidth
-                          helperText="Please specify the last name"
-                          label="Last name"
-                          name="sname"
-                          required
-                          variant="outlined"
-                          onInput={handleSurNameChange}
-                        />
-                      </Grid>
-                      <Grid item md={6} xs={12}>
-                        <TextField
-                          fullWidth
-                          label="Email Address"
-                          helperText="Please type your email adress"
-                          name="email"
-                          required
-                          type="email"
-                          variant="outlined"
-                          onInput={handleEmailChange}
-                        />
-                      </Grid>
-                      <Grid item md={6} xs={12}>
-                        <TextField
-                          fullWidth
-                          label="Phone Number"
-                          name="phone"
-                          type="number"
-                          variant="outlined"
-                          onInput={handleTelephoneChange}
-                        />
-                      </Grid>
-                      <Grid item md={6} xs={12}>
-                        <TextField
-                          fullWidth
-                          label="Date of Birth"
-                          type="date"
-                          InputLabelProps={{ shrink: true }}
-                          name="dateofbirth"
-                          required
-                          variant="outlined"
-                          onInput={handleDobChange}
-                        />
-                      </Grid>
-                      <Grid item md={6} xs={12}>
-                        <input
-                          accept="image/*"
-                          id="icon-button-file"
-                          type="file"
-                          style={{ display: "none" }}
-                        />
-                        <TextField
-                          disabled
-                          defaultValue="pathname.pdf"
-                          fullWidth
-                          label="CV"
-                          name="state"
-                          InputLabelProps={{ shrink: true }}
-                          InputProps={{
-                            endAdornment: <UploadButton />,
-                          }}
-                          variant="outlined"
-                        >
-                          Upload File
-                        </TextField>
-                      </Grid>
-                    </Grid>
-                  </CardContent>
-                  <Box>
-                    <Button
-                      style={{
-                        fontWeight: "600",
-                        textTransform: "none",
-                        marginBottom: "15px",
-                        marginRight: "15px",
-                        float: "right",
+        <Container className={classes.container}>
+          <div autoComplete="off" noValidate>
+            <Card>
+              <CardHeader
+                subheader="The information can be edited"
+                title="Profile"
+              />
+              <Divider />
+              <CardContent>
+                <Grid container spacing={3}>
+                  <Grid item md={6} xs={12}>
+                    <TextField
+                      fullWidth
+                      helperText="Please specify the first name"
+                      label="First name"
+                      name="fname"
+                      required
+                      variant="outlined"
+                      onInput={handleFirstNameChange}
+                    />
+                  </Grid>
+                  <Grid item md={6} xs={12}>
+                    <TextField
+                      fullWidth
+                      helperText="Please specify the last name"
+                      label="Last name"
+                      name="sname"
+                      required
+                      variant="outlined"
+                      onInput={handleSurNameChange}
+                    />
+                  </Grid>
+                  <Grid item md={6} xs={12}>
+                    <TextField
+                      fullWidth
+                      label="Email Address"
+                      helperText="Please type your email adress"
+                      name="email"
+                      required
+                      type="email"
+                      variant="outlined"
+                      onInput={handleEmailChange}
+                    />
+                  </Grid>
+                  <Grid item md={6} xs={12}>
+                    <TextField
+                      fullWidth
+                      label="Phone Number"
+                      name="phone"
+                      type="number"
+                      variant="outlined"
+                      onInput={handleTelephoneChange}
+                    />
+                  </Grid>
+                  <Grid item md={4} xs={12}>
+                    <TextField
+                      fullWidth
+                      label="Date of Birth"
+                      type="date"
+                      InputLabelProps={{ shrink: true }}
+                      name="dateofbirth"
+                      required
+                      variant="outlined"
+                      onInput={handleDobChange}
+                    />
+                  </Grid>
+                  <Grid item md={8} xs={12}>
+                    {/* <input
+                        accept="image/*"
+                        id="icon-button-file"
+                        type="file"
+                        style={{ display: "none" }}
+                      /> */}
+                    <TextField
+                      disabled
+                      defaultValue="pathname.pdf"
+                      fullWidth
+                      label="CV"
+                      name="state"
+                      InputLabelProps={{ shrink: true }}
+                      InputProps={{
+                        endAdornment: <UploadButton />,
                       }}
-                      color="primary"
-                      variant="contained"
-                      onClick={createUser}
+                      variant="outlined"
                     >
-                      Save details
-                    </Button>
-                  </Box>
-                </Card>
-              </form>
-            </Grid>
-          </Container>
-        </main>
+                      Upload File
+                    </TextField>
+                  </Grid>
+                </Grid>
+              </CardContent>
+              <Box>
+                <Button
+                  style={{
+                    fontWeight: "600",
+                    textTransform: "none",
+                    marginBottom: "15px",
+                    marginRight: "15px",
+                    float: "right",
+                  }}
+                  color="primary"
+                  variant="contained"
+                  onClick={createUser}
+                >
+                  Save details
+                </Button>
+              </Box>
+            </Card>
+          </div>
+        </Container>
       </div>
     </ThemeProvider>
   );

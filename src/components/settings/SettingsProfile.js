@@ -101,7 +101,7 @@ const useStyles = makeStyles((theme) => ({
     overflow: "auto",
   },
   container: {
-    paddingTop: theme.spacing(2),
+    paddingTop: theme.spacing(12),
     paddingBottom: theme.spacing(2),
     maxWidth: "100vw",
   },
@@ -124,7 +124,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function SettingsProfile() {
-  const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = React.useState(false);
   const [darkState, setDarkState] = useState(false);
 
   const palletType = darkState ? "dark" : "light";
@@ -222,22 +222,13 @@ export default function SettingsProfile() {
             </List>
           </div>
         </Drawer>
-        <main className={classes.content}>
-          <div className={classes.appBarSpacer} />
-          <Container className={classes.container} maxWidth="lg">
-            <div
-              style={{
-                display: "column",
-                alignItems: "center",
-              }}
-            >
-              <SettingsNotifications />
-              <Box mt={5}>
-                <SettingsPassword />
-              </Box>
-            </div>
-          </Container>
-        </main>
+        <div className={classes.appBarSpacer} />
+        <Container className={classes.container}>
+          <SettingsNotifications />
+          <Box mt={5}>
+            <SettingsPassword />
+          </Box>
+        </Container>
       </div>
     </ThemeProvider>
   );

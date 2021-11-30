@@ -18,7 +18,7 @@ export const SettingsNotifications = (props) => (
       <CardHeader subheader="Manage the notifications" title="Notifications" />
       <Divider />
       <CardContent>
-        <Grid container spacing={6} wrap="wrap">
+        <Grid container spacing={6}>
           <Grid
             item
             md={4}
@@ -41,10 +41,7 @@ export const SettingsNotifications = (props) => (
               label="Push Notifications"
             />
             <FormControlLabel control={<Checkbox />} label="Text Messages" />
-            <FormControlLabel
-              control={<Checkbox color="primary" defaultChecked />}
-              label="Phone calls"
-            />
+            <FormControlLabel control={<Checkbox />} label="Phone calls" />
           </Grid>
           <Grid
             item
@@ -64,13 +61,10 @@ export const SettingsNotifications = (props) => (
               label="Email"
             />
             <FormControlLabel
-              control={<Checkbox />}
+              control={<Checkbox color="primary" defaultChecked />}
               label="Push Notifications"
             />
-            <FormControlLabel
-              control={<Checkbox color="primary" defaultChecked />}
-              label="Phone calls"
-            />
+            <FormControlLabel control={<Checkbox />} label="Phone calls" />
           </Grid>
         </Grid>
       </CardContent>
