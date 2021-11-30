@@ -20,7 +20,7 @@ import MenuIcon from "@material-ui/icons/Menu";
 import HelpIcon from "@material-ui/icons/Help";
 import NotificationsIcon from "@material-ui/icons/Notifications";
 import MoreButton from "./AccountProfileButton";
-import LogoUnica from "./favicon.ico";
+import LogoUnica from "./images/favicon.ico";
 
 const drawerWidth = 200;
 
