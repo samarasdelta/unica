@@ -13,17 +13,16 @@ import TableRow from "@material-ui/core/TableRow";
 import Moment from "react-moment";
 
 const columns = [
-  { id: "title", label: "Title", minWidth: 200 },
-  { id: "category", label: "Category", minWidth: 0 },
+  { id: "title", label: "Title" },
+  { id: "category", label: "Category", align: "right" },
   {
     id: "owner",
     label: "Owner",
-    minWidth: 0,
+    align: "right",
   },
   {
     id: "lmodified",
     label: "Last Modified",
-    minWidth: 0,
     align: "right",
   },
 ];
@@ -113,15 +112,29 @@ const DataTable = () => {
                     </Typography>
                   </TableCell>
                   <TableCell>
-                    <Typography color="textPrimary" variant="body1">
-                      {project.projectCategory}
-                    </Typography>
+                    <Grid
+                      container
+                      direction="column"
+                      justifyContent="center"
+                      alignItems="flex-end"
+                    >
+                      <Typography color="textPrimary" variant="body1">
+                        {project.projectCategory}
+                      </Typography>
+                    </Grid>
                   </TableCell>
                   <TableCell>
-                    <Typography color="textPrimary" variant="body1">
-                      kwstas
-                      {project.ownerId}
-                    </Typography>
+                    <Grid
+                      container
+                      direction="column"
+                      justifyContent="center"
+                      alignItems="flex-end"
+                    >
+                      <Typography color="textPrimary" variant="body1">
+                        kwstas
+                        {project.ownerId}
+                      </Typography>
+                    </Grid>
                   </TableCell>
                   <TableCell>
                     <Grid

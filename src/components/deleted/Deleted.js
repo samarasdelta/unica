@@ -255,7 +255,7 @@ export default function Deleted() {
               {/* Project */}
               {projects.map(function (project, i) {
                 return (
-                  <Grid item xs={6} key={i}>
+                  <Grid item xs={12} key={i}>
                     <Paper hover className={fixedHeightPaper}>
                       <DeletedListItem
                         id={project.projectId}
