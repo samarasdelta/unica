@@ -13,20 +13,18 @@ import TableRow from "@material-ui/core/TableRow";
 import Moment from "react-moment";
 
 const columns = [
-  { id: "title", label: "Title", minWidth: 420 },
+  { id: "title", label: "Title", minWidth: 200 },
   { id: "category", label: "Category", minWidth: 0 },
   {
     id: "owner",
     label: "Owner",
     minWidth: 0,
-    format: (value) => value.toLocaleString("en-US"),
   },
   {
     id: "lmodified",
     label: "Last Modified",
     minWidth: 0,
     align: "right",
-    format: (value) => value.toFixed(2),
   },
 ];
 

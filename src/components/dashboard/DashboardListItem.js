@@ -72,7 +72,7 @@ export default function DashboardListItem(props) {
         <Box flexGrow={1}>
           <Box mt={1}>
             <Typography color="textSecondary">
-              {"Public:"} {props.projectState}
+              {"Public: "} {props.projectState ? "On" : "Off"}
             </Typography>
           </Box>
         </Box>
@@ -81,7 +81,7 @@ export default function DashboardListItem(props) {
       <Box display="flex">
         <Box flexGrow={1} mt={1}>
           <Typography color="textSecondary">
-            {"Last Modified:"}{" "}
+            {"Last Modified: "}
             <Moment format="DD/MM/YYYY - HH:MM">{props.dateCreated}</Moment>
           </Typography>
         </Box>
