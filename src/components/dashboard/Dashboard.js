@@ -271,12 +271,12 @@ export default function Dashboard() {
                 <SimpleDialog />
               </Box>
             </div>
-            <Grid container spacing={4}>
+            <Grid container spacing={2}>
               {/* Project */}
               {projects.map(function (project, i) {
                 return (
-                  <Grid item xs={6} key={i}>
-                    <Paper hover className={fixedHeightPaper}>
+                  <Grid item xs={12} key={i}>
+                    <Paper className={fixedHeightPaper}>
                       <DashboardListItem
                         id={project.projectId}
                         title={project.projectTitle}
