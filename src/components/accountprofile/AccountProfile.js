@@ -30,7 +30,7 @@ import HelpIcon from "@material-ui/icons/Help";
 import NotificationsIcon from "@material-ui/icons/Notifications";
 import PublishIcon from "@material-ui/icons/Publish";
 import {
-  discoverListItems,
+  DiscoverListItems,
   dashboardListItems,
   mainListItems,
   GroupsListItems,
@@ -274,7 +274,7 @@ export default function AccountProfile() {
             </IconButton>
           </div>
           <div className={classes.Top}>
-            <List>{discoverListItems}</List>
+            <List>{DiscoverListItems}</List>
             <List>{dashboardListItems}</List>
             <List>{mainListItems}</List>
             <List>

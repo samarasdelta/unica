@@ -27,7 +27,7 @@ import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import HelpIcon from "@material-ui/icons/Help";
 import NotificationsIcon from "@material-ui/icons/Notifications";
 import {
-  discoverListItems,
+  DiscoverListItems,
   dashboardListItems,
   mainListItems,
   GroupsListItems,
@@ -234,7 +234,7 @@ export default function Dashboard() {
             </IconButton>
           </div>
           <div className={classes.Top}>
-            <List>{discoverListItems}</List>
+            <List>{DiscoverListItems}</List>
             <List>{dashboardListItems}</List>
             <List>{mainListItems}</List>
             <List>

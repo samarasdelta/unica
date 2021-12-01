@@ -14,7 +14,7 @@ import Link from "@material-ui/core/Link";
 import Divider from "@material-ui/core/Divider";
 import NewTeamButtonAPI from "../tools/NewTeamButton";
 
-export const discoverListItems = (
+export const DiscoverListItems = (
   <div>
     <RouteLink to="discover" style={{ textDecoration: "none" }}>
       <Link color="textPrimary" style={{ textDecoration: "none" }}>

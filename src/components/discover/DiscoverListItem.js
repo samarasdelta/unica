@@ -144,7 +144,7 @@ const DataTable = () => {
                       alignItems="flex-end"
                     >
                       <Typography color="textPrimary" variant="body1">
-                        <Moment position="right" format="DD/MM/YYYY - HH:mm">
+                        <Moment position="right" format="DD/MM/YYYY - HH:mm:ss">
                           {project.dateCreated}
                         </Moment>
                       </Typography>
