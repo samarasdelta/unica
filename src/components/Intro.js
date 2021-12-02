@@ -13,6 +13,7 @@ import Box from "@material-ui/core/Box";
 import Logo from "./images/unicalogo.png";
 import CopyrightUnica from "./tools/CopyrightUnica";
 import Logosmall from "./images/unicasmall1.png";
+import "./tools/css.css";
 
 const useStyles = makeStyles((theme) => ({
   "@global": {
@@ -45,7 +46,7 @@ const useStyles = makeStyles((theme) => ({
   },
   footer: {
     borderTop: `1px solid ${theme.palette.divider}`,
-    marginTop: theme.spacing(18),
+    marginTop: theme.spacing(6),
     paddingTop: theme.spacing(0),
     paddingBottom: theme.spacing(0),
     [theme.breakpoints.up("sm")]: {
@@ -60,6 +61,12 @@ const footers = [
   {
     title: "University",
     description: ["Team", "History", "Contact us", "Locations"],
+    href: [
+      "https://www.ece.uowm.gr/",
+      "https://www.ece.gr/",
+      "https://www.uowm.gr/",
+      "https://www.google.gr/",
+    ],
   },
   {
     title: "Features",
@@ -138,57 +145,96 @@ export default function Intro() {
           </Typography>
         </Box>
         <Typography
-          variant="h5"
+          style={{
+            fontWeight: "500",
+            fontSize: "32px",
+            color: "shadowgrey",
+            fontFamily: "Poppins, sans-serif",
+          }}
           align="center"
           color="textSecondary"
           component="p"
           gutterBottom
         >
-          {"University Cooperation Articles"}
+          <span className="i">UNI</span>versity <span className="i">C</span>
+          ooperation <span className="i">A</span>rticles
         </Typography>
         <Typography
-          variant="h4"
+          style={{
+            fontWeight: "500",
+            fontSize: "24px",
+            color: "shadowgrey",
+            fontFamily: "Poppins, sans-serif",
+          }}
           align="center"
           color="textSecondary"
           gutterBottom
         >
-          {"The Collaboration Platform for Project Writing"}
+          The <span className="underline">collaboration</span> platform for{" "}
+          <span className="underline">project writing</span>
         </Typography>
-        <form className={classes.form} noValidate>
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-          >
-            <Box p={1} m={1}>
-              <Button
-                component={RouteLink}
-                to="/signup"
-                type="submit"
-                variant="contained"
-                color="primary"
-                className={classes.submit}
-              >
-                {"SIGN UP"}
-              </Button>
-            </Box>
-            <Box>{"OR"}</Box>
-            <Box p={1} m={1}>
-              <Button
-                component={RouteLink}
-                to="/discover"
-                type="submit"
-                variant="contained"
-                color="primary"
-                className={classes.submit}
-              >
-                {"GUEST SIGN IN"}
-              </Button>
-            </Box>
-          </div>
-        </form>
+        <Grid
+          container
+          direction="column"
+          justifyContent="center"
+          alignItems="center"
+        >
+          <Box>
+            <Button
+              style={{
+                fontWeight: "600",
+                textTransform: "none",
+                marginTop: "30px",
+                fontSize: "18px",
+                marginBottom: "15px",
+                marginRight: "15px",
+                float: "right",
+              }}
+              component={RouteLink}
+              to="/signup"
+              type="submit"
+              variant="contained"
+              color="primary"
+              className={classes.submit}
+            >
+              {"Sign up"}
+            </Button>
+          </Box>
+          <Box>
+            <Typography
+              style={{
+                fontWeight: "500",
+                fontSize: "12px",
+                color: "shadowgrey",
+                fontFamily: "Poppins, sans-serif",
+              }}
+            >
+              {"//"}
+            </Typography>
+          </Box>
+          <Box>
+            <Link
+              style={{
+                fontWeight: "600",
+                textTransform: "none",
+                fontSize: "20px",
+
+                marginTop: "15px",
+                marginBottom: "15px",
+                marginRight: "15px",
+                float: "right",
+              }}
+              component={RouteLink}
+              to="/discover"
+              type="submit"
+              variant="contained"
+              color="primary"
+              className={classes.submit}
+            >
+              {"Continue as a guest"}
+            </Link>
+          </Box>
+        </Grid>
       </Container>
       {/* End hero unit */}
       {/* Footer */}
@@ -202,7 +248,15 @@ export default function Intro() {
               <ul>
                 {footer.description.map((item) => (
                   <li key={item}>
-                    <Link href="" variant="subtitle1" color="textSecondary">
+                    <Link
+                      href={footer.href}
+                      style={{
+                        textTransform: "none",
+                        color: "grey",
+                        fontWeight: "500",
+                      }}
+                      target="_blank"
+                    >
                       {item}
                     </Link>
                   </li>

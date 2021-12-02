@@ -1,0 +1,11 @@
+.i {
+  color: #000;
+  font-size: "48px";
+}
+
+.underline {
+  background: linear-gradient(to right, #dcffff, #2e81ef 100%);
+  background-position: 0 100%;
+  background-size: 100% 2px;
+  background-repeat: repeat-x;
+}
