@@ -1,11 +1,51 @@
 .i {
-  color: #000;
-  font-size: "48px";
+  color: #5c92ff;
+}
+
+.buttpnlgn:hover {
+  opacity: 0.8;
 }
 
 .underline {
-  background: linear-gradient(to right, #dcffff, #2e81ef 100%);
+  background: linear-gradient(to right, #dcffff, #5c92ff 100%);
   background-position: 0 100%;
   background-size: 100% 2px;
   background-repeat: repeat-x;
+}
+
+.footerlinks a {
+  font-size: 24px;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  text-decoration: none;
+}
+
+.footerlinks a:link,
+.footerlinks a:visited {
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
+  color: #5c91ff;
+}
+
+.footerlinks a:hover {
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
+  color: #5c91ff;
+  opacity: 0.8;
+}
+
+.maptitle {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.5rem;
+}
+
+.maptitleuse {
+  font-family: "Poppins", sans-serif;
+  text-align: start;
+  font-size: 1.2rem;
+}
+
+.textdefault {
+  font-size: 0.87rem;
+  font-family: "Poppins", sans-serif;
 }

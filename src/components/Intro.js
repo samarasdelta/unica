@@ -39,7 +39,7 @@ const useStyles = makeStyles((theme) => ({
     margin: theme.spacing(1, 1.5),
   },
   heroContent: {
-    padding: theme.spacing(4, 0, 4),
+    padding: theme.spacing(6, 0, 18),
   },
   form: {
     marginTop: theme.spacing(4),
@@ -55,42 +55,6 @@ const useStyles = makeStyles((theme) => ({
     },
   },
 }));
-
-const footers = [
-  /* Dummy data */
-  {
-    title: "University",
-    description: ["Team", "History", "Contact us", "Locations"],
-    href: [
-      "https://www.ece.uowm.gr/",
-      "https://www.ece.gr/",
-      "https://www.uowm.gr/",
-      "https://www.google.gr/",
-    ],
-  },
-  {
-    title: "Features",
-    description: [
-      "Cool stuff",
-      "Random feature",
-      "Team feature",
-      "Developer stuff",
-    ],
-  },
-  {
-    title: "Resources",
-    description: [
-      "Resource",
-      "Resource name",
-      "Another resource",
-      "Final resource",
-    ],
-  },
-  {
-    title: "Legal",
-    description: ["Privacy policy", "Terms of use"],
-  },
-];
 
 export default function Intro() {
   const classes = useStyles();
@@ -139,15 +103,10 @@ export default function Intro() {
       </AppBar>
       {/* Hero unit */}
       <Container component="main" className={classes.heroContent}>
-        <Box pt={6}>
-          <Typography align="center">
-            <img src={Logo} alt="logo" />
-          </Typography>
-        </Box>
-        <Typography
+        {/* <Typography
           style={{
             fontWeight: "500",
-            fontSize: "32px",
+            fontSize: "36px",
             color: "shadowgrey",
             fontFamily: "Poppins, sans-serif",
           }}
@@ -158,12 +117,16 @@ export default function Intro() {
         >
           <span className="i">UNI</span>versity <span className="i">C</span>
           ooperation <span className="i">A</span>rticles
-        </Typography>
+        </Typography> */}
+        <Box pt={8}>
+          <div align="center">
+            <img src={Logo} alt="logo" />
+          </div>
+        </Box>
         <Typography
           style={{
             fontWeight: "500",
             fontSize: "24px",
-            color: "shadowgrey",
             fontFamily: "Poppins, sans-serif",
           }}
           align="center"
@@ -186,85 +149,49 @@ export default function Intro() {
                 textTransform: "none",
                 marginTop: "30px",
                 fontSize: "18px",
+                backgroundColor: "#5C92FF",
                 marginBottom: "15px",
                 marginRight: "15px",
                 float: "right",
+                borderRadius: "8px",
               }}
               component={RouteLink}
               to="/signup"
               type="submit"
               variant="contained"
               color="primary"
-              className={classes.submit}
+              className="buttpnlgn"
             >
               {"Sign up"}
             </Button>
           </Box>
-          <Box>
+          <Box pb={1}>
             <Typography
               style={{
-                fontWeight: "500",
-                fontSize: "12px",
-                color: "shadowgrey",
+                fontWeight: "400",
+                fontSize: "18px",
                 fontFamily: "Poppins, sans-serif",
               }}
             >
-              {"//"}
+              {"or"}
             </Typography>
           </Box>
-          <Box>
+          <div className="footerlinks">
             <Link
-              style={{
-                fontWeight: "600",
-                textTransform: "none",
-                fontSize: "20px",
-
-                marginTop: "15px",
-                marginBottom: "15px",
-                marginRight: "15px",
-                float: "right",
-              }}
               component={RouteLink}
               to="/discover"
               type="submit"
               variant="contained"
               color="primary"
-              className={classes.submit}
             >
               {"Continue as a guest"}
             </Link>
-          </Box>
+          </div>
         </Grid>
       </Container>
       {/* End hero unit */}
       {/* Footer */}
       <Container maxWidth="md" component="footer" className={classes.footer}>
-        <Grid container spacing={4} justify="space-evenly">
-          {footers.map((footer) => (
-            <Grid item xs={6} sm={3} key={footer.title}>
-              <Typography variant="h6" color="textPrimary" gutterBottom>
-                {footer.title}
-              </Typography>
-              <ul>
-                {footer.description.map((item) => (
-                  <li key={item}>
-                    <Link
-                      href={footer.href}
-                      style={{
-                        textTransform: "none",
-                        color: "grey",
-                        fontWeight: "500",
-                      }}
-                      target="_blank"
-                    >
-                      {item}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </Grid>
-          ))}
-        </Grid>
         <Box pt={4}>
           <CopyrightUnica />
         </Box>

@@ -13,6 +13,8 @@ import DeletedPage from "./pages/DeletedPage.js";
 import ProjectPage from "./pages/ProjectPage.js";
 import AccountPage from "./pages/AccountPage.js";
 import SettingsPage from "./pages/SettingsPage.js";
+import PrivacyPage from "./pages/PrivacyPage.js";
+import TermsPage from "./pages/TermsPage.js";
 
 function App() {
   return (
@@ -24,6 +26,12 @@ function App() {
           </Route>
           <Route path="/404">
             <NotFoundPage />
+          </Route>
+          <Route path="/terms">
+            <TermsPage />
+          </Route>
+          <Route path="/privacy">
+            <PrivacyPage />
           </Route>
           <Route path="/forgotemail">
             <ForgotEmailPage />
