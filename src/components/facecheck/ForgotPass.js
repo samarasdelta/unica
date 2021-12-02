@@ -42,7 +42,7 @@ export default function ForgotPass() {
           <LockOutlinedIcon />
         </Avatar>
         <Typography component="h1" variant="h5">
-          Password Recovery
+          Password recovery
         </Typography>
         <form className={classes.form} noValidate>
           <TextField
@@ -64,6 +64,13 @@ export default function ForgotPass() {
             variant="contained"
             color="primary"
             className={classes.submit}
+            style={{
+              fontWeight: "600",
+              color: "white",
+              textTransform: "none",
+              fontSize: "1rem",
+              borderRadius: "4px",
+            }}
           >
             Next
           </Button>

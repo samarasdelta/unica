@@ -85,17 +85,17 @@ export default function DashboardListItem(props) {
             <Moment format="DD/MM/YYYY - HH:MM">{props.dateCreated}</Moment>
           </Typography>
         </Box>
-        <Box mt={1}>
+        <Box mt={1} style={{ padding: "0 20px" }}>
           <Link color="primary" href={`/project/${props.id}`}>
             {"View full project"}
           </Link>
         </Box>
         <Box m={1}>{"|"}</Box>
-        <Box mt={1}>
+        <Box mt={1} style={{ padding: "0 20px" }}>
           <EditProjectButtonAPI id={props.id} title={props.title} />
         </Box>
         <Box m={1}>{"|"}</Box>
-        <Box mt={1}>
+        <Box mt={1} style={{ padding: "0 20px" }}>
           <Link
             color="primary"
             href="#"

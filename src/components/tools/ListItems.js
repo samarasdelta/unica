@@ -94,7 +94,7 @@ export function GroupsListItems() {
         return (
           <ListItem button key={group.groupId}>
             <ListItemIcon>
-              <GroupWorkIcon />
+              <GroupWorkIcon color="primary" />
             </ListItemIcon>
             <ListItemText secondary={group.groupTitle} />
           </ListItem>

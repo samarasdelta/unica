@@ -113,8 +113,15 @@ export default function SignUp() {
             variant="contained"
             color="primary"
             className={classes.submit}
+            style={{
+              fontWeight: "600",
+              color: "white",
+              textTransform: "none",
+              fontSize: "1rem",
+              borderRadius: "4px",
+            }}
           >
-            Sign Up
+            {"Sign up"}
           </Button>
           <Grid container justify="flex-end">
             <Grid item>

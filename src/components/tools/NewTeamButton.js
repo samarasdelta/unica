@@ -60,7 +60,7 @@ export default function NewTeamButtonAPI() {
         onClick={handleClickOpen}
       >
         <ListItemIcon>
-          <AddCircleIcon />
+          <AddCircleIcon style={{ color: "green" }} />
         </ListItemIcon>
         <ListItemText secondary="New team" />
       </ListItem>

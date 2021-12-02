@@ -81,8 +81,15 @@ export default function LogIn() {
             variant="contained"
             color="primary"
             className={classes.submit}
+            style={{
+              fontWeight: "600",
+              color: "white",
+              textTransform: "none",
+              fontSize: "1rem",
+              borderRadius: "4px",
+            }}
           >
-            Log In
+            Log in
           </Button>
           <Grid container>
             <Grid item xs>
