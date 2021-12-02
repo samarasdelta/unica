@@ -35,9 +35,7 @@ export default function Map() {
       <Container maxWidth="lg" component="footer" className={classes.footer}>
         <Grid container direction="column" justify="center" alignItems="center">
           <b>
-            <span className="maptitle">
-              Who can <span className="iii">/</span> Why use UNI
-            </span>
+            <span className="maptitle">Why use UNI</span>
             <span className="ii">versity</span>
             <span className="maptitle"> C</span>
             <span className="ii">ooperation</span>
