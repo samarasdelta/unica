@@ -2,6 +2,17 @@
   color: #5c92ff;
 }
 
+.ii {
+  color: #5c92ff;
+  font-size: 1.6rem;
+  letter-spacing: -2px;
+}
+
+.iii {
+  color: #5c92ff;
+  font-size: 1.1rem;
+}
+
 .buttpnlgn:hover {
   opacity: 0.8;
 }
@@ -14,8 +25,9 @@
 }
 
 .footerlinks a {
-  font-size: 24px;
-  font-weight: 600;
+  padding: 0 10px;
+  font-size: 1.6rem;
+  font-weight: 500;
   font-family: "Poppins", sans-serif;
   text-decoration: none;
 }
@@ -46,6 +58,22 @@
 }
 
 .textdefault {
-  font-size: 0.87rem;
+  font-size: 1.2rem;
   font-family: "Poppins", sans-serif;
+}
+
+.textdefault2 {
+  font-size: 0.8rem;
+  font-family: "Poppins", sans-serif;
+}
+
+.titleintro {
+  font-family: "Poppins", sans-serif;
+  font-size: 2.4rem;
+  text-align: center;
+}
+
+.termstext {
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
 }

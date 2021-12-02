@@ -1,9 +1,10 @@
 import React from "react";
 import { Grid, makeStyles, Box } from "@material-ui/core";
+import "../tools/css.css";
 
 const useStyles = makeStyles((theme) => ({
   margin: {
-    marginTop: theme.spacing(20),
+    marginTop: theme.spacing(10),
   },
 }));
 
@@ -19,7 +20,7 @@ export default function PrivacyFirst() {
         </Grid>
       </div>
       <Box m={2}>
-        <div>
+        <div className="termstext">
           {[...new Array(48)]
             .map(
               () => `Cras mattis consectetur purus sit amet fermentum.

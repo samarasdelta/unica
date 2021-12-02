@@ -39,7 +39,7 @@ const useStyles = makeStyles((theme) => ({
     margin: theme.spacing(1, 1.5),
   },
   heroContent: {
-    padding: theme.spacing(6, 0, 18),
+    padding: theme.spacing(2, 0, 2),
   },
   form: {
     marginTop: theme.spacing(4),
@@ -103,21 +103,6 @@ export default function Intro() {
       </AppBar>
       {/* Hero unit */}
       <Container component="main" className={classes.heroContent}>
-        {/* <Typography
-          style={{
-            fontWeight: "500",
-            fontSize: "36px",
-            color: "shadowgrey",
-            fontFamily: "Poppins, sans-serif",
-          }}
-          align="center"
-          color="textSecondary"
-          component="p"
-          gutterBottom
-        >
-          <span className="i">UNI</span>versity <span className="i">C</span>
-          ooperation <span className="i">A</span>rticles
-        </Typography> */}
         <Box pt={8}>
           <div align="center">
             <img src={Logo} alt="logo" />
@@ -126,7 +111,7 @@ export default function Intro() {
         <Typography
           style={{
             fontWeight: "500",
-            fontSize: "24px",
+            fontSize: "1.8rem",
             fontFamily: "Poppins, sans-serif",
           }}
           align="center"

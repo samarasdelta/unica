@@ -7,10 +7,10 @@ export default function CopyrightUnica() {
   return (
     <Grid>
       <Map />
-      <Box my={2} m={2}>
+      <Box my={2}>
         <div className="footerlinks" align="center">
           <a href="/terms" target="_blank">
-            {"Terms"}{" "}
+            {"Terms"}
           </a>
           <a href="/privacy" target="_blank">
             {"Privacy Policy"}
