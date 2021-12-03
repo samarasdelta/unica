@@ -92,12 +92,19 @@ export function GroupsListItems() {
       <NewTeamButtonAPI />
       {groups.map(function (group, i) {
         return (
-          <ListItem button key={group.groupId}>
-            <ListItemIcon>
-              <GroupWorkIcon color="primary" />
-            </ListItemIcon>
-            <ListItemText secondary={group.groupTitle} />
-          </ListItem>
+          <Link
+            href={`/groups/${group.groupId}`}
+            key={group.groupId}
+            color="textPrimary"
+            style={{ textDecoration: "none" }}
+          >
+            <ListItem button>
+              <ListItemIcon>
+                <GroupWorkIcon color="primary" />
+              </ListItemIcon>
+              <ListItemText secondary={group.groupTitle} />
+            </ListItem>
+          </Link>
         );
       })}
       <ListSubheader inset>User&apos;s teams</ListSubheader>

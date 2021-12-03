@@ -15,6 +15,7 @@ import AccountPage from "./pages/AccountPage.js";
 import SettingsPage from "./pages/SettingsPage.js";
 import PrivacyPage from "./pages/PrivacyPage.js";
 import TermsPage from "./pages/TermsPage.js";
+import GroupPage from "./pages/GroupPage.js";
 
 function App() {
   return (
@@ -47,6 +48,9 @@ function App() {
           </Route>
           <Route path="/project/:id">
             <ProjectPage />
+          </Route>
+          <Route path="/groups/:id">
+            <GroupPage />
           </Route>
           <Route path="/account">
             <AccountPage />
