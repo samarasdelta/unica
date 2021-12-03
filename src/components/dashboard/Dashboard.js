@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-//import { Link as RouteLink } from "react-router-dom";
 import {
   createMuiTheme,
   ThemeProvider,
@@ -14,6 +13,7 @@ import {
   Switch,
   Typography,
   Toolbar,
+  Link,
   AppBar,
   Drawer,
   List,
@@ -227,7 +227,9 @@ export default function Dashboard() {
         >
           <div className={classes.toolbarIcon}>
             <Box pr={10}>
-              <img src={Logo} alt="logo" />
+              <Link href={`/dashboard`}>
+                <img src={Logo} alt="logo" />
+              </Link>
             </Box>
             <IconButton onClick={handleDrawerClose}>
               <ChevronLeftIcon />

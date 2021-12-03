@@ -8,6 +8,7 @@ import {
   Badge,
   Container,
   IconButton,
+  Link,
   Box,
   Switch,
   Typography,
@@ -222,7 +223,9 @@ export default function Deleted() {
         >
           <div className={classes.toolbarIcon}>
             <Box pr={10}>
-              <img src={Logo} alt="logo" />
+              <Link href={`/dashboard`}>
+                <img src={Logo} alt="logo" />
+              </Link>
             </Box>
             <IconButton onClick={handleDrawerClose}>
               <ChevronLeftIcon />
