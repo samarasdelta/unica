@@ -7,7 +7,6 @@ import Box from "@material-ui/core/Box";
 import PropTypes from "prop-types";
 import Tooltip from "@material-ui/core/Tooltip";
 import DeleteIcon from "@material-ui/icons/Delete";
-import Zoom from "@material-ui/core/Zoom";
 import EditProjectButtonAPI from "../tools/EditProjectButton";
 import Moment from "react-moment";
 
@@ -34,10 +33,6 @@ const useStyles = makeStyles({
   boxSpace: {
     flex: 1,
   },
-
-  customWidth: {
-    maxWidth: "none",
-  },
 });
 
 export default function DashboardListItem(props) {
@@ -45,21 +40,11 @@ export default function DashboardListItem(props) {
   return (
     <React.Fragment>
       <Box className={classes.boxSpace}>
-        <Tooltip
-          arrow
-          classes={{ tooltip: classes.customWidth }}
-          title={props.title}
-          interactive
-          TransitionComponent={Zoom}
-          enterDelay={1200}
-          leaveDelay={500}
-        >
-          <div>
-            <Link href={`/project/${props.id}`}>
-              <Title>{props.title}</Title>
-            </Link>
-          </div>
-        </Tooltip>
+        <div>
+          <Link href={`/project/${props.id}`}>
+            <Title style={{ maxWidth: "25px" }}>{props.title}</Title>
+          </Link>
+        </div>
       </Box>
 
       <Box display="flex" className={classes.boxSpace}>

@@ -53,21 +53,11 @@ export default function DeleteListItem(props) {
   return (
     <React.Fragment>
       <Box className={classes.boxSpace}>
-        <Tooltip
-          classes={{ tooltip: classes.customWidth }}
-          title={props.title}
-          placement="bottom"
-          arrow
-          interactive
-          enterDelay={1000}
-          leaveDelay={500}
-        >
-          <div>
-            <Link href={`/project/${props.id}`}>
-              <Title>{props.title}</Title>
-            </Link>
-          </div>
-        </Tooltip>
+        <div>
+          <Link href={`/project/${props.id}`}>
+            <Title>{props.title}</Title>
+          </Link>
+        </div>
       </Box>
 
       <Box display="flex" className={classes.boxSpace}>
