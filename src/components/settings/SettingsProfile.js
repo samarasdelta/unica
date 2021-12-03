@@ -8,6 +8,7 @@ import {
   IconButton,
   Box,
   Switch,
+  Link,
   Typography,
   Toolbar,
   AppBar,
@@ -207,7 +208,9 @@ export default function SettingsProfile() {
         >
           <div className={classes.toolbarIcon}>
             <Box pr={10}>
-              <img src={Logo} alt="logo" />
+              <Link href={`/dashboard`}>
+                <img src={Logo} alt="logo" />
+              </Link>
             </Box>
             <IconButton onClick={handleDrawerClose}>
               <ChevronLeftIcon />

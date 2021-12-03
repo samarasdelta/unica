@@ -9,6 +9,7 @@ import {
   Box,
   Switch,
   Typography,
+  Link,
   Toolbar,
   AppBar,
   Drawer,
@@ -267,7 +268,9 @@ export default function AccountProfile() {
         >
           <div className={classes.toolbarIcon}>
             <Box pr={10}>
-              <img src={Logo} alt="logo" />
+              <Link href={`/dashboard`}>
+                <img src={Logo} alt="logo" />
+              </Link>
             </Box>
             <IconButton onClick={handleDrawerClose}>
               <ChevronLeftIcon />
