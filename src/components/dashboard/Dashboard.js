@@ -138,7 +138,6 @@ export default function Dashboard() {
     fetch("/api/projects")
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
         setProjects(data);
       })
       .catch((error) => {
