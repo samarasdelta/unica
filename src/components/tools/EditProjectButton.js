@@ -45,7 +45,7 @@ export default function EditProjectButtonAPI(props) {
       .then((data) => {
         console.log("data", data);
         setTitle(data.projectTitle);
-        // setCategory(data);
+        setCategory(data.projectCategory);
         // setPublic(data);
       })
       .catch((error) => {
@@ -56,14 +56,14 @@ export default function EditProjectButtonAPI(props) {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
   const [title, setTitle] = React.useState("");
-  // const [category, setCategory] = React.useState("");
+  const [category, setCategory] = React.useState("");
   // const [isPublic, setPublic] = React.useState("");
 
-  const handleClickOpen = () => {
+  const openModal = () => {
     setOpen(true);
   };
 
-  const handleClose = () => {
+  const closeModal = () => {
     setOpen(false);
   };
 
@@ -71,15 +71,15 @@ export default function EditProjectButtonAPI(props) {
     setTitle(e.target.value);
   };
 
-  // const handleCategory = (category) => {
-  //   setCategory(category);
-  // };
+  const handleCategory = (category) => {
+    setCategory(category);
+  };
 
   // const handlePublicSwitch = (e) => {
   //   setPublic(e.target.checked);
   // };
 
-  const editProject = async () => {
+  const updateProject = async () => {
     console.log("update id", id);
     await fetch(`/api/projects/${id}`, {
       method: "PUT",
@@ -88,7 +88,7 @@ export default function EditProjectButtonAPI(props) {
       },
       body: JSON.stringify({
         title,
-        // category,
+        category,
         // public: isPublic ? true : false,
       }),
     });
@@ -103,7 +103,7 @@ export default function EditProjectButtonAPI(props) {
         color="primary"
         size="small"
         startIcon={<CreateIcon />}
-        onClick={handleClickOpen}
+        onClick={openModal}
       >
         {"Edit Project"}
       </Button>
@@ -112,7 +112,7 @@ export default function EditProjectButtonAPI(props) {
         fullWidth
         maxWidth="sm"
         open={open}
-        onClose={handleClose}
+        onClose={closeModal}
         PaperComponent={PaperComponent}
         aria-labelledby="draggable-dialog-title"
       >
@@ -135,7 +135,7 @@ export default function EditProjectButtonAPI(props) {
             label="Title"
             type="title"
             InputLabelProps={{ shrink: true }}
-            defaultValue={props.title}
+            defaultValue={title}
             multiline
             rows={2}
             variant="outlined"
@@ -148,10 +148,10 @@ export default function EditProjectButtonAPI(props) {
           <Box display="flex" mt={2}>
             <Box flexGrow={1}>
               <ComboBox
-                defaultValue={props.category}
-                // onSelect={(category) => {
-                //   handleCategory(category);
-                // }}
+                defaultValue={category}
+                onSelect={(category) => {
+                  handleCategory(category);
+                }}
               />
             </Box>
             <Box mt={1} pr={3}>
@@ -168,13 +168,14 @@ export default function EditProjectButtonAPI(props) {
           </Box>
         </DialogContent>
         <DialogActions>
-          <Button autoFocus onClick={handleClose} color="disabled">
+          <Button autoFocus onClick={closeModal} color="disabled">
             {"Cancel"}
           </Button>
           <Button
             onClick={(e) => {
               console.log("event", e);
-              editProject(id);
+              updateProject(id);
+              closeModal(false);
             }}
             color="primary"
           >
@@ -196,7 +197,7 @@ export default function EditProjectButtonAPI(props) {
 
 EditProjectButtonAPI.propTypes = {
   id: PropTypes.node,
-  title: PropTypes.node,
+  title: PropTypes.string,
   category: PropTypes.string,
   // dateCreated: PropTypes.node,
   projectState: PropTypes.node,

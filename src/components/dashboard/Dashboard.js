@@ -134,7 +134,7 @@ export default function Dashboard() {
   const [darkState, setDarkState] = useState(false);
   const [projects, setProjects] = useState([]);
 
-  useEffect(() => {
+  const fetchProjects = () => {
     fetch("/api/projects")
       .then((response) => response.json())
       .then((data) => {
@@ -143,6 +143,9 @@ export default function Dashboard() {
       .catch((error) => {
         console.log("Error: ", error);
       });
+  };
+  useEffect(() => {
+    fetchProjects();
   }, []);
 
   const palletType = darkState ? "dark" : "light";
@@ -254,7 +257,7 @@ export default function Dashboard() {
               }}
             >
               <Box>
-                <NewProjectButtonAPI />
+                <NewProjectButtonAPI fetchProjects={fetchProjects} />
               </Box>
               <Box m={1}>
                 <Button

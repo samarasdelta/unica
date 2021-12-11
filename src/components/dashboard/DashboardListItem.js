@@ -77,11 +77,7 @@ export default function DashboardListItem(props) {
         </Box>
         <Box m={1}>{"|"}</Box>
         <Box mt={1} style={{ padding: "0 20px" }}>
-          <EditProjectButtonAPI
-            id={props.id}
-            title={props.title}
-            category={props.category}
-          />
+          <EditProjectButtonAPI id={props.id} />
         </Box>
         <Box m={1}>{"|"}</Box>
         <Box mt={1} style={{ padding: "0 20px" }}>
@@ -103,10 +99,10 @@ export default function DashboardListItem(props) {
 }
 
 DashboardListItem.propTypes = {
-  id: PropTypes.node,
-  title: PropTypes.node,
-  category: PropTypes.node,
-  dateCreated: PropTypes.node,
-  projectState: PropTypes.node,
-  projectIsDeleted: PropTypes.node,
+  id: PropTypes.string,
+  title: PropTypes.string,
+  category: PropTypes.string,
+  dateCreated: PropTypes.string,
+  projectState: PropTypes.string,
+  projectIsDeleted: PropTypes.string,
 };

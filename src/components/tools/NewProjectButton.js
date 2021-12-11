@@ -10,6 +10,7 @@ import DialogTitle from "@material-ui/core/DialogTitle";
 import AddIcon from "@material-ui/icons/Add";
 import Paper from "@material-ui/core/Paper";
 import Draggable from "react-draggable";
+import PropTypes from "prop-types";
 import FormControl from "@material-ui/core/FormControl";
 import Divider from "@material-ui/core/Divider";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
@@ -35,7 +36,7 @@ function PaperComponent(props) {
   );
 }
 
-export default function NewProjectButtonAPI() {
+export default function NewProjectButtonAPI({ fetchProjects }) {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
   const [title, setTitle] = React.useState("");
@@ -75,7 +76,7 @@ export default function NewProjectButtonAPI() {
       }),
     });
 
-    window.location.reload();
+    fetchProjects();
   };
 
   return (
@@ -154,3 +155,7 @@ export default function NewProjectButtonAPI() {
     </div>
   );
 }
+
+NewProjectButtonAPI.propTypes = {
+  fetchProjects: PropTypes.func.isRequired,
+};
