@@ -43,9 +43,10 @@ export default function EditProjectButtonAPI(props) {
     fetch(`/api/projects/${id}`)
       .then((response) => response.json())
       .then((data) => {
-        setTitle(data);
-        setCategory(data);
-        setPublic(data);
+        console.log("data", data);
+        setTitle(data.projectTitle);
+        // setCategory(data);
+        // setPublic(data);
       })
       .catch((error) => {
         console.log("Error: ", error);
@@ -55,12 +56,11 @@ export default function EditProjectButtonAPI(props) {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
   const [title, setTitle] = React.useState("");
-  const [category, setCategory] = React.useState("");
-  const [isPublic, setPublic] = React.useState("");
+  // const [category, setCategory] = React.useState("");
+  // const [isPublic, setPublic] = React.useState("");
 
   const handleClickOpen = () => {
     setOpen(true);
-    console.log("id", id);
   };
 
   const handleClose = () => {
@@ -71,15 +71,16 @@ export default function EditProjectButtonAPI(props) {
     setTitle(e.target.value);
   };
 
-  const handleCategory = (category) => {
-    setCategory(category);
-  };
+  // const handleCategory = (category) => {
+  //   setCategory(category);
+  // };
 
-  const handlePublicSwitch = (e) => {
-    setPublic(e.target.checked);
-  };
+  // const handlePublicSwitch = (e) => {
+  //   setPublic(e.target.checked);
+  // };
 
-  const editProject = async (id) => {
+  const editProject = async () => {
+    console.log("update id", id);
     await fetch(`/api/projects/${id}`, {
       method: "PUT",
       headers: {
@@ -87,12 +88,10 @@ export default function EditProjectButtonAPI(props) {
       },
       body: JSON.stringify({
         title,
-        category,
-        public: isPublic ? true : false,
+        // category,
+        // public: isPublic ? true : false,
       }),
     });
-
-    window.location.reload();
   };
 
   return (
@@ -141,16 +140,18 @@ export default function EditProjectButtonAPI(props) {
             rows={2}
             variant="outlined"
             fullWidth
-            onInput={handleTitleChange}
+            onInput={(e) => {
+              handleTitleChange(e);
+            }}
           />
 
           <Box display="flex" mt={2}>
             <Box flexGrow={1}>
               <ComboBox
                 defaultValue={props.category}
-                onSelect={(category) => {
-                  handleCategory(category);
-                }}
+                // onSelect={(category) => {
+                //   handleCategory(category);
+                // }}
               />
             </Box>
             <Box mt={1} pr={3}>
@@ -160,7 +161,7 @@ export default function EditProjectButtonAPI(props) {
                   label="Public"
                   defaultValue={props.projectState}
                   labelPlacement="start"
-                  onChange={handlePublicSwitch}
+                  // onChange={handlePublicSwitch}
                 />
               </FormControl>
             </Box>
@@ -170,7 +171,13 @@ export default function EditProjectButtonAPI(props) {
           <Button autoFocus onClick={handleClose} color="disabled">
             {"Cancel"}
           </Button>
-          <Button onClick={editProject} color="primary">
+          <Button
+            onClick={(e) => {
+              console.log("event", e);
+              editProject(id);
+            }}
+            color="primary"
+          >
             {"Submit"}
           </Button>
         </DialogActions>
