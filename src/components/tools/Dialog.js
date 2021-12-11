@@ -1,5 +1,4 @@
 import React from "react";
-import { Link as RouteLink } from "react-router-dom";
 import PropTypes from "prop-types";
 import { makeStyles } from "@material-ui/core/styles";
 import Avatar from "@material-ui/core/Avatar";
@@ -105,7 +104,6 @@ export default function SimpleDialogDemo() {
   return (
     <div>
       <Button
-        component={RouteLink}
         type="submit"
         variant="contained"
         color="default"
