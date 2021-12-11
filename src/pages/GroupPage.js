@@ -10,7 +10,6 @@ function ProjectPage() {
     fetch(`/api/groups/${id}`)
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
         setGroup(data);
       })
       .catch((error) => {

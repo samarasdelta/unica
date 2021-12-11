@@ -10,7 +10,6 @@ function ProjectPage() {
     fetch(`/api/projects/${id}`)
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
         setProject(data);
       })
       .catch((error) => {

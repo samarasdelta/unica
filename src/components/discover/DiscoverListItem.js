@@ -66,7 +66,6 @@ const DataTable = () => {
     fetch("/api/projects/public")
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
         setProjects(data);
       })
       .catch((error) => {

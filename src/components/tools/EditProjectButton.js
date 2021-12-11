@@ -43,7 +43,6 @@ export default function EditProjectButtonAPI(props) {
     fetch(`/api/projects/${id}`)
       .then((response) => response.json())
       .then((data) => {
-        console.log("data", data);
         setTitle(data.projectTitle);
         setCategory(data.projectCategory);
         // setPublic(data);
@@ -80,7 +79,6 @@ export default function EditProjectButtonAPI(props) {
   // };
 
   const updateProject = async () => {
-    console.log("update id", id);
     await fetch(`/api/projects/${id}`, {
       method: "PUT",
       headers: {
@@ -173,7 +171,6 @@ export default function EditProjectButtonAPI(props) {
           </Button>
           <Button
             onClick={(e) => {
-              console.log("event", e);
               updateProject(id);
               closeModal(false);
             }}
