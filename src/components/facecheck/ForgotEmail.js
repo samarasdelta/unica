@@ -4,12 +4,10 @@ import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import TextField from "@material-ui/core/TextField";
-import Link from "@material-ui/core/Link";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
-import Grid from "@material-ui/core/Grid";
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -74,20 +72,18 @@ export default function ForgotEmail() {
           >
             Next
           </Button>
-          <Grid container>
-            <Grid item xs>
-              <RouteLink to="">
-                <Link variant="body2"></Link>
-              </RouteLink>
-            </Grid>
-            <Grid item>
-              <RouteLink to="forgotpass" style={{ textDecoration: "none" }}>
-                <Link variant="body2" style={{ textDecoration: "none" }}>
-                  Go back
-                </Link>
-              </RouteLink>
-            </Grid>
-          </Grid>
+          <div align="right">
+            <RouteLink
+              to="forgotpass"
+              style={{
+                color: "#3f51b5",
+                textDecoration: "none",
+                textAlign: "end",
+              }}
+            >
+              Go back
+            </RouteLink>
+          </div>
         </form>
       </div>
     </Container>

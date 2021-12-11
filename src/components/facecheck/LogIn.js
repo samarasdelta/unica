@@ -6,7 +6,6 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 import TextField from "@material-ui/core/TextField";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Checkbox from "@material-ui/core/Checkbox";
-import Link from "@material-ui/core/Link";
 import Grid from "@material-ui/core/Grid";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Typography from "@material-ui/core/Typography";
@@ -93,17 +92,19 @@ export default function LogIn() {
           </Button>
           <Grid container>
             <Grid item xs>
-              <RouteLink to="forgotpass" style={{ textDecoration: "none" }}>
-                <Link variant="body2" style={{ textDecoration: "none" }}>
-                  Forgot password?
-                </Link>
+              <RouteLink
+                to="forgotpass"
+                style={{ color: "#3f51b5", textDecoration: "none" }}
+              >
+                {"Forgot password?"}
               </RouteLink>
             </Grid>
             <Grid item>
-              <RouteLink to="signup" style={{ textDecoration: "none" }}>
-                <Link variant="body2" style={{ textDecoration: "none" }}>
-                  Don&apos;t have an account? Sign Up
-                </Link>
+              <RouteLink
+                to="signup"
+                style={{ color: "#3f51b5", textDecoration: "none" }}
+              >
+                Don&apos;t have an account? Sign Up
               </RouteLink>
             </Grid>
           </Grid>

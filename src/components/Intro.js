@@ -60,7 +60,7 @@ export default function Intro() {
   const classes = useStyles();
 
   return (
-    <React.Fragment>
+    <div>
       <CssBaseline />
       <AppBar
         position="static"
@@ -79,15 +79,17 @@ export default function Intro() {
             className={classes.toolbarTitle}
           ></Typography>
           <nav>
-            <RouteLink to="/discover" style={{ textDecoration: "none" }}>
-              <Link
-                variant="button"
-                color="textPrimary"
-                className={classes.submit}
-                style={{ textDecoration: "none" }}
-              >
-                {"Discover"}
-              </Link>
+            <RouteLink
+              to="/discover"
+              className={classes.submit}
+              style={{
+                fontWeight: "500",
+                fontSize: "1rem",
+                textDecoration: "none",
+                color: "grey",
+              }}
+            >
+              {"Discover"}
             </RouteLink>
           </nav>
           <RouteLink to="/login" style={{ textDecoration: "none" }}>
@@ -121,12 +123,7 @@ export default function Intro() {
           The <span className="underline">collaboration</span> platform for{" "}
           <span className="underline">project writing</span>
         </Typography>
-        <Grid
-          container
-          direction="column"
-          justifyContent="center"
-          alignItems="center"
-        >
+        <Grid container direction="column" alignItems="center">
           <Box>
             <Button
               style={{
@@ -166,7 +163,6 @@ export default function Intro() {
               component={RouteLink}
               to="/discover"
               type="submit"
-              variant="contained"
               color="primary"
             >
               {"Continue as a guest"}
@@ -182,6 +178,6 @@ export default function Intro() {
         </Box>
       </Container>
       {/* End footer */}
-    </React.Fragment>
+    </div>
   );
 }
