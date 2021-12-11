@@ -263,7 +263,6 @@ export default function Dashboard() {
                 <Button
                   variant="contained"
                   component="label"
-                  color="disabled"
                   startIcon={<PublishIcon />}
                 >
                   {"Upload a file"}

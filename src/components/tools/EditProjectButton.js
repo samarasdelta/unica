@@ -166,7 +166,7 @@ export default function EditProjectButtonAPI(props) {
           </Box>
         </DialogContent>
         <DialogActions>
-          <Button autoFocus onClick={closeModal} color="disabled">
+          <Button autoFocus onClick={closeModal}>
             {"Cancel"}
           </Button>
           <Button

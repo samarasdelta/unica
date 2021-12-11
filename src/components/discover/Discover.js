@@ -229,7 +229,7 @@ export default function Discover() {
             <Typography variant="h6">
               {"Available for collaboration projects"}
             </Typography>
-            <Typography variant="h7" color="textSecondary">
+            <Typography style={{ fontSize: "16px" }} color="textSecondary">
               {
                 "Here, you will find a list with the available projects to collaborate with other users"
               }

@@ -144,7 +144,7 @@ export default function NewProjectButtonAPI({ fetchProjects }) {
           </Box>
         </DialogContent>
         <DialogActions>
-          <Button autoFocus onClick={closeModal} color="disabled">
+          <Button autoFocus onClick={closeModal}>
             {"Cancel"}
           </Button>
           <Button

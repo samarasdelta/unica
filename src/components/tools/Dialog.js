@@ -86,9 +86,9 @@ function SimpleDialog(props) {
 }
 
 SimpleDialog.propTypes = {
-  onClose: PropTypes.func.isRequired,
-  open: PropTypes.bool.isRequired,
-  selectedValue: PropTypes.string.isRequired,
+  onClose: PropTypes.func,
+  open: PropTypes.bool,
+  selectedValue: PropTypes.string,
 };
 
 export default function SimpleDialogDemo() {
@@ -106,14 +106,13 @@ export default function SimpleDialogDemo() {
     <div>
       <Button
         component={RouteLink}
-        //to=""
         type="submit"
         variant="contained"
         color="default"
         startIcon={<AddIcon />}
         onClick={handleClickOpen}
       >
-        ?
+        {"Dialog Demo"}
       </Button>
 
       <SimpleDialog open={open} onClose={handleClose} />
