@@ -111,24 +111,14 @@ const DataTable = () => {
                     </Typography>
                   </TableCell>
                   <TableCell>
-                    <Grid
-                      container
-                      direction="column"
-                      justifyContent="center"
-                      alignItems="flex-end"
-                    >
+                    <Grid container direction="column" alignItems="flex-end">
                       <Typography color="textPrimary" variant="body1">
                         {project.projectCategory}
                       </Typography>
                     </Grid>
                   </TableCell>
                   <TableCell>
-                    <Grid
-                      container
-                      direction="column"
-                      justifyContent="center"
-                      alignItems="flex-end"
-                    >
+                    <Grid container direction="column" alignItems="flex-end">
                       <Typography color="textPrimary" variant="body1">
                         kwstas
                         {project.ownerId}
@@ -136,12 +126,7 @@ const DataTable = () => {
                     </Grid>
                   </TableCell>
                   <TableCell>
-                    <Grid
-                      container
-                      direction="column"
-                      justifyContent="center"
-                      alignItems="flex-end"
-                    >
+                    <Grid container direction="column" alignItems="flex-end">
                       <Typography color="textPrimary" variant="body1">
                         <Moment position="right" format="DD/MM/YYYY - HH:mm:ss">
                           {project.dateCreated}

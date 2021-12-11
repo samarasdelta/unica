@@ -1,10 +1,8 @@
 import React, { useState } from "react";
-import { Link as RouteLink } from "react-router-dom";
 import {
   createMuiTheme,
   ThemeProvider,
   makeStyles,
-  Button,
   Badge,
   Container,
   Divider,
@@ -20,9 +18,7 @@ import {
 } from "@material-ui/core";
 import clsx from "clsx";
 import { blue, red } from "@material-ui/core/colors";
-import AddIcon from "@material-ui/icons/Add";
 import IconButton from "@material-ui/core/IconButton";
-import PublishIcon from "@material-ui/icons/Publish";
 import MenuIcon from "@material-ui/icons/Menu";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import HelpIcon from "@material-ui/icons/Help";
@@ -236,41 +232,6 @@ export default function Discover() {
             </Typography>
             <Divider className={classes.section2} />
             <DiscoverResults />
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                paddingBottom: "20px",
-                paddingTop: "20px",
-              }}
-            >
-              <Box>
-                <Button
-                  component={RouteLink}
-                  //to=""
-                  type="submit"
-                  variant="contained"
-                  color="primary"
-                  startIcon={<PublishIcon />}
-                  className={classes.submit}
-                >
-                  Button 1
-                </Button>
-              </Box>
-              <Box m={1}>
-                <Button
-                  component={RouteLink}
-                  //to=""
-                  type="submit"
-                  variant="contained"
-                  color="default"
-                  startIcon={<AddIcon />}
-                  className={classes.submit}
-                >
-                  Button 2
-                </Button>
-              </Box>
-            </div>
           </Container>
         </main>
       </div>
