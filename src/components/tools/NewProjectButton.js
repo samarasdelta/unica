@@ -47,7 +47,7 @@ export default function NewProjectButtonAPI({ fetchProjects }) {
     setOpen(true);
   };
 
-  const handleClose = () => {
+  const closeModal = () => {
     setOpen(false);
   };
 
@@ -94,7 +94,7 @@ export default function NewProjectButtonAPI({ fetchProjects }) {
         fullWidth
         maxWidth="sm"
         open={open}
-        onClose={handleClose}
+        onClose={closeModal}
         PaperComponent={PaperComponent}
         aria-labelledby="draggable-dialog-title"
       >
@@ -144,10 +144,16 @@ export default function NewProjectButtonAPI({ fetchProjects }) {
           </Box>
         </DialogContent>
         <DialogActions>
-          <Button autoFocus onClick={handleClose} color="disabled">
+          <Button autoFocus onClick={closeModal} color="disabled">
             {"Cancel"}
           </Button>
-          <Button onClick={createProject} color="primary">
+          <Button
+            onClick={(e) => {
+              createProject();
+              closeModal(false);
+            }}
+            color="primary"
+          >
             {"Create"}
           </Button>
         </DialogActions>
