@@ -102,7 +102,6 @@ export default function DeleteListItem(props) {
         <Box mt={1} style={{ padding: "0 20px" }}>
           <Link
             color="primary"
-            href="#"
             onClick={() => {
               deletePermaProject(props.id);
             }}

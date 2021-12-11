@@ -3,7 +3,6 @@ import Link from "@material-ui/core/Link";
 import { makeStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import Title from "../tools/Title";
-import Button from "@material-ui/core/Button";
 import Box from "@material-ui/core/Box";
 import PropTypes from "prop-types";
 import Tooltip from "@material-ui/core/Tooltip";
@@ -82,7 +81,7 @@ export default function DashboardListItem(props) {
         </Box>
         <Box m={1}>{"|"}</Box>
         <Box mt={1} style={{ padding: "0 20px" }}>
-          <Button
+          <Link
             color="primary"
             onClick={() => {
               deleteProject(props.id);
@@ -91,7 +90,7 @@ export default function DashboardListItem(props) {
             <Tooltip arrow title="Delete project">
               <DeleteIcon fontSize="small" />
             </Tooltip>
-          </Button>
+          </Link>
         </Box>
       </Box>
     </React.Fragment>
