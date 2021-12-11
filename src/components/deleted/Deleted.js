@@ -33,7 +33,6 @@ import {
 import Logo from "../images/unicasmall1.png";
 import DeletedListItem from "./DeletedListItem";
 import MoreButton from "../tools/AccountProfileButton";
-import SimpleDialog from "../tools/Dialog";
 
 const drawerWidth = 200;
 
@@ -243,17 +242,6 @@ export default function Deleted() {
         <main className={classes.content}>
           <div className={classes.appBarSpacer} />
           <Container className={classes.container}>
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                paddingBottom: "20px",
-              }}
-            >
-              <Box>
-                <SimpleDialog />
-              </Box>
-            </div>
             <Grid container spacing={4}>
               {/* Project */}
               {projects.map(function (project, i) {
