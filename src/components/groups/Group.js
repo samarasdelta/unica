@@ -6,12 +6,10 @@ const Group = (props) => {
   return (
     <div>
       <AppBarCustom />
-      <div>
-        <br />
-        <br />
-        <br />
-        <h3>{`Team Title: ${props.group.groupTitle}`}</h3>
-      </div>
+      <br />
+      <br />
+      <br />
+      <h3>{`Team Title: ${props.group.groupTitle}`}</h3>
     </div>
   );
 };

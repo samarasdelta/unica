@@ -13,7 +13,6 @@ import {
   Link,
   CssBaseline,
 } from "@material-ui/core";
-import { Link as RouteLink } from "react-router-dom";
 import clsx from "clsx";
 import { blue, red } from "@material-ui/core/colors";
 import MenuIcon from "@material-ui/icons/Menu";
@@ -140,18 +139,16 @@ const AppBarCustom = () => {
   };
 
   return (
-    <ThemeProvider theme={darkTheme}>
-      <div className={classes.root}>
+    <div className={classes.root}>
+      <ThemeProvider theme={darkTheme}>
         <CssBaseline />
         <AppBar position="absolute">
           <Toolbar className={classes.toolbar}>
-            <RouteLink to="/dashboard" style={{ textDecoration: "none" }}>
-              <Link href="/dashboard" style={{ textDecoration: "none" }}>
-                <Box className={classes.toolbar}>
-                  <img src={LogoUnica} alt="logo" className="appbarlogo" />
-                </Box>
-              </Link>
-            </RouteLink>
+            <Link href="/dashboard" style={{ textDecoration: "none" }}>
+              <Box className={classes.toolbar}>
+                <img src={LogoUnica} alt="logo" className="appbarlogo" />
+              </Box>
+            </Link>
             <IconButton
               edge="start"
               color="inherit"
@@ -186,8 +183,8 @@ const AppBarCustom = () => {
             <Switch checked={darkState} onChange={handleThemeChange} />
           </Toolbar>
         </AppBar>
-      </div>
-    </ThemeProvider>
+      </ThemeProvider>
+    </div>
   );
 };
 

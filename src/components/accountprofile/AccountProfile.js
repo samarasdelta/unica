@@ -207,7 +207,6 @@ export default function AccountProfile() {
       }}
       variant="contained"
       component="label"
-      color="disabled"
       startIcon={<PublishIcon />}
     >
       {"Upload"}

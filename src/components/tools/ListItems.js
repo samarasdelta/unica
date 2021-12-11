@@ -16,15 +16,13 @@ import NewTeamButtonAPI from "../tools/NewTeamButton";
 
 export const DiscoverListItems = (
   <div>
-    <RouteLink to="discover" style={{ textDecoration: "none" }}>
-      <Link color="textPrimary" style={{ textDecoration: "none" }}>
-        <ListItem button>
-          <ListItemIcon>
-            <FindInPageIcon />
-          </ListItemIcon>
-          <ListItemText secondary="Discover" />
-        </ListItem>
-      </Link>
+    <RouteLink to="discover" style={{ textDecoration: "none", color: "grey" }}>
+      <ListItem button>
+        <ListItemIcon>
+          <FindInPageIcon />
+        </ListItemIcon>
+        <ListItemText secondary="Discover" />
+      </ListItem>
     </RouteLink>
     <Divider />
   </div>
@@ -32,15 +30,13 @@ export const DiscoverListItems = (
 
 export const dashboardListItems = (
   <div>
-    <RouteLink to="dashboard" style={{ textDecoration: "none" }}>
-      <Link color="textPrimary" style={{ textDecoration: "none" }}>
-        <ListItem button>
-          <ListItemIcon>
-            <DashboardIcon />
-          </ListItemIcon>
-          <ListItemText secondary="Dashboard" />
-        </ListItem>
-      </Link>
+    <RouteLink to="dashboard" style={{ textDecoration: "none", color: "grey" }}>
+      <ListItem button>
+        <ListItemIcon>
+          <DashboardIcon />
+        </ListItemIcon>
+        <ListItemText secondary="Dashboard" />
+      </ListItem>
     </RouteLink>
   </div>
 );
@@ -59,15 +55,13 @@ export const mainListItems = (
       </ListItemIcon>
       <ListItemText secondary="Shared" />
     </ListItem>
-    <RouteLink to="deleted" style={{ textDecoration: "none" }}>
-      <Link color="textPrimary" style={{ textDecoration: "none" }}>
-        <ListItem button>
-          <ListItemIcon>
-            <DeleteIcon />
-          </ListItemIcon>
-          <ListItemText secondary="Deleted" />
-        </ListItem>
-      </Link>
+    <RouteLink to="deleted" style={{ textDecoration: "none", color: "grey" }}>
+      <ListItem button>
+        <ListItemIcon>
+          <DeleteIcon />
+        </ListItemIcon>
+        <ListItemText secondary="Deleted" />
+      </ListItem>
     </RouteLink>
   </div>
 );
