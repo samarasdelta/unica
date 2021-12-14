@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Project from "../components/project/Project.js";
-import { useParams } from "react-router";
+import { useParams } from "react-router-dom";
 
 function ProjectPage() {
   let { id } = useParams();

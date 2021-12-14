@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Group from "../components/groups/Group.js";
-import { useParams } from "react-router";
+import { useParams } from "react-router-dom";
 
 function ProjectPage() {
   let { id } = useParams();
