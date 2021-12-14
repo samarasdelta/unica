@@ -61,6 +61,7 @@ const useStyles = makeStyles({
 
 const DataTable = () => {
   const [projects, setProjects] = useState([]);
+  // const [user, setUser] = useState([]);
 
   useEffect(() => {
     fetch("/api/projects/public")
@@ -72,6 +73,19 @@ const DataTable = () => {
         console.log("Error: ", error);
       });
   }, []);
+
+  // useEffect(() => {
+  //   // has to change to user id
+  //   fetch("/api/users")
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       setUser(data);
+  //     })
+  //     .catch((error) => {
+  //       console.log("Error: ", error);
+  //     });
+  // }, []);
+
   const classes = useStyles();
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(5);
