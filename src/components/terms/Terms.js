@@ -12,7 +12,12 @@ export default function TermsFirst() {
   return (
     <div>
       <div className={classes.margin}>
-        <Grid container direction="column" justify="center" alignItems="center">
+        <Grid
+          container
+          direction="column"
+          justifyContent="center"
+          alignItems="center"
+        >
           <div className="titleintro">
             <b>{"Terms of Service"}</b>
           </div>

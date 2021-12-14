@@ -13,7 +13,12 @@ export default function PrivacyFirst() {
   return (
     <div>
       <div className={classes.margin}>
-        <Grid container direction="column" justify="center" alignItems="center">
+        <Grid
+          container
+          direction="column"
+          justifyContent="center"
+          alignItems="center"
+        >
           <div className="titleintro">
             <b>{"Privacy Policy"}</b>
           </div>

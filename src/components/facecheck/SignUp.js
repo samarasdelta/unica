@@ -122,7 +122,7 @@ export default function SignUp() {
           >
             {"Sign up"}
           </Button>
-          <Grid container justify="flex-end">
+          <Grid container justifyContent="flex-end">
             <Grid item>
               <RouteLink
                 to="login"

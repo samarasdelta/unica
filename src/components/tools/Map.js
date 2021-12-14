@@ -33,7 +33,7 @@ export default function Map() {
       {/* End hero unit */}
       {/* Footer */}
       <Container maxWidth="lg" component="footer" className={classes.footer}>
-        <Grid container direction="column" justify="center" alignItems="center">
+        <Grid container direction="column" alignItems="center">
           <b>
             <span className="maptitle">Why use UNI</span>
             <span className="ii">versity</span>

@@ -86,17 +86,13 @@ export default function TemporaryDrawer() {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <Box mx={2}>
-        {/* <Grid container direction="row" justify="center" alignItems="center">
-          <div className="darkmodetext">Dark Mode</div>
-          <CustomSwitch onChange={handleThemeChange} />
-        </Grid> */}
         <Divider />
         <div>
           <ListSubheader align="center">ece00792@uowm.gr</ListSubheader>
           <Divider />
           <List className={classes.listContent}>
             <ListItem>
-              <Grid container justify="center">
+              <Grid container justifyContent="center">
                 <Button
                   fullWidth
                   component={RouteLink}
@@ -110,7 +106,7 @@ export default function TemporaryDrawer() {
               </Grid>
             </ListItem>
             <ListItem>
-              <Grid container justify="center">
+              <Grid container justifyContent="center">
                 <Button
                   fullWidth
                   component={RouteLink}
@@ -124,7 +120,7 @@ export default function TemporaryDrawer() {
               </Grid>
             </ListItem>
             <ListItem>
-              <Grid container justify="center">
+              <Grid container justifyContent="center">
                 <Button
                   fullWidth
                   component={RouteLink}
