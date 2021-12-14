@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import {
-  createMuiTheme,
+  createTheme,
   ThemeProvider,
   makeStyles,
   Badge,
@@ -127,7 +127,7 @@ export default function Discover() {
   const palletType = darkState ? "dark" : "light";
   const mainPrimaryColor = darkState ? blue[200] : blue[800];
   const mainSecondaryColor = darkState ? red[600] : red[500];
-  const darkTheme = createMuiTheme({
+  const darkTheme = createTheme({
     palette: {
       type: palletType,
       primary: {

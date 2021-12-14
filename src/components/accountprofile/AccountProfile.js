@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import {
-  createMuiTheme,
+  createTheme,
   ThemeProvider,
   makeStyles,
   Badge,
@@ -138,7 +138,7 @@ export default function AccountProfile() {
   const [dob, setDob] = React.useState("");
   const [telephone, setTelephone] = React.useState("");
 
-  const darkTheme = createMuiTheme({
+  const darkTheme = createTheme({
     backgroundColor: "#212121",
     palette: {
       type: palletType,
