@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link as RouteLink } from "react-router-dom";
 import ListItem from "@material-ui/core/ListItem";
-import ListSubheader from "@material-ui/core/ListSubheader";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import DashboardIcon from "@material-ui/icons/Dashboard";
@@ -103,7 +102,6 @@ export function GroupsListItems() {
           </Link>
         );
       })}
-      <ListSubheader inset>User&apos;s teams</ListSubheader>
     </div>
   );
 }
