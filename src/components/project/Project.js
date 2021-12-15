@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import AppBarCustom from "../tools/AppBarCustom";
+import MyEditor from "./Draft";
 
 const Project = (props) => {
   return (
@@ -16,6 +17,7 @@ const Project = (props) => {
           {`Project Category: ${props.project.projectCategory}`}
         </h3>
       </div>
+      <MyEditor />
     </div>
   );
 };
