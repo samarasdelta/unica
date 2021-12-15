@@ -36,7 +36,7 @@ function PaperComponent(props) {
   );
 }
 
-export default function EditProjectButtonAPI(props) {
+export default function EditProjectButtonAPI(props, { fetchProjects }) {
   const { id } = props;
 
   useEffect(() => {
@@ -90,6 +90,9 @@ export default function EditProjectButtonAPI(props) {
         // public: isPublic ? true : false,
       }),
     });
+
+    // window.location.reload();
+    fetchProjects();
   };
 
   return (

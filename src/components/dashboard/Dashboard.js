@@ -281,6 +281,7 @@ export default function Dashboard() {
                   <Grid item xs={12} key={i}>
                     <Paper className={fixedHeightPaper}>
                       <DashboardListItem
+                        fetchProjects={fetchProjects}
                         id={project.projectId}
                         title={project.projectTitle}
                         category={project.projectCategory}

@@ -27,7 +27,7 @@ const useStyles = makeStyles({
   },
 });
 
-export default function DashboardListItem(props) {
+export default function DashboardListItem(props, { fetchProjects }) {
   const classes = useStyles();
   return (
     <React.Fragment>
@@ -69,7 +69,7 @@ export default function DashboardListItem(props) {
         </Box>
         <Box m={1}>{"|"}</Box>
         <Box mt={1} style={{ padding: "0 20px" }}>
-          <EditProjectButtonAPI id={props.id} />
+          <EditProjectButtonAPI id={props.id} fetchProjects={fetchProjects} />
         </Box>
         <Box m={1}>{"|"}</Box>
         <Box mt={1} style={{ padding: "0 20px" }}>
