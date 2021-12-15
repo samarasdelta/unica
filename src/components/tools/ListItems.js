@@ -13,6 +13,7 @@ import FindInPageIcon from "@material-ui/icons/FindInPage";
 import Link from "@material-ui/core/Link";
 import Divider from "@material-ui/core/Divider";
 import NewTeamButtonAPI from "../tools/NewTeamButton";
+import randomColor from "randomcolor";
 
 export const DiscoverListItems = (
   <div>
@@ -78,6 +79,7 @@ export function GroupsListItems() {
       .catch((error) => {
         console.log("Error: ", error);
       });
+    randomColor();
   }, []);
 
   return (
