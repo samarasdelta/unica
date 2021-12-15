@@ -56,7 +56,7 @@ export default function EditProjectButtonAPI(props) {
   const [open, setOpen] = React.useState(false);
   const [title, setTitle] = React.useState("");
   const [category, setCategory] = React.useState("");
-  // const [isPublic, setPublic] = React.useState("");
+  const [isPublic, setPublic] = React.useState("");
 
   const openModal = () => {
     setOpen(true);
@@ -74,9 +74,9 @@ export default function EditProjectButtonAPI(props) {
     setCategory(category);
   };
 
-  // const handlePublicSwitch = (e) => {
-  //   setPublic(e.target.checked);
-  // };
+  const handlePublicSwitch = (e) => {
+    setPublic(e.target.checked);
+  };
 
   const updateProject = async () => {
     await fetch(`/api/projects/${id}`, {
@@ -87,7 +87,7 @@ export default function EditProjectButtonAPI(props) {
       body: JSON.stringify({
         title,
         category,
-        // public: isPublic ? true : false,
+        public: isPublic ? true : false,
       }),
     });
   };
@@ -157,9 +157,11 @@ export default function EditProjectButtonAPI(props) {
                 <FormControlLabel
                   control={<Switch color="primary" />}
                   label="Public"
-                  defaultValue={props.projectState}
+                  value={isPublic}
                   labelPlacement="start"
-                  // onChange={handlePublicSwitch}
+                  onChange={(e) => {
+                    handlePublicSwitch(e);
+                  }}
                 />
               </FormControl>
             </Box>
@@ -184,19 +186,9 @@ export default function EditProjectButtonAPI(props) {
   );
 }
 
-// EditProjectButtonAPI.propTypes = {
-//   id: PropTypes.string,
-//   title: PropTypes.shape({
-//     projectTitle: PropTypes.string,
-//     // projectCategory: PropTypes.string,
-//   }),
-// };
-
 EditProjectButtonAPI.propTypes = {
   id: PropTypes.node,
   title: PropTypes.string,
   category: PropTypes.string,
-  // dateCreated: PropTypes.node,
   projectState: PropTypes.node,
-  // projectIsDeleted: PropTypes.node,
 };

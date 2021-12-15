@@ -18,14 +18,6 @@ const deleteProject = async (id) => {
   window.location.reload();
 };
 
-// const getProjectId = async (id) => {
-//   await fetch(`api/projects/${id}`, {
-//     method: "GET",
-//   });
-
-//   window.location.reload();
-// };
-
 const useStyles = makeStyles({
   projectContext: {
     //flex: 1,
