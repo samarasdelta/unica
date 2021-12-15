@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
+import Link from "@material-ui/core/Link";
 import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
 import Table from "@material-ui/core/Table";
@@ -29,7 +30,7 @@ const useStyles = makeStyles({
   },
 });
 
-const DataTable = () => {
+export default function DataTable() {
   const [projects, setProjects] = useState([]);
   // const [user, setUser] = useState([]);
 
@@ -80,9 +81,11 @@ const DataTable = () => {
               <TableBody key={i}>
                 <TableRow hover role="checkbox" tabIndex={-1}>
                   <TableCell>
-                    <Typography color="textPrimary" variant="body1">
-                      {project.projectTitle}
-                    </Typography>
+                    <Link href={`/project/${project.projectId}`}>
+                      <Typography color="textPrimary" variant="body1">
+                        {project.projectTitle}
+                      </Typography>
+                    </Link>
                   </TableCell>
                   <TableCell>
                     <Grid container direction="column" alignItems="flex-end">
@@ -107,6 +110,4 @@ const DataTable = () => {
       </TableContainer>
     </Paper>
   );
-};
-
-export default DataTable;
+}
