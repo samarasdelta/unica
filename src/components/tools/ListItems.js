@@ -12,7 +12,7 @@ import FindInPageIcon from "@material-ui/icons/FindInPage";
 import Link from "@material-ui/core/Link";
 import Divider from "@material-ui/core/Divider";
 import NewTeamButtonAPI from "../tools/NewTeamButton";
-import randomColor from "randomcolor";
+import { makeStyles } from "@material-ui/core/styles";
 
 export const DiscoverListItems = (
   <div>
@@ -66,7 +66,25 @@ export const mainListItems = (
   </div>
 );
 
+const useStyles = makeStyles({
+  line: {
+    width: 200,
+    display: "flex",
+  },
+  ListItemText: {
+    display: "block",
+    overflow: "hidden",
+  },
+  ListItemTextRoot: {
+    overflow: "hidden",
+  },
+  ListItemTextContent: {
+    overflow: "hidden",
+  },
+});
+
 export function GroupsListItems() {
+  const classes = useStyles();
   const [groups, setGroups] = useState([]);
 
   useEffect(() => {
@@ -78,7 +96,6 @@ export function GroupsListItems() {
       .catch((error) => {
         console.log("Error: ", error);
       });
-    randomColor();
   }, []);
 
   return (
@@ -93,11 +110,14 @@ export function GroupsListItems() {
             color="textPrimary"
             style={{ textDecoration: "none" }}
           >
-            <ListItem button>
+            <ListItem className={classes.line} button>
               <ListItemIcon>
                 <GroupWorkIcon color="primary" />
               </ListItemIcon>
-              <ListItemText secondary={group.groupTitle} />
+              <ListItemText
+                className={classes.ListItemText}
+                secondary={group.groupTitle}
+              />
             </ListItem>
           </Link>
         );
