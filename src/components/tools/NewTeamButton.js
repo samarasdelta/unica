@@ -78,14 +78,14 @@ export default function NewTeamButtonAPI() {
           <DialogContentText variant="subtitle2">
             {"Please, set a title for your team."}
           </DialogContentText>
-          <Box mb={4}>
+          <Box>
             <TextField
               margin="dense"
               id="title"
-              label="Team name"
+              label="Team's name"
               type="title"
               multiline
-              rows={2}
+              rows={1}
               variant="outlined"
               fullWidth
               onInput={handleTitleChange}
