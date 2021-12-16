@@ -16,7 +16,7 @@
 }
 
 .maintextarea {
-  border: 2.5px solid grey;
+  border-top: 2.5px solid grey;
   border-radius: 4px;
   width: 46.5rem;
   min-height: 80vh;
@@ -29,7 +29,8 @@
 .compiledtextare {
   width: 53.25rem;
   float: left;
-  border: 2.5px solid grey;
+  border-top: 2.5px solid grey;
+  border-left: 2.5px solid grey;
   border-radius: 4px;
   min-height: 80vh;
   cursor: text;
