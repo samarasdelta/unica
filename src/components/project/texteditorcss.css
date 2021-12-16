@@ -1,0 +1,43 @@
+.projecttitle {
+  margin-left: 2%;
+  margin-right: 2%;
+}
+
+.mainborder {
+  border: 2px solid grey;
+  border-radius: 8px;
+  width: 100rem;
+  margin: 0 auto;
+  display: table;
+  position: static;
+  clear: both;
+  position: relative;
+  /* align-items: center; */
+}
+
+.maintextarea {
+  border: 2.5px solid grey;
+  border-radius: 4px;
+  width: 46.5rem;
+  min-height: 80vh;
+  cursor: text;
+  padding: 10px;
+  margin-top: 1.5%;
+  float: left;
+}
+
+.compiledtextare {
+  width: 53.25rem;
+  float: left;
+  border: 2.5px solid grey;
+  border-radius: 4px;
+  min-height: 80vh;
+  cursor: text;
+  padding: 10px;
+  margin-top: 1.5%;
+}
+
+.compilearrow {
+  top: 50%;
+  position: absolute;
+}

@@ -45,7 +45,7 @@ export default function EditProjectButtonAPI(props, { fetchProjects }) {
       .then((data) => {
         setTitle(data.projectTitle);
         setCategory(data.projectCategory);
-        // setPublic(data);
+        setPublic(data.projectState);
       })
       .catch((error) => {
         console.log("Error: ", error);
@@ -56,7 +56,7 @@ export default function EditProjectButtonAPI(props, { fetchProjects }) {
   const [open, setOpen] = React.useState(false);
   const [title, setTitle] = React.useState("");
   const [category, setCategory] = React.useState("");
-  // const [isPublic, setPublic] = React.useState("");
+  const [isPublic, setPublic] = React.useState("");
 
   const openModal = () => {
     setOpen(true);
@@ -91,8 +91,8 @@ export default function EditProjectButtonAPI(props, { fetchProjects }) {
       }),
     });
 
-    // window.location.reload();
-    fetchProjects();
+    window.location.reload();
+    // fetchProjects();
   };
 
   return (
@@ -160,10 +160,11 @@ export default function EditProjectButtonAPI(props, { fetchProjects }) {
                 <FormControlLabel
                   control={<Switch color="primary" />}
                   label="Public"
-                  // value={isPublic}
+                  checked={isPublic}
                   labelPlacement="start"
                   // onChange={(e) => {
                   //   handlePublicSwitch(e);
+                  //   console.log("public state", isPublic);
                   // }}
                 />
               </FormControl>
@@ -193,5 +194,5 @@ EditProjectButtonAPI.propTypes = {
   id: PropTypes.node,
   title: PropTypes.string,
   category: PropTypes.string,
-  projectState: PropTypes.node,
+  isPublic: PropTypes.bool,
 };

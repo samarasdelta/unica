@@ -2,12 +2,13 @@ import React from "react";
 import PropTypes from "prop-types";
 import AppBarCustom from "../tools/AppBarCustom";
 import MyEditor from "./Draft";
+import "./texteditorcss.css";
 
 const Project = (props) => {
   return (
     <div>
       <AppBarCustom />
-      <div>
+      <div className="projecttitle">
         <br />
         <br />
         <br />

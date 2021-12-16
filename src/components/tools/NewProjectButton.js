@@ -61,6 +61,7 @@ export default function NewProjectButtonAPI({ fetchProjects }) {
 
   const handlePublicSwitch = (e) => {
     setPublic(e.target.checked);
+    console.log("public state", isPublic);
   };
 
   const createProject = async () => {
