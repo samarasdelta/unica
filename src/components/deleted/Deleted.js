@@ -130,7 +130,7 @@ export default function Deleted() {
   const [darkState, setDarkState] = useState(false);
   const [projects, setProjects] = useState([]);
 
-  useEffect(() => {
+  const fetchDeletedProjects = () => {
     fetch("/api/projects/deleted")
       .then((response) => response.json())
       .then((data) => {
@@ -139,6 +139,10 @@ export default function Deleted() {
       .catch((error) => {
         alert("Error: ", error.message);
       });
+  };
+
+  useEffect(() => {
+    fetchDeletedProjects();
   }, []);
 
   const palletType = darkState ? "dark" : "light";
@@ -249,6 +253,7 @@ export default function Deleted() {
                   <Grid item xs={12} key={i}>
                     <Paper className={fixedHeightPaper}>
                       <DeletedListItem
+                        fetchDeletedProjects={fetchDeletedProjects}
                         id={project.projectId}
                         title={project.projectTitle}
                         category={project.projectCategory}

@@ -13,28 +13,6 @@ import Moment from "react-moment";
 //   event.preventDefault();
 // }
 
-const deletePermaProject = async (id) => {
-  await fetch(`api/projects/${id}`, {
-    method: "DELETE",
-  });
-
-  window.location.reload();
-};
-
-const restoreProject = async (id) => {
-  await fetch(`api/projects/${id}`, {
-    method: "PUT",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      isDeleted: "0",
-    }),
-  });
-
-  window.location.reload();
-};
-
 const useStyles = makeStyles({
   projectContext: {
     //flex: 1,
@@ -48,8 +26,33 @@ const useStyles = makeStyles({
   },
 });
 
-export default function DeleteListItem(props) {
+export default function DeleteListItem(props, { fetchDeletedProjects }) {
   const classes = useStyles();
+
+  const deletePermaProject = async (id) => {
+    await fetch(`api/projects/${id}`, {
+      method: "DELETE",
+    });
+
+    window.location.reload();
+    // fetchDeletedProjects();
+  };
+
+  const restoreProject = async (id) => {
+    await fetch(`api/projects/${id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        isDeleted: "0",
+      }),
+    });
+
+    window.location.reload();
+    // fetchDeletedProjects();
+  };
+
   return (
     <React.Fragment>
       <Box className={classes.boxSpace}>

@@ -56,7 +56,7 @@ export default function EditProjectButtonAPI(props, { fetchProjects }) {
   const [open, setOpen] = React.useState(false);
   const [title, setTitle] = React.useState("");
   const [category, setCategory] = React.useState("");
-  const [isPublic, setPublic] = React.useState("");
+  const [isPublic, setPublic] = React.useState(false);
 
   const openModal = () => {
     setOpen(true);
@@ -74,9 +74,14 @@ export default function EditProjectButtonAPI(props, { fetchProjects }) {
     setCategory(category);
   };
 
-  // const handlePublicSwitch = (e) => {
-  //   setPublic(e.target.checked);
-  // };
+  const handlePublicSwitch = () => {
+    // if (isPublic) {
+    //   setPublic(false);
+    // } else {
+    //   setPublic(true);
+    // }
+    setPublic(isPublic ? false : true);
+  };
 
   const updateProject = async () => {
     await fetch(`/api/projects/${id}`, {
@@ -87,7 +92,7 @@ export default function EditProjectButtonAPI(props, { fetchProjects }) {
       body: JSON.stringify({
         title,
         category,
-        // public: isPublic ? true : false,
+        public: isPublic ? "1" : "0",
       }),
     });
 
@@ -162,10 +167,9 @@ export default function EditProjectButtonAPI(props, { fetchProjects }) {
                   label="Public"
                   checked={isPublic}
                   labelPlacement="start"
-                  // onChange={(e) => {
-                  //   handlePublicSwitch(e);
-                  //   console.log("public state", isPublic);
-                  // }}
+                  onChange={(e) => {
+                    handlePublicSwitch(e);
+                  }}
                 />
               </FormControl>
             </Box>

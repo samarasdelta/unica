@@ -10,14 +10,6 @@ import DeleteIcon from "@material-ui/icons/Delete";
 import EditProjectButtonAPI from "../tools/EditProjectButton";
 import Moment from "react-moment";
 
-const deleteProject = async (id) => {
-  await fetch(`api/projects/${id}`, {
-    method: "DELETE",
-  });
-
-  window.location.reload();
-};
-
 const useStyles = makeStyles({
   projectContext: {
     //flex: 1,
@@ -26,8 +18,16 @@ const useStyles = makeStyles({
     flex: 1,
   },
 });
-
 export default function DashboardListItem(props, { fetchProjects }) {
+  const deleteProject = async (id) => {
+    await fetch(`api/projects/${id}`, {
+      method: "DELETE",
+    });
+
+    // fetchProjects();
+    window.location.reload();
+  };
+
   const classes = useStyles();
   return (
     <React.Fragment>
@@ -80,7 +80,7 @@ export default function DashboardListItem(props, { fetchProjects }) {
             }}
           >
             <Tooltip arrow title="Delete project">
-              <DeleteIcon fontSize="small" />
+              <DeleteIcon style={{ cursor: "pointer" }} fontSize="small" />
             </Tooltip>
           </Link>
         </Box>
@@ -96,4 +96,5 @@ DashboardListItem.propTypes = {
   dateCreated: PropTypes.string,
   projectState: PropTypes.number,
   projectIsDeleted: PropTypes.number,
+  fetchProjects: PropTypes.func.isRequired,
 };
