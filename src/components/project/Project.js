@@ -1,8 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
 import AppBarCustom from "../tools/AppBarCustom";
-import MyEditor from "./Draft";
+// import MyEditor from "./Draft";
+// import EditorWYS from "./DraftWYS";
 import "./texteditorcss.css";
+import DemoEditor from "./DraftDemo";
 
 const Project = (props) => {
   return (
@@ -18,7 +20,9 @@ const Project = (props) => {
           {`Project Category: ${props.project.projectCategory}`}
         </h3>
       </div>
-      <MyEditor />
+      {/* <MyEditor /> */}
+      {/* <EditorWYS /> */}
+      <DemoEditor />
     </div>
   );
 };
