@@ -1,14 +1,14 @@
 .App-header {
+  margin-top: 64px;
   background-color: #282c34;
   min-height: 5vh;
   display: flex;
+  padding-left: 1rem;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: calc(8px + 2vmin);
   color: white;
   margin-bottom: 5vh;
-  text-align: center;
 }
 
 .wrapper-class {
@@ -16,9 +16,11 @@
   border: 1px solid #ccc;
 }
 .editor-class {
-  background-color: lightgray;
+  background-color: lightgrey;
+  color: black;
   padding: 1rem;
   border: 1px solid #ccc;
+  min-height: 50vh;
 }
 .toolbar-class {
   border: 1px solid #ccc;

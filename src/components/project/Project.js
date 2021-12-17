@@ -3,22 +3,20 @@ import PropTypes from "prop-types";
 import AppBarCustom from "../tools/AppBarCustom";
 // import MyEditor from "./Draft";
 // import EditorWYS from "./DraftWYS";
-import "./texteditorcss.css";
+// import "./texteditorcss.css";
+import "./democss.css";
 import DemoEditor from "./DraftDemo";
 
 const Project = (props) => {
   return (
     <div>
       <AppBarCustom />
-      <div className="projecttitle">
-        <br />
-        <br />
-        <br />
-        <h3>
+      <div>
+        <header className="App-header">
           {`Project Title: ${props.project.projectTitle}`}
           {" || "}
           {`Project Category: ${props.project.projectCategory}`}
-        </h3>
+        </header>
       </div>
       {/* <MyEditor /> */}
       {/* <EditorWYS /> */}
