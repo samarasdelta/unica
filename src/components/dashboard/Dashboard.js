@@ -10,11 +10,11 @@ import {
   Container,
   IconButton,
   Box,
-  Switch,
   Typography,
   Toolbar,
   Link,
   AppBar,
+  withStyles,
   Drawer,
   List,
   CssBaseline,
@@ -25,6 +25,7 @@ import PublishIcon from "@material-ui/icons/Publish";
 import MenuIcon from "@material-ui/icons/Menu";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import HelpIcon from "@material-ui/icons/Help";
+import SwitchUI from "@material-ui/core/Switch";
 import NotificationsIcon from "@material-ui/icons/Notifications";
 import {
   DiscoverListItems,
@@ -129,6 +130,20 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+const CustomSwitch = withStyles({
+  switchBase: {
+    color: "#ffffff",
+    "&$checked": {
+      color: "#000000",
+    },
+    "&$checked + $track": {
+      backgroundColor: "#000000",
+    },
+  },
+  checked: {},
+  track: {},
+})(SwitchUI);
+
 export default function Dashboard() {
   const [open, setOpen] = React.useState(true);
   const [darkState, setDarkState] = useState(false);
@@ -151,6 +166,7 @@ export default function Dashboard() {
   const palletType = darkState ? "dark" : "light";
   const mainPrimaryColor = darkState ? blue[200] : blue[800];
   const mainSecondaryColor = darkState ? red[600] : red[500];
+
   const darkTheme = createTheme({
     backgroundColor: "#212121",
     palette: {
@@ -165,9 +181,12 @@ export default function Dashboard() {
   });
 
   const classes = useStyles();
-  const handleThemeChange = () => {
-    setDarkState(!darkState);
+
+  const handleThemeChange = (event) => {
+    const { checked } = event.target;
+    setDarkState(checked ? true : false);
   };
+
   const handleDrawerOpen = () => {
     setOpen(true);
   };
@@ -217,7 +236,7 @@ export default function Dashboard() {
               </Badge>
             </IconButton>
             <MoreButton />
-            <Switch checked={darkState} onChange={handleThemeChange} />
+            <CustomSwitch checked={darkState} onChange={handleThemeChange} />
           </Toolbar>
         </AppBar>
         <Drawer

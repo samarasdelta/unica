@@ -5,8 +5,8 @@ import {
   makeStyles,
   Badge,
   IconButton,
-  Switch,
   Typography,
+  withStyles,
   Toolbar,
   AppBar,
   Box,
@@ -17,6 +17,7 @@ import clsx from "clsx";
 import { blue, red } from "@material-ui/core/colors";
 import MenuIcon from "@material-ui/icons/Menu";
 import HelpIcon from "@material-ui/icons/Help";
+import SwitchUI from "@material-ui/core/Switch";
 import NotificationsIcon from "@material-ui/icons/Notifications";
 import MoreButton from "./AccountProfileButton";
 import LogoUnica from "./images/favicon.ico";
@@ -111,6 +112,20 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+const CustomSwitch = withStyles({
+  switchBase: {
+    color: "#ffffff",
+    "&$checked": {
+      color: "#000000",
+    },
+    "&$checked + $track": {
+      backgroundColor: "#000000",
+    },
+  },
+  checked: {},
+  track: {},
+})(SwitchUI);
+
 const AppBarCustom = () => {
   const [open, setOpen] = React.useState(true);
   const [darkState, setDarkState] = useState(false);
@@ -131,8 +146,9 @@ const AppBarCustom = () => {
   });
 
   const classes = useStyles();
-  const handleThemeChange = () => {
-    setDarkState(!darkState);
+  const handleThemeChange = (event) => {
+    const { checked } = event.target;
+    setDarkState(checked ? true : false);
   };
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -180,7 +196,7 @@ const AppBarCustom = () => {
             </IconButton>
             <MoreButton />
 
-            <Switch checked={darkState} onChange={handleThemeChange} />
+            <CustomSwitch checked={darkState} onChange={handleThemeChange} />
           </Toolbar>
         </AppBar>
       </ThemeProvider>
