@@ -11,7 +11,6 @@ import {
   AppBar,
   Box,
   Link,
-  CssBaseline,
 } from "@material-ui/core";
 import clsx from "clsx";
 // import { blue, red } from "@material-ui/core/colors";
@@ -117,10 +116,10 @@ const CustomSwitch = withStyles({
   switchBase: {
     color: "#ffffff",
     "&$checked": {
-      color: "#000000",
+      color: "#424242",
     },
     "&$checked + $track": {
-      backgroundColor: "#000000",
+      backgroundColor: "#ffffff",
     },
   },
   checked: {},
@@ -130,22 +129,6 @@ const CustomSwitch = withStyles({
 const AppBarCustom = () => {
   const classes = useStyles();
   const [open, setOpen] = React.useState(true);
-  // const [darkState, setDarkState] = useState(false);
-  // const palletType = darkState ? "dark" : "light";
-  // const mainPrimaryColor = darkState ? blue[200] : blue[800];
-  // const mainSecondaryColor = darkState ? red[600] : red[500];
-  // const darkTheme = createTheme({
-  //   backgroundColor: "#212121",
-  //   palette: {
-  //     type: palletType,
-  //     primary: {
-  //       main: mainPrimaryColor,
-  //     },
-  //     secondary: {
-  //       main: mainSecondaryColor,
-  //     },
-  //   },
-  // });
 
   const { currentTheme, setTheme } = useContext(CustomThemeContext);
   const isDark = Boolean(currentTheme === "dark");
@@ -164,8 +147,6 @@ const AppBarCustom = () => {
 
   return (
     <div className={classes.root}>
-      {/* <ThemeProvider theme={darkTheme}> */}
-      <CssBaseline />
       <AppBar position="absolute">
         <Toolbar className={classes.toolbar}>
           <Link href="/dashboard" style={{ textDecoration: "none" }}>
@@ -207,7 +188,6 @@ const AppBarCustom = () => {
           <CustomSwitch checked={isDark} onChange={handleThemeChange} />
         </Toolbar>
       </AppBar>
-      {/* </ThemeProvider> */}
     </div>
   );
 };
