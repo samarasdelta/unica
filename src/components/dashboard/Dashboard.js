@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import {
-  createTheme,
-  ThemeProvider,
+  // createTheme,
+  // ThemeProvider,
   makeStyles,
   Button,
   Grid,
@@ -12,15 +12,15 @@ import {
   Box,
   Typography,
   Toolbar,
+  withStyles,
   Link,
   AppBar,
-  withStyles,
   Drawer,
   List,
-  CssBaseline,
+  // CssBaseline,
 } from "@material-ui/core";
 import clsx from "clsx";
-import { blue, red } from "@material-ui/core/colors";
+// import { blue, red } from "@material-ui/core/colors";
 import PublishIcon from "@material-ui/icons/Publish";
 import MenuIcon from "@material-ui/icons/Menu";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
@@ -38,6 +38,7 @@ import DashboardListItem from "./DashboardListItem";
 import MoreButton from "../tools/AccountProfileButton";
 import SimpleDialog from "../tools/Dialog";
 import NewProjectButtonAPI from "../tools/NewProjectButton";
+import { CustomThemeContext } from "../tools/themes/CustomThemeProvider";
 
 const drawerWidth = 200;
 
@@ -145,8 +146,9 @@ const CustomSwitch = withStyles({
 })(SwitchUI);
 
 export default function Dashboard() {
+  const classes = useStyles();
   const [open, setOpen] = React.useState(true);
-  const [darkState, setDarkState] = useState(false);
+  // const [darkState, setDarkState] = useState(false);
   const [projects, setProjects] = useState([]);
 
   const fetchProjects = () => {
@@ -163,28 +165,29 @@ export default function Dashboard() {
     fetchProjects();
   }, []);
 
-  const palletType = darkState ? "dark" : "light";
-  const mainPrimaryColor = darkState ? blue[200] : blue[800];
-  const mainSecondaryColor = darkState ? red[600] : red[500];
+  // const palletType = darkState ? "dark" : "light";
+  // const mainPrimaryColor = darkState ? blue[200] : blue[800];
+  // const mainSecondaryColor = darkState ? red[600] : red[500];
 
-  const darkTheme = createTheme({
-    backgroundColor: "#212121",
-    palette: {
-      type: palletType,
-      primary: {
-        main: mainPrimaryColor,
-      },
-      secondary: {
-        main: mainSecondaryColor,
-      },
-    },
-  });
+  // const darkTheme = createTheme({
+  //   backgroundColor: "#212121",
+  //   palette: {
+  //     type: palletType,
+  //     primary: {
+  //       main: mainPrimaryColor,
+  //     },
+  //     secondary: {
+  //       main: mainSecondaryColor,
+  //     },
+  //   },
+  // });
 
-  const classes = useStyles();
+  const { currentTheme, setTheme } = useContext(CustomThemeContext);
+  const isDark = Boolean(currentTheme === "dark");
 
   const handleThemeChange = (event) => {
     const { checked } = event.target;
-    setDarkState(checked ? true : false);
+    setTheme(checked ? "dark" : "normal");
   };
 
   const handleDrawerOpen = () => {
@@ -196,126 +199,126 @@ export default function Dashboard() {
   const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
 
   return (
-    <ThemeProvider theme={darkTheme}>
-      <div className={classes.root}>
-        <CssBaseline />
-        <AppBar
-          position="absolute"
-          className={clsx(classes.appBar, open && classes.appBarShift)}
-        >
-          <Toolbar className={classes.toolbar}>
-            <IconButton
-              edge="start"
-              color="inherit"
-              aria-label="open drawer"
-              onClick={handleDrawerOpen}
-              className={clsx(
-                classes.menuButton,
-                open && classes.menuButtonHidden
-              )}
-            >
-              <MenuIcon />
-            </IconButton>
-            <Typography
-              component="h1"
-              variant="h5"
-              color="inherit"
-              noWrap
-              className={classes.title}
-            >
-              {"Dashboard"}
-            </Typography>
-            <IconButton color="inherit">
-              <Badge badgeContent={1} color="secondary">
-                <NotificationsIcon />
-              </Badge>
-            </IconButton>
-            <IconButton color="inherit">
-              <Badge color="secondary">
-                <HelpIcon />
-              </Badge>
-            </IconButton>
-            <MoreButton />
-            <CustomSwitch checked={darkState} onChange={handleThemeChange} />
-          </Toolbar>
-        </AppBar>
-        <Drawer
-          variant="permanent"
-          classes={{
-            paper: clsx(classes.drawerPaper, !open && classes.drawerPaperClose),
-          }}
-          open={open}
-        >
-          <div className={classes.toolbarIcon}>
-            <Box pr={10}>
-              <Link href={`/dashboard`}>
-                <img src={Logo} alt="logo" />
-              </Link>
+    // <ThemeProvider theme={darkTheme}>
+    <div className={classes.root}>
+      {/* <CssBaseline /> */}
+      <AppBar
+        position="absolute"
+        className={clsx(classes.appBar, open && classes.appBarShift)}
+      >
+        <Toolbar className={classes.toolbar}>
+          <IconButton
+            edge="start"
+            color="inherit"
+            aria-label="open drawer"
+            onClick={handleDrawerOpen}
+            className={clsx(
+              classes.menuButton,
+              open && classes.menuButtonHidden
+            )}
+          >
+            <MenuIcon />
+          </IconButton>
+          <Typography
+            component="h1"
+            variant="h5"
+            color="inherit"
+            noWrap
+            className={classes.title}
+          >
+            {"Dashboard"}
+          </Typography>
+          <IconButton color="inherit">
+            <Badge badgeContent={1} color="secondary">
+              <NotificationsIcon />
+            </Badge>
+          </IconButton>
+          <IconButton color="inherit">
+            <Badge color="secondary">
+              <HelpIcon />
+            </Badge>
+          </IconButton>
+          <MoreButton />
+          <CustomSwitch checked={isDark} onChange={handleThemeChange} />
+        </Toolbar>
+      </AppBar>
+      <Drawer
+        variant="permanent"
+        classes={{
+          paper: clsx(classes.drawerPaper, !open && classes.drawerPaperClose),
+        }}
+        open={open}
+      >
+        <div className={classes.toolbarIcon}>
+          <Box pr={10}>
+            <Link href={`/dashboard`}>
+              <img src={Logo} alt="logo" />
+            </Link>
+          </Box>
+          <IconButton onClick={handleDrawerClose}>
+            <ChevronLeftIcon />
+          </IconButton>
+        </div>
+        <div className={classes.Top}>
+          <List>{DiscoverListItems}</List>
+          <List>{dashboardListItems}</List>
+          <List>{mainListItems}</List>
+          <List>
+            <GroupsListItems />
+          </List>
+        </div>
+      </Drawer>
+      <main className={classes.content}>
+        <div className={classes.appBarSpacer} />
+        <Container className={classes.container}>
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              paddingBottom: "20px",
+            }}
+          >
+            <Box>
+              <NewProjectButtonAPI fetchProjects={fetchProjects} />
             </Box>
-            <IconButton onClick={handleDrawerClose}>
-              <ChevronLeftIcon />
-            </IconButton>
-          </div>
-          <div className={classes.Top}>
-            <List>{DiscoverListItems}</List>
-            <List>{dashboardListItems}</List>
-            <List>{mainListItems}</List>
-            <List>
-              <GroupsListItems />
-            </List>
-          </div>
-        </Drawer>
-        <main className={classes.content}>
-          <div className={classes.appBarSpacer} />
-          <Container className={classes.container}>
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                paddingBottom: "20px",
-              }}
-            >
-              <Box>
-                <NewProjectButtonAPI fetchProjects={fetchProjects} />
-              </Box>
-              <Box m={1}>
-                <Button
-                  variant="contained"
-                  component="label"
-                  startIcon={<PublishIcon />}
-                >
-                  {"Upload a file"}
-                  <input type="file" hidden />
-                </Button>
-              </Box>
+            <Box m={1}>
+              <Button
+                variant="contained"
+                component="label"
+                startIcon={<PublishIcon />}
+              >
+                {"Upload a file"}
+                <input type="file" hidden />
+              </Button>
+            </Box>
 
-              <Box>
-                <SimpleDialog />
-              </Box>
-            </div>
-            <Grid container spacing={2}>
-              {/* Project */}
-              {projects.map(function (project, i) {
-                return (
-                  <Grid item xs={12} key={i}>
-                    <Paper className={fixedHeightPaper}>
-                      <DashboardListItem
-                        fetchProjects={fetchProjects}
-                        id={project.projectId}
-                        title={project.projectTitle}
-                        category={project.projectCategory}
-                        dateCreated={project.projectDateCreated}
-                        projectState={project.projectState}
-                        projectIsDeleted={project.projectDeleted}
-                      />
-                    </Paper>
-                  </Grid>
-                );
-              })}
-            </Grid>
-          </Container>
-        </main>
-      </div>
-    </ThemeProvider>
+            <Box>
+              <SimpleDialog />
+            </Box>
+          </div>
+          <Grid container spacing={2}>
+            {/* Project */}
+            {projects.map(function (project, i) {
+              return (
+                <Grid item xs={12} key={i}>
+                  <Paper className={fixedHeightPaper}>
+                    <DashboardListItem
+                      fetchProjects={fetchProjects}
+                      id={project.projectId}
+                      title={project.projectTitle}
+                      category={project.projectCategory}
+                      dateCreated={project.projectDateCreated}
+                      projectState={project.projectState}
+                      projectIsDeleted={project.projectDeleted}
+                    />
+                  </Paper>
+                </Grid>
+              );
+            })}
+          </Grid>
+        </Container>
+      </main>
+    </div>
+    // </ThemeProvider>
   );
 }

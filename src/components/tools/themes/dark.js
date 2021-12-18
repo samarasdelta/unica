@@ -19,6 +19,7 @@ const theme = createTheme({
         body: {
           // backgroundImage: `url(${imagebgdark})`,
           backgroundPosition: "center center",
+          backgroundColor: "#303030",
           // height: "100vh",
           // backgroundRepeat: "no-repeat",
         },

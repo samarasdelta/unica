@@ -132,15 +132,11 @@ const AppBarCustom = () => {
 
   const { currentTheme, setTheme } = useContext(CustomThemeContext);
   const isDark = Boolean(currentTheme === "dark");
-
   const handleThemeChange = (event) => {
     const { checked } = event.target;
-    if (checked) {
-      setTheme("dark");
-    } else {
-      setTheme("normal");
-    }
+    setTheme(checked ? "dark" : "normal");
   };
+
   const handleDrawerOpen = () => {
     setOpen(true);
   };
