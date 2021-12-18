@@ -1,13 +1,20 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
-import * as serviceWorker from "./serviceWorker";
+import CustomThemeProvider from "../src/components/tools/themes/CustomThemeProvider";
+import CssBaseline from "@material-ui/core/CssBaseline";
+// import * as serviceWorker from "./serviceWorker";
 
 ReactDOM.render(
-  <React.StrictMode>
+  <CustomThemeProvider>
+    <CssBaseline />
+    {/* <React.StrictMode> */}
     <App />
-  </React.StrictMode>,
+    {/* </React.StrictMode> */}
+  </CustomThemeProvider>,
   document.getElementById("root")
 );
 
-serviceWorker.unregister();
+// {
+//   /* serviceWorker.unregister(); */
+// }
