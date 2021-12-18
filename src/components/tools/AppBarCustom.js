@@ -116,10 +116,10 @@ const CustomSwitch = withStyles({
   switchBase: {
     color: "#ffffff",
     "&$checked": {
-      color: "#424242",
+      color: "#000000",
     },
     "&$checked + $track": {
-      backgroundColor: "#ffffff",
+      backgroundColor: "#424242",
     },
   },
   checked: {},
