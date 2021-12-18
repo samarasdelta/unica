@@ -9,6 +9,9 @@ const theme = createTheme({
     background: {
       default: "#424242",
     },
+    color: {
+      default: "#000000",
+    },
   },
   overrides: {
     MuiCssBaseline: {
