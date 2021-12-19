@@ -17,16 +17,12 @@ const theme = createTheme({
     MuiCssBaseline: {
       "@global": {
         body: {
-          // backgroundImage: `url(${imagebgdark})`,
           backgroundPosition: "center center",
           backgroundColor: "#303030",
-          // height: "100vh",
-          // backgroundRepeat: "no-repeat",
         },
       },
     },
   },
-  shadows: ["0px 3px 6px 1px rgb(38 107 193 / 8%)"],
 });
 
 export default theme;
