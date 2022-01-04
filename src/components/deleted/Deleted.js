@@ -1,7 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import {
-  createTheme,
-  ThemeProvider,
   makeStyles,
   Grid,
   Paper,
@@ -10,19 +8,18 @@ import {
   IconButton,
   Link,
   Box,
-  Switch,
+  withStyles,
   Typography,
   Toolbar,
   AppBar,
   Drawer,
   List,
-  CssBaseline,
 } from "@material-ui/core";
 import clsx from "clsx";
-import { blue, red } from "@material-ui/core/colors";
 import MenuIcon from "@material-ui/icons/Menu";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import HelpIcon from "@material-ui/icons/Help";
+import SwitchUI from "@material-ui/core/Switch";
 import NotificationsIcon from "@material-ui/icons/Notifications";
 import {
   DiscoverListItems,
@@ -33,6 +30,7 @@ import {
 import Logo from "../images/unicasmall1.png";
 import DeletedListItem from "./DeletedListItem";
 import MoreButton from "../tools/AccountProfileButton";
+import { CustomThemeContext } from "../tools/themes/CustomThemeProvider";
 
 const drawerWidth = 200;
 
@@ -125,10 +123,24 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+const CustomSwitch = withStyles({
+  switchBase: {
+    color: "#ffffff",
+    "&$checked": {
+      color: "#e53935",
+    },
+    "&$checked + $track": {
+      backgroundColor: "#e53935",
+    },
+  },
+  checked: {},
+  track: {},
+})(SwitchUI);
+
 export default function Deleted() {
   const [open, setOpen] = React.useState(true);
-  const [darkState, setDarkState] = useState(false);
   const [projects, setProjects] = useState([]);
+  const classes = useStyles();
 
   const fetchDeletedProjects = () => {
     fetch("/api/projects/deleted")
@@ -145,26 +157,14 @@ export default function Deleted() {
     fetchDeletedProjects();
   }, []);
 
-  const palletType = darkState ? "dark" : "light";
-  const mainPrimaryColor = darkState ? blue[200] : blue[800];
-  const mainSecondaryColor = darkState ? red[600] : red[500];
-  const darkTheme = createTheme({
-    backgroundColor: "#212121",
-    palette: {
-      type: palletType,
-      primary: {
-        main: mainPrimaryColor,
-      },
-      secondary: {
-        main: mainSecondaryColor,
-      },
-    },
-  });
+  const { currentTheme, setTheme } = useContext(CustomThemeContext);
+  const isDark = Boolean(currentTheme === "dark");
 
-  const classes = useStyles();
-  const handleThemeChange = () => {
-    setDarkState(!darkState);
+  const handleThemeChange = (event) => {
+    const { checked } = event.target;
+    setTheme(checked ? "dark" : "normal");
   };
+
   const handleDrawerOpen = () => {
     setOpen(true);
   };
@@ -174,101 +174,98 @@ export default function Deleted() {
   const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
 
   return (
-    <ThemeProvider theme={darkTheme}>
-      <div className={classes.root}>
-        <CssBaseline />
-        <AppBar
-          position="absolute"
-          className={clsx(classes.appBar, open && classes.appBarShift)}
-        >
-          <Toolbar className={classes.toolbar}>
-            <IconButton
-              edge="start"
-              color="inherit"
-              aria-label="open drawer"
-              onClick={handleDrawerOpen}
-              className={clsx(
-                classes.menuButton,
-                open && classes.menuButtonHidden
-              )}
-            >
-              <MenuIcon />
-            </IconButton>
-            <Typography
-              component="h1"
-              variant="h5"
-              color="inherit"
-              noWrap
-              className={classes.title}
-            >
-              {"Deleted"}
-            </Typography>
-            <IconButton color="inherit">
-              <Badge badgeContent={1} color="secondary">
-                <NotificationsIcon />
-              </Badge>
-            </IconButton>
-            <IconButton color="inherit">
-              <Badge color="secondary">
-                <HelpIcon />
-              </Badge>
-            </IconButton>
-            <MoreButton />
-            <Switch checked={darkState} onChange={handleThemeChange} />
-          </Toolbar>
-        </AppBar>
-        <Drawer
-          variant="permanent"
-          classes={{
-            paper: clsx(classes.drawerPaper, !open && classes.drawerPaperClose),
-          }}
-          open={open}
-        >
-          <div className={classes.toolbarIcon}>
-            <Box pr={10}>
-              <Link href={`/dashboard`}>
-                <img src={Logo} alt="logo" />
-              </Link>
-            </Box>
-            <IconButton onClick={handleDrawerClose}>
-              <ChevronLeftIcon />
-            </IconButton>
-          </div>
-          <div className={classes.Top}>
-            <List>{DiscoverListItems}</List>
-            <List>{dashboardListItems}</List>
-            <List>{mainListItems}</List>
-            <List>
-              <GroupsListItems />
-            </List>{" "}
-          </div>
-        </Drawer>
-        <main className={classes.content}>
-          <div className={classes.appBarSpacer} />
-          <Container className={classes.container}>
-            <Grid container spacing={4}>
-              {/* Project */}
-              {projects.map(function (project, i) {
-                return (
-                  <Grid item xs={12} key={i}>
-                    <Paper className={fixedHeightPaper}>
-                      <DeletedListItem
-                        fetchDeletedProjects={fetchDeletedProjects}
-                        id={project.projectId}
-                        title={project.projectTitle}
-                        category={project.projectCategory}
-                        dateCreated={project.projectDateCreated}
-                        projectState={project.projectState}
-                        projectIsDeleted={project.projectDeleted}
-                      />
-                    </Paper>
-                  </Grid>
-                );
-              })}
-            </Grid>
-          </Container>
-        </main>
-      </div>
-    </ThemeProvider>
+    <div className={classes.root}>
+      <AppBar
+        position="absolute"
+        className={clsx(classes.appBar, open && classes.appBarShift)}
+      >
+        <Toolbar className={classes.toolbar}>
+          <IconButton
+            edge="start"
+            color="inherit"
+            aria-label="open drawer"
+            onClick={handleDrawerOpen}
+            className={clsx(
+              classes.menuButton,
+              open && classes.menuButtonHidden
+            )}
+          >
+            <MenuIcon />
+          </IconButton>
+          <Typography
+            component="h1"
+            variant="h5"
+            color="inherit"
+            noWrap
+            className={classes.title}
+          >
+            {"Deleted"}
+          </Typography>
+          <IconButton color="inherit">
+            <Badge badgeContent={1} color="secondary">
+              <NotificationsIcon />
+            </Badge>
+          </IconButton>
+          <IconButton color="inherit">
+            <Badge color="secondary">
+              <HelpIcon />
+            </Badge>
+          </IconButton>
+          <MoreButton />
+          <CustomSwitch checked={isDark} onChange={handleThemeChange} />
+        </Toolbar>
+      </AppBar>
+      <Drawer
+        variant="permanent"
+        classes={{
+          paper: clsx(classes.drawerPaper, !open && classes.drawerPaperClose),
+        }}
+        open={open}
+      >
+        <div className={classes.toolbarIcon}>
+          <Box pr={10}>
+            <Link href={`/dashboard`}>
+              <img src={Logo} alt="logo" />
+            </Link>
+          </Box>
+          <IconButton onClick={handleDrawerClose}>
+            <ChevronLeftIcon />
+          </IconButton>
+        </div>
+        <div className={classes.Top}>
+          <List>{DiscoverListItems}</List>
+          <List>{dashboardListItems}</List>
+          <List>{mainListItems}</List>
+          <List>
+            <GroupsListItems />
+          </List>{" "}
+        </div>
+      </Drawer>
+      <main className={classes.content}>
+        <div className={classes.appBarSpacer} />
+        <Container className={classes.container}>
+          <Grid container spacing={4}>
+            {/* Project */}
+            {projects.map(function (project, i) {
+              return (
+                <Grid item xs={12} key={i}>
+                  <Paper className={fixedHeightPaper}>
+                    <DeletedListItem
+                      fetchDeletedProjects={fetchDeletedProjects}
+                      id={project.projectId}
+                      title={project.projectTitle}
+                      category={project.projectCategory}
+                      dateCreated={project.projectDateCreated}
+                      projectState={project.projectState}
+                      projectIsDeleted={project.projectDeleted}
+                    />
+                  </Paper>
+                </Grid>
+              );
+            })}
+          </Grid>
+        </Container>
+      </main>
+    </div>
   );
 }

@@ -1,27 +1,24 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import {
-  createTheme,
-  ThemeProvider,
   makeStyles,
   Badge,
   Container,
   Divider,
   Box,
-  Switch,
   Link,
   Typography,
+  withStyles,
   Toolbar,
   AppBar,
   Drawer,
   List,
-  CssBaseline,
 } from "@material-ui/core";
 import clsx from "clsx";
-import { blue, red } from "@material-ui/core/colors";
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import HelpIcon from "@material-ui/icons/Help";
+import SwitchUI from "@material-ui/core/Switch";
 import NotificationsIcon from "@material-ui/icons/Notifications";
 import {
   DiscoverListItems,
@@ -33,6 +30,7 @@ import Logo from "../images/unicasmall1.png";
 import SearchBar from "../tools/SearchBar";
 import DiscoverResults from "./DiscoverListItem";
 import MoreButton from "../tools/AccountProfileButton";
+import { CustomThemeContext } from "../tools/themes/CustomThemeProvider";
 
 const drawerWidth = 200;
 
@@ -121,28 +119,33 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Discover() {
-  const [open, setOpen] = React.useState(true);
-  const [darkState, setDarkState] = useState(false);
-  const palletType = darkState ? "dark" : "light";
-  const mainPrimaryColor = darkState ? blue[200] : blue[800];
-  const mainSecondaryColor = darkState ? red[600] : red[500];
-  const darkTheme = createTheme({
-    palette: {
-      type: palletType,
-      primary: {
-        main: mainPrimaryColor,
-      },
-      secondary: {
-        main: mainSecondaryColor,
-      },
+const CustomSwitch = withStyles({
+  switchBase: {
+    color: "#ffffff",
+    "&$checked": {
+      color: "#e53935",
     },
-  });
+    "&$checked + $track": {
+      backgroundColor: "#e53935",
+    },
+  },
+  checked: {},
+  track: {},
+})(SwitchUI);
 
+export default function Discover() {
   const classes = useStyles();
-  const handleThemeChange = () => {
-    setDarkState(!darkState);
+
+  const [open, setOpen] = React.useState(true);
+
+  const { currentTheme, setTheme } = useContext(CustomThemeContext);
+  const isDark = Boolean(currentTheme === "dark");
+
+  const handleThemeChange = (event) => {
+    const { checked } = event.target;
+    setTheme(checked ? "dark" : "normal");
   };
+
   const handleDrawerOpen = () => {
     setOpen(true);
   };
@@ -151,90 +154,87 @@ export default function Discover() {
   };
 
   return (
-    <ThemeProvider theme={darkTheme}>
-      <div className={classes.root}>
-        <CssBaseline />
-        <AppBar
-          position="absolute"
-          className={clsx(classes.appBar, open && classes.appBarShift)}
-        >
-          <Toolbar className={classes.toolbar}>
-            <IconButton
-              edge="start"
-              color="inherit"
-              aria-label="open drawer"
-              onClick={handleDrawerOpen}
-              className={clsx(
-                classes.menuButton,
-                open && classes.menuButtonHidden
-              )}
-            >
-              <MenuIcon />
-            </IconButton>
-            <Typography
-              component="h1"
-              variant="h5"
-              color="inherit"
-              noWrap
-              className={classes.title}
-            >
-              {"Discover"}
-            </Typography>
-            <SearchBar />
-            <IconButton color="inherit">
-              <Badge badgeContent={1} color="secondary">
-                <NotificationsIcon />
-              </Badge>
-            </IconButton>
-            <IconButton color="inherit">
-              <Badge color="secondary">
-                <HelpIcon />
-              </Badge>
-            </IconButton>
-            <MoreButton />
-            <Switch checked={darkState} onChange={handleThemeChange} />
-          </Toolbar>
-        </AppBar>
-        <Drawer
-          variant="permanent"
-          classes={{
-            paper: clsx(classes.drawerPaper, !open && classes.drawerPaperClose),
-          }}
-          open={open}
-        >
-          <div className={classes.toolbarIcon}>
-            <Box pr={10}>
-              <Link href={`/dashboard`}>
-                <img src={Logo} alt="logo" />
-              </Link>
-            </Box>
-            <IconButton onClick={handleDrawerClose}>
-              <ChevronLeftIcon />
-            </IconButton>
-          </div>
-          <List>{DiscoverListItems}</List>
-          <List>{dashboardListItems}</List>
-          <List>{mainListItems}</List>
-          <List>
-            <GroupsListItems />
-          </List>
-        </Drawer>
-        <main className={classes.content}>
-          <div className={classes.appBarSpacer} />
-          <Container className={classes.container} maxWidth="xl">
-            <Typography variant="h6">
-              {"Available for collaboration projects"}
-            </Typography>
-            <Typography style={{ fontSize: "16px" }} color="textSecondary">
-              {
-                "Here, you will find a list with the available projects to collaborate with other users"
-              }
-            </Typography>
-            <Divider className={classes.section2} />
-            <DiscoverResults />
-          </Container>
-        </main>
-      </div>
-    </ThemeProvider>
+    <div className={classes.root}>
+      <AppBar
+        position="absolute"
+        className={clsx(classes.appBar, open && classes.appBarShift)}
+      >
+        <Toolbar className={classes.toolbar}>
+          <IconButton
+            edge="start"
+            color="inherit"
+            aria-label="open drawer"
+            onClick={handleDrawerOpen}
+            className={clsx(
+              classes.menuButton,
+              open && classes.menuButtonHidden
+            )}
+          >
+            <MenuIcon />
+          </IconButton>
+          <Typography
+            component="h1"
+            variant="h5"
+            color="inherit"
+            noWrap
+            className={classes.title}
+          >
+            {"Discover"}
+          </Typography>
+          <SearchBar />
+          <IconButton color="inherit">
+            <Badge badgeContent={1} color="secondary">
+              <NotificationsIcon />
+            </Badge>
+          </IconButton>
+          <IconButton color="inherit">
+            <Badge color="secondary">
+              <HelpIcon />
+            </Badge>
+          </IconButton>
+          <MoreButton />
+          <CustomSwitch checked={isDark} onChange={handleThemeChange} />
+        </Toolbar>
+      </AppBar>
+      <Drawer
+        variant="permanent"
+        classes={{
+          paper: clsx(classes.drawerPaper, !open && classes.drawerPaperClose),
+        }}
+        open={open}
+      >
+        <div className={classes.toolbarIcon}>
+          <Box pr={10}>
+            <Link href={`/dashboard`}>
+              <img src={Logo} alt="logo" />
+            </Link>
+          </Box>
+          <IconButton onClick={handleDrawerClose}>
+            <ChevronLeftIcon />
+          </IconButton>
+        </div>
+        <List>{DiscoverListItems}</List>
+        <List>{dashboardListItems}</List>
+        <List>{mainListItems}</List>
+        <List>
+          <GroupsListItems />
+        </List>
+      </Drawer>
+      <main className={classes.content}>
+        <div className={classes.appBarSpacer} />
+        <Container className={classes.container} maxWidth="xl">
+          <Typography variant="h6">
+            {"Available for collaboration projects"}
+          </Typography>
+          <Typography style={{ fontSize: "16px" }} color="textSecondary">
+            {
+              "Here, you will find a list with the available projects to collaborate with other users"
+            }
+          </Typography>
+          <Divider className={classes.section2} />
+          <DiscoverResults />
+        </Container>
+      </main>
+    </div>
   );
 }

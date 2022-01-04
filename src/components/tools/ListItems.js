@@ -68,7 +68,6 @@ export const mainListItems = (
 
 const useStyles = makeStyles({
   line: {
-    width: 200,
     display: "flex",
   },
   ListItemText: {

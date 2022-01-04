@@ -76,3 +76,30 @@
   font-family: "Poppins", sans-serif;
   font-size: 1rem;
 }
+
+/****** custom scrollbar *********/
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+
+::-webkit-scrollbar-thumb {
+  background: #8c8c8c;
+  border-radius: 8px;
+}
+
+/* Handle on hover */
+
+::-webkit-scrollbar-thumb:hover {
+  background: #aaaaaa;
+}
+
+/****** custom scrollbar *********/
