@@ -1,7 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
 import {
-  // createTheme,
-  // ThemeProvider,
   makeStyles,
   Button,
   Grid,
@@ -17,10 +15,8 @@ import {
   AppBar,
   Drawer,
   List,
-  // CssBaseline,
 } from "@material-ui/core";
 import clsx from "clsx";
-// import { blue, red } from "@material-ui/core/colors";
 import PublishIcon from "@material-ui/icons/Publish";
 import MenuIcon from "@material-ui/icons/Menu";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
@@ -148,7 +144,6 @@ const CustomSwitch = withStyles({
 export default function Dashboard() {
   const classes = useStyles();
   const [open, setOpen] = React.useState(true);
-  // const [darkState, setDarkState] = useState(false);
   const [projects, setProjects] = useState([]);
 
   const fetchProjects = () => {
@@ -164,23 +159,6 @@ export default function Dashboard() {
   useEffect(() => {
     fetchProjects();
   }, []);
-
-  // const palletType = darkState ? "dark" : "light";
-  // const mainPrimaryColor = darkState ? blue[200] : blue[800];
-  // const mainSecondaryColor = darkState ? red[600] : red[500];
-
-  // const darkTheme = createTheme({
-  //   backgroundColor: "#212121",
-  //   palette: {
-  //     type: palletType,
-  //     primary: {
-  //       main: mainPrimaryColor,
-  //     },
-  //     secondary: {
-  //       main: mainSecondaryColor,
-  //     },
-  //   },
-  // });
 
   const { currentTheme, setTheme } = useContext(CustomThemeContext);
   const isDark = Boolean(currentTheme === "dark");
@@ -199,9 +177,7 @@ export default function Dashboard() {
   const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
 
   return (
-    // <ThemeProvider theme={darkTheme}>
     <div className={classes.root}>
-      {/* <CssBaseline /> */}
       <AppBar
         position="absolute"
         className={clsx(classes.appBar, open && classes.appBarShift)}
@@ -319,6 +295,5 @@ export default function Dashboard() {
         </Container>
       </main>
     </div>
-    // </ThemeProvider>
   );
 }

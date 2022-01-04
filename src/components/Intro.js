@@ -12,7 +12,7 @@ import Container from "@material-ui/core/Container";
 import Box from "@material-ui/core/Box";
 import Logo from "./images/unicalogo.png";
 import CopyrightUnica from "./tools/CopyrightUnica";
-import Logosmall from "./images/unicasmall1.png";
+// import Logosmall from "./images/unicasmall1.png";
 import "./tools/css.css";
 
 const useStyles = makeStyles((theme) => ({
@@ -69,9 +69,9 @@ export default function Intro() {
         className={classes.appBar}
       >
         <Toolbar className={classes.toolbar}>
-          <Box>
+          {/* <Box>
             <img src={Logosmall} alt="logo" />
-          </Box>
+          </Box> */}
           <Typography
             variant="h6"
             color="inherit"
