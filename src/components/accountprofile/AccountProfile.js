@@ -1,22 +1,19 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import {
-  createTheme,
-  ThemeProvider,
   makeStyles,
   Badge,
   Container,
   IconButton,
   Box,
-  Switch,
   Typography,
   Link,
   Toolbar,
   AppBar,
   Drawer,
   List,
-  CssBaseline,
   Grid,
   CardHeader,
+  withStyles,
   Divider,
   TextField,
   CardContent,
@@ -24,8 +21,8 @@ import {
   Button,
 } from "@material-ui/core";
 import clsx from "clsx";
-import { blue, red } from "@material-ui/core/colors";
 import MenuIcon from "@material-ui/icons/Menu";
+import SwitchUI from "@material-ui/core/Switch";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import HelpIcon from "@material-ui/icons/Help";
 import NotificationsIcon from "@material-ui/icons/Notifications";
@@ -38,6 +35,7 @@ import {
 } from "../tools/ListItems";
 import Logo from "../images/unicasmall1.png";
 import MoreButton from "../tools/AccountProfileButton";
+import { CustomThemeContext } from "../tools/themes/CustomThemeProvider";
 
 const drawerWidth = 200;
 
@@ -125,36 +123,39 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+const CustomSwitch = withStyles({
+  switchBase: {
+    color: "#ffffff",
+    "&$checked": {
+      color: "#e53935",
+    },
+    "&$checked + $track": {
+      backgroundColor: "#e53935",
+    },
+  },
+  checked: {},
+  track: {},
+})(SwitchUI);
+
 export default function AccountProfile() {
   const [open, setOpen] = React.useState(false);
-  const [darkState, setDarkState] = useState(false);
 
-  const palletType = darkState ? "dark" : "light";
-  const mainPrimaryColor = darkState ? blue[200] : blue[800];
-  const mainSecondaryColor = darkState ? red[600] : red[500];
   const [fname, setFirstName] = React.useState("");
   const [sname, setSurName] = React.useState("");
   const [email, setEmail] = React.useState("");
   const [dob, setDob] = React.useState("");
   const [telephone, setTelephone] = React.useState("");
 
-  const darkTheme = createTheme({
-    backgroundColor: "#212121",
-    palette: {
-      type: palletType,
-      primary: {
-        main: mainPrimaryColor,
-      },
-      secondary: {
-        main: mainSecondaryColor,
-      },
-    },
-  });
+  const { currentTheme, setTheme } = useContext(CustomThemeContext);
+  const isDark = Boolean(currentTheme === "dark");
+
+  const handleThemeChange = (event) => {
+    const { checked } = event.target;
+    setTheme(checked ? "dark" : "normal");
+  };
 
   const classes = useStyles();
-  const handleThemeChange = () => {
-    setDarkState(!darkState);
-  };
+
   const handleDrawerOpen = () => {
     setOpen(true);
   };
@@ -215,185 +216,182 @@ export default function AccountProfile() {
   );
 
   return (
-    <ThemeProvider theme={darkTheme}>
-      <div className={classes.root}>
-        <CssBaseline />
-        <AppBar
-          position="absolute"
-          className={clsx(classes.appBar, open && classes.appBarShift)}
-        >
-          <Toolbar className={classes.toolbar}>
-            <IconButton
-              edge="start"
-              color="inherit"
-              aria-label="open drawer"
-              onClick={handleDrawerOpen}
-              className={clsx(
-                classes.menuButton,
-                open && classes.menuButtonHidden
-              )}
-            >
-              <MenuIcon />
-            </IconButton>
-            <Typography
-              component="h1"
-              variant="h5"
-              color="inherit"
-              noWrap
-              className={classes.title}
-            >
-              {"Account"}
-            </Typography>
-            <IconButton color="inherit">
-              <Badge badgeContent={1} color="secondary">
-                <NotificationsIcon />
-              </Badge>
-            </IconButton>
-            <IconButton color="inherit">
-              <Badge color="secondary">
-                <HelpIcon />
-              </Badge>
-            </IconButton>
-            <MoreButton />
-            <Switch checked={darkState} onChange={handleThemeChange} />
-          </Toolbar>
-        </AppBar>
-        <Drawer
-          variant="permanent"
-          classes={{
-            paper: clsx(classes.drawerPaper, !open && classes.drawerPaperClose),
-          }}
-          open={open}
-        >
-          <div className={classes.toolbarIcon}>
-            <Box pr={10}>
-              <Link href={`/dashboard`}>
-                <img src={Logo} alt="logo" />
-              </Link>
-            </Box>
-            <IconButton onClick={handleDrawerClose}>
-              <ChevronLeftIcon />
-            </IconButton>
-          </div>
-          <div className={classes.Top}>
-            <List>{DiscoverListItems}</List>
-            <List>{dashboardListItems}</List>
-            <List>{mainListItems}</List>
-            <List>
-              <GroupsListItems />
-            </List>
-          </div>
-        </Drawer>
-        <Container className={classes.container}>
-          <div autoComplete="off" noValidate>
-            <Card>
-              <CardHeader
-                subheader="The information can be edited"
-                title="Profile"
-              />
-              <Divider />
-              <CardContent>
-                <Grid container spacing={3}>
-                  <Grid item md={6} xs={12}>
-                    <TextField
-                      fullWidth
-                      helperText="Please specify the first name"
-                      label="First name"
-                      name="fname"
-                      required
-                      variant="outlined"
-                      onInput={handleFirstNameChange}
-                    />
-                  </Grid>
-                  <Grid item md={6} xs={12}>
-                    <TextField
-                      fullWidth
-                      helperText="Please specify the last name"
-                      label="Last name"
-                      name="sname"
-                      required
-                      variant="outlined"
-                      onInput={handleSurNameChange}
-                    />
-                  </Grid>
-                  <Grid item md={6} xs={12}>
-                    <TextField
-                      fullWidth
-                      label="Email Address"
-                      helperText="Please type your email adress"
-                      name="email"
-                      required
-                      type="email"
-                      variant="outlined"
-                      onInput={handleEmailChange}
-                    />
-                  </Grid>
-                  <Grid item md={6} xs={12}>
-                    <TextField
-                      fullWidth
-                      label="Phone Number"
-                      name="phone"
-                      type="number"
-                      variant="outlined"
-                      onInput={handleTelephoneChange}
-                    />
-                  </Grid>
-                  <Grid item md={4} xs={12}>
-                    <TextField
-                      fullWidth
-                      label="Date of Birth"
-                      type="date"
-                      InputLabelProps={{ shrink: true }}
-                      name="dateofbirth"
-                      required
-                      variant="outlined"
-                      onInput={handleDobChange}
-                    />
-                  </Grid>
-                  <Grid item md={8} xs={12}>
-                    {/* <input
+    <div className={classes.root}>
+      <AppBar
+        position="absolute"
+        className={clsx(classes.appBar, open && classes.appBarShift)}
+      >
+        <Toolbar className={classes.toolbar}>
+          <IconButton
+            edge="start"
+            color="inherit"
+            aria-label="open drawer"
+            onClick={handleDrawerOpen}
+            className={clsx(
+              classes.menuButton,
+              open && classes.menuButtonHidden
+            )}
+          >
+            <MenuIcon />
+          </IconButton>
+          <Typography
+            component="h1"
+            variant="h5"
+            color="inherit"
+            noWrap
+            className={classes.title}
+          >
+            {"Account"}
+          </Typography>
+          <IconButton color="inherit">
+            <Badge badgeContent={1} color="secondary">
+              <NotificationsIcon />
+            </Badge>
+          </IconButton>
+          <IconButton color="inherit">
+            <Badge color="secondary">
+              <HelpIcon />
+            </Badge>
+          </IconButton>
+          <MoreButton />
+          <CustomSwitch checked={isDark} onChange={handleThemeChange} />
+        </Toolbar>
+      </AppBar>
+      <Drawer
+        variant="permanent"
+        classes={{
+          paper: clsx(classes.drawerPaper, !open && classes.drawerPaperClose),
+        }}
+        open={open}
+      >
+        <div className={classes.toolbarIcon}>
+          <Box pr={10}>
+            <Link href={`/dashboard`}>
+              <img src={Logo} alt="logo" />
+            </Link>
+          </Box>
+          <IconButton onClick={handleDrawerClose}>
+            <ChevronLeftIcon />
+          </IconButton>
+        </div>
+        <div className={classes.Top}>
+          <List>{DiscoverListItems}</List>
+          <List>{dashboardListItems}</List>
+          <List>{mainListItems}</List>
+          <List>
+            <GroupsListItems />
+          </List>
+        </div>
+      </Drawer>
+      <Container className={classes.container}>
+        <div autoComplete="off" noValidate>
+          <Card>
+            <CardHeader
+              subheader="The information can be edited"
+              title="Profile"
+            />
+            <Divider />
+            <CardContent>
+              <Grid container spacing={3}>
+                <Grid item md={6} xs={12}>
+                  <TextField
+                    fullWidth
+                    helperText="Please specify the first name"
+                    label="First name"
+                    name="fname"
+                    required
+                    variant="outlined"
+                    onInput={handleFirstNameChange}
+                  />
+                </Grid>
+                <Grid item md={6} xs={12}>
+                  <TextField
+                    fullWidth
+                    helperText="Please specify the last name"
+                    label="Last name"
+                    name="sname"
+                    required
+                    variant="outlined"
+                    onInput={handleSurNameChange}
+                  />
+                </Grid>
+                <Grid item md={6} xs={12}>
+                  <TextField
+                    fullWidth
+                    label="Email Address"
+                    helperText="Please type your email adress"
+                    name="email"
+                    required
+                    type="email"
+                    variant="outlined"
+                    onInput={handleEmailChange}
+                  />
+                </Grid>
+                <Grid item md={6} xs={12}>
+                  <TextField
+                    fullWidth
+                    label="Phone Number"
+                    name="phone"
+                    type="number"
+                    variant="outlined"
+                    onInput={handleTelephoneChange}
+                  />
+                </Grid>
+                <Grid item md={4} xs={12}>
+                  <TextField
+                    fullWidth
+                    label="Date of Birth"
+                    type="date"
+                    InputLabelProps={{ shrink: true }}
+                    name="dateofbirth"
+                    required
+                    variant="outlined"
+                    onInput={handleDobChange}
+                  />
+                </Grid>
+                <Grid item md={8} xs={12}>
+                  {/* <input
                         accept="image/*"
                         id="icon-button-file"
                         type="file"
                         style={{ display: "none" }}
                       /> */}
-                    <TextField
-                      disabled
-                      defaultValue="pathname.pdf"
-                      fullWidth
-                      label="CV"
-                      name="state"
-                      InputLabelProps={{ shrink: true }}
-                      InputProps={{
-                        endAdornment: <UploadButton />,
-                      }}
-                      variant="outlined"
-                    >
-                      Upload File
-                    </TextField>
-                  </Grid>
+                  <TextField
+                    disabled
+                    defaultValue="pathname.pdf"
+                    fullWidth
+                    label="CV"
+                    name="state"
+                    InputLabelProps={{ shrink: true }}
+                    InputProps={{
+                      endAdornment: <UploadButton />,
+                    }}
+                    variant="outlined"
+                  >
+                    Upload File
+                  </TextField>
                 </Grid>
-              </CardContent>
-              <Box>
-                <Button
-                  style={{
-                    fontWeight: "600",
-                    textTransform: "none",
-                    marginBottom: "15px",
-                    marginRight: "15px",
-                    float: "right",
-                  }}
-                  color="primary"
-                  variant="contained"
-                  onClick={createUser}
-                >
-                  Save details
-                </Button>
-              </Box>
-            </Card>
-          </div>
-        </Container>
-      </div>
-    </ThemeProvider>
+              </Grid>
+            </CardContent>
+            <Box>
+              <Button
+                style={{
+                  fontWeight: "600",
+                  textTransform: "none",
+                  marginBottom: "15px",
+                  marginRight: "15px",
+                  float: "right",
+                }}
+                color="primary"
+                variant="contained"
+                onClick={createUser}
+              >
+                Save details
+              </Button>
+            </Box>
+          </Card>
+        </div>
+      </Container>
+    </div>
   );
 }

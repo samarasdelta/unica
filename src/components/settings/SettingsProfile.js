@@ -1,24 +1,25 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import {
-  createTheme,
-  ThemeProvider,
+  // createTheme,
+  // ThemeProvider,
   makeStyles,
   Badge,
   Container,
   IconButton,
   Box,
-  Switch,
   Link,
   Typography,
   Toolbar,
   AppBar,
+  withStyles,
   Drawer,
   List,
-  CssBaseline,
+  // CssBaseline,
 } from "@material-ui/core";
 import clsx from "clsx";
-import { blue, red } from "@material-ui/core/colors";
+// import { blue, red } from "@material-ui/core/colors";
 import MenuIcon from "@material-ui/icons/Menu";
+import SwitchUI from "@material-ui/core/Switch";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import HelpIcon from "@material-ui/icons/Help";
 import NotificationsIcon from "@material-ui/icons/Notifications";
@@ -32,6 +33,7 @@ import Logo from "../images/unicasmall1.png";
 import MoreButton from "../tools/AccountProfileButton";
 import { SettingsNotifications } from "./settings-notifications";
 import { SettingsPassword } from "./settings-password";
+import { CustomThemeContext } from "../tools/themes/CustomThemeProvider";
 
 const drawerWidth = 200;
 
@@ -124,30 +126,49 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+const CustomSwitch = withStyles({
+  switchBase: {
+    color: "#ffffff",
+    "&$checked": {
+      color: "#e53935",
+    },
+    "&$checked + $track": {
+      backgroundColor: "#e53935",
+    },
+  },
+  checked: {},
+  track: {},
+})(SwitchUI);
+
 export default function SettingsProfile() {
   const [open, setOpen] = React.useState(false);
-  const [darkState, setDarkState] = useState(false);
-
-  const palletType = darkState ? "dark" : "light";
-  const mainPrimaryColor = darkState ? blue[200] : blue[800];
-  const mainSecondaryColor = darkState ? red[600] : red[500];
-  const darkTheme = createTheme({
-    backgroundColor: "#212121",
-    palette: {
-      type: palletType,
-      primary: {
-        main: mainPrimaryColor,
-      },
-      secondary: {
-        main: mainSecondaryColor,
-      },
-    },
-  });
-
   const classes = useStyles();
-  const handleThemeChange = () => {
-    setDarkState(!darkState);
+  // const [darkState, setDarkState] = useState(false);
+
+  // const palletType = darkState ? "dark" : "light";
+  // const mainPrimaryColor = darkState ? blue[200] : blue[800];
+  // const mainSecondaryColor = darkState ? red[600] : red[500];
+  // const darkTheme = createTheme({
+  //   backgroundColor: "#212121",
+  //   palette: {
+  //     type: palletType,
+  //     primary: {
+  //       main: mainPrimaryColor,
+  //     },
+  //     secondary: {
+  //       main: mainSecondaryColor,
+  //     },
+  //   },
+  // });
+
+  const { currentTheme, setTheme } = useContext(CustomThemeContext);
+  const isDark = Boolean(currentTheme === "dark");
+
+  const handleThemeChange = (event) => {
+    const { checked } = event.target;
+    setTheme(checked ? "dark" : "normal");
   };
+
   const handleDrawerOpen = () => {
     setOpen(true);
   };
@@ -156,83 +177,83 @@ export default function SettingsProfile() {
   };
 
   return (
-    <ThemeProvider theme={darkTheme}>
-      <div className={classes.root}>
-        <CssBaseline />
-        <AppBar
-          position="absolute"
-          className={clsx(classes.appBar, open && classes.appBarShift)}
-        >
-          <Toolbar className={classes.toolbar}>
-            <IconButton
-              edge="start"
-              color="inherit"
-              aria-label="open drawer"
-              onClick={handleDrawerOpen}
-              className={clsx(
-                classes.menuButton,
-                open && classes.menuButtonHidden
-              )}
-            >
-              <MenuIcon />
-            </IconButton>
-            <Typography
-              component="h1"
-              variant="h5"
-              color="inherit"
-              noWrap
-              className={classes.title}
-            >
-              {"Settings"}
-            </Typography>
-            <IconButton color="inherit">
-              <Badge badgeContent={1} color="secondary">
-                <NotificationsIcon />
-              </Badge>
-            </IconButton>
-            <IconButton color="inherit">
-              <Badge color="secondary">
-                <HelpIcon />
-              </Badge>
-            </IconButton>
-            <MoreButton />
-            <Switch checked={darkState} onChange={handleThemeChange} />
-          </Toolbar>
-        </AppBar>
-        <Drawer
-          variant="permanent"
-          classes={{
-            paper: clsx(classes.drawerPaper, !open && classes.drawerPaperClose),
-          }}
-          open={open}
-        >
-          <div className={classes.toolbarIcon}>
-            <Box pr={10}>
-              <Link href={`/dashboard`}>
-                <img src={Logo} alt="logo" />
-              </Link>
-            </Box>
-            <IconButton onClick={handleDrawerClose}>
-              <ChevronLeftIcon />
-            </IconButton>
-          </div>
-          <div className={classes.Top}>
-            <List>{DiscoverListItems}</List>
-            <List>{dashboardListItems}</List>
-            <List>{mainListItems}</List>
-            <List>
-              <GroupsListItems />
-            </List>
-          </div>
-        </Drawer>
-        <div className={classes.appBarSpacer} />
-        <Container className={classes.container}>
-          <SettingsNotifications />
-          <Box mt={5}>
-            <SettingsPassword />
+    // <ThemeProvider theme={darkTheme}>
+    <div className={classes.root}>
+      {/* <CssBaseline /> */}
+      <AppBar
+        position="absolute"
+        className={clsx(classes.appBar, open && classes.appBarShift)}
+      >
+        <Toolbar className={classes.toolbar}>
+          <IconButton
+            edge="start"
+            color="inherit"
+            aria-label="open drawer"
+            onClick={handleDrawerOpen}
+            className={clsx(
+              classes.menuButton,
+              open && classes.menuButtonHidden
+            )}
+          >
+            <MenuIcon />
+          </IconButton>
+          <Typography
+            component="h1"
+            variant="h5"
+            color="inherit"
+            noWrap
+            className={classes.title}
+          >
+            {"Settings"}
+          </Typography>
+          <IconButton color="inherit">
+            <Badge badgeContent={1} color="secondary">
+              <NotificationsIcon />
+            </Badge>
+          </IconButton>
+          <IconButton color="inherit">
+            <Badge color="secondary">
+              <HelpIcon />
+            </Badge>
+          </IconButton>
+          <MoreButton />
+          <CustomSwitch checked={isDark} onChange={handleThemeChange} />
+        </Toolbar>
+      </AppBar>
+      <Drawer
+        variant="permanent"
+        classes={{
+          paper: clsx(classes.drawerPaper, !open && classes.drawerPaperClose),
+        }}
+        open={open}
+      >
+        <div className={classes.toolbarIcon}>
+          <Box pr={10}>
+            <Link href={`/dashboard`}>
+              <img src={Logo} alt="logo" />
+            </Link>
           </Box>
-        </Container>
-      </div>
-    </ThemeProvider>
+          <IconButton onClick={handleDrawerClose}>
+            <ChevronLeftIcon />
+          </IconButton>
+        </div>
+        <div className={classes.Top}>
+          <List>{DiscoverListItems}</List>
+          <List>{dashboardListItems}</List>
+          <List>{mainListItems}</List>
+          <List>
+            <GroupsListItems />
+          </List>
+        </div>
+      </Drawer>
+      <div className={classes.appBarSpacer} />
+      <Container className={classes.container}>
+        <SettingsNotifications />
+        <Box mt={5}>
+          <SettingsPassword />
+        </Box>
+      </Container>
+    </div>
+    // </ThemeProvider>
   );
 }
