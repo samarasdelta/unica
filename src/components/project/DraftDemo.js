@@ -1,3 +1,5 @@
+//version 1
+
 // import React, { useState } from "react";
 // import { ContentState, convertToRaw } from "draft-js";
 // import { Editor } from "react-draft-wysiwyg";
@@ -23,7 +25,9 @@
 // };
 // export default DemoEditor;
 
-//end
+//end version 1
+
+//version 2
 
 import React, { useState } from "react";
 import { EditorState } from "draft-js";
@@ -73,3 +77,5 @@ const DemoEditor = () => {
 };
 
 export default DemoEditor;
+
+//end version 2

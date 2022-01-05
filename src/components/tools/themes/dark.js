@@ -17,6 +17,7 @@ const theme = createTheme({
     MuiCssBaseline: {
       "@global": {
         body: {
+          color: "#000000",
           backgroundPosition: "center center",
           backgroundColor: "#303030",
         },
