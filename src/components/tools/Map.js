@@ -44,7 +44,7 @@ export default function Map() {
             <span className="maptitle"> ?</span>
           </b>
           <div className="textdefault">
-            <p>Unica is a researcher&apos;s collaborative web site. </p>
+            <p>Unica is a researcher&apos;s collaborative website. </p>
             <p>
               Here, a writer of scientific articles can find other writers, all
               over the world, who want to work on the same article and publish
@@ -59,12 +59,12 @@ export default function Map() {
             <p>
               All scientific fields are served on this website: Philosophy,
               Mathematics, Geometry, Litterature, Engineering, Mechanics,
-              Informatics, Theology, Medicin, Physics, Fine Arts, etc.
+              Informatics, Theology, Medicine, Physics, Fine Arts, etc.
             </p>
           </div>
           <Box my={1}>
             <div className="textdefault">
-              Ideal for researchers, collaborators, students and writers.
+              Ideal for researchers, collaborators, students, and writers.
             </div>
           </Box>
         </Grid>
