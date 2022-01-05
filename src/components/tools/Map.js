@@ -88,11 +88,9 @@ export default function Map() {
               color="textSecondary"
               gutterBottom
             >
-              <p>
-                All scientific fields are served on this website: Philosophy,
-                Mathematics, Geometry, Litterature, Engineering, Mechanics,
-                Informatics, Theology, Medicine, Physics, Fine Arts, etc.
-              </p>
+              All scientific fields are served on this website: Philosophy,
+              Mathematics, Geometry, Litterature, Engineering, Mechanics,
+              Informatics, Theology, Medicine, Physics, Fine Arts, etc.
             </Typography>
           </div>
           <Box my={1}>
