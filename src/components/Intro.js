@@ -12,7 +12,6 @@ import Container from "@material-ui/core/Container";
 import Box from "@material-ui/core/Box";
 import Logo from "./images/unicalogo.png";
 import CopyrightUnica from "./tools/CopyrightUnica";
-// import Logosmall from "./images/unicasmall1.png";
 import "./tools/css.css";
 
 const useStyles = makeStyles((theme) => ({
@@ -83,7 +82,7 @@ export default function Intro() {
               to="/discover"
               className={classes.submit}
               style={{
-                fontWeight: "500",
+                fontWeight: "600",
                 fontSize: "1rem",
                 textDecoration: "none",
                 color: "grey",
