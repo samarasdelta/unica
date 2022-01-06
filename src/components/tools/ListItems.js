@@ -13,6 +13,7 @@ import Link from "@material-ui/core/Link";
 import Divider from "@material-ui/core/Divider";
 import NewTeamButtonAPI from "../tools/NewTeamButton";
 import { makeStyles } from "@material-ui/core/styles";
+import { Typography } from "@material-ui/core";
 
 export const DiscoverListItems = (
   <div>
@@ -113,10 +114,15 @@ export function GroupsListItems() {
               <ListItemIcon>
                 <GroupWorkIcon color="primary" />
               </ListItemIcon>
-              <ListItemText
-                className={classes.ListItemText}
-                secondary={group.groupTitle}
-              />
+              <ListItemText className={classes.ListItemText}>
+                <Typography
+                  noWrap
+                  color="textSecondary"
+                  style={{ fontSize: "14px" }}
+                >
+                  {group.groupTitle}
+                </Typography>
+              </ListItemText>
             </ListItem>
           </Link>
         );
