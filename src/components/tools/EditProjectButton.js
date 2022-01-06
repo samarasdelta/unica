@@ -103,7 +103,12 @@ export default function EditProjectButtonAPI(props, { fetchProjects }) {
   return (
     <div>
       <Button
-        style={{ textTransform: "none", height: "22px" }}
+        style={{
+          textTransform: "none",
+          height: "22px",
+          fontWeight: "400",
+          fontSize: "14px",
+        }}
         type="submit"
         variant="text"
         color="primary"
@@ -111,7 +116,7 @@ export default function EditProjectButtonAPI(props, { fetchProjects }) {
         startIcon={<CreateIcon />}
         onClick={openModal}
       >
-        {"Edit Project"}
+        {"Edit project"}
       </Button>
 
       <Dialog
