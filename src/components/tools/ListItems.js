@@ -12,7 +12,6 @@ import FindInPageIcon from "@material-ui/icons/FindInPage";
 import Link from "@material-ui/core/Link";
 import Divider from "@material-ui/core/Divider";
 import NewTeamButtonAPI from "../tools/NewTeamButton";
-import { makeStyles } from "@material-ui/core/styles";
 import { Typography } from "@material-ui/core";
 
 export const DiscoverListItems = (
@@ -67,24 +66,7 @@ export const mainListItems = (
   </div>
 );
 
-const useStyles = makeStyles({
-  line: {
-    display: "flex",
-  },
-  ListItemText: {
-    display: "block",
-    overflow: "hidden",
-  },
-  ListItemTextRoot: {
-    overflow: "hidden",
-  },
-  ListItemTextContent: {
-    overflow: "hidden",
-  },
-});
-
 export function GroupsListItems() {
-  const classes = useStyles();
   const [groups, setGroups] = useState([]);
 
   useEffect(() => {
@@ -110,11 +92,11 @@ export function GroupsListItems() {
             color="textPrimary"
             style={{ textDecoration: "none" }}
           >
-            <ListItem className={classes.line} button>
+            <ListItem button>
               <ListItemIcon>
                 <GroupWorkIcon color="primary" />
               </ListItemIcon>
-              <ListItemText className={classes.ListItemText}>
+              <ListItemText>
                 <Typography
                   noWrap
                   color="textSecondary"
