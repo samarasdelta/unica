@@ -1,6 +1,9 @@
 import { createTheme } from "@material-ui/core";
 
 const theme = createTheme({
+  typography: {
+    fontFamily: `"Poppins", sans-serif`,
+  },
   palette: {
     primary: {
       main: "#1565c0",

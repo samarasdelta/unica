@@ -1,6 +1,9 @@
 import { createTheme } from "@material-ui/core";
 
 const theme = createTheme({
+  typography: {
+    fontFamily: `"Poppins", sans-serif`,
+  },
   palette: {
     type: "dark",
     primary: {
@@ -17,6 +20,7 @@ const theme = createTheme({
     MuiCssBaseline: {
       "@global": {
         body: {
+          fontFamily: "Poppins, sans-serif",
           color: "#000000",
           backgroundPosition: "center center",
           backgroundColor: "#303030",
