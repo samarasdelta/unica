@@ -27,8 +27,8 @@ import {
   GroupsListItems,
 } from "../tools/ListItems";
 import Logo from "../images/unicasmall1.png";
-import SearchBar from "../tools/SearchBar";
-import DiscoverResults from "./DiscoverListItem";
+// import DiscoverResults from "./DiscoverListItem";
+import DiscoverMaterialTable from "./DiscoverMaterialTable";
 import MoreButton from "../tools/AccountProfileButton";
 import { CustomThemeContext } from "../tools/themes/CustomThemeProvider";
 
@@ -181,7 +181,6 @@ export default function Discover() {
           >
             {"Discover"}
           </Typography>
-          <SearchBar />
           <IconButton color="inherit">
             <Badge badgeContent={1} color="secondary">
               <NotificationsIcon />
@@ -232,7 +231,8 @@ export default function Discover() {
             }
           </Typography>
           <Divider className={classes.section2} />
-          <DiscoverResults />
+          {/* <DiscoverResults /> */}
+          <DiscoverMaterialTable />
         </Container>
       </main>
     </div>
