@@ -31,3 +31,28 @@
   margin-top: 1rem;
   color: gray;
 }
+
+/* textarea */
+
+.row {
+  flex: 1;
+  display: flex;
+  flex-flow: row;
+}
+
+.col {
+  flex: 1;
+  display: flex;
+  flex-flow: column;
+  margin: 0px 2px;
+  min-height: 755px;
+}
+
+.editor-textarea {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid;
+  resize: none;
+}
+
+/* textarea */

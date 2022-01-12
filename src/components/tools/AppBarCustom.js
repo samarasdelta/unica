@@ -19,7 +19,7 @@ import HelpIcon from "@material-ui/icons/Help";
 import SwitchUI from "@material-ui/core/Switch";
 import NotificationsIcon from "@material-ui/icons/Notifications";
 import MoreButton from "./AccountProfileButton";
-import LogoUnica from "./images/favicon.ico";
+import LogoUnica from "./images/unicasmall256.png";
 import { CustomThemeContext } from "./themes/CustomThemeProvider";
 
 const drawerWidth = 200;

@@ -1,11 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
 import AppBarCustom from "../tools/AppBarCustom";
+import "./democss.css";
 // import MyEditor from "./Draft";
 // import EditorWYS from "./DraftWYS";
 // import "./texteditorcss.css";
-import "./democss.css";
-import DemoEditor from "./DraftDemo";
+// import DemoEditor from "./DraftDemo";
 
 const Project = (props) => {
   return (
@@ -20,7 +20,18 @@ const Project = (props) => {
       </div>
       {/* <MyEditor /> */}
       {/* <EditorWYS /> */}
-      <DemoEditor />
+      {/* <DemoEditor /> */}
+
+      {/* textarea */}
+      <div className="row">
+        <div className="col">
+          <textarea className="editor-textarea">textarea 1</textarea>
+        </div>
+        <div className="col">
+          <textarea className="editor-textarea">textarea 2</textarea>
+        </div>
+      </div>
+      {/* textarea */}
     </div>
   );
 };
