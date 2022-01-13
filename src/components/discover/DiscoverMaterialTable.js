@@ -8,6 +8,7 @@ import ChevronLeft from "@material-ui/icons/ChevronLeft";
 import ChevronRight from "@material-ui/icons/ChevronRight";
 import FirstPage from "@material-ui/icons/FirstPage";
 import LastPage from "@material-ui/icons/LastPage";
+// import Link from "@material-ui/core/Link";
 
 const tableIcons = {
   Clear: forwardRef((props, ref) => <Clear {...props} ref={ref} />),
@@ -46,17 +47,19 @@ export default function DataTable() {
             title: "Name",
             field: "name",
           },
-          { title: "Category", field: "category" },
-          { title: "Owner", field: "owner" },
+          { title: "Category", field: "category", align: "right" },
+          { title: "Owner", field: "owner", align: "right" },
         ]}
         data={projects.map((project) => {
           return {
-            owner: "Kwstas",
             name: `${project.projectTitle}`,
             category: `${project.projectCategory}`,
+            owner: "Kwstas",
           };
         })}
-      />
+      >
+        {/* <Link href={`/project/${project.projectId}`} /> */}
+      </MaterialTable>
     </div>
   );
 }
