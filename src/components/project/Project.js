@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import AppBarCustom from "../tools/AppBarCustom";
 import "./democss.css";
+import katex from "katex";
 // import MyEditor from "./Draft";
 // import EditorWYS from "./DraftWYS";
 // import "./texteditorcss.css";
@@ -34,15 +35,19 @@ const Project = (props) => {
           <textarea
             onChange={handleTextChange}
             className="editor-textarea"
-            defaultValue={"Type your LaTeX code here!"}
+            defaultValue={"ce{CO2 + C -> 2 C0}"}
           />
         </div>
-        <div className="col">
-          <textarea
+        <div
+          className="col"
+          dangerouslySetInnerHTML={{ __html: katex.renderToString(text) }}
+        >
+          {/* <textarea
             readOnly
             className="editor-textarea"
             defaultValue={"Preview of your compiled code here!"}
-          />
+            value={katex.renderToString(text)}
+          /> */}
         </div>
       </div>
       {/* textarea */}
