@@ -8,6 +8,12 @@ import "./democss.css";
 // import DemoEditor from "./DraftDemo";
 
 const Project = (props) => {
+  const [text, setText] = React.useState("");
+
+  const handleTextChange = (e) => {
+    setText(e.target.value);
+  };
+
   return (
     <div>
       <AppBarCustom />
@@ -25,10 +31,18 @@ const Project = (props) => {
       {/* textarea */}
       <div className="row">
         <div className="col">
-          <textarea className="editor-textarea">textarea 1</textarea>
+          <textarea
+            onChange={handleTextChange}
+            className="editor-textarea"
+            defaultValue={"Type your LaTeX code here!"}
+          />
         </div>
         <div className="col">
-          <textarea className="editor-textarea">textarea 2</textarea>
+          <textarea
+            readOnly
+            className="editor-textarea"
+            defaultValue={"Preview of your compiled code here!"}
+          />
         </div>
       </div>
       {/* textarea */}
