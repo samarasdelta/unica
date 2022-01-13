@@ -38,30 +38,29 @@ export default function DataTable() {
 
   return (
     <div>
-      {projects.map(function (project, i) {
-        return (
-          <MaterialTable
-            key={i}
-            icons={tableIcons}
-            title="Project"
-            columns={[
-              {
-                title: "Name",
-                field: "name",
-              },
-              { title: "Category", field: "category" },
-              { title: "Owner", field: "owner" },
-            ]}
-            data={[
-              {
-                name: `${project.projectTitle}`,
-                category: `${project.projectCategory}`,
-                owner: "Kwstas",
-              },
-            ]}
-          />
-        );
-      })}
+      <MaterialTable
+        icons={tableIcons}
+        title="Project"
+        columns={[
+          {
+            title: "Name",
+            field: "name",
+          },
+          { title: "Category", field: "category" },
+          { title: "Owner", field: "owner" },
+        ]}
+        data={projects.map((project) => {
+          return {
+            owner: "Kwstas",
+            name: `${project.projectTitle}`,
+            category: `${project.projectCategory}`,
+          };
+        })}
+      />
     </div>
   );
 }
+
+// [
+
+// ]
