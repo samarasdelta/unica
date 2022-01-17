@@ -8,7 +8,6 @@ import ChevronLeft from "@material-ui/icons/ChevronLeft";
 import ChevronRight from "@material-ui/icons/ChevronRight";
 import FirstPage from "@material-ui/icons/FirstPage";
 import LastPage from "@material-ui/icons/LastPage";
-// import Link from "@material-ui/core/Link";
 
 const tableIcons = {
   Clear: forwardRef((props, ref) => <Clear {...props} ref={ref} />),
@@ -57,6 +56,12 @@ export default function DataTable() {
             owner: "Kwstas",
           };
         })}
+        options={{
+          headerStyle: {
+            backgroundColor: "#eee",
+            color: "#000",
+          },
+        }}
       >
         {/* <Link href={`/project/${project.projectId}`} /> */}
       </MaterialTable>

@@ -78,18 +78,23 @@ export default function Intro() {
             className={classes.toolbarTitle}
           ></Typography>
           <nav>
-            <RouteLink
-              to="/discover"
-              className={classes.submit}
-              style={{
-                fontWeight: "600",
-                fontSize: "1rem",
-                textDecoration: "none",
-                color: "grey",
-              }}
-            >
-              {"Discover"}
-            </RouteLink>
+            <div className="disc">
+              <RouteLink
+                to="/discover"
+                className={classes.submit}
+                style={{
+                  textDecoration: "none",
+                }}
+              >
+                <Button
+                  color="disabled"
+                  className="disc"
+                  style={{ textTransform: "none" }}
+                >
+                  {"Discover"}
+                </Button>
+              </RouteLink>
+            </div>
           </nav>
           <RouteLink to="/login" style={{ textDecoration: "none" }}>
             <Button
@@ -126,7 +131,7 @@ export default function Intro() {
           <Box>
             <Button
               style={{
-                fontWeight: "600",
+                fontWeight: "500",
                 textTransform: "none",
                 marginTop: "30px",
                 fontSize: "18px",

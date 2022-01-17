@@ -16,6 +16,14 @@
   opacity: 0.8;
 }
 
+.disc {
+  font-size: 16px;
+}
+
+.disc:hover {
+  color: #5c91ff;
+}
+
 .underline {
   background: linear-gradient(to right, #dcffff, #5c92ff 100%);
   background-position: 0 100%;
