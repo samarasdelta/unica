@@ -49,6 +49,7 @@
 }
 
 .editor-textarea {
+  background-color: #fff;
   flex: 1;
   padding: 10px;
   border: 1px solid;

@@ -8,7 +8,9 @@ import ChevronLeft from "@material-ui/icons/ChevronLeft";
 import ChevronRight from "@material-ui/icons/ChevronRight";
 import FirstPage from "@material-ui/icons/FirstPage";
 import LastPage from "@material-ui/icons/LastPage";
+// import ArrowForwardIcon from "@material-ui/icons/ArrowForward";
 
+//component icons declaration
 const tableIcons = {
   Clear: forwardRef((props, ref) => <Clear {...props} ref={ref} />),
   FirstPage: forwardRef((props, ref) => <FirstPage {...props} ref={ref} />),
@@ -21,6 +23,7 @@ const tableIcons = {
   Search: forwardRef((props, ref) => <Search {...props} ref={ref} />),
   SortArrow: forwardRef((props, ref) => <ArrowDownward {...props} ref={ref} />),
 };
+//end component icons declaration
 
 export default function DataTable() {
   const [projects, setProjects] = useState([]);
@@ -56,6 +59,13 @@ export default function DataTable() {
             owner: "Kwstas",
           };
         })}
+        // actions={[
+        //   {
+        //     icon: () => <ArrowForwardIcon />,
+        //     tooltip: "Go to project",
+        //     onClick: (event, rowData) => alert("You saved " + rowData.name),
+        //   },
+        // ]}
         options={{
           headerStyle: {
             backgroundColor: "#eee",

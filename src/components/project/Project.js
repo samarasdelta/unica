@@ -37,13 +37,14 @@ const Project = (props) => {
           <textarea
             onChange={handleTextChange}
             className="editor-textarea"
-            defaultValue={"ce{CO2 + C -> 2 C0}"}
+            defaultValue={`ce{CO2 + C -> 2 C0}`}
           />
         </div>
-        <div
-          className="col"
-          dangerouslySetInnerHTML={{ __html: katex.renderToString(text) }}
-        >
+        <div className="col">
+          <div
+            className="editor-textarea"
+            dangerouslySetInnerHTML={{ __html: katex.renderToString(text) }}
+          ></div>
           {/* <textarea
             readOnly
             className="editor-textarea"
