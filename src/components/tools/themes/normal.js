@@ -5,6 +5,7 @@ const theme = createTheme({
     fontFamily: `"Poppins", sans-serif`,
     button: {
       textTransform: "none",
+      fontSize: "1rem",
     },
   },
   palette: {

@@ -2,7 +2,6 @@ import React from "react";
 import Link from "@material-ui/core/Link";
 import { makeStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
-import Title from "../tools/Title";
 import Box from "@material-ui/core/Box";
 import PropTypes from "prop-types";
 import Tooltip from "@material-ui/core/Tooltip";
@@ -58,13 +57,15 @@ export default function DeleteListItem(props, { fetchDeletedProjects }) {
       <Box className={classes.boxSpace}>
         <div>
           <Link href={`/project/${props.id}`}>
-            <Title>{props.title}</Title>
+            <Typography noWrap variant="h5" style={{ fontWeight: "500" }}>
+              {props.title}
+            </Typography>
           </Link>
         </div>
       </Box>
 
       <Box display="flex" className={classes.boxSpace}>
-        <Typography variant="h6">
+        <Typography variant="h6" style={{ fontWeight: "400" }}>
           {"Category:"} {props.category}
         </Typography>
       </Box>
@@ -84,13 +85,12 @@ export default function DeleteListItem(props, { fetchDeletedProjects }) {
             <Moment format="DD/MM/YYYY - HH:MM">{props.dateCreated}</Moment>
           </Typography>
         </Box>
-        <Box mt={1} style={{ padding: "0 20px" }}>
+        <Box mt={1} style={{ padding: "0 20px", fontSize: "1rem" }}>
           <Link color="primary" href={`/project/${props.id}`}>
             {"View full project "}
           </Link>
         </Box>
-        <Box m={1}>{"|"}</Box>
-        <Box mt={1} style={{ padding: "0 20px" }}>
+        <Box mt={1} style={{ padding: "0 20px", fontSize: "1rem" }}>
           <Link
             color="primary"
             href="#"
@@ -101,7 +101,6 @@ export default function DeleteListItem(props, { fetchDeletedProjects }) {
             {"Restore project "}
           </Link>
         </Box>
-        <Box m={1}>{"|"}</Box>
         <Box mt={1} style={{ padding: "0 20px" }}>
           <Link
             color="primary"
@@ -110,7 +109,7 @@ export default function DeleteListItem(props, { fetchDeletedProjects }) {
             }}
           >
             <Tooltip arrow title="Permanent deletion project">
-              <DeleteForeverIcon fontSize="small" />
+              <DeleteForeverIcon fontSize="medium" />
             </Tooltip>
           </Link>
         </Box>

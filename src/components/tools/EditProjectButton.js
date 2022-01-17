@@ -107,7 +107,7 @@ export default function EditProjectButtonAPI(props, { fetchProjects }) {
           textTransform: "none",
           height: "22px",
           fontWeight: "400",
-          fontSize: "14px",
+          fontSize: "1rem",
         }}
         type="submit"
         variant="text"

@@ -27,11 +27,14 @@ const Project = (props) => {
           {`Project Category: ${props.project.projectCategory}`}
         </header>
       </div>
+      {/*  other text editors  */}
       {/* <MyEditor /> */}
       {/* <EditorWYS /> */}
+      {/*  other text editors  */}
+
       {/* <DemoEditor /> */}
 
-      {/* textarea */}
+      {/* latex editor */}
       <div className="row">
         <div className="col">
           <textarea
@@ -44,16 +47,17 @@ const Project = (props) => {
           <div
             className="editor-textarea"
             dangerouslySetInnerHTML={{ __html: katex.renderToString(text) }}
-          ></div>
-          {/* <textarea
+          >
+            {/* <textarea
             readOnly
             className="editor-textarea"
             defaultValue={"Preview of your compiled code here!"}
             value={katex.renderToString(text)}
           /> */}
+          </div>
         </div>
       </div>
-      {/* textarea */}
+      {/* end latex editor */}
     </div>
   );
 };

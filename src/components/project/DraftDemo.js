@@ -33,10 +33,10 @@ import React, { useState } from "react";
 import { EditorState } from "draft-js";
 import { Editor } from "react-draft-wysiwyg";
 import { convertToHTML } from "draft-convert";
-// import DOMPurify from "dompurify";
+import DOMPurify from "dompurify";
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 import "./democss.css";
-import katex from "katex";
+// import katex from "katex";
 
 const DemoEditor = () => {
   const [editorState, setEditorState] = useState(() =>
@@ -56,8 +56,8 @@ const DemoEditor = () => {
 
   const createMarkup = (html) => {
     return {
-      __html: katex.renderToString("ce{CO2 + C -> 2 C0}"),
-      // __html: DOMPurify.sanitize(html),
+      // __html: katex.renderToString("ce{CO2 + C -> 2 C0}"),
+      __html: DOMPurify.sanitize(html),
     };
   };
 
