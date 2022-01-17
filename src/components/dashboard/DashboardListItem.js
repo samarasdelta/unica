@@ -79,7 +79,10 @@ export default function DashboardListItem(props, { fetchProjects }) {
             }}
           >
             <Tooltip arrow title="Delete project">
-              <DeleteIcon style={{ cursor: "pointer" }} fontSize="medium" />
+              <DeleteIcon
+                style={{ cursor: "pointer", marginTop: "-2px" }}
+                fontSize="medium"
+              />
             </Tooltip>
           </Link>
         </Box>

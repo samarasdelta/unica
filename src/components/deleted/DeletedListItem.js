@@ -109,7 +109,10 @@ export default function DeleteListItem(props, { fetchDeletedProjects }) {
             }}
           >
             <Tooltip arrow title="Permanent deletion project">
-              <DeleteForeverIcon fontSize="medium" />
+              <DeleteForeverIcon
+                fontSize="medium"
+                style={{ marginTop: "-2px" }}
+              />
             </Tooltip>
           </Link>
         </Box>
