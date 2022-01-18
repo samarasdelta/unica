@@ -3,12 +3,12 @@ import PropTypes from "prop-types";
 import AppBarCustom from "../tools/AppBarCustom";
 import "./democss.css";
 import katex from "katex";
-// import Latex from "react-latex";
+import Latex from "react-latex";
 
 // import MyEditor from "./Draft";
 // import EditorWYS from "./DraftWYS";
 // import "./texteditorcss.css";
-// import DemoEditor from "./DraftDemo";
+import DemoEditor from "./DraftDemo";
 
 const Project = (props) => {
   const [text, setText] = React.useState("");
@@ -32,7 +32,9 @@ const Project = (props) => {
       {/* <EditorWYS /> */}
       {/*  other text editors  */}
 
-      {/* <DemoEditor /> */}
+      <DemoEditor />
+
+      <Latex>$$(3\times 4) \div (5-3)$$</Latex>
 
       {/* latex editor */}
       <div className="row">
@@ -41,7 +43,7 @@ const Project = (props) => {
             onChange={handleTextChange}
             className="editor-textarea"
             defaultValue={`ce{CO2 + C -> 2 C0}`}
-          />
+          ></textarea>
         </div>
         <div className="col">
           <div
