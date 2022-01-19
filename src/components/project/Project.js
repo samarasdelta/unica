@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import AppBarCustom from "../tools/AppBarCustom";
-import Button from "@material-ui/core/Button";
+import DownloadButton from "./DownloadButton";
 import "./democss.css";
 import katex from "katex";
 import Latex from "react-latex";
@@ -9,7 +9,7 @@ import Latex from "react-latex";
 // import MyEditor from "./Draft";
 // import EditorWYS from "./DraftWYS";
 // import "./texteditorcss.css";
-import DemoEditor from "./DraftDemo";
+// import DemoEditor from "./DraftDemo";
 
 const Project = (props) => {
   const [text, setText] = React.useState("");
@@ -33,7 +33,7 @@ const Project = (props) => {
       {/* <EditorWYS /> */}
       {/*  other text editors  */}
 
-      <DemoEditor />
+      {/* <DemoEditor /> */}
 
       <Latex>$$(3\times 4) \div (5-3)$$</Latex>
 
@@ -58,14 +58,10 @@ const Project = (props) => {
             value={katex.renderToString(text)}
           /> */}
           </div>
-          <Button
-            variant="contained"
-            // onClick={}
-          >
-            Save
-          </Button>
         </div>
       </div>
+      <DownloadButton />
+
       {/* end latex editor */}
     </div>
   );
