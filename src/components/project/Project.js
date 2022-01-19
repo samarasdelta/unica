@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import AppBarCustom from "../tools/AppBarCustom";
+import Button from "@material-ui/core/Button";
 import "./democss.css";
 import katex from "katex";
 import Latex from "react-latex";
@@ -57,6 +58,12 @@ const Project = (props) => {
             value={katex.renderToString(text)}
           /> */}
           </div>
+          <Button
+            variant="contained"
+            // onClick={}
+          >
+            Save
+          </Button>
         </div>
       </div>
       {/* end latex editor */}
