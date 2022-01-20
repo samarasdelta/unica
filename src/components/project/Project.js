@@ -4,7 +4,7 @@ import AppBarCustom from "../tools/AppBarCustom";
 import DownloadButton from "./DownloadButton";
 import "./democss.css";
 import katex from "katex";
-import Latex from "react-latex";
+// import Latex from "react-latex";
 
 // import MyEditor from "./Draft";
 // import EditorWYS from "./DraftWYS";
@@ -35,7 +35,7 @@ const Project = (props) => {
 
       {/* <DemoEditor /> */}
 
-      <Latex>$$(3\times 4) \div (5-3)$$</Latex>
+      {/* <Latex>$$ (3\times 4) \div (5-3) $$</Latex> */}
 
       {/* latex editor */}
       <div className="row">
@@ -52,11 +52,10 @@ const Project = (props) => {
             dangerouslySetInnerHTML={{ __html: katex.renderToString(text) }}
           >
             {/* <textarea
-            readOnly
-            className="editor-textarea"
-            defaultValue={"Preview of your compiled code here!"}
-            value={katex.renderToString(text)}
-          /> */}
+              readOnly
+              className="editor-textarea"
+              defaultValue={"Preview of your compiled code here!"}
+            ></textarea> */}
           </div>
         </div>
       </div>
