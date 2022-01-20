@@ -1,10 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 import AppBarCustom from "../tools/AppBarCustom";
-import DownloadButton from "./DownloadButton";
+import DownloadButton from "../tools/DownloadButton";
 import "./democss.css";
 import katex from "katex";
-// import Latex from "react-latex";
 
 // import MyEditor from "./Draft";
 // import EditorWYS from "./DraftWYS";
