@@ -68,34 +68,22 @@ export default function Intro() {
         className={classes.appBar}
       >
         <Toolbar className={classes.toolbar}>
-          {/* <Box>
-            <img src={Logosmall} alt="logo" />
-          </Box> */}
           <Typography
             variant="h6"
             color="inherit"
             noWrap
+            component={"span"}
             className={classes.toolbarTitle}
           ></Typography>
-          <nav>
-            <div className="disc">
-              <RouteLink
-                to="/discover"
-                className={classes.submit}
-                style={{
-                  textDecoration: "none",
-                }}
-              >
-                <Button
-                  color="disabled"
-                  className="disc"
-                  style={{ textTransform: "none" }}
-                >
-                  {"Discover"}
-                </Button>
-              </RouteLink>
-            </div>
-          </nav>
+          <RouteLink
+            to="/discover"
+            className={classes.submit}
+            style={{
+              textDecoration: "none",
+            }}
+          >
+            <Button className="disc">{"Discover"}</Button>
+          </RouteLink>
           <RouteLink to="/login" style={{ textDecoration: "none" }}>
             <Button
               color="primary"

@@ -47,6 +47,7 @@ export default function Map() {
           </b>
           <div className="textdefault">
             <Typography
+              component={"span"}
               style={{
                 fontWeight: "500",
                 fontSize: "19.2px",
@@ -58,6 +59,7 @@ export default function Map() {
               <p>Unica is a researcher&apos;s collaborative website.</p>
             </Typography>
             <Typography
+              component={"span"}
               style={{
                 fontWeight: "500",
                 fontSize: "19.2px",
