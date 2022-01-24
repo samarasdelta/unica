@@ -85,8 +85,22 @@
 // version 3
 
 import React from "react";
-// import PropTypes from "prop-types";
 import "./democss.css";
+
+// import { parse, HtmlGenerator } from "latex.js";
+
+// const { createHTMLWindow } = require("svgdom");
+
+// global.window = createHTMLWindow();
+// global.document = window.document;
+
+// let latex = "Hi, this is a line of text.";
+
+// let generator = new HtmlGenerator({ hyphenate: false });
+
+// let doc = parse(latex, { generator: generator }).htmlDocument();
+
+// console.log(doc.documentElement.outerHTML);
 
 const DemoEditor = () => {
   const [text, setText] = React.useState("");
@@ -97,13 +111,6 @@ const DemoEditor = () => {
 
   return (
     <div>
-      {/* <div>
-        <header className="App-header">
-          {`Project Title: ${props.project.projectTitle}`}
-          {" || "}
-          {`Project Category: ${props.project.projectCategory}`}
-        </header>
-      </div> */}
       <div className="row">
         <div className="col">
           <textarea
@@ -116,7 +123,7 @@ const DemoEditor = () => {
           <textarea
             readOnly
             className="editor-textarea2"
-            value={text}
+            defaultValue={text}
           ></textarea>
         </div>
       </div>

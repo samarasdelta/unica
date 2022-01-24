@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import AppBarCustom from "../tools/AppBarCustom";
 import DownloadButton from "../tools/DownloadButton";
 import "./democss.css";
+// import { Helmet } from "react-helmet";
 // import katex from "katex";
 
 // import MyEditor from "./Draft";
