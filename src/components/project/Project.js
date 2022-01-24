@@ -3,19 +3,19 @@ import PropTypes from "prop-types";
 import AppBarCustom from "../tools/AppBarCustom";
 import DownloadButton from "../tools/DownloadButton";
 import "./democss.css";
-import katex from "katex";
+// import katex from "katex";
 
 // import MyEditor from "./Draft";
 // import EditorWYS from "./DraftWYS";
 // import "./texteditorcss.css";
-// import DemoEditor from "./DraftDemo";
+import DemoEditor from "./DraftDemo";
 
 const Project = (props) => {
-  const [text, setText] = React.useState("");
+  // const [text, setText] = React.useState("");
 
-  const handleTextChange = (e) => {
-    setText(e.target.value);
-  };
+  // const handleTextChange = (e) => {
+  //   setText(e.target.value);
+  // };
 
   return (
     <div>
@@ -32,12 +32,12 @@ const Project = (props) => {
       {/* <EditorWYS /> */}
       {/*  other text editors  */}
 
-      {/* <DemoEditor /> */}
+      <DemoEditor />
 
       {/* <Latex>$$ (3\times 4) \div (5-3) $$</Latex> */}
 
       {/* latex editor */}
-      <div className="row">
+      {/* <div className="row">
         <div className="col">
           <textarea
             onChange={handleTextChange}
@@ -50,14 +50,16 @@ const Project = (props) => {
             className="editor-textarea"
             dangerouslySetInnerHTML={{ __html: katex.renderToString(text) }}
           >
-            {/* <textarea
+            <textarea
               readOnly
               className="editor-textarea"
               defaultValue={"Preview of your compiled code here!"}
-            ></textarea> */}
+            ></textarea>
           </div>
         </div>
-      </div>
+      </div> */}
+      {/* latex editor */}
+
       <DownloadButton />
 
       {/* end latex editor */}

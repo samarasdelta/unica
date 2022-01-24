@@ -56,4 +56,13 @@
   resize: none;
 }
 
+.editor-textarea2 {
+  outline: none;
+  background-color: #fff;
+  flex: 1;
+  padding: 10px;
+  border: 1px solid;
+  resize: none;
+}
+
 /* textarea */
