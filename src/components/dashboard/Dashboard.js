@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import {
   makeStyles,
-  // Button,
   Grid,
   Paper,
   Container,
@@ -28,8 +27,6 @@ import {
 import Logo from "../images/unicasmall1.png";
 import DashboardListItem from "./DashboardListItem";
 import MoreButton from "../tools/AccountProfileButton";
-// import SimpleDialog from "../tools/Dialog";
-// import PublishIcon from "@material-ui/icons/Publish";
 import NewProjectButtonAPI from "../tools/NewProjectButton";
 import { CustomThemeContext } from "../tools/themes/CustomThemeProvider";
 import NotificationButton from "../tools/NotificationButton";

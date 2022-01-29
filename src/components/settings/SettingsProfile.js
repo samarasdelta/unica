@@ -1,9 +1,6 @@
 import React, { useContext } from "react";
 import {
-  // createTheme,
-  // ThemeProvider,
   makeStyles,
-  Badge,
   Container,
   IconButton,
   Box,
@@ -14,15 +11,11 @@ import {
   withStyles,
   Drawer,
   List,
-  // CssBaseline,
 } from "@material-ui/core";
 import clsx from "clsx";
-// import { blue, red } from "@material-ui/core/colors";
 import MenuIcon from "@material-ui/icons/Menu";
 import SwitchUI from "@material-ui/core/Switch";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
-import HelpIcon from "@material-ui/icons/Help";
-import NotificationsIcon from "@material-ui/icons/Notifications";
 import {
   DiscoverListItems,
   dashboardListItems,
