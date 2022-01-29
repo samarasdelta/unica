@@ -1,11 +1,5 @@
 import React from "react";
-import {
-  Badge,
-  IconButton,
-  Snackbar,
-  makeStyles,
-  Link,
-} from "@material-ui/core";
+import { IconButton, Snackbar, makeStyles, Link } from "@material-ui/core";
 import MuiAlert from "@material-ui/lab/Alert";
 import HelpIcon from "@material-ui/icons/Help";
 
@@ -16,8 +10,10 @@ function Alert(props) {
 const useStyles = makeStyles((theme) => ({
   root: {
     width: "100%",
+  },
+  top: {
     "& > * + *": {
-      marginTop: theme.spacing(2),
+      marginTop: theme.spacing(-2),
     },
   },
 }));
@@ -44,15 +40,13 @@ export default function PositionedSnackbar() {
         color="inherit"
         onClick={handleClick({ vertical: "top", horizontal: "center" })}
       >
-        <Badge>
-          <HelpIcon />
-        </Badge>
+        <HelpIcon />
       </IconButton>
     </React.Fragment>
   );
 
   return (
-    <div>
+    <div className={classes.top}>
       {buttons}
       <Snackbar
         anchorOrigin={{ vertical, horizontal }}
@@ -62,14 +56,16 @@ export default function PositionedSnackbar() {
       >
         <div className={classes.root}>
           <Alert onClose={handleClose} severity="info">
-            This website uses LaTeX as it's primary input on projects. You can
-            learn LaTeX by clicking the link:
+            {
+              "This website uses LaTeX as its primary input on projects. You can learn LaTeX by clicking the link: "
+            }
             <Link
               href="https://www.learnlatex.org/en/"
+              rel="noreferrer"
               target="_blank"
               style={{ color: "#fff" }}
             >
-              {" Learn LaTeX.org"}
+              {"Learn LaTeX.org"}
             </Link>
           </Alert>
         </div>

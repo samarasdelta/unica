@@ -1,9 +1,19 @@
 import React from "react";
 import Snackbar from "@material-ui/core/Snackbar";
-import { Badge, IconButton } from "@material-ui/core";
+import { Badge, IconButton, makeStyles } from "@material-ui/core";
 import NotificationsIcon from "@material-ui/icons/Notifications";
 
+const useStyles = makeStyles((theme) => ({
+  root: {
+    maxWidth: "600px",
+    "& > * + *": {
+      marginTop: theme.spacing(-2),
+    },
+  },
+}));
+
 export default function PositionedSnackbar() {
+  const classes = useStyles();
   const [state, setState] = React.useState({
     open: false,
     vertical: "top",
@@ -34,7 +44,7 @@ export default function PositionedSnackbar() {
   );
 
   return (
-    <div>
+    <div className={classes.root}>
       {buttons}
       <Snackbar
         anchorOrigin={{ vertical, horizontal }}
