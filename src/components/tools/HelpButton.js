@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme) => ({
   },
   top: {
     "& > * + *": {
-      marginTop: theme.spacing(-2),
+      marginRight: theme.spacing(1),
     },
   },
 }));
@@ -38,7 +38,7 @@ export default function PositionedSnackbar() {
     <React.Fragment>
       <IconButton
         color="inherit"
-        onClick={handleClick({ vertical: "top", horizontal: "center" })}
+        onClick={handleClick({ vertical: "bottom", horizontal: "right" })}
       >
         <HelpIcon />
       </IconButton>

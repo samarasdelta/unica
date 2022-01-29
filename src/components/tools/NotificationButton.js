@@ -7,7 +7,8 @@ const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: "600px",
     "& > * + *": {
-      marginTop: theme.spacing(-2),
+      marginRight: theme.spacing(1),
+      marginTop: theme.spacing(6.5),
     },
   },
 }));
@@ -16,8 +17,6 @@ export default function PositionedSnackbar() {
   const classes = useStyles();
   const [state, setState] = React.useState({
     open: false,
-    vertical: "top",
-    horizontal: "center",
   });
 
   const { vertical, horizontal, open } = state;
