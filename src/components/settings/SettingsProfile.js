@@ -34,6 +34,8 @@ import MoreButton from "../tools/AccountProfileButton";
 import { SettingsNotifications } from "./settings-notifications";
 import { SettingsPassword } from "./settings-password";
 import { CustomThemeContext } from "../tools/themes/CustomThemeProvider";
+import NotificationButton from "../tools/NotificationButton";
+import HelpButton from "../tools/HelpButton";
 
 const drawerWidth = 200;
 
@@ -206,16 +208,8 @@ export default function SettingsProfile() {
           >
             {"Settings"}
           </Typography>
-          <IconButton color="inherit">
-            <Badge badgeContent={1} color="secondary">
-              <NotificationsIcon />
-            </Badge>
-          </IconButton>
-          <IconButton color="inherit">
-            <Badge color="secondary">
-              <HelpIcon />
-            </Badge>
-          </IconButton>
+          <NotificationButton />
+          <HelpButton />
           <MoreButton />
           <CustomSwitch checked={isDark} onChange={handleThemeChange} />
         </Toolbar>

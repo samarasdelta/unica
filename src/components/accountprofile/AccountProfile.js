@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 import {
   makeStyles,
-  Badge,
   Container,
   IconButton,
   Box,
@@ -24,8 +23,6 @@ import clsx from "clsx";
 import MenuIcon from "@material-ui/icons/Menu";
 import SwitchUI from "@material-ui/core/Switch";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
-import HelpIcon from "@material-ui/icons/Help";
-import NotificationsIcon from "@material-ui/icons/Notifications";
 import PublishIcon from "@material-ui/icons/Publish";
 import {
   DiscoverListItems,
@@ -36,6 +33,8 @@ import {
 import Logo from "../images/unicasmall1.png";
 import MoreButton from "../tools/AccountProfileButton";
 import { CustomThemeContext } from "../tools/themes/CustomThemeProvider";
+import NotificationButton from "../tools/NotificationButton";
+import HelpButton from "../tools/HelpButton";
 
 const drawerWidth = 200;
 
@@ -243,16 +242,8 @@ export default function AccountProfile() {
           >
             {"Account"}
           </Typography>
-          <IconButton color="inherit">
-            <Badge badgeContent={1} color="secondary">
-              <NotificationsIcon />
-            </Badge>
-          </IconButton>
-          <IconButton color="inherit">
-            <Badge color="secondary">
-              <HelpIcon />
-            </Badge>
-          </IconButton>
+          <NotificationButton />
+          <HelpButton />
           <MoreButton />
           <CustomSwitch checked={isDark} onChange={handleThemeChange} />
         </Toolbar>

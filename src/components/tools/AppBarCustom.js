@@ -3,7 +3,6 @@ import {
   // createTheme,
   // ThemeProvider,
   makeStyles,
-  Badge,
   IconButton,
   Typography,
   withStyles,
@@ -15,12 +14,12 @@ import {
 import clsx from "clsx";
 // import { blue, red } from "@material-ui/core/colors";
 import MenuIcon from "@material-ui/icons/Menu";
-import HelpIcon from "@material-ui/icons/Help";
 import SwitchUI from "@material-ui/core/Switch";
-import NotificationsIcon from "@material-ui/icons/Notifications";
 import MoreButton from "./AccountProfileButton";
 import LogoUnica from "./images/unicasmall256.png";
 import { CustomThemeContext } from "./themes/CustomThemeProvider";
+import NotificationButton from "./NotificationButton";
+import HelpButton from "./HelpButton";
 
 const drawerWidth = 200;
 
@@ -169,16 +168,8 @@ const AppBarCustom = () => {
             noWrap
             className={classes.title}
           ></Typography>
-          <IconButton color="inherit">
-            <Badge badgeContent={1} color="secondary">
-              <NotificationsIcon />
-            </Badge>
-          </IconButton>
-          <IconButton color="inherit">
-            <Badge color="secondary">
-              <HelpIcon />
-            </Badge>
-          </IconButton>
+          <NotificationButton />
+          <HelpButton />
           <MoreButton />
 
           <CustomSwitch checked={isDark} onChange={handleThemeChange} />
