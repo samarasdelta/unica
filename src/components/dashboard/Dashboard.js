@@ -4,7 +4,6 @@ import {
   // Button,
   Grid,
   Paper,
-  Badge,
   Container,
   IconButton,
   Box,
@@ -19,9 +18,7 @@ import {
 import clsx from "clsx";
 import MenuIcon from "@material-ui/icons/Menu";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
-import HelpIcon from "@material-ui/icons/Help";
 import SwitchUI from "@material-ui/core/Switch";
-import NotificationsIcon from "@material-ui/icons/Notifications";
 import {
   DiscoverListItems,
   dashboardListItems,
@@ -35,6 +32,8 @@ import MoreButton from "../tools/AccountProfileButton";
 // import PublishIcon from "@material-ui/icons/Publish";
 import NewProjectButtonAPI from "../tools/NewProjectButton";
 import { CustomThemeContext } from "../tools/themes/CustomThemeProvider";
+import NotificationButton from "../tools/NotificationButton";
+import HelpButton from "../tools/HelpButton";
 
 const drawerWidth = 200;
 
@@ -204,16 +203,8 @@ export default function Dashboard() {
           >
             {"Dashboard"}
           </Typography>
-          <IconButton color="inherit">
-            <Badge badgeContent={1} color="secondary">
-              <NotificationsIcon />
-            </Badge>
-          </IconButton>
-          <IconButton color="inherit">
-            <Badge color="secondary">
-              <HelpIcon />
-            </Badge>
-          </IconButton>
+          <NotificationButton />
+          <HelpButton />
           <MoreButton />
           <CustomSwitch checked={isDark} onChange={handleThemeChange} />
         </Toolbar>
