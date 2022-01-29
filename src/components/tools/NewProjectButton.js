@@ -93,6 +93,7 @@ export default function NewProjectButtonAPI({ fetchProjects }) {
       <Dialog
         fullWidth
         maxWidth="sm"
+        color="primary"
         open={open}
         onClose={closeModal}
         PaperComponent={PaperComponent}
@@ -112,15 +113,13 @@ export default function NewProjectButtonAPI({ fetchProjects }) {
           </DialogContentText>
           <TextField
             required
-            margin="dense"
             id="title"
             label="Title"
             type="title"
-            multiline
-            rows={2}
             variant="outlined"
             fullWidth
             onInput={handleTitleChange}
+            autoFocus
           />
 
           <Box display="flex" mt={2}>

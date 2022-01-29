@@ -141,14 +141,11 @@ export default function EditProjectButtonAPI(props, { fetchProjects }) {
           </DialogContentText>
           <TextField
             required
-            margin="dense"
             id="title"
             label="Title"
             type="title"
             InputLabelProps={{ shrink: true }}
             defaultValue={title}
-            multiline
-            rows={2}
             variant="outlined"
             fullWidth
             onInput={(e) => {
