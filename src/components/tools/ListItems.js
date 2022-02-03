@@ -43,18 +43,24 @@ export const dashboardListItems = (
 
 export const mainListItems = (
   <div>
-    <ListItem button>
-      <ListItemIcon>
-        <PersonIcon />
-      </ListItemIcon>
-      <ListItemText secondary="Your's" />
-    </ListItem>
-    <ListItem button>
-      <ListItemIcon>
-        <ShareIcon />
-      </ListItemIcon>
-      <ListItemText secondary="Shared" />
-    </ListItem>
+    <RouteLink to="yours" style={{ textDecoration: "none", color: "grey" }}>
+      <ListItem button>
+        <ListItemIcon>
+          <PersonIcon />
+        </ListItemIcon>
+        <ListItemText secondary="Yours" />
+      </ListItem>
+    </RouteLink>
+
+    <RouteLink to="shared" style={{ textDecoration: "none", color: "grey" }}>
+      <ListItem button>
+        <ListItemIcon>
+          <ShareIcon />
+        </ListItemIcon>
+        <ListItemText secondary="Shared" />
+      </ListItem>
+    </RouteLink>
+
     <RouteLink to="deleted" style={{ textDecoration: "none", color: "grey" }}>
       <ListItem button>
         <ListItemIcon>

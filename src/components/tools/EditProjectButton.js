@@ -151,6 +151,7 @@ export default function EditProjectButtonAPI(props, { fetchProjects }) {
             onInput={(e) => {
               handleTitleChange(e);
             }}
+            autoFocus
           />
 
           <Box display="flex" mt={2}>
@@ -178,9 +179,7 @@ export default function EditProjectButtonAPI(props, { fetchProjects }) {
           </Box>
         </DialogContent>
         <DialogActions>
-          <Button autoFocus onClick={closeModal}>
-            {"Cancel"}
-          </Button>
+          <Button onClick={closeModal}>{"Cancel"}</Button>
           <Button
             onClick={(e) => {
               updateProject(id);

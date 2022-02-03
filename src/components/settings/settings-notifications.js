@@ -40,8 +40,6 @@ export const SettingsNotifications = (props) => (
               control={<Checkbox color="primary" defaultChecked />}
               label="Push Notifications"
             />
-            <FormControlLabel control={<Checkbox />} label="Text Messages" />
-            <FormControlLabel control={<Checkbox />} label="Phone calls" />
           </Grid>
           <Grid
             item
@@ -61,10 +59,9 @@ export const SettingsNotifications = (props) => (
               label="Email"
             />
             <FormControlLabel
-              control={<Checkbox color="primary" defaultChecked />}
+              control={<Checkbox color="primary" />}
               label="Push Notifications"
             />
-            <FormControlLabel control={<Checkbox />} label="Phone calls" />
           </Grid>
         </Grid>
       </CardContent>

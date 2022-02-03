@@ -9,11 +9,9 @@ import "./democss.css";
 // import MyEditor from "./Draft";
 // import EditorWYS from "./DraftWYS";
 // import "./texteditorcss.css";
-import DemoEditor from "./DraftDemo";
+import DraftDemo from "./DraftDemo";
 
 const Project = (props) => {
-  // const [text, setText] = React.useState("");
-
   // const handleTextChange = (e) => {
   //   setText(e.target.value);
   // };
@@ -33,7 +31,7 @@ const Project = (props) => {
       {/* <EditorWYS /> */}
       {/*  other text editors  */}
 
-      <DemoEditor />
+      <DraftDemo />
 
       {/* <Latex>$$ (3\times 4) \div (5-3) $$</Latex> */}
 

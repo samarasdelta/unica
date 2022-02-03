@@ -1,17 +1,17 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import Button from "@material-ui/core/Button";
-import TextField from "@material-ui/core/TextField";
-import Dialog from "@material-ui/core/Dialog";
-import DialogActions from "@material-ui/core/DialogActions";
-import DialogContent from "@material-ui/core/DialogContent";
-import DialogContentText from "@material-ui/core/DialogContentText";
-import DialogTitle from "@material-ui/core/DialogTitle";
-import AddCircleIcon from "@material-ui/icons/AddCircle";
-import Box from "@material-ui/core/Box";
-import ListItem from "@material-ui/core/ListItem";
-import ListItemIcon from "@material-ui/core/ListItemIcon";
-import ListItemText from "@material-ui/core/ListItemText";
+import {
+  makeStyles,
+  IconButton,
+  Button,
+  TextField,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogContentText,
+  DialogTitle,
+  Box,
+} from "@material-ui/core";
+import PersonAddIcon from "@material-ui/icons/PersonAdd";
 
 const useStyles = makeStyles({
   Bgcolor: {
@@ -53,12 +53,9 @@ export default function NewTeamButtonAPI() {
 
   return (
     <div>
-      <ListItem button type="submit" onClick={handleClickOpen}>
-        <ListItemIcon>
-          <AddCircleIcon style={{ color: "green" }} />
-        </ListItemIcon>
-        <ListItemText secondary="New team" />
-      </ListItem>
+      <IconButton onClick={handleClickOpen} color="primary">
+        <PersonAddIcon />
+      </IconButton>
       <Dialog
         fullWidth
         maxWidth="sm"
@@ -67,18 +64,20 @@ export default function NewTeamButtonAPI() {
         aria-labelledby="draggable-dialog-title"
       >
         <div className={classes.Bgcolor}>
-          <DialogTitle>{"Create new team"}</DialogTitle>{" "}
+          <DialogTitle>{"Add user"}</DialogTitle>{" "}
         </div>
         <DialogContent>
           <DialogContentText variant="subtitle2">
-            {"Please, set a title for your team."}
+            {"Please, add user by giving an email."}
           </DialogContentText>
           <Box>
             <TextField
               autoFocus
-              id="title"
-              label="Enter team name"
-              type="title"
+              required
+              id="email"
+              label="Email address"
+              type="email"
+              name="email"
               variant="outlined"
               fullWidth
               onInput={handleTitleChange}

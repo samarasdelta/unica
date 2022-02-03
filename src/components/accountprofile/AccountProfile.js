@@ -309,7 +309,7 @@ export default function AccountProfile() {
                 <Grid item md={6} xs={12}>
                   <TextField
                     fullWidth
-                    label="Email Address"
+                    label="Email address"
                     helperText="Please type your email adress"
                     name="email"
                     required
@@ -321,7 +321,7 @@ export default function AccountProfile() {
                 <Grid item md={6} xs={12}>
                   <TextField
                     fullWidth
-                    label="Phone Number"
+                    label="Phone number"
                     name="phone"
                     type="number"
                     variant="outlined"
@@ -331,7 +331,7 @@ export default function AccountProfile() {
                 <Grid item md={4} xs={12}>
                   <TextField
                     fullWidth
-                    label="Date of Birth"
+                    label="Date of birth"
                     type="date"
                     InputLabelProps={{ shrink: true }}
                     name="dateofbirth"

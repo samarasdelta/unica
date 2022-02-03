@@ -1,22 +1,24 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import Button from "@material-ui/core/Button";
-import TextField from "@material-ui/core/TextField";
-import Dialog from "@material-ui/core/Dialog";
-import DialogActions from "@material-ui/core/DialogActions";
-import DialogContent from "@material-ui/core/DialogContent";
-import DialogContentText from "@material-ui/core/DialogContentText";
-import DialogTitle from "@material-ui/core/DialogTitle";
-import AddIcon from "@material-ui/icons/Add";
-import Paper from "@material-ui/core/Paper";
-import Draggable from "react-draggable";
+import {
+  makeStyles,
+  Button,
+  TextField,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogContentText,
+  DialogTitle,
+  Paper,
+  FormControl,
+  FormControlLabel,
+  Divider,
+  Switch,
+  Box,
+} from "@material-ui/core";
 import PropTypes from "prop-types";
-import FormControl from "@material-ui/core/FormControl";
-import Divider from "@material-ui/core/Divider";
-import FormControlLabel from "@material-ui/core/FormControlLabel";
-import Switch from "@material-ui/core/Switch";
-import Box from "@material-ui/core/Box";
 import ComboBox from "./Category";
+import AddIcon from "@material-ui/icons/Add";
+import Draggable from "react-draggable";
 
 const useStyles = makeStyles({
   Bgcolor: {
@@ -101,7 +103,7 @@ export default function NewProjectButtonAPI({ fetchProjects }) {
       >
         <div className={classes.Bgcolor}>
           <DialogTitle style={{ cursor: "move" }} id="draggable-dialog-title">
-            {"Create a new project"}
+            {"Create new project"}
           </DialogTitle>
         </div>
         <Divider />
@@ -143,9 +145,7 @@ export default function NewProjectButtonAPI({ fetchProjects }) {
           </Box>
         </DialogContent>
         <DialogActions>
-          <Button autoFocus onClick={closeModal}>
-            {"Cancel"}
-          </Button>
+          <Button onClick={closeModal}>{"Cancel"}</Button>
           <Button
             onClick={(e) => {
               createProject();

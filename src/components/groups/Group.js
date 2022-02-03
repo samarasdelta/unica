@@ -8,8 +8,10 @@ import {
   CardContent,
   CardHeader,
   makeStyles,
+  Divider,
   Grid,
 } from "@material-ui/core";
+import GroupAddUser from "../tools/GroupAddUser";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -36,10 +38,22 @@ const Group = (props) => {
         <Container maxWidth="xl">
           <Grid
             container
+            direction="row"
+            justifyContent="flex-start"
+            alignItems="center"
+          >
+            <Typography variant="h5" color="textSecondary">
+              {"Add user to your team"}
+            </Typography>
+            <GroupAddUser />
+          </Grid>
+          <Divider className={classes.section2} />
+          <Grid
+            container
             direction="column"
             justifyContent="center"
             alignItems="center"
-            spacing={2}
+            spacing={(2, 2)}
           >
             <Grid item>
               <Card className={classes.root}>

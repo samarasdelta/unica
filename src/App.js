@@ -16,6 +16,8 @@ import SettingsPage from "./pages/SettingsPage.js";
 import PrivacyPage from "./pages/PrivacyPage.js";
 import TermsPage from "./pages/TermsPage.js";
 import GroupPage from "./pages/GroupPage.js";
+import YoursPage from "./pages/YoursPage.js";
+import SharedPage from "./pages/SharedPage.js";
 
 function App() {
   return (
@@ -45,6 +47,12 @@ function App() {
           </Route>
           <Route path="/dashboard">
             <DashboardPage />
+          </Route>
+          <Route path="/yours">
+            <YoursPage />
+          </Route>
+          <Route path="/shared">
+            <SharedPage />
           </Route>
           <Route path="/project/:id">
             <ProjectPage />

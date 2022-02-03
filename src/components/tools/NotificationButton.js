@@ -2,6 +2,7 @@ import React from "react";
 import Snackbar from "@material-ui/core/Snackbar";
 import { Badge, IconButton, makeStyles } from "@material-ui/core";
 import NotificationsIcon from "@material-ui/icons/Notifications";
+import CloseIcon from "@material-ui/icons/Close";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -48,9 +49,22 @@ export default function PositionedSnackbar() {
       <Snackbar
         anchorOrigin={{ vertical, horizontal }}
         open={open}
+        autoHideDuration={6000}
         onClose={handleClose}
         message="No notifications to show!"
         key={vertical + horizontal}
+        action={
+          <React.Fragment>
+            <IconButton
+              size="small"
+              aria-label="close"
+              color="inherit"
+              onClick={handleClose}
+            >
+              <CloseIcon fontSize="small" />
+            </IconButton>
+          </React.Fragment>
+        }
       />
     </div>
   );
