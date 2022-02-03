@@ -3,6 +3,7 @@ import { createTheme } from "@material-ui/core";
 const theme = createTheme({
   typography: {
     fontFamily: `"Poppins", sans-serif`,
+    fontWeight: "400",
     button: {
       textTransform: "none",
       fontSize: "1rem",
