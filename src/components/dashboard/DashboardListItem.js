@@ -11,7 +11,7 @@ import Moment from "react-moment";
 
 const useStyles = makeStyles({
   projectContext: {
-    //flex: 1,
+    flex: 1,
   },
   boxSpace: {
     flex: 1,

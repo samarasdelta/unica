@@ -116,7 +116,7 @@ export default function EditProjectButtonAPI(props, { fetchProjects }) {
         startIcon={<CreateIcon />}
         onClick={openModal}
       >
-        {"Edit project"}
+        {"Edit"}
       </Button>
 
       <Dialog

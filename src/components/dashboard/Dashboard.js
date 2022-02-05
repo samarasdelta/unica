@@ -112,7 +112,7 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: "column",
   },
   fixedHeight: {
-    height: 220,
+    height: 200,
   },
   Box: {
     paddingTop: 1,
@@ -245,20 +245,6 @@ export default function Dashboard() {
             <Box>
               <NewProjectButtonAPI fetchProjects={fetchProjects} />
             </Box>
-            {/* <Box m={1}>
-              <Button
-                variant="contained"
-                component="label"
-                startIcon={<PublishIcon />}
-              >
-                {"Upload a file"}
-                <input type="file" hidden />
-              </Button>
-            </Box>
-
-            <Box>
-              <SimpleDialog />
-            </Box> */}
           </div>
           <Grid container spacing={2}>
             {/* Project */}
