@@ -1,6 +1,6 @@
 {
   "name": "unica",
-  "homepage": "/~ece00792/unica",
+  "homepage": ".",
   "version": "0.1.0",
   "private": false,
   "dependencies": {
