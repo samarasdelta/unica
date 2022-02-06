@@ -22,7 +22,7 @@ const DemoEditor = () => {
           <textarea
             readOnly
             className="editor-textarea2"
-            defaultValue={text}
+            value={text}
           ></textarea>
         </div>
       </div>

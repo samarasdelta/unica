@@ -37,7 +37,6 @@ const Compile = () => {
       <Button
         variant="contained"
         color="primary"
-        size="small"
         onClick={refreshCanvas}
         startIcon={
           <Autorenew
@@ -49,7 +48,6 @@ const Compile = () => {
           />
         }
         style={{
-          paddingBottom: "4px",
           fontSize: "calc(2px + 1.5vmin)",
         }}
       >

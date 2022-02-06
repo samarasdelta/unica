@@ -1,10 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
 import DraftDemo from "./DraftDemo";
+import { Grid } from "@material-ui/core";
 import AppBarCustom from "../tools/AppBarCustom";
-import DownloadButton from "../tools/DownloadButton";
+import DownloadButton from "./DownloadButton";
 import "./democss.css";
 import CompileButton from "./CompileButton";
+import SaveButton from "./SaveButton";
 
 const Project = (props) => {
   // const handleTextChange = (e) => {
@@ -15,7 +17,24 @@ const Project = (props) => {
     <div>
       <AppBarCustom />
       <div className="App-header">
-        <CompileButton />
+        <div className="space">
+          <Grid
+            container
+            direction="row"
+            justifyContent="flex-end"
+            alignItems="center"
+          >
+            <Grid item>
+              <CompileButton />
+            </Grid>
+            <Grid item>
+              <DownloadButton />
+            </Grid>
+            <Grid item>
+              <SaveButton />
+            </Grid>
+          </Grid>
+        </div>
         <header>
           {`Title: `}
           <span className="color-change">{`${props.project.projectTitle}`}</span>
@@ -25,9 +44,8 @@ const Project = (props) => {
         </header>
       </div>
       <DraftDemo />
-      <div className="space">
-        <DownloadButton />
-      </div>
+      {/* <div className="space">
+        </div> */}
     </div>
   );
 };

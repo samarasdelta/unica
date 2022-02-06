@@ -1,13 +1,13 @@
 .App-header {
-  margin-top: 64px;
+  margin-top: 6.8vh;
   background-color: #424242;
   min-height: 6vh;
   padding-left: 0.44rem;
   padding-right: 0.44rem;
-  padding-top: 0.6rem;
   flex-direction: row;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   font-size: calc(4px + 2vmin);
   color: white;
   margin-bottom: 1vh;
@@ -18,7 +18,7 @@
 }
 
 .space {
-  padding-left: 0.28rem;
+  padding-left: 0.1rem;
   padding-right: 0.28rem;
 }
 
