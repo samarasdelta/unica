@@ -2,13 +2,18 @@
   margin-top: 64px;
   background-color: #424242;
   min-height: 5vh;
-  display: flex;
   padding-left: 1rem;
+  padding-top: 0.3rem;
   flex-direction: column;
-  justify-content: center;
-  font-size: calc(8px + 2vmin);
+  display: flex;
+  justify-content: space-between;
+  font-size: calc(4px + 2vmin);
   color: white;
   margin-bottom: 1vh;
+}
+
+.color-change {
+  color: #ccc;
 }
 
 .wrapper-class {

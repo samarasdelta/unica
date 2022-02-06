@@ -1,15 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { Button } from "@material-ui/core";
+import AutorenewIcon from "@material-ui/icons/Autorenew";
+import DraftDemo from "./DraftDemo";
 import AppBarCustom from "../tools/AppBarCustom";
 import DownloadButton from "../tools/DownloadButton";
 import "./democss.css";
-// import { Helmet } from "react-helmet";
-// import katex from "katex";
-
-// import MyEditor from "./Draft";
-// import EditorWYS from "./DraftWYS";
-// import "./texteditorcss.css";
-import DraftDemo from "./DraftDemo";
 
 const Project = (props) => {
   // const handleTextChange = (e) => {
@@ -19,49 +15,28 @@ const Project = (props) => {
   return (
     <div>
       <AppBarCustom />
-      <div>
-        <header className="App-header">
-          {`Project Title: ${props.project.projectTitle}`}
-          {" || "}
-          {`Project Category: ${props.project.projectCategory}`}
+      <div className="App-header">
+        <header>
+          {`Title: `}
+          <span className="color-change">{`${props.project.projectTitle}`}</span>
+          {", "}
+          {`Category: `}
+          <span className="color-change">{`${props.project.projectCategory}`}</span>{" "}
+          <Button
+            variant="contained"
+            color="primary"
+            size="small"
+            startIcon={<AutorenewIcon />}
+            style={{
+              fontSize: "calc(2px + 1.5vmin)",
+            }}
+          >
+            Compile
+          </Button>
         </header>
       </div>
-      {/*  other text editors  */}
-      {/* <MyEditor /> */}
-      {/* <EditorWYS /> */}
-      {/*  other text editors  */}
-
       <DraftDemo />
-
-      {/* <Latex>$$ (3\times 4) \div (5-3) $$</Latex> */}
-
-      {/* latex editor */}
-      {/* <div className="row">
-        <div className="col">
-          <textarea
-            onChange={handleTextChange}
-            className="editor-textarea"
-            defaultValue={`ce{CO2 + C -> 2 C0}`}
-          ></textarea>
-        </div>
-        <div className="col">
-          <div
-            className="editor-textarea"
-            dangerouslySetInnerHTML={{ __html: katex.renderToString(text) }}
-          >
-            <textarea
-              readOnly
-              className="editor-textarea"
-              defaultValue={"Preview of your compiled code here!"}
-            ></textarea>
-          </div>
-        </div>
-      </div> */}
-      {/* latex editor */}
-
       <DownloadButton />
-
-      {/* end latex editor */}
     </div>
   );
 };
@@ -72,6 +47,5 @@ Project.propTypes = {
   id: PropTypes.string,
   project: PropTypes.shape({
     projectTitle: PropTypes.string,
-    projectCategory: PropTypes.string,
   }),
 };
