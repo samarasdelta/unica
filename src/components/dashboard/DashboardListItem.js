@@ -60,7 +60,7 @@ export default function DashboardListItem(props, { fetchProjects }) {
         <Box flexGrow={1} mt={1}>
           <Typography color="textSecondary">
             {"Last Modified: "}
-            <Moment format="DD/MM/YYYY - HH:MM">{props.dateCreated}</Moment>
+            <Moment format="DD/MM/YYYY - HH:mm">{props.dateCreated}</Moment>
           </Typography>
         </Box>
         <Box mt={1} style={{ padding: "0 20px", fontSize: "1rem" }}>
