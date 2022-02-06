@@ -25,7 +25,9 @@ const Project = (props) => {
         </header>
       </div>
       <DraftDemo />
-      <DownloadButton />
+      <div className="space">
+        <DownloadButton />
+      </div>
     </div>
   );
 };

@@ -17,6 +17,11 @@
   color: #ccc;
 }
 
+.space {
+  padding-left: 0.28rem;
+  padding-right: 0.28rem;
+}
+
 .wrapper-class {
   padding: 1rem;
   border: 1px solid #ccc;
@@ -50,8 +55,8 @@
   flex: 1;
   display: flex;
   flex-flow: column;
-  margin: 0 0.4rem;
   height: 78vh;
+  padding: 0 0.44rem 0 0.44rem;
 }
 
 .editor-textarea {
