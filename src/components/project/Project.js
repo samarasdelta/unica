@@ -1,11 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Button } from "@material-ui/core";
-import AutorenewIcon from "@material-ui/icons/Autorenew";
 import DraftDemo from "./DraftDemo";
 import AppBarCustom from "../tools/AppBarCustom";
 import DownloadButton from "../tools/DownloadButton";
 import "./democss.css";
+import CompileButton from "./CompileButton";
 
 const Project = (props) => {
   // const handleTextChange = (e) => {
@@ -16,23 +15,13 @@ const Project = (props) => {
     <div>
       <AppBarCustom />
       <div className="App-header">
+        <CompileButton />
         <header>
           {`Title: `}
           <span className="color-change">{`${props.project.projectTitle}`}</span>
           {", "}
           {`Category: `}
-          <span className="color-change">{`${props.project.projectCategory}`}</span>{" "}
-          <Button
-            variant="contained"
-            color="primary"
-            size="small"
-            startIcon={<AutorenewIcon />}
-            style={{
-              fontSize: "calc(2px + 1.5vmin)",
-            }}
-          >
-            Compile
-          </Button>
+          <span className="color-change">{`${props.project.projectCategory}`}</span>
         </header>
       </div>
       <DraftDemo />

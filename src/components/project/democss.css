@@ -1,10 +1,11 @@
 .App-header {
   margin-top: 64px;
   background-color: #424242;
-  min-height: 5vh;
-  padding-left: 1rem;
-  padding-top: 0.3rem;
-  flex-direction: column;
+  min-height: 6vh;
+  padding-left: 0.44rem;
+  padding-right: 0.44rem;
+  padding-top: 0.6rem;
+  flex-direction: row;
   display: flex;
   justify-content: space-between;
   font-size: calc(4px + 2vmin);
@@ -49,8 +50,8 @@
   flex: 1;
   display: flex;
   flex-flow: column;
-  margin: 0px 2px;
-  min-height: 755px;
+  margin: 0 0.4rem;
+  height: 78vh;
 }
 
 .editor-textarea {
