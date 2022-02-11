@@ -7,6 +7,7 @@ const theme = createTheme({
     button: {
       textTransform: "none",
       fontSize: "1rem",
+      fontWeight: "400",
     },
   },
   palette: {
@@ -21,7 +22,6 @@ const theme = createTheme({
     MuiCssBaseline: {
       "@global": {
         body: {
-          backgroundPosition: "center center",
           backgroundColor: "#fafafa",
         },
       },
