@@ -47,9 +47,6 @@ const Compile = () => {
             spin={360}
           />
         }
-        style={{
-          fontSize: "calc(2px + 1.5vmin)",
-        }}
       >
         Compile
       </Button>
