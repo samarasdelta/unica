@@ -1,5 +1,6 @@
 import React from "react";
 import "./democss.css";
+import CompiledPDF from "./CompiledPDF";
 
 const DemoEditor = () => {
   const [text, setText] = React.useState("");
@@ -19,11 +20,12 @@ const DemoEditor = () => {
           ></textarea>
         </div>
         <div className="col">
-          <textarea
+          {/* <textarea
             readOnly
             className="editor-textarea2"
             value={text}
-          ></textarea>
+          ></textarea> */}
+          <CompiledPDF />
         </div>
       </div>
     </div>
