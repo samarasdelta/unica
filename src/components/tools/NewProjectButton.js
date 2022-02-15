@@ -1,6 +1,5 @@
 import React from "react";
 import {
-  makeStyles,
   Button,
   TextField,
   Dialog,
@@ -20,13 +19,6 @@ import ComboBox from "./Category";
 import AddIcon from "@material-ui/icons/Add";
 import Draggable from "react-draggable";
 
-const useStyles = makeStyles({
-  Bgcolor: {
-    backgroundColor: "#1565C0",
-    color: "#ffffff",
-  },
-});
-
 function PaperComponent(props) {
   return (
     <Draggable
@@ -39,7 +31,6 @@ function PaperComponent(props) {
 }
 
 export default function NewProjectButtonAPI({ fetchProjects }) {
-  const classes = useStyles();
   const [open, setOpen] = React.useState(false);
   const [title, setTitle] = React.useState("");
   const [category, setCategory] = React.useState("");
@@ -101,8 +92,12 @@ export default function NewProjectButtonAPI({ fetchProjects }) {
         PaperComponent={PaperComponent}
         aria-labelledby="draggable-dialog-title"
       >
-        <div className={classes.Bgcolor}>
-          <DialogTitle style={{ cursor: "move" }} id="draggable-dialog-title">
+        <div>
+          <DialogTitle
+            color="primary"
+            style={{ cursor: "move" }}
+            id="draggable-dialog-title"
+          >
             {"Create new project"}
           </DialogTitle>
         </div>

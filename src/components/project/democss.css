@@ -62,18 +62,18 @@
 .editor-textarea {
   background-color: #fff;
   flex: 1;
-  padding: 10px;
+  padding-top: 12px;
+  padding-left: 35px;
   border: 1px solid;
   resize: none;
 }
 
-.editor-textarea2 {
-  outline: none;
-  background-color: #fff;
-  flex: 1;
-  padding: 10px;
-  border: 1px solid;
-  resize: none;
+textarea {
+  background: url(http://i.imgur.com/2cOaJ.png);
+  background-attachment: local;
+  background-repeat: no-repeat;
+
+  border-color: #ccc;
 }
 
 /* textarea */
