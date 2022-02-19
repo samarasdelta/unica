@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import { makeStyles } from "@material-ui/core/styles";
 import PropTypes from "prop-types";
 import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
@@ -9,33 +8,12 @@ import DialogContent from "@material-ui/core/DialogContent";
 import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import CreateIcon from "@material-ui/icons/Create";
-import Paper from "@material-ui/core/Paper";
-import Draggable from "react-draggable";
 import FormControl from "@material-ui/core/FormControl";
 import Divider from "@material-ui/core/Divider";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Switch from "@material-ui/core/Switch";
 import Box from "@material-ui/core/Box";
 import ComboBox from "./Category";
-
-const useStyles = makeStyles({
-  Bgcolor: {
-    backgroundColor: "#1565C0",
-    color: "#ffffff",
-  },
-});
-
-function PaperComponent(props) {
-  return (
-    <Draggable
-      handle="#draggable-dialog-title"
-      cancel={'[class*="MuiDialogContent-root"]'}
-    >
-      <Paper {...props} />
-    </Draggable>
-  );
-}
-
 export default function EditProjectButtonAPI(props, { fetchProjects }) {
   const { id } = props;
 
@@ -52,7 +30,6 @@ export default function EditProjectButtonAPI(props, { fetchProjects }) {
       });
   }, [id]);
 
-  const classes = useStyles();
   const [open, setOpen] = React.useState(false);
   const [title, setTitle] = React.useState("");
   const [category, setCategory] = React.useState("");
@@ -75,11 +52,6 @@ export default function EditProjectButtonAPI(props, { fetchProjects }) {
   };
 
   const handlePublicSwitch = () => {
-    // if (isPublic) {
-    //   setPublic(false);
-    // } else {
-    //   setPublic(true);
-    // }
     setPublic(isPublic ? false : true);
   };
 
@@ -119,18 +91,9 @@ export default function EditProjectButtonAPI(props, { fetchProjects }) {
         {"Edit"}
       </Button>
 
-      <Dialog
-        fullWidth
-        maxWidth="sm"
-        open={open}
-        onClose={closeModal}
-        PaperComponent={PaperComponent}
-        aria-labelledby="draggable-dialog-title"
-      >
-        <div className={classes.Bgcolor}>
-          <DialogTitle style={{ cursor: "move" }} id="draggable-dialog-title">
-            {"Edit project"}
-          </DialogTitle>
+      <Dialog fullWidth maxWidth="sm" open={open} onClose={closeModal}>
+        <div>
+          <DialogTitle>{"Edit project"}</DialogTitle>
         </div>
         <Divider />
         <DialogContent>

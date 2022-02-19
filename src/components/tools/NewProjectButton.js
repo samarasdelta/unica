@@ -7,7 +7,6 @@ import {
   DialogContent,
   DialogContentText,
   DialogTitle,
-  Paper,
   FormControl,
   FormControlLabel,
   Divider,
@@ -17,18 +16,6 @@ import {
 import PropTypes from "prop-types";
 import ComboBox from "./Category";
 import AddIcon from "@material-ui/icons/Add";
-import Draggable from "react-draggable";
-
-function PaperComponent(props) {
-  return (
-    <Draggable
-      handle="#draggable-dialog-title"
-      cancel={'[class*="MuiDialogContent-root"]'}
-    >
-      <Paper {...props} />
-    </Draggable>
-  );
-}
 
 export default function NewProjectButtonAPI({ fetchProjects }) {
   const [open, setOpen] = React.useState(false);
@@ -81,7 +68,7 @@ export default function NewProjectButtonAPI({ fetchProjects }) {
         startIcon={<AddIcon />}
         onClick={handleClickOpen}
       >
-        {"New Project"}
+        {"Create"}
       </Button>
       <Dialog
         fullWidth
@@ -89,17 +76,9 @@ export default function NewProjectButtonAPI({ fetchProjects }) {
         color="primary"
         open={open}
         onClose={closeModal}
-        PaperComponent={PaperComponent}
-        aria-labelledby="draggable-dialog-title"
       >
         <div>
-          <DialogTitle
-            color="primary"
-            style={{ cursor: "move" }}
-            id="draggable-dialog-title"
-          >
-            {"Create new project"}
-          </DialogTitle>
+          <DialogTitle>{"Create new project"}</DialogTitle>
         </div>
         <Divider />
         <DialogContent>
