@@ -55,7 +55,8 @@
   flex: 1;
   display: flex;
   flex-flow: column;
-  height: 78vh;
+  height: 85vh;
+  max-height: 100%;
   padding: 0 0.44rem 0 0.44rem;
 }
 
@@ -72,8 +73,6 @@ textarea {
   background: url(http://i.imgur.com/2cOaJ.png);
   background-attachment: local;
   background-repeat: no-repeat;
-
-  border-color: #ccc;
 }
 
 /* textarea */
