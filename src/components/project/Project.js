@@ -5,7 +5,6 @@ import { Grid } from "@material-ui/core";
 import AppBarCustom from "../tools/AppBarCustom";
 import DownloadButton from "./DownloadButton";
 import "./democss.css";
-// import CompileButton from "./CompileButton";
 import SaveButton from "./SaveButton";
 import { Button } from "@material-ui/core";
 
