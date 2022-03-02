@@ -10,6 +10,7 @@ const DemoEditor = ({ onTextChange, link }) => {
           <textarea
             onChange={onTextChange}
             className="editor-textarea"
+            spellCheck="false"
             defaultValue={`hello`}
           ></textarea>
         </div>

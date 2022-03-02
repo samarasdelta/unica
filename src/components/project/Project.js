@@ -1,9 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
-import DraftDemo from "./DraftDemo";
+import DraftDemo from "./LatexEditor";
 import { Grid } from "@material-ui/core";
 import AppBarCustom from "../tools/AppBarCustom";
 import DownloadButton from "./DownloadButton";
+import CompileButton from "./CompileButton";
 import "./democss.css";
 import { Button } from "@material-ui/core";
 
@@ -30,7 +31,6 @@ const Project = (props) => {
       .catch((error) => {
         console.log("Error: ", error);
       });
-    console.log("text", text);
   };
 
   return (
@@ -45,9 +45,7 @@ const Project = (props) => {
             alignItems="center"
           >
             <Grid item>
-              <Button variant="contained" color="primary" onClick={compile}>
-                Compile
-              </Button>
+              <CompileButton compile={compile} />
             </Grid>
             <Grid item>
               <DownloadButton />

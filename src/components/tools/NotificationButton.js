@@ -30,8 +30,8 @@ export default function PositionedSnackbar() {
     setState({ ...state, open: false });
   };
 
-  const buttons = (
-    <React.Fragment>
+  return (
+    <div className={classes.root}>
       <IconButton
         color="inherit"
         onClick={handleClick({ vertical: "top", horizontal: "right" })}
@@ -40,12 +40,6 @@ export default function PositionedSnackbar() {
           <NotificationsIcon />
         </Badge>
       </IconButton>
-    </React.Fragment>
-  );
-
-  return (
-    <div className={classes.root}>
-      {buttons}
       <Snackbar
         anchorOrigin={{ vertical, horizontal }}
         open={open}

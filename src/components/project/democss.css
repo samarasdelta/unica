@@ -76,7 +76,7 @@
 }
 
 textarea {
-  background: url(http://i.imgur.com/2cOaJ.png);
+  background: url("../images/lines.png");
   background-attachment: local;
   background-repeat: no-repeat;
 }
