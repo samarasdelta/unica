@@ -1,31 +1,21 @@
 import React from "react";
 import "./democss.css";
 import CompiledPDF from "./CompiledPDF";
+// import { Button } from "@material-ui/core";
 
-const DemoEditor = () => {
-  const [text, setText] = React.useState("");
-
-  const handleTextChange = (e) => {
-    setText(e.target.value);
-  };
-
+const DemoEditor = ({ onTextChange, link }) => {
   return (
     <div>
       <div className="row">
         <div className="col">
           <textarea
-            onChange={handleTextChange}
+            onChange={onTextChange}
             className="editor-textarea"
             defaultValue={`hello`}
           ></textarea>
         </div>
         <div className="col">
-          {/* <textarea
-            readOnly
-            className="editor-textarea2"
-            value={text}
-          ></textarea> */}
-          <CompiledPDF />
+          <CompiledPDF url={link} />
         </div>
       </div>
     </div>

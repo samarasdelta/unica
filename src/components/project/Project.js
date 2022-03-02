@@ -5,13 +5,36 @@ import { Grid } from "@material-ui/core";
 import AppBarCustom from "../tools/AppBarCustom";
 import DownloadButton from "./DownloadButton";
 import "./democss.css";
-import CompileButton from "./CompileButton";
+// import CompileButton from "./CompileButton";
 import SaveButton from "./SaveButton";
+import { Button } from "@material-ui/core";
 
 const Project = (props) => {
-  // const handleTextChange = (e) => {
-  //   setText(e.target.value);
-  // };
+  const [text, setText] = React.useState("");
+  const [link, setLink] = React.useState("");
+
+  const handleTextChange = (e) => {
+    setText(e.target.value);
+  };
+
+  const compile = () => {
+    fetch("/api/latex", {
+      method: "POST",
+      headers: {
+        "Content-Type": "text/plain",
+      },
+      body: text,
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("data", data);
+        setLink(data.pdf);
+      })
+      .catch((error) => {
+        console.log("Error: ", error);
+      });
+    console.log("text", text);
+  };
 
   return (
     <div>
@@ -25,7 +48,9 @@ const Project = (props) => {
             alignItems="center"
           >
             <Grid item>
-              <CompileButton />
+              <Button variant="contained" color="primary" onClick={compile}>
+                Compile
+              </Button>
             </Grid>
             <Grid item>
               <DownloadButton />
@@ -43,9 +68,7 @@ const Project = (props) => {
           <span className="color-change">{`${props.project.projectCategory}`}</span>
         </header>
       </div>
-      <DraftDemo />
-      {/* <div className="space">
-        </div> */}
+      <DraftDemo onTextChange={handleTextChange} link={link} />
     </div>
   );
 };
