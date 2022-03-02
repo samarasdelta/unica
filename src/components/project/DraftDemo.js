@@ -1,7 +1,6 @@
 import React from "react";
 import "./democss.css";
 import CompiledPDF from "./CompiledPDF";
-// import { Button } from "@material-ui/core";
 
 const DemoEditor = ({ onTextChange, link }) => {
   return (

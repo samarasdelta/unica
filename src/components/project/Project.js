@@ -5,7 +5,6 @@ import { Grid } from "@material-ui/core";
 import AppBarCustom from "../tools/AppBarCustom";
 import DownloadButton from "./DownloadButton";
 import "./democss.css";
-import SaveButton from "./SaveButton";
 import { Button } from "@material-ui/core";
 
 const Project = (props) => {
@@ -26,7 +25,6 @@ const Project = (props) => {
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log("data", data);
         setLink(data.pdf);
       })
       .catch((error) => {
@@ -55,7 +53,9 @@ const Project = (props) => {
               <DownloadButton />
             </Grid>
             <Grid item>
-              <SaveButton />
+              <Button variant="contained" color="primary">
+                Save
+              </Button>
             </Grid>
           </Grid>
         </div>

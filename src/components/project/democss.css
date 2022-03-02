@@ -69,6 +69,12 @@
   resize: none;
 }
 
+.editor-textarea2 {
+  background-color: #c8c8c8;
+  flex: 1;
+  border: 1px solid;
+}
+
 textarea {
   background: url(http://i.imgur.com/2cOaJ.png);
   background-attachment: local;
