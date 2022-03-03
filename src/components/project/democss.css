@@ -13,6 +13,19 @@
   margin-bottom: 1vh;
 }
 
+.text-preview {
+  z-index: 1;
+  color: black;
+  position: absolute;
+}
+
+.pdf-viewer {
+  z-index: 999;
+  height: 85vh;
+  max-height: 100%;
+  position: relative;
+}
+
 .color-change {
   color: #ccc;
 }

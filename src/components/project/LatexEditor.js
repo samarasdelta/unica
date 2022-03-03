@@ -2,7 +2,9 @@ import React from "react";
 import "./democss.css";
 import CompiledPDF from "./CompiledPDF";
 
-const DemoEditor = ({ onTextChange, link }) => {
+const LatexEditor = ({ onTextChange, link, savedText }) => {
+  console.log("text: ", savedText);
+
   return (
     <div>
       <div className="row">
@@ -11,7 +13,7 @@ const DemoEditor = ({ onTextChange, link }) => {
             onChange={onTextChange}
             className="editor-textarea"
             spellCheck="false"
-            defaultValue={`hello`}
+            value={savedText}
           ></textarea>
         </div>
         <div className="col">
@@ -22,4 +24,4 @@ const DemoEditor = ({ onTextChange, link }) => {
   );
 };
 
-export default DemoEditor;
+export default LatexEditor;
