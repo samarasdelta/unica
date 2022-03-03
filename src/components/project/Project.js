@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 import LatexEditor from "./LatexEditor";
 import { Grid } from "@material-ui/core";
@@ -46,10 +46,26 @@ const Project = (props) => {
       body: JSON.stringify({
         text,
       }),
-    });
-
-    window.location.reload();
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("data", data);
+      })
+      .catch((error) => {
+        console.log("Error: ", error);
+      });
   };
+
+  useEffect(() => {
+    fetch(`/api/projects/${id}`)
+      .then((response) => response.json())
+      .then((data) => {
+        setText(data.projectInfo);
+      })
+      .catch((error) => {
+        console.log("Error: ", error);
+      });
+  }, [id]);
 
   return (
     <div>
