@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import DraftDemo from "./LatexEditor";
 import { Grid } from "@material-ui/core";
 import AppBarCustom from "../tools/AppBarCustom";
-import DownloadButton from "./DownloadButton";
+// import DownloadButton from "./DownloadButton";
 import CompileButton from "./CompileButton";
 import "./democss.css";
 import { Button } from "@material-ui/core";
@@ -39,6 +39,7 @@ const Project = (props) => {
       <div className="App-header">
         <div className="space">
           <Grid
+            spacing={1}
             container
             direction="row"
             justifyContent="flex-end"
@@ -46,9 +47,6 @@ const Project = (props) => {
           >
             <Grid item>
               <CompileButton compile={compile} />
-            </Grid>
-            <Grid item>
-              <DownloadButton />
             </Grid>
             <Grid item>
               <Button variant="contained" color="primary">
