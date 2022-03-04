@@ -5,8 +5,8 @@ import { Grid } from "@material-ui/core";
 import AppBarCustom from "../tools/AppBarCustom";
 // import DownloadButton from "./DownloadButton";
 import CompileButton from "./CompileButton";
+import SaveButton from "./SaveButton";
 import "./democss.css";
-import { Button } from "@material-ui/core";
 
 const Project = (props) => {
   const { id } = props;
@@ -83,9 +83,7 @@ const Project = (props) => {
               <CompileButton compile={compile} />
             </Grid>
             <Grid item>
-              <Button onClick={saveProject} variant="contained" color="primary">
-                Save
-              </Button>
+              <SaveButton saveProject={saveProject} />
             </Grid>
           </Grid>
         </div>
