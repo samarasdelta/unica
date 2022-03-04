@@ -3,8 +3,6 @@ import "./democss.css";
 import CompiledLatex from "./CompiledLatex";
 
 const LatexEditor = ({ onTextChange, link, savedText }) => {
-  console.log("text: ", savedText);
-
   return (
     <div>
       <div className="row">

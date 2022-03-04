@@ -28,9 +28,7 @@ const Project = (props) => {
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log("data", data);
         setLink(data.pdf);
-        console.log("text", text);
       })
       .catch((error) => {
         console.log("Error: ", error);
