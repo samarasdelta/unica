@@ -11,14 +11,12 @@ function Alert(props) {
 const useStyles = makeStyles((theme) => ({
   root: {
     width: "100%",
-    "& > * + *": {
-      marginTop: theme.spacing(2),
-    },
   },
 }));
 
 const SaveButton = ({ saveProject }) => {
   const classes = useStyles();
+
   const [open, setOpen] = React.useState(false);
 
   const handleClick = () => {
@@ -45,7 +43,15 @@ const SaveButton = ({ saveProject }) => {
       >
         Save
       </Button>
-      <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+      <Snackbar
+        anchorOrigin={{
+          vertical: "bottom",
+          horizontal: "right",
+        }}
+        open={open}
+        autoHideDuration={3000}
+        onClose={handleClose}
+      >
         <Alert onClose={handleClose} severity="success">
           Code saved successfully!
         </Alert>

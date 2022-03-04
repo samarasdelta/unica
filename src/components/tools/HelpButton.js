@@ -41,7 +41,7 @@ export default function PositionedSnackbar() {
   );
 
   return (
-    <div className={classes.top}>
+    <div>
       {buttons}
       <Snackbar
         open={open}
