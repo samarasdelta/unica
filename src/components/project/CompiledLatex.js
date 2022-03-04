@@ -1,7 +1,7 @@
 import React from "react";
 import { Typography } from "@material-ui/core";
 
-const CompiledPdf = ({ url }) => {
+const CompiledLatex = ({ url }) => {
   return (
     <div className="editor-textarea2">
       <div className="text-preview">
@@ -22,4 +22,4 @@ const CompiledPdf = ({ url }) => {
   );
 };
 
-export default CompiledPdf;
+export default CompiledLatex;

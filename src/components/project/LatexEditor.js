@@ -1,6 +1,6 @@
 import React from "react";
 import "./democss.css";
-import CompiledPDF from "./CompiledPDF";
+import CompiledLatex from "./CompiledLatex";
 
 const LatexEditor = ({ onTextChange, link, savedText }) => {
   console.log("text: ", savedText);
@@ -17,7 +17,7 @@ const LatexEditor = ({ onTextChange, link, savedText }) => {
           ></textarea>
         </div>
         <div className="col">
-          <CompiledPDF url={link} />
+          <CompiledLatex url={link} />
         </div>
       </div>
     </div>
