@@ -4,8 +4,8 @@ import LatexEditor from "./LatexEditor";
 import { Grid } from "@material-ui/core";
 import AppBarCustom from "../tools/AppBarCustom";
 // import DownloadButton from "./DownloadButton";
-import CompileButton from "./CompileButton";
-import SaveButton from "./SaveButton";
+import CompileButton from "./buttons/CompileButton";
+import SaveButton from "./buttons/SaveButton";
 import "./democss.css";
 
 const Project = (props) => {
