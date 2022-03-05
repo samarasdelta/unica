@@ -5,6 +5,7 @@ import { Grid } from "@material-ui/core";
 import AppBarCustom from "../tools/AppBarCustom";
 // import DownloadButton from "./DownloadButton";
 import CompileButton from "./buttons/CompileButton";
+import CopyLinkButton from "./buttons/CopyLinkButton";
 import SaveButton from "./buttons/SaveButton";
 import "./democss.css";
 
@@ -82,6 +83,9 @@ const Project = (props) => {
             </Grid>
             <Grid item>
               <SaveButton saveProject={saveProject} />
+            </Grid>
+            <Grid item>
+              <CopyLinkButton link={link} />
             </Grid>
           </Grid>
         </div>
