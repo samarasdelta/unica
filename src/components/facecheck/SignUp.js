@@ -95,7 +95,7 @@ export default function SignUp() {
                 variant="outlined"
                 required
                 fullWidth
-                name="password"
+                name="confirmpassword"
                 label="Confirm Password"
                 type="password"
                 id="password2"
@@ -104,6 +104,11 @@ export default function SignUp() {
             </Grid>
           </Grid>
           <Button
+            // disabled={
+            //   email === "" || password === "" || confirmpassword === ""
+            //     ? true
+            //     : false
+            // }
             component={RouteLink}
             to="dashboard"
             type="submit"

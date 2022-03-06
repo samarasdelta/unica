@@ -121,6 +121,7 @@ export default function NewProjectButtonAPI({ fetchProjects }) {
         <DialogActions>
           <Button onClick={closeModal}>{"Cancel"}</Button>
           <Button
+            disabled={title === "" || category === "" ? true : false}
             onClick={(e) => {
               createProject();
               closeModal(false);
