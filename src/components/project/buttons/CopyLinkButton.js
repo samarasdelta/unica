@@ -34,6 +34,7 @@ const SaveButton = ({ link }) => {
   return (
     <div className={classes.root}>
       <Button
+        disabled={link === "" ? true : false}
         onClick={() => {
           handleClick();
           navigator.clipboard.writeText(link);
