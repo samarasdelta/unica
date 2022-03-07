@@ -6,9 +6,13 @@ const CompiledLatex = ({ url }) => {
     <div className="editor-textarea2">
       <div className="text-preview">
         <Typography
-          variant="h6"
-          color="textSecondary"
-          style={{ padding: "0.5vw", color: "5c5c5c" }}
+          style={{
+            padding: "0.5vw",
+            color: "#5c5c5c",
+            fontWeight: "400",
+            fontSize: "1.4rem",
+            lineHeight: "48px",
+          }}
         >
           <li>{"Click the compile button to preview your work as a PDF."}</li>
           <li>

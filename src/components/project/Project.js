@@ -89,14 +89,16 @@ const Project = (props) => {
             </Grid>
           </Grid>
         </div>
-        <header>
-          <span className="color-change">{`Title: `}</span>
-          {`${props.project.projectTitle}`}
+        <header className="dflt">
+          {`Title: `}
           <span className="color-change">
-            {", "}
-            {`Category: `}
+            {`${props.project.projectTitle}`}
           </span>
-          {`${props.project.projectCategory}`}
+          {", "}
+          {`Category: `}
+          <span className="color-change">
+            {`${props.project.projectCategory}`}
+          </span>
         </header>
       </div>
       <LatexEditor
