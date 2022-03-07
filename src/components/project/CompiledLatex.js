@@ -6,21 +6,27 @@ const CompiledLatex = ({ url }) => {
     <div className="editor-textarea2">
       <div className="text-preview">
         <Typography
-          variant="h5"
-          color="textSecondary"
-          style={{ padding: "1vw" }}
-        >
-          {"Click the compile button to preview your work as a PDF."}
-        </Typography>
-        <Typography
           variant="h6"
           color="textSecondary"
-          style={{ padding: "1vw" }}
+          style={{ padding: "0.5vw" }}
         >
-          {
-            "After compile is done, you can share this pdf by clicking the Share PDF button. "
-          }
+          <li>{"Click the compile button to preview your work as a PDF."}</li>
+          <li>
+            {
+              "After compile is done, you can share this pdf by clicking the Share PDF button."
+            }
+          </li>
+          <li>
+            {
+              "If an error occurs during compile process, it will be displayed below."
+            }
+          </li>
         </Typography>
+        <blockquote className="errormsg">
+          dwdwd wddw dwdwddwdw dwddwdwdwdd wdwdwddwdwdwddw dwdwddw dwdwd dwdwd
+          wddwdwdwddwd wdwddwdwdw ddwdwdwddwdwdwddwdwdwddwdwdw ddw dwdwddwdwdwd
+          dwdwdwddwdwdw ddwdwdwddwdwdwddwdwdw ddwdwdwdd wdwdwddw dwdwd
+        </blockquote>
       </div>
       <div className="pdf-viewer">
         <object width="100%" height="100%" data={url} type="application/pdf">

@@ -56,6 +56,11 @@
   color: gray;
 }
 
+.errormsg {
+  color: red;
+  font-family: "Courier New", Courier, monospace;
+}
+
 /* textarea */
 
 .row {
