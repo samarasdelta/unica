@@ -8,7 +8,7 @@ const CompiledLatex = ({ url }) => {
         <Typography
           variant="h6"
           color="textSecondary"
-          style={{ padding: "0.5vw" }}
+          style={{ padding: "0.5vw", color: "5c5c5c" }}
         >
           <li>{"Click the compile button to preview your work as a PDF."}</li>
           <li>
@@ -22,11 +22,7 @@ const CompiledLatex = ({ url }) => {
             }
           </li>
         </Typography>
-        <blockquote className="errormsg">
-          dwdwd wddw dwdwddwdw dwddwdwdwdd wdwdwddwdwdwddw dwdwddw dwdwd dwdwd
-          wddwdwdwddwd wdwddwdwdw ddwdwdwddwdwdwddwdwdwddwdwdw ddw dwdwddwdwdwd
-          dwdwdwddwdwdw ddwdwdwddwdwdwddwdwdw ddwdwdwdd wdwdwddw dwdwd
-        </blockquote>
+        <blockquote className="errormsg">{""}</blockquote>
       </div>
       <div className="pdf-viewer">
         <object width="100%" height="100%" data={url} type="application/pdf">
