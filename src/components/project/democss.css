@@ -62,6 +62,7 @@
 
 .errormsg {
   color: red;
+  font-size: x-small;
   font-family: "Courier New", Courier, monospace;
 }
 

@@ -7,24 +7,27 @@ const CompiledLatex = ({ url }) => {
       <div className="text-preview">
         <Typography
           style={{
-            padding: "0.5vw",
+            padding: "0.2vw",
             color: "#5c5c5c",
             fontWeight: "400",
             fontSize: "1.4rem",
             lineHeight: "48px",
           }}
         >
-          <li>{"Click the compile button to preview your work as a PDF."}</li>
-          <li>
-            {
-              "After compile is done, you can share this pdf by clicking the Share PDF button."
-            }
-          </li>
-          <li>
-            {
-              "If an error occurs during compile process, it will be displayed below."
-            }
-          </li>
+          <ul>
+            <li>{"Click the compile button to preview your work as a PDF."}</li>
+            <li>
+              {
+                "After compile is done, you can share this pdf by clicking the Share PDF button."
+              }
+            </li>
+            <li>{"Be sure to save your work by clicking the save button."}</li>
+            <li>
+              {
+                "If an error occurs during compile process, it will be displayed below."
+              }
+            </li>
+          </ul>
         </Typography>
         <blockquote className="errormsg">{""}</blockquote>
       </div>
