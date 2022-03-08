@@ -12,7 +12,7 @@ export default function ComboBox({ onSelect, defaultValue }) {
       }}
       fullWidth
       renderInput={(params) => (
-        <TextField {...params} label="Template" required variant="outlined" />
+        <TextField {...params} label="Template" variant="outlined" />
       )}
     />
   );
