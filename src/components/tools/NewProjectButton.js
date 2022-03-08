@@ -15,6 +15,7 @@ import {
 } from "@material-ui/core";
 import PropTypes from "prop-types";
 import ComboBox from "./Category";
+import TemplateBox from "./Template";
 import AddIcon from "@material-ui/icons/Add";
 
 export default function NewProjectButtonAPI({ fetchProjects }) {
@@ -97,7 +98,15 @@ export default function NewProjectButtonAPI({ fetchProjects }) {
             onInput={handleTitleChange}
             autoFocus
           />
-
+          <Box mt={2}>
+            <Box flexGrow={1}>
+              <TemplateBox
+                onSelect={(category) => {
+                  handleCategory(category);
+                }}
+              />
+            </Box>
+          </Box>
           <Box display="flex" mt={2}>
             <Box flexGrow={1}>
               <ComboBox
