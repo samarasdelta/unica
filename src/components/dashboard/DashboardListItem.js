@@ -17,14 +17,13 @@ const useStyles = makeStyles({
     flex: 1,
   },
 });
-export default function DashboardListItem(props, { fetchProjects }) {
+export default function DashboardListItem(props) {
   const deleteProject = async (id) => {
     await fetch(`api/projects/${id}`, {
       method: "DELETE",
     });
 
-    // fetchProjects();
-    window.location.reload();
+    props.fetchProjects();
   };
 
   const classes = useStyles();
@@ -69,7 +68,10 @@ export default function DashboardListItem(props, { fetchProjects }) {
           </Link>
         </Box>
         <Box mt={1} style={{ padding: "0 20px" }}>
-          <EditProjectButtonAPI id={props.id} fetchProjects={fetchProjects} />
+          <EditProjectButtonAPI
+            id={props.id}
+            fetchProjects={props.fetchProjects}
+          />
         </Box>
         <Box mt={1} style={{ padding: "0 20px" }}>
           <Link
