@@ -75,7 +75,7 @@ export const mainListItems = (
 export function GroupsListItems() {
   const [groups, setGroups] = useState([]);
 
-  useEffect(() => {
+  const fetchGroups = () => {
     fetch("/api/groups")
       .then((response) => response.json())
       .then((data) => {
@@ -84,12 +84,15 @@ export function GroupsListItems() {
       .catch((error) => {
         console.log("Error: ", error);
       });
+  };
+  useEffect(() => {
+    fetchGroups();
   }, []);
 
   return (
     <div>
       <Divider />
-      <NewTeamButtonAPI />
+      <NewTeamButtonAPI fetchGroups={fetchGroups} />
       {groups.map(function (group, i) {
         return (
           <Link

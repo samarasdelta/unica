@@ -3,6 +3,7 @@ import { Button } from "@material-ui/core";
 import Snackbar from "@material-ui/core/Snackbar";
 import MuiAlert from "@material-ui/lab/Alert";
 import { makeStyles } from "@material-ui/core/styles";
+import PropTypes from "prop-types";
 
 function Alert(props) {
   return <MuiAlert elevation={6} variant="filled" {...props} />;
@@ -61,3 +62,7 @@ const SaveButton = ({ saveProject }) => {
 };
 
 export default SaveButton;
+
+SaveButton.propTypes = {
+  saveProject: PropTypes.func.isRequired,
+};

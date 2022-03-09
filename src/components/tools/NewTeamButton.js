@@ -12,6 +12,7 @@ import Box from "@material-ui/core/Box";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
+import PropTypes from "prop-types";
 
 const useStyles = makeStyles({
   Bgcolor: {
@@ -20,7 +21,7 @@ const useStyles = makeStyles({
   },
 });
 
-export default function NewTeamButtonAPI() {
+export default function NewTeamButtonAPI({ fetchGroups }) {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
   const [title, setTitle] = React.useState("");
@@ -48,7 +49,7 @@ export default function NewTeamButtonAPI() {
       }),
     });
 
-    window.location.reload();
+    fetchGroups();
   };
 
   return (
@@ -89,7 +90,13 @@ export default function NewTeamButtonAPI() {
           <Button onClick={handleClose} color="disabled">
             {"Cancel"}
           </Button>
-          <Button onClick={createGroup} color="primary">
+          <Button
+            onClick={() => {
+              createGroup();
+              handleClose();
+            }}
+            color="primary"
+          >
             {"Create"}
           </Button>
         </DialogActions>
@@ -97,3 +104,7 @@ export default function NewTeamButtonAPI() {
     </div>
   );
 }
+
+NewTeamButtonAPI.propTypes = {
+  fetchGroups: PropTypes.func.isRequired,
+};

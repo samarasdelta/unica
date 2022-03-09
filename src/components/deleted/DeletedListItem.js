@@ -25,7 +25,7 @@ const useStyles = makeStyles({
   },
 });
 
-export default function DeleteListItem(props, { fetchDeletedProjects }) {
+export default function DeleteListItem(props) {
   const classes = useStyles();
 
   const deletePermaProject = async (id) => {
@@ -33,8 +33,7 @@ export default function DeleteListItem(props, { fetchDeletedProjects }) {
       method: "DELETE",
     });
 
-    window.location.reload();
-    // fetchDeletedProjects();
+    props.fetchDeletedProjects();
   };
 
   const restoreProject = async (id) => {
@@ -48,8 +47,7 @@ export default function DeleteListItem(props, { fetchDeletedProjects }) {
       }),
     });
 
-    window.location.reload();
-    // fetchDeletedProjects();
+    props.fetchDeletedProjects();
   };
 
   return (
@@ -128,4 +126,5 @@ DeleteListItem.propTypes = {
   dateCreated: PropTypes.node,
   projectState: PropTypes.node,
   projectIsDeleted: PropTypes.node,
+  fetchDeletedProjects: PropTypes.func.isRequired,
 };

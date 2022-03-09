@@ -14,7 +14,7 @@ import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Switch from "@material-ui/core/Switch";
 import Box from "@material-ui/core/Box";
 import ComboBox from "./Category";
-export default function EditProjectButtonAPI(props, { fetchProjects }) {
+export default function EditProjectButtonAPI(props) {
   const { id } = props;
 
   useEffect(() => {
@@ -68,8 +68,7 @@ export default function EditProjectButtonAPI(props, { fetchProjects }) {
       }),
     });
 
-    window.location.reload();
-    // fetchProjects();
+    props.fetchProjects();
   };
 
   return (
@@ -163,4 +162,5 @@ EditProjectButtonAPI.propTypes = {
   title: PropTypes.string,
   category: PropTypes.string,
   isPublic: PropTypes.bool,
+  fetchProjects: PropTypes.func.isRequired,
 };

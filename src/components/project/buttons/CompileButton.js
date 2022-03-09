@@ -3,6 +3,7 @@ import { Button } from "@material-ui/core";
 import { Autorenew } from "@material-ui/icons";
 import { makeStyles } from "@material-ui/core";
 import clsx from "clsx";
+import PropTypes from "prop-types";
 
 const useStyles = makeStyles((theme) => ({
   refresh: {
@@ -57,3 +58,7 @@ const Compile = ({ compile }) => {
 };
 
 export default Compile;
+
+Compile.propTypes = {
+  compile: PropTypes.func.isRequired,
+};

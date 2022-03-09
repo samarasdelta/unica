@@ -3,6 +3,7 @@ import { Button } from "@material-ui/core";
 import Snackbar from "@material-ui/core/Snackbar";
 import MuiAlert from "@material-ui/lab/Alert";
 import { makeStyles } from "@material-ui/core/styles";
+import PropTypes from "prop-types";
 
 function Alert(props) {
   return <MuiAlert elevation={6} variant="filled" {...props} />;
@@ -14,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const SaveButton = ({ link }) => {
+const CopyLinkButton = ({ link }) => {
   const classes = useStyles();
 
   const [open, setOpen] = React.useState(false);
@@ -61,4 +62,8 @@ const SaveButton = ({ link }) => {
   );
 };
 
-export default SaveButton;
+export default CopyLinkButton;
+
+CopyLinkButton.propTypes = {
+  link: PropTypes.func.isRequired,
+};
