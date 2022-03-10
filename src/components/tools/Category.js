@@ -2,7 +2,7 @@ import React from "react";
 import TextField from "@material-ui/core/TextField";
 import Autocomplete from "@material-ui/lab/Autocomplete";
 import PropTypes from "prop-types";
-export default function ComboBox({ onSelect, defaultValue }) {
+export default function Category({ onSelect, defaultValue }) {
   return (
     <Autocomplete
       defaultValue={defaultValue}
@@ -33,7 +33,9 @@ const categories = [
   "Other",
 ];
 
-ComboBox.propTypes = {
+Category.propTypes = {
   onSelect: PropTypes.func.isRequired,
   defaultValue: PropTypes.string,
 };
+
+// Engineering, Fine Art, Informatics, Literature, Mathematics, Mechanics, Medicine, Philosophy, Physics, Other

@@ -14,7 +14,7 @@ import {
   Box,
 } from "@material-ui/core";
 import PropTypes from "prop-types";
-import ComboBox from "./Category";
+import Category from "./Category";
 import TemplateBox from "./Template";
 import AddIcon from "@material-ui/icons/Add";
 
@@ -109,7 +109,7 @@ export default function NewProjectButtonAPI({ fetchProjects }) {
           </Box>
           <Box display="flex" mt={2}>
             <Box flexGrow={1}>
-              <ComboBox
+              <Category
                 onSelect={(category) => {
                   handleCategory(category);
                 }}
