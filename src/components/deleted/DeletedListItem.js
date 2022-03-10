@@ -54,7 +54,7 @@ export default function DeleteListItem(props) {
     <React.Fragment>
       <Box className={classes.boxSpace}>
         <div>
-          <Link href={`/project/${props.id}`}>
+          <Link>
             <Typography noWrap variant="h5" style={{ fontWeight: "500" }}>
               {props.title}
             </Typography>
@@ -83,11 +83,7 @@ export default function DeleteListItem(props) {
             <Moment format="DD/MM/YYYY - HH:MM">{props.dateCreated}</Moment>
           </Typography>
         </Box>
-        <Box mt={1} style={{ padding: "0 20px", fontSize: "1rem" }}>
-          <Link color="primary" href={`/project/${props.id}`}>
-            {"View full project "}
-          </Link>
-        </Box>
+
         <Box mt={1} style={{ padding: "0 20px", fontSize: "1rem" }}>
           <Link
             color="primary"
