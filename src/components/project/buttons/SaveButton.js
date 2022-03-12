@@ -17,7 +17,6 @@ const useStyles = makeStyles((theme) => ({
 
 const SaveButton = ({ saveProject, text }) => {
   const classes = useStyles();
-  console.log("saveProject", saveProject);
 
   const [open, setOpen] = React.useState(false);
 

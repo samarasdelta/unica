@@ -1,5 +1,6 @@
 import React from "react";
 import { Typography } from "@material-ui/core";
+import PropTypes from "prop-types";
 
 const CompiledLatex = ({ url }) => {
   return (
@@ -14,7 +15,7 @@ const CompiledLatex = ({ url }) => {
             lineHeight: "48px",
           }}
         >
-          <ul>
+          <span className="li-space">
             <li>{"Click the compile button to preview your work as a PDF."}</li>
             <li>
               {
@@ -27,7 +28,7 @@ const CompiledLatex = ({ url }) => {
                 "If an error occurs during compile process, it will be displayed below."
               }
             </li>
-          </ul>
+          </span>
         </Typography>
         <blockquote className="errormsg">{""}</blockquote>
       </div>
@@ -41,3 +42,7 @@ const CompiledLatex = ({ url }) => {
 };
 
 export default CompiledLatex;
+
+CompiledLatex.propTypes = {
+  url: PropTypes.string.isRequired,
+};

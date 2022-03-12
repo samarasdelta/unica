@@ -65,5 +65,5 @@ const CopyLinkButton = ({ link }) => {
 export default CopyLinkButton;
 
 CopyLinkButton.propTypes = {
-  link: PropTypes.func.isRequired,
+  link: PropTypes.string.isRequired,
 };

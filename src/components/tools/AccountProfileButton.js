@@ -88,7 +88,7 @@ export default function TemporaryDrawer() {
       <Box mx={2}>
         <Divider />
         <div>
-          <ListSubheader align="center">User's settings</ListSubheader>
+          <ListSubheader align="center">{"User's settings"}</ListSubheader>
           <Divider />
           <List className={classes.listContent}>
             <ListItem>
