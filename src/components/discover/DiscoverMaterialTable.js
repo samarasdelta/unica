@@ -8,7 +8,9 @@ import ChevronLeft from "@material-ui/icons/ChevronLeft";
 import ChevronRight from "@material-ui/icons/ChevronRight";
 import FirstPage from "@material-ui/icons/FirstPage";
 import LastPage from "@material-ui/icons/LastPage";
-// import ArrowForwardIcon from "@material-ui/icons/ArrowForward";
+import IconButton from "@material-ui/core/IconButton";
+import AddBoxIcon from "@material-ui/icons/AddBox";
+import Tooltip from "@material-ui/core/Tooltip";
 
 //component icons declaration
 const tableIcons = {
@@ -24,7 +26,6 @@ const tableIcons = {
   SortArrow: forwardRef((props, ref) => <ArrowDownward {...props} ref={ref} />),
 };
 //end component icons declaration
-
 export default function DataTable() {
   const [projects, setProjects] = useState([]);
 
@@ -59,14 +60,28 @@ export default function DataTable() {
             owner: "Kwstas",
           };
         })}
-        // actions={[
-        //   {
-        //     icon: () => <ArrowForwardIcon />,
-        //     tooltip: "Go to project",
-        //     onClick: (event, rowData) => alert("You saved " + rowData.name),
-        //   },
-        // ]}
+        actions={[
+          {
+            tooltip: "Apply",
+            onClick: (event, rowData) => alert("You saved " + rowData.name),
+          },
+        ]}
+        components={{
+          Action: (props) => (
+            <Tooltip title="Apply">
+              <IconButton
+                onClick={(event) => props.action.onClick(event, props.data)}
+                color="primary"
+                variant="contained"
+                size="small"
+              >
+                <AddBoxIcon />
+              </IconButton>
+            </Tooltip>
+          ),
+        }}
         options={{
+          pageSize: 10,
           headerStyle: {
             backgroundColor: "#eee",
             color: "#000",
