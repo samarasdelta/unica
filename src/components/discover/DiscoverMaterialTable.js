@@ -63,6 +63,7 @@ export default function DataTable() {
         actions={[
           {
             tooltip: "Apply",
+            icon: "save",
             onClick: (event, rowData) => alert("You saved " + rowData.name),
           },
         ]}

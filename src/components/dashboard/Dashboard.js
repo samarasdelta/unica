@@ -245,11 +245,11 @@ export default function Dashboard() {
               <NewProjectButtonAPI fetchProjects={fetchProjects} />
             </Box>
           </div>
-          <Grid container spacing={2}>
+          <Grid container spacing={4}>
             {/* Project */}
             {projects.map(function (project, i) {
               return (
-                <Grid item xs={12} key={i}>
+                <Grid item md={12} sm={12} key={i}>
                   <Paper className={fixedHeightPaper}>
                     <DashboardListItem
                       fetchProjects={fetchProjects}

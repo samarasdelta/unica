@@ -239,7 +239,7 @@ export default function Deleted() {
             {/* Project */}
             {projects.map(function (project, i) {
               return (
-                <Grid item xs={12} key={i}>
+                <Grid item key={i}>
                   <Paper className={fixedHeightPaper}>
                     <DeletedListItem
                       fetchDeletedProjects={fetchDeletedProjects}
