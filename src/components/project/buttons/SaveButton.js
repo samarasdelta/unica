@@ -15,8 +15,9 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const SaveButton = ({ saveProject }) => {
+const SaveButton = ({ saveProject, text }) => {
   const classes = useStyles();
+  console.log("saveProject", saveProject);
 
   const [open, setOpen] = React.useState(false);
 
@@ -39,6 +40,7 @@ const SaveButton = ({ saveProject }) => {
           handleClick();
           saveProject();
         }}
+        disabled={text === "" ? true : false}
         variant="contained"
         color="primary"
       >
@@ -65,4 +67,5 @@ export default SaveButton;
 
 SaveButton.propTypes = {
   saveProject: PropTypes.func.isRequired,
+  text: PropTypes.string.isRequired,
 };

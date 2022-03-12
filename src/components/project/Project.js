@@ -82,7 +82,7 @@ const Project = (props) => {
               <CompileButton compile={compile} />
             </Grid>
             <Grid item>
-              <SaveButton saveProject={saveProject} />
+              <SaveButton saveProject={saveProject} text={text} />
             </Grid>
             <Grid item>
               <CopyLinkButton link={link} />
