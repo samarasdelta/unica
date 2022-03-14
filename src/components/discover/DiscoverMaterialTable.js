@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import MaterialTable from "material-table";
+import MaterialTable from "@material-table/core";
+
 import { forwardRef } from "react";
 import Search from "@material-ui/icons/Search";
 import Clear from "@material-ui/icons/Clear";
@@ -45,6 +46,11 @@ export default function DataTable() {
       <MaterialTable
         icons={tableIcons}
         title="Project"
+        localization={{
+          body: {
+            emptyDataSourceMessage: "No projects to display",
+          },
+        }}
         columns={[
           {
             title: "Name",
