@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import MaterialTable from "@material-table/core";
-
 import { forwardRef } from "react";
 import Search from "@material-ui/icons/Search";
 import Clear from "@material-ui/icons/Clear";
