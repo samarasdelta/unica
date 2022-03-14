@@ -111,7 +111,8 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: "column",
   },
   fixedHeight: {
-    height: 220,
+    height: 200,
+    minWidth: 580,
   },
   Box: {
     paddingTop: 1,
@@ -235,11 +236,11 @@ export default function Deleted() {
       <main className={classes.content}>
         <div className={classes.appBarSpacer} />
         <Container className={classes.container}>
-          <Grid container spacing={4}>
+          <Grid container spacing={2}>
             {/* Project */}
             {projects.map(function (project, i) {
               return (
-                <Grid item key={i}>
+                <Grid item xs={12} md={6} key={i}>
                   <Paper className={fixedHeightPaper}>
                     <DeletedListItem
                       fetchDeletedProjects={fetchDeletedProjects}

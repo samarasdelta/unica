@@ -29,7 +29,7 @@ const categories = [
   "Informatics",
   "Litterature",
   "Mathematics",
-  "Fine Art's",
+  "Fine Arts",
   "Other",
 ];
 

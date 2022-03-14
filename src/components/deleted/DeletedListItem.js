@@ -6,7 +6,9 @@ import Box from "@material-ui/core/Box";
 import PropTypes from "prop-types";
 import Tooltip from "@material-ui/core/Tooltip";
 import DeleteForeverIcon from "@material-ui/icons/DeleteForever";
+import RestoreIcon from "@material-ui/icons/Restore";
 import Moment from "react-moment";
+import { Button } from "@material-ui/core";
 
 // function preventDefault(event) {
 //   event.preventDefault();
@@ -85,15 +87,24 @@ export default function DeleteListItem(props) {
         </Box>
 
         <Box mt={1} style={{ padding: "0 20px", fontSize: "1rem" }}>
-          <Link
+          <Button
+            style={{
+              textTransform: "none",
+              height: "22px",
+              fontWeight: "400",
+              fontSize: "1rem",
+            }}
+            type="submit"
+            variant="text"
             color="primary"
-            href="#"
+            size="small"
+            startIcon={<RestoreIcon />}
             onClick={() => {
               restoreProject(props.id);
             }}
           >
-            {"Restore project "}
-          </Link>
+            {"Restore"}
+          </Button>
         </Box>
         <Box mt={1} style={{ padding: "0 20px" }}>
           <Link
@@ -105,7 +116,7 @@ export default function DeleteListItem(props) {
             <Tooltip arrow title="Permanent deletion project">
               <DeleteForeverIcon
                 fontSize="medium"
-                style={{ marginTop: "-2px" }}
+                style={{ cursor: "pointer", marginTop: "-2px" }}
               />
             </Tooltip>
           </Link>
