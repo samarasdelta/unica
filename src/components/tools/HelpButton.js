@@ -19,7 +19,7 @@ export default function PositionedSnackbar() {
     open: false,
   });
 
-  const { vertical, horizontal, open } = state;
+  const { vertical = "bottom", horizontal = "left", open } = state;
 
   const handleClick = (newState) => () => {
     setState({ open: true, ...newState });
