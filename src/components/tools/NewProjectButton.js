@@ -11,14 +11,23 @@ import {
   FormControlLabel,
   Divider,
   Switch,
+  AppBar,
   Box,
+  makeStyles,
 } from "@material-ui/core";
 import PropTypes from "prop-types";
 import Category from "./Category";
 import TemplateBox from "./Template";
 import AddIcon from "@material-ui/icons/Add";
 
+const useStyles = makeStyles({
+  appBar: {
+    position: "relative",
+  },
+});
 export default function NewProjectButtonAPI({ fetchProjects }) {
+  const classes = useStyles();
+
   const [open, setOpen] = React.useState(false);
   const [title, setTitle] = React.useState("");
   const [category, setCategory] = React.useState("");
@@ -74,13 +83,13 @@ export default function NewProjectButtonAPI({ fetchProjects }) {
       <Dialog
         fullWidth
         maxWidth="sm"
-        color="primary"
+        color="inherit"
         open={open}
         onClose={closeModal}
       >
-        <div>
-          <DialogTitle>{"Create new project"}</DialogTitle>
-        </div>
+        <AppBar className={classes.appBar}>
+          <DialogTitle color="inherit">{"Create new project"}</DialogTitle>
+        </AppBar>
         <Divider />
         <DialogContent>
           <DialogContentText variant="subtitle2">

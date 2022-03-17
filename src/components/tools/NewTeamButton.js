@@ -1,5 +1,5 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles, AppBar } from "@material-ui/core";
 import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
 import Dialog from "@material-ui/core/Dialog";
@@ -15,9 +15,8 @@ import ListItemText from "@material-ui/core/ListItemText";
 import PropTypes from "prop-types";
 
 const useStyles = makeStyles({
-  Bgcolor: {
-    backgroundColor: "#1565C0",
-    color: "#ffffff",
+  appBar: {
+    position: "relative",
   },
 });
 
@@ -67,9 +66,9 @@ export default function NewTeamButtonAPI({ fetchGroups }) {
         onClose={handleClose}
         aria-labelledby="draggable-dialog-title"
       >
-        <div className={classes.Bgcolor}>
-          <DialogTitle>{"Create new team"}</DialogTitle>{" "}
-        </div>
+        <AppBar className={classes.appBar}>
+          <DialogTitle>{"Create new team"}</DialogTitle>
+        </AppBar>
         <DialogContent>
           <DialogContentText variant="subtitle2">
             {"Please, set a title for your team."}
@@ -77,8 +76,9 @@ export default function NewTeamButtonAPI({ fetchGroups }) {
           <Box>
             <TextField
               autoFocus
+              required
               id="title"
-              label="Enter team name"
+              label="Team's name"
               type="title"
               variant="outlined"
               fullWidth
@@ -87,10 +87,9 @@ export default function NewTeamButtonAPI({ fetchGroups }) {
           </Box>
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose} color="disabled">
-            {"Cancel"}
-          </Button>
+          <Button onClick={handleClose}>{"Cancel"}</Button>
           <Button
+            disabled={title === "" ? true : false}
             onClick={() => {
               createGroup();
               handleClose();

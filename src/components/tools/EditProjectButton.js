@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import PropTypes from "prop-types";
-import Button from "@material-ui/core/Button";
+import { Button, makeStyles, AppBar } from "@material-ui/core";
 import TextField from "@material-ui/core/TextField";
 import Dialog from "@material-ui/core/Dialog";
 import DialogActions from "@material-ui/core/DialogActions";
@@ -14,7 +14,15 @@ import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Switch from "@material-ui/core/Switch";
 import Box from "@material-ui/core/Box";
 import ComboBox from "./Category";
+
+const useStyles = makeStyles({
+  appBar: {
+    position: "relative",
+  },
+});
 export default function EditProjectButtonAPI(props) {
+  const classes = useStyles();
+
   const { id } = props;
 
   useEffect(() => {
@@ -91,9 +99,9 @@ export default function EditProjectButtonAPI(props) {
       </Button>
 
       <Dialog fullWidth maxWidth="sm" open={open} onClose={closeModal}>
-        <div>
+        <AppBar className={classes.appBar}>
           <DialogTitle>{"Edit project"}</DialogTitle>
-        </div>
+        </AppBar>
         <Divider />
         <DialogContent>
           <DialogContentText variant="subtitle2">
