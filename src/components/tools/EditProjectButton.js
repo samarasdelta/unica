@@ -166,6 +166,7 @@ export default function EditProjectButtonAPI(props) {
 }
 
 EditProjectButtonAPI.propTypes = {
+  projectTitle: PropTypes.string,
   id: PropTypes.node,
   title: PropTypes.string,
   category: PropTypes.string,

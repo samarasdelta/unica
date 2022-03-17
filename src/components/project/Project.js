@@ -1,7 +1,13 @@
 import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 import LatexEditor from "./LatexEditor";
-import { Grid } from "@material-ui/core";
+import {
+  Grid,
+  Typography,
+  AppBar,
+  Toolbar,
+  makeStyles,
+} from "@material-ui/core";
 import AppBarCustom from "../tools/AppBarCustom";
 // import DownloadButton from "./DownloadButton";
 import CompileButton from "./buttons/CompileButton";
@@ -9,8 +15,22 @@ import CopyLinkButton from "./buttons/CopyLinkButton";
 import SaveButton from "./buttons/SaveButton";
 import "./democss.css";
 
+const useStyles = makeStyles({
+  root: {
+    display: "flex",
+    flexGrow: 1,
+    overflow: "hidden",
+    width: "auto",
+  },
+  toolbar: {
+    paddingLeft: "0.44rem",
+    paddingRight: "0.44rem",
+  },
+});
+
 const Project = (props) => {
   const { id } = props;
+  const classes = useStyles();
 
   const [text, setText] = React.useState("");
   const [link, setLink] = React.useState("");
@@ -69,37 +89,93 @@ const Project = (props) => {
   return (
     <div>
       <AppBarCustom />
-      <div className="App-header">
-        <div className="space">
-          <Grid
-            spacing={1}
-            container
-            direction="row"
-            justifyContent="flex-end"
-            alignItems="center"
-          >
-            <Grid item>
-              <CompileButton compile={compile} />
+      <div className={classes.root}>
+        <AppBar position="relative" color="secondary" className="App-header">
+          <Toolbar className={classes.toolbar}>
+            <Grid
+              container
+              direction="row"
+              justifyContent="space-between"
+              alignItems="center"
+            >
+              <Grid item>
+                <div className="space">
+                  <Grid
+                    spacing={1}
+                    container
+                    direction="row"
+                    justifyContent="flex-end"
+                    alignItems="center"
+                  >
+                    <Grid item>
+                      <CompileButton compile={compile} />
+                    </Grid>
+                    <Grid item>
+                      <SaveButton saveProject={saveProject} text={text} />
+                    </Grid>
+                    <Grid item>
+                      <CopyLinkButton link={link} />
+                    </Grid>
+                  </Grid>
+                </div>
+              </Grid>
+              <Grid item>
+                <header className="dflt">
+                  <Grid
+                    spacing={1}
+                    container
+                    direction="row"
+                    justifyContent="flex-end"
+                    alignItems="center"
+                  >
+                    <Grid item>
+                      <Typography
+                        style={{
+                          fontSize: "1.2rem",
+                        }}
+                        color="textSecondary"
+                      >{`Title: `}</Typography>
+                    </Grid>
+
+                    <Grid item>
+                      <Typography
+                        style={{
+                          fontSize: "1.2rem",
+                        }}
+                        color="primary"
+                      >
+                        {`${props.project.projectTitle}`}
+                      </Typography>
+                    </Grid>
+                    <Grid item>
+                      <Typography
+                        style={{
+                          fontSize: "1.2rem",
+                        }}
+                        color="textSecondary"
+                      >
+                        {`Category: `}
+                      </Typography>
+                    </Grid>
+
+                    <Grid item>
+                      <Typography
+                        style={{
+                          fontSize: "1.2rem",
+                        }}
+                        color="primary"
+                      >
+                        {`${props.project.projectCategory}`}
+                      </Typography>
+                    </Grid>
+                  </Grid>
+
+                  {/* </span> */}
+                </header>
+              </Grid>
             </Grid>
-            <Grid item>
-              <SaveButton saveProject={saveProject} text={text} />
-            </Grid>
-            <Grid item>
-              <CopyLinkButton link={link} />
-            </Grid>
-          </Grid>
-        </div>
-        <header className="dflt">
-          {`Title: `}
-          <span className="color-change">
-            {`${props.project.projectTitle}`}
-          </span>
-          {", "}
-          {`Category: `}
-          <span className="color-change">
-            {`${props.project.projectCategory}`}
-          </span>
-        </header>
+          </Toolbar>
+        </AppBar>
       </div>
       <LatexEditor
         savedText={text}

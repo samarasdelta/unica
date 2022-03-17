@@ -1,20 +1,13 @@
 .App-header {
   margin-top: 64px;
-  background-color: #c8c8c8;
   min-height: 6vh;
-  padding-left: 0.44rem;
-  padding-right: 0.44rem;
-  flex-direction: row;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: calc(4px + 2vmin);
-  color: white;
-  margin-bottom: 1vh;
+  margin-bottom: 2vh;
 }
 
 li {
-  padding: 1rem;
+  padding-bottom: 2rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 .text-preview {
@@ -28,10 +21,6 @@ li {
   height: 85vh;
   max-height: 100%;
   position: relative;
-}
-
-.color-change {
-  color: #1565c0;
 }
 
 .dflt {
@@ -97,9 +86,9 @@ li {
 }
 
 .editor-textarea2 {
-  background-color: #c8c8c8;
+  background-color: transparent;
   flex: 1;
-  border: 1px solid;
+  border: transparent;
 }
 
 textarea {

@@ -7,15 +7,12 @@ const CompiledLatex = ({ url }) => {
     <div className="editor-textarea2">
       <div className="text-preview">
         <Typography
+          color="textSecondary"
           style={{
-            padding: "0.2vw",
-            color: "#5c5c5c",
-            fontWeight: "400",
             fontSize: "1.4rem",
-            lineHeight: "48px",
           }}
         >
-          <span className="li-space">
+          <span>
             <li>{"Click the compile button to preview your work as a PDF."}</li>
             <li>
               {

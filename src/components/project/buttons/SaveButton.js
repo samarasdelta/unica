@@ -9,11 +9,11 @@ function Alert(props) {
   return <MuiAlert elevation={6} variant="filled" {...props} />;
 }
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles({
   root: {
     width: "100%",
   },
-}));
+});
 
 const SaveButton = ({ saveProject, text }) => {
   const classes = useStyles();
@@ -28,7 +28,6 @@ const SaveButton = ({ saveProject, text }) => {
     if (reason === "clickaway") {
       return;
     }
-
     setOpen(false);
   };
 
