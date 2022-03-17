@@ -3,7 +3,6 @@
 }
 
 .ii {
-  color: #939393;
   font-size: 1.6rem;
   letter-spacing: -2px;
 }
@@ -32,56 +31,46 @@
 }
 
 .footerlinks a {
-  padding: 0 10px;
   font-size: 1.6rem;
-  font-weight: 500;
-  font-family: "Poppins", sans-serif;
   text-decoration: none;
+  padding: 0.4rem;
 }
 
 .footerlinks a:link,
 .footerlinks a:visited {
   text-decoration: none;
-  font-family: "Poppins", sans-serif;
   color: #5c91ff;
 }
 
 .footerlinks a:hover {
   text-decoration: none;
-  font-family: "Poppins", sans-serif;
   color: #5c91ff;
   opacity: 0.8;
 }
 
 .maptitle {
-  font-family: "Poppins", sans-serif;
   font-size: 1.5rem;
 }
 
 .maptitleuse {
-  font-family: "Poppins", sans-serif;
   text-align: start;
   font-size: 1.2rem;
 }
 
 .textdefault {
   font-size: 1.2rem;
-  font-family: "Poppins", sans-serif;
 }
 
 .textdefault2 {
   font-size: 0.8rem;
-  font-family: "Poppins", sans-serif;
 }
 
 .titleintro {
-  font-family: "Poppins", sans-serif;
   font-size: 2.4rem;
   text-align: center;
 }
 
 .termstext {
-  font-family: "Poppins", sans-serif;
   font-size: 1rem;
 }
 

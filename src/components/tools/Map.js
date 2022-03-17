@@ -35,16 +35,63 @@ export default function Map() {
       {/* End hero unit */}
       {/* Footer */}
       <Container maxWidth="lg" component="footer" className={classes.footer}>
+        <Grid
+          container
+          direction="row"
+          justifyContent="center"
+          alignItems="center"
+        >
+          <Typography
+            className="maptitle"
+            style={{ fontWeight: "500", fontSize: "1.6rem" }}
+            color="textPrimary"
+          >
+            {"Why use UNI"}
+          </Typography>
+          <Typography
+            className="ii"
+            style={{ fontWeight: "500", fontSize: "1.6rem" }}
+            color="primary"
+          >
+            {"versity"}
+          </Typography>
+          <Typography
+            className="maptitle"
+            style={{ fontWeight: "500", fontSize: "1.6rem" }}
+            color="textPrimary"
+          >
+            {"C"}
+          </Typography>
+          <Typography
+            className="ii"
+            style={{ fontWeight: "500", fontSize: "1.6rem" }}
+            color="primary"
+          >
+            {"ooperation "}
+          </Typography>
+          <Typography
+            className="maptitle"
+            style={{ fontWeight: "500", fontSize: "1.6rem" }}
+            color="textPrimary"
+          >
+            {"A"}
+          </Typography>
+          <Typography
+            className="ii"
+            style={{ fontWeight: "500", fontSize: "1.6rem" }}
+            color="primary"
+          >
+            {"rticles "}
+          </Typography>
+          <Typography
+            className="maptitle"
+            style={{ fontWeight: "500", fontSize: "1.6rem" }}
+            color="textPrimary"
+          >
+            {"?"}
+          </Typography>
+        </Grid>
         <Grid container direction="column" alignItems="center">
-          <b>
-            <span className="maptitle">Why use UNI</span>
-            <span className="ii">versity</span>
-            <span className="maptitle"> C</span>
-            <span className="ii">ooperation</span>
-            <span className="maptitle"> A</span>
-            <span className="ii">rticles</span>
-            <span className="maptitle"> ?</span>
-          </b>
           <div className="textdefault">
             <Typography
               component={"span"}

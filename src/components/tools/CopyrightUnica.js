@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Grid } from "@material-ui/core";
+import { Box, Grid, Typography } from "@material-ui/core";
 import Map from "./Map";
 import "./css.css";
 
@@ -19,10 +19,14 @@ export default function CopyrightUnica() {
       </Box>
 
       <Box>
-        <div className="textdefault" align="center">
+        <Typography
+          color="textSecondary"
+          className="textdefault"
+          align="center"
+        >
           {"© Copyright "}
           {new Date().getFullYear()} {"UNICA"} {"®"}
-        </div>
+        </Typography>
       </Box>
     </Grid>
   );

@@ -139,6 +139,7 @@ export default function Intro() {
           </Box>
           <Box pb={1}>
             <Typography
+              color="textSecondary"
               style={{
                 fontWeight: "400",
                 fontSize: "18px",
