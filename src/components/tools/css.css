@@ -15,6 +15,11 @@
   opacity: 0.8;
 }
 
+.image-responsive {
+  width: 100%;
+  height: 100%;
+}
+
 .disc {
   font-size: 16px;
 }
@@ -48,16 +53,8 @@
   opacity: 0.8;
 }
 
-.maptitle {
-  font-size: 1.5rem;
-}
-
 .maptitleuse {
   text-align: start;
-  font-size: 1.2rem;
-}
-
-.textdefault {
   font-size: 1.2rem;
 }
 
@@ -72,35 +69,4 @@
 
 .termstext {
   font-size: 1rem;
-}
-
-/****** custom scrollbar *********/
-
-::-webkit-scrollbar {
-  width: 10px;
-}
-
-/* Track */
-
-::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-/* Handle */
-
-::-webkit-scrollbar-thumb {
-  background: #8c8c8c;
-  border-radius: 8px;
-}
-
-/* Handle on hover */
-
-::-webkit-scrollbar-thumb:hover {
-  background: #aaaaaa;
-}
-
-/****** custom scrollbar *********/
-
-.anchorOriginTopCenter {
-  font-weight: 600;
 }

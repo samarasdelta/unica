@@ -15,13 +15,6 @@ import CopyrightUnica from "./tools/CopyrightUnica";
 import "./tools/css.css";
 
 const useStyles = makeStyles((theme) => ({
-  "@global": {
-    ul: {
-      margin: 0,
-      padding: 0,
-      listStyle: "none",
-    },
-  },
   appBar: {
     borderBottom: `1px solid ${theme.palette.divider}`,
   },
@@ -50,6 +43,11 @@ const useStyles = makeStyles((theme) => ({
       paddingTop: theme.spacing(2),
       paddingBottom: theme.spacing(2),
     },
+  },
+  linkbasic: {
+    fontSize: "1.6rem",
+    textDecoration: "none",
+    fontWeight: "500",
   },
 }));
 
@@ -80,7 +78,9 @@ export default function Intro() {
               textDecoration: "none",
             }}
           >
-            <Button className="disc">{"Discover"}</Button>
+            <Button color="default" className="disc">
+              {"Discover"}
+            </Button>
           </RouteLink>
           <RouteLink to="/login" style={{ textDecoration: "none" }}>
             <Button
@@ -95,36 +95,34 @@ export default function Intro() {
       </AppBar>
       {/* Hero unit */}
       <Container component="main" className={classes.heroContent}>
-        <Box pt={8}>
-          <div align="center">
-            <img src={Logo} alt="logo" />
-          </div>
-        </Box>
-        <Typography
-          style={{
-            fontWeight: "500",
-            fontSize: "1.8rem",
-            fontFamily: "Poppins, sans-serif",
-          }}
-          align="center"
-          color="textSecondary"
-          gutterBottom
-        >
-          The <span className="underline">collaboration</span> platform for{" "}
-          <span className="underline">project writing</span>
-        </Typography>
-        <Grid container direction="column" alignItems="center">
-          <Box>
+        <Grid container direction="column" alignItems="center" spacing={3}>
+          <Grid item>
+            <Box pt={2}>
+              <div className="image-responsive">
+                <img src={Logo} alt="logo" />
+              </div>
+            </Box>
+          </Grid>
+          <Grid item>
+            <Typography
+              style={{
+                fontWeight: "500",
+                fontSize: "1.8rem",
+                fontFamily: "Poppins, sans-serif",
+              }}
+              align="center"
+              color="textSecondary"
+              gutterBottom
+            >
+              The <span className="underline">collaboration</span> platform for{" "}
+              <span className="underline">project writing</span>
+            </Typography>
+          </Grid>
+          <Grid item>
             <Button
               style={{
                 fontWeight: "500",
-                textTransform: "none",
-                marginTop: "30px",
-                fontSize: "18px",
-                backgroundColor: "#5C92FF",
-                marginBottom: "15px",
-                marginRight: "15px",
-                float: "right",
+                fontSize: "1.2rem",
                 borderRadius: "8px",
               }}
               component={RouteLink}
@@ -136,8 +134,8 @@ export default function Intro() {
             >
               {"Sign up"}
             </Button>
-          </Box>
-          <Box pb={1}>
+          </Grid>
+          <Grid item>
             <Typography
               color="textSecondary"
               style={{
@@ -148,17 +146,19 @@ export default function Intro() {
             >
               {"or"}
             </Typography>
-          </Box>
-          <div className="footerlinks">
-            <Link
-              component={RouteLink}
-              to="/discover"
-              type="submit"
-              color="primary"
-            >
-              {"Continue as a guest"}
-            </Link>
-          </div>
+          </Grid>
+          <Grid item>
+            <Typography className={classes.linkbasic}>
+              <Link
+                component={RouteLink}
+                to="/discover"
+                type="submit"
+                color="primary"
+              >
+                {"Continue as a guest"}
+              </Link>
+            </Typography>
+          </Grid>
         </Grid>
       </Container>
       {/* End hero unit */}

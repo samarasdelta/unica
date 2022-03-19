@@ -20,6 +20,9 @@ const theme = createTheme({
     background: {
       default: "#ffffff",
     },
+    error: {
+      main: "#202020",
+    },
   },
   overrides: {
     MuiCssBaseline: {

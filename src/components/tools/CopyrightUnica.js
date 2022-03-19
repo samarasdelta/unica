@@ -1,24 +1,59 @@
 import React from "react";
-import { Box, Grid, Typography } from "@material-ui/core";
+import { Link as RouteLink } from "react-router-dom";
+import { Box, Grid, Typography, Link } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core/styles";
 import Map from "./Map";
 import "./css.css";
 
+const useStyles = makeStyles({
+  linkbasic: {
+    fontSize: "1.6rem",
+    textDecoration: "none",
+    fontWeight: "500",
+  },
+});
+
 export default function CopyrightUnica() {
+  const classes = useStyles();
   return (
     <Grid>
       <Map />
-      <Box my={2}>
-        <div className="footerlinks" align="center">
-          <a href="/terms" target="_blank">
-            {"Terms"}
-          </a>
-          <a href="/privacy" target="_blank">
-            {"Privacy Policy"}
-          </a>
-        </div>
-      </Box>
+      <Grid
+        spacing={2}
+        container
+        direction="row"
+        justifyContent="center"
+        alignItems="center"
+      >
+        <Grid item>
+          <Typography className={classes.linkbasic}>
+            <Link
+              target="_blank"
+              component={RouteLink}
+              to="/terms"
+              type="submit"
+              color="primary"
+            >
+              {"Terms"}
+            </Link>
+          </Typography>
+        </Grid>
+        <Grid item>
+          <Typography className={classes.linkbasic}>
+            <Link
+              target="_blank"
+              component={RouteLink}
+              to="/terms"
+              type="submit"
+              color="primary"
+            >
+              {"Privacy Policy"}
+            </Link>
+          </Typography>
+        </Grid>
+      </Grid>
 
-      <Box>
+      <Box pt={2}>
         <Typography
           color="textSecondary"
           className="textdefault"
