@@ -88,7 +88,7 @@ export default function Map() {
                 color="textSecondary"
                 gutterBottom
               >
-                {"Unica is a researcher's collaborative website."}
+                {"Unica is a collaborative website for researchers."}
               </Typography>
             </Box>
           </Grid>
@@ -99,13 +99,13 @@ export default function Map() {
               color="textSecondary"
               gutterBottom
             >
-              Here, a writer of scientific articles can find other writers, all
-              over the world, who want to work on the same article and publish
-              it together. The first author proposes his article (an idea or
-              even semi-finished work) by giving a title and a short abstract.
-              He also gives an e-mail and possibly a phone number. Then these
-              two persons can contact in any way and work together till the
-              finishing of their article.
+              A writer of scientific papers can use this site to connect with
+              other writers from across the world who want to collaborate on the
+              same topic and publish it together. The first author introduces
+              his article (a concept or even a half-completed project) with a
+              title and a brief abstract. He also provides an e-mail address as
+              well as a phone number. Then these two people can communicate in
+              any way they like and collaborate till their paper is completed.
             </Typography>
           </Grid>
 
@@ -115,9 +115,9 @@ export default function Map() {
               color="textSecondary"
               gutterBottom
             >
-              All scientific fields are served on this website: Philosophy,
-              Mathematics, Geometry, Litterature, Engineering, Mechanics,
-              Informatics, Theology, Medicine, Physics, Fine Arts, etc.
+              Philosophy, Mathematics, Geometry, Literature, Engineering,
+              Mechanics, Informatics, Theology, Medicine, Physics, Fine Arts,
+              and other scientific fields are all covered on this website.
             </Typography>
           </Grid>
         </Grid>
@@ -131,7 +131,7 @@ export default function Map() {
             color="textSecondary"
             gutterBottom
           >
-            Ideal for researchers, collaborators, students, and writers.
+            Researchers, collaborators, students, and writers will love it.{" "}
           </Typography>
         </Box>
       </Container>

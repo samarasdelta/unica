@@ -39,21 +39,23 @@ const Project = (props) => {
     setText(e.target.value);
   };
 
-  const compile = () => {
-    fetch("/api/latex", {
-      method: "POST",
-      headers: {
-        "Content-Type": "text/plain",
-      },
-      body: text,
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        setLink(data.pdf);
+  const compile = async () => {
+    try {
+      await fetch("/api/latex", {
+        method: "POST",
+        headers: {
+          "Content-Type": "text/plain",
+        },
+        body: text,
       })
-      .catch((error) => {
-        console.log("Error: ", error);
-      });
+        .then((response) => response.json())
+        .then((data) => {
+          setLink(data.pdf);
+        });
+    } catch (error) {
+      alert("babis");
+      console.log("error", error);
+    }
   };
 
   const saveProject = async () => {
