@@ -37,9 +37,24 @@ export default function NewProjectButtonAPI({ fetchProjects }) {
     setOpen(true);
   };
 
+  const initialState = [{ title: null, category: null, isPublic: null }];
+
   const closeModal = () => {
     setOpen(false);
+    setTitle("");
+    setCategory("");
   };
+
+  // const closeModal = () => {
+  //   this.setState(
+  //     {
+  //       setOpen(false)
+  //     },
+  //     () => {
+  //       this.props.resetInputData();
+  //     }
+  //   );
+  // };
 
   const handleTitleChange = (e) => {
     setTitle(e.target.value);
@@ -104,6 +119,7 @@ export default function NewProjectButtonAPI({ fetchProjects }) {
             type="title"
             variant="outlined"
             fullWidth
+            defaultValue={initialState.title}
             onInput={handleTitleChange}
             autoFocus
           />
@@ -119,6 +135,7 @@ export default function NewProjectButtonAPI({ fetchProjects }) {
           <Box display="flex" mt={2}>
             <Box flexGrow={1}>
               <Category
+                defaultValue={initialState.category}
                 onSelect={(category) => {
                   handleCategory(category);
                 }}
