@@ -31,6 +31,7 @@ export default function NewProjectButtonAPI({ fetchProjects }) {
   const [open, setOpen] = React.useState(false);
   const [title, setTitle] = React.useState("");
   const [category, setCategory] = React.useState("");
+  // const [template, setTemplate] = React.useState("");
   const [isPublic, setPublic] = React.useState(false);
 
   const handleClickOpen = () => {
@@ -45,20 +46,13 @@ export default function NewProjectButtonAPI({ fetchProjects }) {
     setCategory("");
   };
 
-  // const closeModal = () => {
-  //   this.setState(
-  //     {
-  //       setOpen(false)
-  //     },
-  //     () => {
-  //       this.props.resetInputData();
-  //     }
-  //   );
-  // };
-
   const handleTitleChange = (e) => {
     setTitle(e.target.value);
   };
+
+  // const handleTemplate = (template) => {
+  //   setTemplate(template);
+  // };
 
   const handleCategory = (category) => {
     setCategory(category);
@@ -126,6 +120,9 @@ export default function NewProjectButtonAPI({ fetchProjects }) {
           <Box mt={2}>
             <Box flexGrow={1}>
               <TemplateBox
+                // onSelect={(template) => {
+                //   handleTemplate(template);
+                // }}
                 onSelect={(category) => {
                   handleCategory(category);
                 }}

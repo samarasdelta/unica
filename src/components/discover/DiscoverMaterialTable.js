@@ -3,6 +3,7 @@ import MaterialTable from "@material-table/core";
 import { forwardRef } from "react";
 import Search from "@material-ui/icons/Search";
 import Clear from "@material-ui/icons/Clear";
+import PropTypes from "prop-types";
 import ArrowDownward from "@material-ui/icons/ArrowDownward";
 import ChevronLeft from "@material-ui/icons/ChevronLeft";
 import ChevronRight from "@material-ui/icons/ChevronRight";
@@ -14,15 +15,23 @@ import Tooltip from "@material-ui/core/Tooltip";
 
 //component icons declaration
 const tableIcons = {
+  // eslint-disable-next-line react/display-name
   Clear: forwardRef((props, ref) => <Clear {...props} ref={ref} />),
+  // eslint-disable-next-line react/display-name
   FirstPage: forwardRef((props, ref) => <FirstPage {...props} ref={ref} />),
+  // eslint-disable-next-line react/display-name
   LastPage: forwardRef((props, ref) => <LastPage {...props} ref={ref} />),
+  // eslint-disable-next-line react/display-name
   NextPage: forwardRef((props, ref) => <ChevronRight {...props} ref={ref} />),
+  // eslint-disable-next-line react/display-name
   PreviousPage: forwardRef((props, ref) => (
     <ChevronLeft {...props} ref={ref} />
   )),
+  // eslint-disable-next-line react/display-name
   ResetSearch: forwardRef((props, ref) => <Clear {...props} ref={ref} />),
+  // eslint-disable-next-line react/display-name
   Search: forwardRef((props, ref) => <Search {...props} ref={ref} />),
+  // eslint-disable-next-line react/display-name
   SortArrow: forwardRef((props, ref) => <ArrowDownward {...props} ref={ref} />),
 };
 //end component icons declaration
@@ -55,8 +64,8 @@ export default function DataTable() {
             title: "Name",
             field: "name",
           },
-          { title: "Category", field: "category", align: "right" },
-          { title: "Owner", field: "owner", align: "right" },
+          { title: "Category", field: "category" },
+          { title: "Owner", field: "owner" },
         ]}
         data={projects.map((project) => {
           return {
@@ -87,7 +96,7 @@ export default function DataTable() {
           ),
         }}
         options={{
-          pageSize: 10,
+          pageSize: 5,
           headerStyle: {
             backgroundColor: "#eee",
             color: "#000",
@@ -99,3 +108,7 @@ export default function DataTable() {
     </div>
   );
 }
+DataTable.propTypes = {
+  data: PropTypes.any,
+  action: PropTypes.any,
+};

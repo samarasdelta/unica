@@ -6,7 +6,8 @@ export default function Template({ onSelect, defaultValue }) {
   return (
     <Autocomplete
       defaultValue={defaultValue}
-      options={categories}
+      options={templates}
+      getOptionLabel={(option) => option.title}
       onChange={(e, newValue) => {
         onSelect(newValue);
       }}
@@ -17,9 +18,13 @@ export default function Template({ onSelect, defaultValue }) {
     />
   );
 }
-
-const categories = ["Math", "Greek", "Formal letter", "Book", "Article"];
-
+const templates = [
+  { title: "Math", folderName: "math-example" },
+  { title: "Greek", folderName: "greek-template" },
+  { title: "Formal letter", folderName: "formal-letter" },
+  { title: "Book", folderName: "book-template" },
+  { title: "Article", folderName: "article-template" },
+];
 Template.propTypes = {
   onSelect: PropTypes.func.isRequired,
   defaultValue: PropTypes.string,
