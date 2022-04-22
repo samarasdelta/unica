@@ -63,8 +63,6 @@ export default function LogIn() {
       localStorage.setItem("token", response.token);
 
       history.push("/dashboard");
-
-      console.log("token", response.token);
     } catch (e) {
       alert("User not found!");
     }

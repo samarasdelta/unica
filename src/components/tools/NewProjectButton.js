@@ -31,7 +31,7 @@ export default function NewProjectButtonAPI({ fetchProjects }) {
   const [open, setOpen] = React.useState(false);
   const [title, setTitle] = React.useState("");
   const [category, setCategory] = React.useState("");
-  // const [template, setTemplate] = React.useState("");
+  const [template, setTemplate] = React.useState("");
   const [isPublic, setPublic] = React.useState(false);
 
   const handleClickOpen = () => {
@@ -50,9 +50,9 @@ export default function NewProjectButtonAPI({ fetchProjects }) {
     setTitle(e.target.value);
   };
 
-  // const handleTemplate = (template) => {
-  //   setTemplate(template);
-  // };
+  const handleTemplate = (template) => {
+    setTemplate(template);
+  };
 
   const handleCategory = (category) => {
     setCategory(category);
@@ -62,15 +62,19 @@ export default function NewProjectButtonAPI({ fetchProjects }) {
     setPublic(e.target.checked);
   };
 
+  const verifiedToken = localStorage.token;
+
   const createProject = async () => {
     await fetch("api/projects", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        Authorization: `Bearer ${verifiedToken}`,
       },
       body: JSON.stringify({
         title,
         category,
+        template,
         public: isPublic ? true : false,
       }),
     });
@@ -120,11 +124,8 @@ export default function NewProjectButtonAPI({ fetchProjects }) {
           <Box mt={2}>
             <Box flexGrow={1}>
               <TemplateBox
-                // onSelect={(template) => {
-                //   handleTemplate(template);
-                // }}
-                onSelect={(category) => {
-                  handleCategory(category);
+                onSelect={(template) => {
+                  handleTemplate(template);
                 }}
               />
             </Box>

@@ -111,7 +111,7 @@ const useStyles = makeStyles((theme) => ({
   },
   fixedHeight: {
     height: 200,
-    minWidth: 580,
+    // minWidth: 580,
   },
   Box: {
     paddingTop: 1,
@@ -141,8 +141,15 @@ export default function Dashboard() {
   const [open, setOpen] = React.useState(true);
   const [projects, setProjects] = useState([]);
 
+  const verifiedToken = localStorage.token;
+  console.log("verifiedToken", verifiedToken);
   const fetchProjects = () => {
-    fetch("/api/projects")
+    fetch("/api/projects", {
+      headers: {
+        "Content-Type": "application/json;",
+        Authorization: `Bearer ${verifiedToken}`,
+      },
+    })
       .then((response) => response.json())
       .then((data) => {
         setProjects(data);
