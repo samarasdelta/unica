@@ -11,6 +11,7 @@ import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
+import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -34,6 +35,40 @@ const useStyles = makeStyles((theme) => ({
 
 export default function LogIn() {
   const classes = useStyles();
+  let history = useHistory();
+
+  const [email, setEmail] = React.useState("");
+  const [pass, setPass] = React.useState("");
+
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
+  };
+  const handlePassChange = (e) => {
+    setPass(e.target.value);
+  };
+
+  const authenticate = async () => {
+    try {
+      const response = await fetch("auth/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email,
+          pass,
+        }),
+      }).then((response) => response.json());
+
+      localStorage.setItem("token", response.token);
+
+      history.push("/dashboard");
+
+      console.log("token", response.token);
+    } catch (e) {
+      alert("User not found!");
+    }
+  };
 
   return (
     <Container component="main" maxWidth="xs">
@@ -55,6 +90,7 @@ export default function LogIn() {
             label="Email Address"
             name="email"
             autoComplete="email"
+            onInput={handleEmailChange}
             autoFocus
           />
           <TextField
@@ -66,6 +102,7 @@ export default function LogIn() {
             label="Password"
             type="password"
             id="password"
+            onInput={handlePassChange}
             autoComplete="current-password"
           />
           <FormControlLabel
@@ -73,9 +110,6 @@ export default function LogIn() {
             label="Remember me"
           />
           <Button
-            component={RouteLink}
-            to="dashboard"
-            type="submit"
             fullWidth
             variant="contained"
             color="primary"
@@ -86,6 +120,9 @@ export default function LogIn() {
               textTransform: "none",
               fontSize: "1rem",
               borderRadius: "4px",
+            }}
+            onClick={(e) => {
+              authenticate();
             }}
           >
             Log in
