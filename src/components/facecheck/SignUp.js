@@ -9,6 +9,7 @@ import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
+import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -32,6 +33,59 @@ const useStyles = makeStyles((theme) => ({
 
 export default function SignUp() {
   const classes = useStyles();
+  let history = useHistory();
+
+  const [email, setEmail] = React.useState("");
+  const [pass, setPass] = React.useState("");
+  const [fname, setFirstName] = React.useState("");
+  const [sname, setSecondName] = React.useState("");
+
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
+  };
+  const handlePassChange = (e) => {
+    setPass(e.target.value);
+  };
+  const handleFirstNameChange = (e) => {
+    setFirstName(e.target.value);
+  };
+  const handleSecondNameChange = (e) => {
+    setSecondName(e.target.value);
+  };
+
+  const register = async () => {
+    try {
+      await fetch("auth/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email,
+          pass,
+          fname,
+          sname,
+        }),
+      });
+
+      history.push("/login");
+    } catch (e) {
+      alert("Your information is not correct. Please try again!");
+    }
+  };
+
+  // useEffect(() => {
+  //   const listener = (event) => {
+  //     if (event.code === "Enter" || event.code === "NumpadEnter") {
+  //       event.preventDefault();
+  //       register();
+  //     }
+  //   };
+  //   document.addEventListener("keydown", listener);
+  //   return () => {
+  //     document.removeEventListener("keydown", listener);
+  //   };
+  // });
 
   return (
     <Container component="main" maxWidth="xs">
@@ -43,28 +97,27 @@ export default function SignUp() {
         <Typography color="textSecondary" component="h1" variant="h5">
           Sign up
         </Typography>
-        <form className={classes.form} noValidate>
+        <form className={classes.form}>
           <Grid container spacing={2}>
             <Grid item xs={12}>
               <TextField
                 variant="outlined"
                 required
                 fullWidth
-                id="email"
                 label="Email Address"
-                name="email"
-                autoComplete="email"
+                onInput={handleEmailChange}
                 autoFocus
               />
             </Grid>
             <Grid item xs={12} sm={6}>
               <TextField
-                autoComplete="fname"
+                autoComplete="firstName"
                 name="firstName"
                 variant="outlined"
                 fullWidth
                 id="firstName"
                 label="First Name"
+                onInput={handleFirstNameChange}
               />
             </Grid>
             <Grid item xs={12} sm={6}>
@@ -74,7 +127,8 @@ export default function SignUp() {
                 id="lastName"
                 label="Last Name"
                 name="lastName"
-                autoComplete="lname"
+                autoComplete="lastName"
+                onInput={handleSecondNameChange}
               />
             </Grid>
 
@@ -88,30 +142,12 @@ export default function SignUp() {
                 type="password"
                 id="password"
                 autoComplete="current-password"
-              />
-            </Grid>
-            <Grid item xs={12}>
-              <TextField
-                variant="outlined"
-                required
-                fullWidth
-                name="confirmpassword"
-                label="Confirm Password"
-                type="password"
-                id="password2"
-                autoComplete="current-password"
+                onInput={handlePassChange}
               />
             </Grid>
           </Grid>
           <Button
-            // disabled={
-            //   email === "" || password === "" || confirmpassword === ""
-            //     ? true
-            //     : false
-            // }
-            component={RouteLink}
-            to="dashboard"
-            type="submit"
+            disabled={email === "" || pass === "" ? true : false}
             fullWidth
             variant="contained"
             color="primary"
@@ -123,20 +159,23 @@ export default function SignUp() {
               fontSize: "1rem",
               borderRadius: "4px",
             }}
+            onClick={(e) => {
+              register();
+            }}
           >
             {"Sign up"}
           </Button>
-          <Grid container justifyContent="flex-end">
-            <Grid item>
-              <RouteLink
-                to="login"
-                style={{ color: "#3f51b5", textDecoration: "none" }}
-              >
-                Already have an account? Log in
-              </RouteLink>
-            </Grid>
-          </Grid>
         </form>
+        <Grid container justifyContent="flex-end">
+          <Grid item>
+            <RouteLink
+              to="login"
+              style={{ color: "#3f51b5", textDecoration: "none" }}
+            >
+              Already have an account? Log in
+            </RouteLink>
+          </Grid>
+        </Grid>
       </div>
     </Container>
   );

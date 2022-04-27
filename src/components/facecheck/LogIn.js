@@ -116,6 +116,7 @@ export default function LogIn() {
           />
           <Button
             fullWidth
+            disabled={email === "" || pass === "" ? true : false}
             variant="contained"
             color="primary"
             className={classes.submit}
