@@ -89,7 +89,7 @@ export default function DataTable() {
               color="primary"
               size="small"
               onClick={(event) => props.action.onClick(event, props.data)}
-              startIcon={<SendIcon />}
+              endIcon={<SendIcon />}
             >
               Apply
             </Button>
