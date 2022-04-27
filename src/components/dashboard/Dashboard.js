@@ -31,6 +31,7 @@ import NewProjectButtonAPI from "../tools/NewProjectButton";
 import { CustomThemeContext } from "../tools/themes/CustomThemeProvider";
 import NotificationButton from "../tools/NotificationButton";
 import HelpButton from "../tools/HelpButton";
+import { useHistory } from "react-router-dom";
 
 const drawerWidth = 200;
 
@@ -140,6 +141,7 @@ export default function Dashboard() {
   const classes = useStyles();
   const [open, setOpen] = React.useState(true);
   const [projects, setProjects] = useState([]);
+  let history = useHistory();
 
   const verifiedToken = localStorage.token;
   // console.log("verifiedToken", verifiedToken);
@@ -156,6 +158,7 @@ export default function Dashboard() {
       })
       .catch((error) => {
         console.log("Error: ", error);
+        history.push("/login");
       });
   };
   useEffect(() => {

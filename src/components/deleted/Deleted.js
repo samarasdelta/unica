@@ -30,6 +30,7 @@ import MoreButton from "../tools/AccountProfileButton";
 import { CustomThemeContext } from "../tools/themes/CustomThemeProvider";
 import NotificationButton from "../tools/NotificationButton";
 import HelpButton from "../tools/HelpButton";
+import { useHistory } from "react-router-dom";
 
 const drawerWidth = 200;
 
@@ -141,6 +142,7 @@ export default function Deleted() {
   const [open, setOpen] = React.useState(true);
   const [projects, setProjects] = useState([]);
   const classes = useStyles();
+  let history = useHistory();
 
   const verifiedToken = localStorage.token;
 
@@ -156,7 +158,8 @@ export default function Deleted() {
         setProjects(data);
       })
       .catch((error) => {
-        alert("Error: ", error.message);
+        alert("Error: 403 Forbidden", error.message);
+        history.push("/login");
       });
   };
 
