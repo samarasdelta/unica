@@ -20,7 +20,7 @@ export const SettingsPassword = () => {
             fullWidth
             label="Password"
             margin="normal"
-            helperText="Please specify your password"
+            helperText="Your current password"
             required
             name="password"
             // onChange={}
@@ -31,10 +31,23 @@ export const SettingsPassword = () => {
           />
           <TextField
             fullWidth
+            label="New password"
+            margin="normal"
+            helperText="Please specify your new password"
+            required
+            name="password"
+            // onChange={}
+            type="password"
+            // value={values.password}
+            variant="outlined"
+          />
+          <TextField
+            fullWidth
             required
             label="Confirm password"
             margin="normal"
             name="confirm"
+            helperText="Please re-enter your new password"
             // onChange={}
             type="password"
             // value={values.confirm}
@@ -51,7 +64,7 @@ export const SettingsPassword = () => {
         >
           <Button
             style={{
-              fontWeight: "600",
+              fontWeight: "400",
               textTransform: "none",
               marginTop: "15px",
               marginBottom: "15px",

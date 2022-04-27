@@ -24,7 +24,6 @@ import {
 } from "../tools/ListItems";
 import Logo from "../images/unicasmall1.png";
 import MoreButton from "../tools/AccountProfileButton";
-import { SettingsNotifications } from "./settings-notifications";
 import { SettingsPassword } from "./settings-password";
 import { CustomThemeContext } from "../tools/themes/CustomThemeProvider";
 import NotificationButton from "../tools/NotificationButton";
@@ -138,23 +137,6 @@ const CustomSwitch = withStyles({
 export default function SettingsProfile() {
   const [open, setOpen] = React.useState(false);
   const classes = useStyles();
-  // const [darkState, setDarkState] = useState(false);
-
-  // const palletType = darkState ? "dark" : "light";
-  // const mainPrimaryColor = darkState ? blue[200] : blue[800];
-  // const mainSecondaryColor = darkState ? red[600] : red[500];
-  // const darkTheme = createTheme({
-  //   backgroundColor: "#212121",
-  //   palette: {
-  //     type: palletType,
-  //     primary: {
-  //       main: mainPrimaryColor,
-  //     },
-  //     secondary: {
-  //       main: mainSecondaryColor,
-  //     },
-  //   },
-  // });
 
   const { currentTheme, setTheme } = useContext(CustomThemeContext);
   const isDark = Boolean(currentTheme === "dark");
@@ -235,8 +217,7 @@ export default function SettingsProfile() {
       </Drawer>
       <div className={classes.appBarSpacer} />
       <Container className={classes.container}>
-        <SettingsNotifications />
-        <Box mt={5}>
+        <Box>
           <SettingsPassword />
         </Box>
       </Container>
