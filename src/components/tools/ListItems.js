@@ -74,9 +74,15 @@ export const mainListItems = (
 
 export function GroupsListItems() {
   const [groups, setGroups] = useState([]);
+  const verifiedToken = localStorage.token;
 
   const fetchGroups = () => {
-    fetch("/api/groups")
+    fetch("/api/groups", {
+      headers: {
+        "Content-Type": "application/json;",
+        Authorization: `Bearer ${verifiedToken}`,
+      },
+    })
       .then((response) => response.json())
       .then((data) => {
         setGroups(data);
@@ -87,7 +93,7 @@ export function GroupsListItems() {
   };
   useEffect(() => {
     fetchGroups();
-  }, []);
+  });
 
   return (
     <div>
