@@ -142,8 +142,15 @@ export default function Deleted() {
   const [projects, setProjects] = useState([]);
   const classes = useStyles();
 
+  const verifiedToken = localStorage.token;
+
   const fetchDeletedProjects = () => {
-    fetch("/api/projects/deleted")
+    fetch("/api/projects/deleted", {
+      headers: {
+        "Content-Type": "application/json;",
+        Authorization: `Bearer ${verifiedToken}`,
+      },
+    })
       .then((response) => response.json())
       .then((data) => {
         setProjects(data);
@@ -155,7 +162,7 @@ export default function Deleted() {
 
   useEffect(() => {
     fetchDeletedProjects();
-  }, []);
+  });
 
   const { currentTheme, setTheme } = useContext(CustomThemeContext);
   const isDark = Boolean(currentTheme === "dark");
