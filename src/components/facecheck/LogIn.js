@@ -4,8 +4,6 @@ import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import TextField from "@material-ui/core/TextField";
-import FormControlLabel from "@material-ui/core/FormControlLabel";
-import Checkbox from "@material-ui/core/Checkbox";
 import Grid from "@material-ui/core/Grid";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Typography from "@material-ui/core/Typography";
@@ -22,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
   },
   avatar: {
     margin: theme.spacing(1),
-    backgroundColor: theme.palette.secondary.main,
+    backgroundColor: "red",
   },
   form: {
     width: "100%", // Fix IE 11 issue.
@@ -64,7 +62,7 @@ export default function LogIn() {
 
       history.push("/dashboard");
     } catch (e) {
-      alert("User not found!");
+      alert("User not found. Please try again!");
     }
   };
 
@@ -75,7 +73,7 @@ export default function LogIn() {
         <Avatar className={classes.avatar}>
           <LockOutlinedIcon />
         </Avatar>
-        <Typography component="h1" variant="h5">
+        <Typography color="textSecondary" component="h1" variant="h5">
           Log in
         </Typography>
         <form className={classes.form} noValidate>
@@ -103,17 +101,13 @@ export default function LogIn() {
             onInput={handlePassChange}
             autoComplete="current-password"
           />
-          <FormControlLabel
-            control={<Checkbox value="remember" color="primary" />}
-            label="Remember me"
-          />
           <Button
             fullWidth
             variant="contained"
             color="primary"
             className={classes.submit}
             style={{
-              fontWeight: "600",
+              fontWeight: "400",
               color: "white",
               textTransform: "none",
               fontSize: "1rem",

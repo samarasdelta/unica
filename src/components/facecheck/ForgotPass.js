@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
   },
   avatar: {
     margin: theme.spacing(1),
-    backgroundColor: theme.palette.secondary.main,
+    backgroundColor: "red",
   },
   form: {
     width: "100%", // Fix IE 11 issue.
@@ -40,7 +40,7 @@ export default function ForgotPass() {
         <Avatar className={classes.avatar}>
           <LockOutlinedIcon />
         </Avatar>
-        <Typography component="h1" variant="h5">
+        <Typography color="textSecondary" component="h1" variant="h5">
           Password recovery
         </Typography>
         <form className={classes.form} noValidate>
@@ -64,7 +64,7 @@ export default function ForgotPass() {
             color="primary"
             className={classes.submit}
             style={{
-              fontWeight: "600",
+              fontWeight: "400",
               color: "white",
               textTransform: "none",
               fontSize: "1rem",

@@ -142,7 +142,7 @@ export default function Dashboard() {
   const [projects, setProjects] = useState([]);
 
   const verifiedToken = localStorage.token;
-  console.log("verifiedToken", verifiedToken);
+  // console.log("verifiedToken", verifiedToken);
   const fetchProjects = () => {
     fetch("/api/projects", {
       headers: {
@@ -160,7 +160,26 @@ export default function Dashboard() {
   };
   useEffect(() => {
     fetchProjects();
-  }, []);
+  });
+
+  // const fetchUserById = () => {
+  //   fetch("/api/users/:userId", {
+  //     headers: {
+  //       "Content-Type": "application/json;",
+  //       Authorization: `Bearer ${verifiedToken}`,
+  //     },
+  //   })
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       setProjects(data);
+  //     })
+  //     .catch((error) => {
+  //       console.log("Error: ", error);
+  //     });
+  // };
+  // useEffect(() => {
+  //   fetchProjects();
+  // });
 
   const { currentTheme, setTheme } = useContext(CustomThemeContext);
   const isDark = Boolean(currentTheme === "dark");
