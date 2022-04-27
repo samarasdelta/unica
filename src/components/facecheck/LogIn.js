@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link as RouteLink } from "react-router-dom";
 import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
@@ -66,6 +66,19 @@ export default function LogIn() {
     }
   };
 
+  useEffect(() => {
+    const listener = (event) => {
+      if (event.code === "Enter" || event.code === "NumpadEnter") {
+        event.preventDefault();
+        authenticate();
+      }
+    };
+    document.addEventListener("keydown", listener);
+    return () => {
+      document.removeEventListener("keydown", listener);
+    };
+  });
+
   return (
     <Container component="main" maxWidth="xs">
       <CssBaseline />
@@ -76,7 +89,7 @@ export default function LogIn() {
         <Typography color="textSecondary" component="h1" variant="h5">
           Log in
         </Typography>
-        <form className={classes.form} noValidate>
+        <form className={classes.form}>
           <TextField
             variant="outlined"
             margin="normal"
@@ -105,6 +118,7 @@ export default function LogIn() {
             fullWidth
             variant="contained"
             color="primary"
+            type="submit"
             className={classes.submit}
             style={{
               fontWeight: "400",
