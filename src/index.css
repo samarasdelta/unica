@@ -16,3 +16,15 @@ code {
   font-family: '"Poppins", sans-serif';
   src: url(FONT_FILE_NAME.woff2) format('woff2');
  } */
+
+html {
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-position: center center;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
