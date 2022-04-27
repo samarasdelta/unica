@@ -9,7 +9,7 @@ const CompiledLatex = ({ url }) => {
         <Typography
           color="textSecondary"
           style={{
-            fontSize: "1.4rem",
+            fontSize: "1.6vw",
           }}
         >
           <span>

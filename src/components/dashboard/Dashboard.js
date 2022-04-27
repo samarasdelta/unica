@@ -112,7 +112,7 @@ const useStyles = makeStyles((theme) => ({
   },
   fixedHeight: {
     height: 200,
-    // minWidth: 580,
+    minWidth: 480,
   },
   Box: {
     paddingTop: 1,
@@ -279,7 +279,7 @@ export default function Dashboard() {
             {/* Project */}
             {projects.map(function (project, i) {
               return (
-                <Grid item xs={12} sm={12} md={6} lg={6} xl={6} key={i}>
+                <Grid item xs={12} sm={12} md={12} lg={6} xl={6} key={i}>
                   <Paper className={fixedHeightPaper}>
                     <DashboardListItem
                       fetchProjects={fetchProjects}

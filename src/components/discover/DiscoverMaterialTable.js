@@ -85,7 +85,7 @@ export default function DataTable() {
         components={{
           Action: (props) => (
             <Button
-              variant="contained"
+              variant="outlined"
               color="primary"
               size="small"
               onClick={(event) => props.action.onClick(event, props.data)}
@@ -97,10 +97,6 @@ export default function DataTable() {
         }}
         options={{
           pageSize: 5,
-          headerStyle: {
-            backgroundColor: "#eee",
-            color: "#000",
-          },
         }}
       >
         {/* <Link href={`/project/${project.projectId}`} /> */}
