@@ -118,7 +118,6 @@ export default function LogIn() {
             fullWidth
             variant="contained"
             color="primary"
-            type="submit"
             className={classes.submit}
             style={{
               fontWeight: "400",
