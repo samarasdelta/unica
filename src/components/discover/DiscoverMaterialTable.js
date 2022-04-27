@@ -9,9 +9,10 @@ import ChevronLeft from "@material-ui/icons/ChevronLeft";
 import ChevronRight from "@material-ui/icons/ChevronRight";
 import FirstPage from "@material-ui/icons/FirstPage";
 import LastPage from "@material-ui/icons/LastPage";
-import IconButton from "@material-ui/core/IconButton";
-import AddBoxIcon from "@material-ui/icons/AddBox";
-import Tooltip from "@material-ui/core/Tooltip";
+// import IconButton from "@material-ui/core/IconButton";
+import Button from "@material-ui/core/Button";
+import SendIcon from "@material-ui/icons/Send";
+// import Tooltip from "@material-ui/core/Tooltip";
 
 //component icons declaration
 const tableIcons = {
@@ -83,16 +84,15 @@ export default function DataTable() {
         ]}
         components={{
           Action: (props) => (
-            <Tooltip title="Apply">
-              <IconButton
-                onClick={(event) => props.action.onClick(event, props.data)}
-                color="primary"
-                variant="contained"
-                size="small"
-              >
-                <AddBoxIcon />
-              </IconButton>
-            </Tooltip>
+            <Button
+              variant="contained"
+              color="primary"
+              size="small"
+              onClick={(event) => props.action.onClick(event, props.data)}
+              startIcon={<SendIcon />}
+            >
+              Apply
+            </Button>
           ),
         }}
         options={{
