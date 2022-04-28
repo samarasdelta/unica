@@ -230,7 +230,7 @@ export default function Dashboard() {
           </Typography>
           <NotificationButton />
           <HelpButton />
-          <MoreButton />
+          <MoreButton verifiedToken={verifiedToken} />
           <CustomSwitch checked={isDark} onChange={handleThemeChange} />
         </Toolbar>
       </AppBar>

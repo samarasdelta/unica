@@ -16,11 +16,7 @@ import PersonIcon from "@material-ui/icons/Person";
 import { Link as RouteLink } from "react-router-dom";
 import SettingsIcon from "@material-ui/icons/Settings";
 import ExitToAppSharpIcon from "@material-ui/icons/ExitToAppSharp";
-// import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
-// import { CustomThemeContext } from "../themes/CustomThemeProvider";
-// import SwitchUI from "@material-ui/core/Switch";
-// import "./MoreButtonCSS.css";
 
 const useStyles = makeStyles({
   list: {
@@ -33,37 +29,11 @@ const useStyles = makeStyles({
   },
 });
 
-// const CustomSwitch = withStyles({
-//   switchBase: {
-//     color: "#5C91FF",
-//     "&$checked": {
-//       color: "#5C91FF",
-//     },
-//     "&$checked + $track": {
-//       backgroundColor: "#5C91FF",
-//     },
-//   },
-//   checked: {},
-//   track: {},
-// })(SwitchUI);
-
-export default function TemporaryDrawer() {
+export default function TemporaryDrawer(verifiedToken) {
   const classes = useStyles();
   const [state, setState] = React.useState({
     right: false,
   });
-
-  // const { currentTheme, setTheme } = useContext();
-  // const isDark = Boolean(currentTheme === "dark");
-
-  // const handleThemeChange = (event) => {
-  //   const { checked } = event.target;
-  //   if (checked) {
-  //     setTheme("dark");
-  //   } else {
-  //     setTheme("normal");
-  //   }
-  // };
 
   const toggleDrawer = (anchor, open) => (event) => {
     if (
