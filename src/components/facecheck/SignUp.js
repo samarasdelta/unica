@@ -13,7 +13,12 @@ import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   paper: {
-    marginTop: theme.spacing(10),
+    marginTop: theme.spacing(2),
+    display: "flex",
+    flexDirection: "column",
+  },
+  margin: {
+    marginTop: theme.spacing(4),
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
@@ -24,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
   },
   form: {
     width: "100%", // Fix IE 11 issue.
-    marginTop: theme.spacing(3),
+    marginTop: theme.spacing(1),
   },
   submit: {
     margin: theme.spacing(3, 0, 2),
@@ -88,14 +93,19 @@ export default function SignUp() {
   // });
 
   return (
-    <Container component="main" maxWidth="xs">
+    <Container component="main" maxWidth="sm">
       <CssBaseline />
-      <div className={classes.paper}>
+      <div className={classes.margin}>
         <Avatar className={classes.avatar}>
           <LockOutlinedIcon />
         </Avatar>
-        <Typography color="textSecondary" component="h1" variant="h5">
-          Sign up
+      </div>
+      <div className={classes.paper}>
+        <Typography color="textSecondary" variant="h4">
+          Create a new account
+        </Typography>
+        <Typography color="secondary" variant="h6">
+          Use your email to create a new account
         </Typography>
         <form className={classes.form}>
           <Grid container spacing={2}>
@@ -109,7 +119,7 @@ export default function SignUp() {
                 autoFocus
               />
             </Grid>
-            <Grid item xs={12} sm={6}>
+            <Grid item xs={12} sm={12}>
               <TextField
                 autoComplete="firstName"
                 name="firstName"
@@ -120,7 +130,7 @@ export default function SignUp() {
                 onInput={handleFirstNameChange}
               />
             </Grid>
-            <Grid item xs={12} sm={6}>
+            <Grid item xs={12} sm={12}>
               <TextField
                 variant="outlined"
                 fullWidth
@@ -167,12 +177,20 @@ export default function SignUp() {
           </Button>
         </form>
         <Grid container justifyContent="flex-end">
+          <Grid item xs>
+            <RouteLink
+              to="/"
+              style={{ color: "#3f51b5", textDecoration: "none" }}
+            >
+              {"Go back"}
+            </RouteLink>
+          </Grid>
           <Grid item>
             <RouteLink
               to="login"
               style={{ color: "#3f51b5", textDecoration: "none" }}
             >
-              Already have an account? Log in
+              Already have an account? Sign In
             </RouteLink>
           </Grid>
         </Grid>

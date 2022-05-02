@@ -88,7 +88,7 @@ export default function Intro() {
               variant="outlined"
               className={classes.submit}
             >
-              {"Login"}
+              {"Sign In"}
             </Button>
           </RouteLink>
         </Toolbar>
@@ -132,7 +132,7 @@ export default function Intro() {
               color="primary"
               className="buttpnlgn"
             >
-              {"Sign up"}
+              {"Sign Up"}
             </Button>
           </Grid>
           <Grid item>

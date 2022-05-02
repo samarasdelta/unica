@@ -13,7 +13,12 @@ import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   paper: {
-    marginTop: theme.spacing(10),
+    marginTop: theme.spacing(2),
+    display: "flex",
+    flexDirection: "column",
+  },
+  margin: {
+    marginTop: theme.spacing(4),
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
@@ -25,6 +30,7 @@ const useStyles = makeStyles((theme) => ({
   form: {
     width: "100%", // Fix IE 11 issue.
     marginTop: theme.spacing(1),
+    alignItems: "center",
   },
   submit: {
     margin: theme.spacing(3, 0, 2),
@@ -80,14 +86,19 @@ export default function LogIn() {
   });
 
   return (
-    <Container component="main" maxWidth="xs">
+    <Container component="main" maxWidth="sm">
       <CssBaseline />
-      <div className={classes.paper}>
+      <div className={classes.margin}>
         <Avatar className={classes.avatar}>
           <LockOutlinedIcon />
         </Avatar>
-        <Typography color="textSecondary" component="h1" variant="h5">
-          Log in
+      </div>
+      <div className={classes.paper}>
+        <Typography color="textSecondary" variant="h4">
+          Sign In
+        </Typography>
+        <Typography color="secondary" variant="h6">
+          Sign In on Unica
         </Typography>
         <form className={classes.form}>
           <TextField
@@ -131,7 +142,7 @@ export default function LogIn() {
               authenticate();
             }}
           >
-            Log in
+            Sign In
           </Button>
           <Grid container>
             <Grid item xs>

@@ -12,7 +12,12 @@ import Container from "@material-ui/core/Container";
 
 const useStyles = makeStyles((theme) => ({
   paper: {
-    marginTop: theme.spacing(10),
+    marginTop: theme.spacing(2),
+    display: "flex",
+    flexDirection: "column",
+  },
+  margin: {
+    marginTop: theme.spacing(4),
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
@@ -34,14 +39,19 @@ export default function ForgotPass() {
   const classes = useStyles();
 
   return (
-    <Container component="main" maxWidth="xs">
+    <Container component="main" maxWidth="sm">
       <CssBaseline />
-      <div className={classes.paper}>
+      <div className={classes.margin}>
         <Avatar className={classes.avatar}>
           <LockOutlinedIcon />
         </Avatar>
+      </div>
+      <div className={classes.paper}>
         <Typography color="textSecondary" component="h1" variant="h5">
           Password recovery
+        </Typography>
+        <Typography color="secondary" variant="h6">
+          Use your email to recover your password
         </Typography>
         <form className={classes.form} noValidate>
           <TextField
@@ -56,8 +66,9 @@ export default function ForgotPass() {
             autoFocus
           />
           <Button
+            // disabled={email === "" ? true : false}
             component={RouteLink}
-            to="dashboard"
+            to="/"
             type="submit"
             fullWidth
             variant="contained"
