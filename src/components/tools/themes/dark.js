@@ -21,7 +21,7 @@ const theme = createTheme({
     background: {
       default: "#424242",
     },
-    error: {
+    textPrimary: {
       main: "#ffffff",
     },
     color: {

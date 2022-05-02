@@ -11,6 +11,9 @@ import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import { useHistory } from "react-router-dom";
 
+import * as Yup from "yup";
+import { useFormik } from "formik";
+
 const useStyles = makeStyles((theme) => ({
   paper: {
     marginTop: theme.spacing(2),
@@ -39,6 +42,27 @@ const useStyles = makeStyles((theme) => ({
 export default function SignUp() {
   const classes = useStyles();
   let history = useHistory();
+
+  const formik = useFormik({
+    initialValues: {
+      email: "",
+      firstName: "",
+      lastName: "",
+      password: "",
+    },
+    validationSchema: Yup.object({
+      email: Yup.string()
+        .email("Must be a valid email")
+        .max(255)
+        .required("Email is required"),
+      firstName: Yup.string().max(255).required("First name is required"),
+      lastName: Yup.string().max(255).required("Last name is required"),
+      password: Yup.string().max(255).required("Password is required"),
+    }),
+    onSubmit: () => {
+      register();
+    },
+  });
 
   const [email, setEmail] = React.useState("");
   const [pass, setPass] = React.useState("");
@@ -107,27 +131,40 @@ export default function SignUp() {
         <Typography color="secondary" variant="h6">
           Use your email to create a new account
         </Typography>
-        <form className={classes.form}>
-          <Grid container spacing={2}>
+        <form className={classes.form} onSubmit={formik.handleSubmit}>
+          <Grid container spacing={4}>
             <Grid item xs={12}>
               <TextField
+                error={Boolean(formik.touched.email && formik.errors.email)}
+                helperText={formik.touched.email && formik.errors.email}
+                onBlur={formik.handleBlur}
+                onChange={formik.handleChange}
+                name="email"
+                type="email"
                 variant="outlined"
-                required
                 fullWidth
                 label="Email Address"
                 onInput={handleEmailChange}
+                value={formik.values.email}
                 autoFocus
               />
             </Grid>
             <Grid item xs={12} sm={12}>
               <TextField
                 autoComplete="firstName"
-                name="firstName"
-                variant="outlined"
-                fullWidth
                 id="firstName"
-                label="First Name"
                 onInput={handleFirstNameChange}
+                error={Boolean(
+                  formik.touched.firstName && formik.errors.firstName
+                )}
+                fullWidth
+                helperText={formik.touched.firstName && formik.errors.firstName}
+                label="First Name"
+                name="firstName"
+                onBlur={formik.handleBlur}
+                onChange={formik.handleChange}
+                value={formik.values.firstName}
+                variant="outlined"
               />
             </Grid>
             <Grid item xs={12} sm={12}>
@@ -139,13 +176,26 @@ export default function SignUp() {
                 name="lastName"
                 autoComplete="lastName"
                 onInput={handleSecondNameChange}
+                error={Boolean(
+                  formik.touched.lastName && formik.errors.lastName
+                )}
+                helperText={formik.touched.lastName && formik.errors.lastName}
+                onBlur={formik.handleBlur}
+                onChange={formik.handleChange}
+                value={formik.values.lastName}
               />
             </Grid>
 
             <Grid item xs={12}>
               <TextField
+                error={Boolean(
+                  formik.touched.password && formik.errors.password
+                )}
+                helperText={formik.touched.password && formik.errors.password}
+                onBlur={formik.handleBlur}
+                onChange={formik.handleChange}
+                value={formik.values.password}
                 variant="outlined"
-                required
                 fullWidth
                 name="password"
                 label="Password"
@@ -157,7 +207,12 @@ export default function SignUp() {
             </Grid>
           </Grid>
           <Button
-            disabled={email === "" || pass === "" ? true : false}
+            // disabled={formik.isSubmitting}
+            disabled={
+              email === "" || pass === "" || fname === "" || sname === ""
+                ? true
+                : false
+            }
             fullWidth
             variant="contained"
             color="primary"

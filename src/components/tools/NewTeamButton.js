@@ -37,11 +37,14 @@ export default function NewTeamButtonAPI({ fetchGroups }) {
     setTitle(e.target.value);
   };
 
+  const verifiedToken = localStorage.token;
+
   const createGroup = async () => {
     await fetch("api/groups", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        Authorization: `Bearer ${verifiedToken}`,
       },
       body: JSON.stringify({
         title,

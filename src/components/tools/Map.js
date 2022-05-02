@@ -52,25 +52,25 @@ export default function Map() {
           justifyContent="center"
           alignItems="center"
         >
-          <Typography color="error" className={classes.typoBasic}>
+          <Typography color="textPrimary" className={classes.typoBasic}>
             {"Why use UNI"}
           </Typography>
           <Typography color="primary" className={classes.typoBlue}>
             {"versity"}
           </Typography>
-          <Typography color="error" className={classes.typoBasic}>
+          <Typography color="textPrimary" className={classes.typoBasic}>
             {"C"}
           </Typography>
           <Typography color="primary" className={classes.typoBlue}>
             {"ooperation "}
           </Typography>
-          <Typography color="error" className={classes.typoBasic}>
+          <Typography color="textPrimary" className={classes.typoBasic}>
             {"A"}
           </Typography>
           <Typography color="primary" className={classes.typoBlue}>
             {"rticles "}
           </Typography>
-          <Typography color="error" className={classes.typoBasic}>
+          <Typography color="textPrimary" className={classes.typoBasic}>
             {"?"}
           </Typography>
         </Grid>

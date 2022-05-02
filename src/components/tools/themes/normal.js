@@ -20,7 +20,7 @@ const theme = createTheme({
     background: {
       default: "#ffffff",
     },
-    error: {
+    textPrimary: {
       main: "#202020",
     },
   },
