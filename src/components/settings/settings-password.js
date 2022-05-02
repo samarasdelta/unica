@@ -52,13 +52,7 @@ export const SettingsPassword = () => {
           />
         </CardContent>
         <Divider />
-        <Box
-          sx={{
-            display: "flex",
-            justifyContent: "flex-end",
-            p: 2,
-          }}
-        >
+        <Box>
           <Button
             style={{
               fontWeight: "400",

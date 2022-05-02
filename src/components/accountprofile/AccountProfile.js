@@ -324,6 +324,8 @@ export default function AccountProfile() {
                 </Grid> */}
               </Grid>
             </CardContent>
+            <Divider />
+
             <Box>
               <Button
                 style={{
