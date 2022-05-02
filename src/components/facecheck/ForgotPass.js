@@ -9,6 +9,8 @@ import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
+import * as Yup from "yup";
+import { useFormik } from "formik";
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -38,6 +40,18 @@ const useStyles = makeStyles((theme) => ({
 export default function ForgotPass() {
   const classes = useStyles();
 
+  const formik = useFormik({
+    initialValues: {
+      email: "",
+    },
+    validationSchema: Yup.object({
+      email: Yup.string()
+        .email("Must be a valid email")
+        .max(255)
+        .required("Email is required"),
+    }),
+  });
+
   return (
     <Container component="main" maxWidth="sm">
       <CssBaseline />
@@ -57,16 +71,23 @@ export default function ForgotPass() {
           <TextField
             variant="outlined"
             margin="normal"
-            required
             fullWidth
             id="email"
             label="Email Address"
             name="email"
             autoComplete="email"
-            autoFocus
+            error={Boolean(formik.touched.email && formik.errors.email)}
+            helperText={formik.touched.email && formik.errors.email}
+            onBlur={formik.handleBlur}
+            onChange={formik.handleChange}
+            type="email"
+            // onInput={handleEmailChange}
+            value={formik.values.email}
           />
           <Button
-            // disabled={email === "" ? true : false}
+            // disabled={formik.values.email === "" ? true : false}
+            disabled={formik.values.email === "" ? true : false}
+            // disabled={formik.isSubmitting}
             component={RouteLink}
             to="/"
             type="submit"
@@ -85,14 +106,6 @@ export default function ForgotPass() {
             {"Next"}
           </Button>
           <Grid container>
-            <Grid item xs>
-              <RouteLink
-                to="forgotemail"
-                style={{ color: "#3f51b5", textDecoration: "none" }}
-              >
-                {"Forgot Email?"}
-              </RouteLink>
-            </Grid>
             <Grid item>
               <RouteLink
                 to="login"

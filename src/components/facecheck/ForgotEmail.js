@@ -62,7 +62,6 @@ export default function ForgotEmail() {
             label="Phone Number"
             name="phonenumber"
             autoComplete="phonenumber"
-            autoFocus
           />
           <Button
             component={RouteLink}

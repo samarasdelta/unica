@@ -142,7 +142,6 @@ export default function SignUp() {
                 label="Email Address"
                 onInput={handleEmailChange}
                 value={formik.values.email}
-                autoFocus
               />
             </Grid>
             <Grid item xs={12} sm={12}>

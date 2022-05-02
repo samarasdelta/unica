@@ -126,7 +126,6 @@ export default function LogIn() {
             name="email"
             autoComplete="email"
             onInput={handleEmailChange}
-            autoFocus
             error={Boolean(formik.touched.email && formik.errors.email)}
             helperText={formik.touched.email && formik.errors.email}
             onBlur={formik.handleBlur}
