@@ -10,7 +10,6 @@ import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import { useHistory } from "react-router-dom";
-
 import * as Yup from "yup";
 import { useFormik } from "formik";
 
@@ -59,9 +58,6 @@ export default function SignUp() {
       lastName: Yup.string().max(255).required("Last name is required"),
       password: Yup.string().max(255).required("Password is required"),
     }),
-    onSubmit: () => {
-      register();
-    },
   });
 
   const [email, setEmail] = React.useState("");

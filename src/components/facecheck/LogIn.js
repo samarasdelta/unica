@@ -10,6 +10,8 @@ import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import { useHistory } from "react-router-dom";
+import { useFormik } from "formik";
+import * as Yup from "yup";
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -40,6 +42,20 @@ const useStyles = makeStyles((theme) => ({
 export default function LogIn() {
   const classes = useStyles();
   let history = useHistory();
+
+  const formik = useFormik({
+    initialValues: {
+      email: "",
+      password: "",
+    },
+    validationSchema: Yup.object({
+      email: Yup.string()
+        .email("Must be a valid email")
+        .max(255)
+        .required("Email is required"),
+      password: Yup.string().max(255).required("Password is required"),
+    }),
+  });
 
   const [email, setEmail] = React.useState("");
   const [pass, setPass] = React.useState("");
@@ -104,7 +120,6 @@ export default function LogIn() {
           <TextField
             variant="outlined"
             margin="normal"
-            required
             fullWidth
             id="email"
             label="Email Address"
@@ -112,11 +127,16 @@ export default function LogIn() {
             autoComplete="email"
             onInput={handleEmailChange}
             autoFocus
+            error={Boolean(formik.touched.email && formik.errors.email)}
+            helperText={formik.touched.email && formik.errors.email}
+            onBlur={formik.handleBlur}
+            onChange={formik.handleChange}
+            type="email"
+            value={formik.values.email}
           />
           <TextField
             variant="outlined"
             margin="normal"
-            required
             fullWidth
             name="password"
             label="Password"
@@ -124,6 +144,11 @@ export default function LogIn() {
             id="password"
             onInput={handlePassChange}
             autoComplete="current-password"
+            error={Boolean(formik.touched.password && formik.errors.password)}
+            helperText={formik.touched.password && formik.errors.password}
+            onBlur={formik.handleBlur}
+            onChange={formik.handleChange}
+            value={formik.values.password}
           />
           <Button
             fullWidth
