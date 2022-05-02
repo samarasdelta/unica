@@ -21,7 +21,6 @@ export const SettingsPassword = () => {
             label="Password"
             margin="normal"
             helperText="Your current password"
-            required
             name="password"
             // onChange={}
             type="password"
@@ -34,7 +33,6 @@ export const SettingsPassword = () => {
             label="New password"
             margin="normal"
             helperText="Please specify your new password"
-            required
             name="password"
             // onChange={}
             type="password"
@@ -43,7 +41,6 @@ export const SettingsPassword = () => {
           />
           <TextField
             fullWidth
-            required
             label="Confirm password"
             margin="normal"
             name="confirm"

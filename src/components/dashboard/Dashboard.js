@@ -26,7 +26,7 @@ import {
 } from "../tools/ListItems";
 import Logo from "../images/unicasmall1.png";
 import DashboardListItem from "./DashboardListItem";
-import MoreButton from "../tools/AccountProfileButton";
+import AccountProfileButton from "../tools/AccountProfileButton";
 import NewProjectButtonAPI from "../tools/NewProjectButton";
 import { CustomThemeContext } from "../tools/themes/CustomThemeProvider";
 import NotificationButton from "../tools/NotificationButton";
@@ -141,6 +141,7 @@ export default function Dashboard() {
   const classes = useStyles();
   const [open, setOpen] = React.useState(true);
   const [projects, setProjects] = useState([]);
+  // const [users, setUsers] = useState([]);
   let history = useHistory();
 
   const verifiedToken = localStorage.token;
@@ -164,25 +165,6 @@ export default function Dashboard() {
   useEffect(() => {
     fetchProjects();
   });
-
-  // const fetchUserById = () => {
-  //   fetch("/api/users/:userId", {
-  //     headers: {
-  //       "Content-Type": "application/json;",
-  //       Authorization: `Bearer ${verifiedToken}`,
-  //     },
-  //   })
-  //     .then((response) => response.json())
-  //     .then((data) => {
-  //       setProjects(data);
-  //     })
-  //     .catch((error) => {
-  //       console.log("Error: ", error);
-  //     });
-  // };
-  // useEffect(() => {
-  //   fetchProjects();
-  // });
 
   const { currentTheme, setTheme } = useContext(CustomThemeContext);
   const isDark = Boolean(currentTheme === "dark");
@@ -230,7 +212,7 @@ export default function Dashboard() {
           </Typography>
           <NotificationButton />
           <HelpButton />
-          <MoreButton verifiedToken={verifiedToken} />
+          <AccountProfileButton />
           <CustomSwitch checked={isDark} onChange={handleThemeChange} />
         </Toolbar>
       </AppBar>

@@ -23,7 +23,7 @@ import clsx from "clsx";
 import MenuIcon from "@material-ui/icons/Menu";
 import SwitchUI from "@material-ui/core/Switch";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
-import PublishIcon from "@material-ui/icons/Publish";
+// import PublishIcon from "@material-ui/icons/Publish";
 import {
   DiscoverListItems,
   dashboardListItems,
@@ -142,8 +142,6 @@ export default function AccountProfile() {
   const [fname, setFirstName] = React.useState("");
   const [sname, setSurName] = React.useState("");
   const [email, setEmail] = React.useState("");
-  const [dob, setDob] = React.useState("");
-  const [telephone, setTelephone] = React.useState("");
 
   const { currentTheme, setTheme } = useContext(CustomThemeContext);
   const isDark = Boolean(currentTheme === "dark");
@@ -171,12 +169,6 @@ export default function AccountProfile() {
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
   };
-  const handleDobChange = (e) => {
-    setDob(e.target.value);
-  };
-  const handleTelephoneChange = (e) => {
-    setTelephone(e.target.value);
-  };
 
   const createUser = async () => {
     await fetch("api/users", {
@@ -188,31 +180,29 @@ export default function AccountProfile() {
         fname,
         sname,
         email,
-        dob,
-        telephone,
       }),
     });
 
     window.location.reload();
   };
 
-  const UploadButton = () => (
-    <Button
-      style={{
-        color: "red",
-        fontWeight: "600",
-        textTransform: "none",
-        backgroundColor: "transparent",
-        boxShadow: "none",
-      }}
-      variant="contained"
-      component="label"
-      startIcon={<PublishIcon />}
-    >
-      {"Upload"}
-      <input type="file" hidden />
-    </Button>
-  );
+  // const UploadButton = () => (
+  //   <Button
+  //     style={{
+  //       color: "red",
+  //       fontWeight: "600",
+  //       textTransform: "none",
+  //       backgroundColor: "transparent",
+  //       boxShadow: "none",
+  //     }}
+  //     variant="contained"
+  //     component="label"
+  //     startIcon={<PublishIcon />}
+  //   >
+  //     {"Upload"}
+  //     <input type="file" hidden />
+  //   </Button>
+  // );
 
   return (
     <div className={classes.root}>
@@ -284,69 +274,39 @@ export default function AccountProfile() {
             <Divider />
             <CardContent>
               <Grid container spacing={3}>
-                <Grid item md={6} xs={12}>
+                <Grid item xs={12}>
                   <TextField
                     fullWidth
-                    helperText="Please specify the first name"
                     label="First name"
                     name="fname"
-                    required
                     variant="outlined"
                     onInput={handleFirstNameChange}
+                    InputLabelProps={{ shrink: true }}
                   />
                 </Grid>
-                <Grid item md={6} xs={12}>
+                <Grid item xs={12}>
                   <TextField
                     fullWidth
-                    helperText="Please specify the last name"
                     label="Last name"
                     name="sname"
-                    required
                     variant="outlined"
                     onInput={handleSurNameChange}
+                    InputLabelProps={{ shrink: true }}
                   />
                 </Grid>
-                <Grid item md={6} xs={12}>
+                <Grid item xs={12}>
                   <TextField
                     fullWidth
                     label="Email address"
-                    helperText="Please type your email adress"
                     name="email"
-                    required
                     type="email"
                     variant="outlined"
                     onInput={handleEmailChange}
-                  />
-                </Grid>
-                <Grid item md={6} xs={12}>
-                  <TextField
-                    fullWidth
-                    label="Phone number"
-                    name="phone"
-                    type="number"
-                    variant="outlined"
-                    onInput={handleTelephoneChange}
-                  />
-                </Grid>
-                <Grid item md={4} xs={12}>
-                  <TextField
-                    fullWidth
-                    label="Date of birth"
-                    type="date"
                     InputLabelProps={{ shrink: true }}
-                    name="dateofbirth"
-                    required
-                    variant="outlined"
-                    onInput={handleDobChange}
                   />
                 </Grid>
+                {/* 
                 <Grid item md={8} xs={12}>
-                  {/* <input
-                        accept="image/*"
-                        id="icon-button-file"
-                        type="file"
-                        style={{ display: "none" }}
-                      /> */}
                   <TextField
                     disabled
                     defaultValue="pathname.pdf"
@@ -361,13 +321,13 @@ export default function AccountProfile() {
                   >
                     Upload File
                   </TextField>
-                </Grid>
+                </Grid> */}
               </Grid>
             </CardContent>
             <Box>
               <Button
                 style={{
-                  fontWeight: "600",
+                  fontWeight: "400",
                   textTransform: "none",
                   marginBottom: "15px",
                   marginRight: "15px",
