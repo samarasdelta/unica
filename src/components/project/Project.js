@@ -50,6 +50,8 @@ const Project = (props) => {
       })
         .then((response) => {
           // response.headers;
+          console.log("response", response);
+
           if (response.ok) {
             return response;
           }
@@ -59,8 +61,7 @@ const Project = (props) => {
           setLink(data.pdf);
         });
     } catch (error) {
-      alert("your code is not corect");
-      console.log("error", error);
+      alert("Your LaTeX code is not correct!");
     }
   };
 
