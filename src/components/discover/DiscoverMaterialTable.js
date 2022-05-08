@@ -72,7 +72,7 @@ export default function DataTable() {
           return {
             name: `${project.projectTitle}`,
             category: `${project.projectCategory}`,
-            owner: `${project.projectOwnerId}`,
+            owner: `${project.userFullName}`,
           };
         })}
         actions={[
