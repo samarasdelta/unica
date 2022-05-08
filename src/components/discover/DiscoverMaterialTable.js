@@ -54,7 +54,7 @@ export default function DataTable() {
     <div>
       <MaterialTable
         icons={tableIcons}
-        title="Project"
+        title="Projects"
         localization={{
           body: {
             emptyDataSourceMessage: "No projects to display",
