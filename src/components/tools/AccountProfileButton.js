@@ -96,6 +96,9 @@ export default function TemporaryDrawer(verifiedToken) {
                   component={RouteLink}
                   to="/"
                   variant="contained"
+                  onClick={() => {
+                    localStorage.removeItem("token");
+                  }}
                   startIcon={<ExitToAppSharpIcon />}
                 >
                   Logout
