@@ -48,12 +48,18 @@ const Project = (props) => {
         },
         body: text,
       })
+        .then((response) => {
+          // response.headers;
+          if (response.ok) {
+            return response;
+          }
+        })
         .then((response) => response.json())
         .then((data) => {
           setLink(data.pdf);
         });
     } catch (error) {
-      alert("babis");
+      alert("your code is not corect");
       console.log("error", error);
     }
   };
