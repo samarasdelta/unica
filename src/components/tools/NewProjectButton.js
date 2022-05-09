@@ -105,11 +105,13 @@ export default function NewProjectButtonAPI({ fetchProjects }) {
         </AppBar>
         <Divider />
         <DialogContent>
-          <DialogContentText variant="subtitle2">
-            {
-              "Please, fill out a title and a category for your project. Also, you can set your public state preference."
-            }
-          </DialogContentText>
+          <Box>
+            <DialogContentText variant="subtitle2">
+              {
+                "Please fill in a title and a category for your project. Additionally, there is an option to enter a code template to get started. Finally, you can choose whether your project will be public or not."
+              }
+            </DialogContentText>
+          </Box>
           <TextField
             required
             id="title"
