@@ -73,34 +73,41 @@ export default function DataTable() {
             category: `${project.projectCategory}`,
             owner: `${project.userFullName}`,
             email: `${project.userEmail}`,
+            abstract: `${project.projectAbstract}`,
           };
         })}
-        // detailPanel={[
-        //   {
-        //     tooltip: "Show info",
-        //     render: (rowData) => {
-        //       return (
-        //         <div
-        //           style={{
-        //             height: "120px",
-        //             fontSize: 28,
-        //             textAlign: "center",
-        //             color: "#000",
-        //           }}
-        //         >
-        //           {rowData.email}
-        //         </div>
-        //       );
-        //     },
-        //   },
-        // ]}
-        // actions={[
-        //   {
-        //     tooltip: "Apply",
-        //     icon: "save",
-        //     onClick: (event, rowData) => alert("You saved " + rowData.name),
-        //   },
-        // ]}
+        detailPanel={[
+          {
+            tooltip: "Show info",
+            render: (data) => {
+              return (
+                <div
+                  style={{
+                    margin: "10px",
+                    minHeight: "120px",
+                    fontSize: 16,
+                    textAlign: "start",
+                    color: "#c8c8c8",
+                  }}
+                >
+                  <p>Abstract: </p>
+                  <div
+                    style={{
+                      marginLeft: "15px",
+                      fontSize: 22,
+                      textAlign: "start",
+                      color: "#000",
+                    }}
+                  >
+                    <p>sample text</p>
+                  </div>
+
+                  {/* {`${project.projectAbstract}`} */}
+                </div>
+              );
+            },
+          },
+        ]}
         components={{
           Action: (props) => (
             <Button
