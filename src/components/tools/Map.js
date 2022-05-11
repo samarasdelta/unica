@@ -28,7 +28,6 @@ const useStyles = makeStyles((theme) => ({
   },
   typoBlue: {
     fontWeight: "500",
-    fontSize: "1.3rem",
   },
   typoDefault: {
     fontWeight: "500",
@@ -73,6 +72,18 @@ export default function Map() {
           <Typography color="textPrimary" className={classes.typoBasic}>
             {"?"}
           </Typography>
+          <Box mx={2} m={2}>
+            <Typography
+              className={classes.typoDefault}
+              color="textSecondary"
+              style={{
+                textAlign: "center",
+              }}
+              gutterBottom
+            >
+              {"Unica is a collaborative website for researchers."}
+            </Typography>
+          </Box>
         </Grid>
         <Grid
           container
@@ -81,18 +92,6 @@ export default function Map() {
           alignItems="flex-start"
           spacing={2}
         >
-          <Grid item>
-            <Box pt={2}>
-              <Typography
-                className={classes.typoDefault}
-                color="textSecondary"
-                gutterBottom
-              >
-                {"Unica is a collaborative website for researchers."}
-              </Typography>
-            </Box>
-          </Grid>
-
           <Grid item>
             <Typography
               className={classes.typoDefault}
@@ -103,9 +102,9 @@ export default function Map() {
               other writers from across the world who want to collaborate on the
               same topic and publish it together. The first author introduces
               his article (a concept or even a half-completed project) with a
-              title and a brief abstract. He also provides an e-mail address as
-              well as a phone number. Then these two people can communicate in
-              any way they like and collaborate till their paper is completed.
+              title and a brief abstract. He also provides an e-mail address.
+              Then these two people can communicate in any way they like and
+              collaborate till their paper is completed.
             </Typography>
           </Grid>
 

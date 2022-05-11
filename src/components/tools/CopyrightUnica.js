@@ -1,24 +1,25 @@
 import React from "react";
-import { Link as RouteLink } from "react-router-dom";
-import { Box, Grid, Typography, Link } from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles";
+import { Box, Grid, Typography } from "@material-ui/core";
+// import { Link as RouteLink } from "react-router-dom";
+// import { Link } from "@material-ui/core";
+// import { makeStyles } from "@material-ui/core/styles";
 import Map from "./Map";
 import "./css.css";
 
-const useStyles = makeStyles({
-  linkbasic: {
-    fontSize: "1.6rem",
-    textDecoration: "none",
-    fontWeight: "500",
-  },
-});
+// const useStyles = makeStyles({
+//   linkbasic: {
+//     fontSize: "1.6rem",
+//     textDecoration: "none",
+//     fontWeight: "500",
+//   },
+// });
 
 export default function CopyrightUnica() {
-  const classes = useStyles();
+  // const classes = useStyles();
   return (
     <Grid>
       <Map />
-      <Grid
+      {/* <Grid
         spacing={2}
         container
         direction="row"
@@ -43,7 +44,7 @@ export default function CopyrightUnica() {
             <Link
               target="_blank"
               component={RouteLink}
-              to="/terms"
+              to="/privacy"
               type="submit"
               color="primary"
             >
@@ -51,7 +52,7 @@ export default function CopyrightUnica() {
             </Link>
           </Typography>
         </Grid>
-      </Grid>
+      </Grid> */}
 
       <Box pt={2}>
         <Typography

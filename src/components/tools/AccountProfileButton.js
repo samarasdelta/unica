@@ -54,8 +54,7 @@ export default function TemporaryDrawer(verifiedToken) {
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
-      <Box mx={2}>
-        <Divider />
+      <Box>
         <div>
           <ListSubheader align="center">{"User's Settings"}</ListSubheader>
           <Divider />

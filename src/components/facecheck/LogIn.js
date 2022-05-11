@@ -171,10 +171,10 @@ export default function LogIn() {
           <Grid container>
             <Grid item xs>
               <RouteLink
-                to="forgotpass"
+                to="/"
                 style={{ color: "#3f51b5", textDecoration: "none" }}
               >
-                {"Forgot password?"}
+                {"Go Back"}
               </RouteLink>
             </Grid>
             <Grid item>

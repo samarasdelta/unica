@@ -45,7 +45,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   linkbasic: {
-    fontSize: "1.6rem",
+    fontSize: "1.2rem",
     textDecoration: "none",
     fontWeight: "500",
   },
@@ -95,7 +95,7 @@ export default function Intro() {
       </AppBar>
       {/* Hero unit */}
       <Container component="main" className={classes.heroContent}>
-        <Grid container direction="column" alignItems="center" spacing={3}>
+        <Grid container direction="column" alignItems="center">
           <Grid item>
             <Box pt={2}>
               <div className="image-responsive">
@@ -118,22 +118,26 @@ export default function Intro() {
               <span className="underline">project writing</span>
             </Typography>
           </Grid>
+        </Grid>
+        <Grid container direction="column" alignItems="center" spacing={1}>
           <Grid item>
-            <Button
-              style={{
-                fontWeight: "500",
-                fontSize: "1.2rem",
-                borderRadius: "8px",
-              }}
-              component={RouteLink}
-              to="/signup"
-              type="submit"
-              variant="contained"
-              color="primary"
-              className="buttpnlgn"
-            >
-              {"Sign Up"}
-            </Button>
+            <Box pt={2}>
+              <Button
+                style={{
+                  fontWeight: "500",
+                  fontSize: "1.2rem",
+                  borderRadius: "8px",
+                }}
+                component={RouteLink}
+                to="/signup"
+                type="submit"
+                variant="contained"
+                color="primary"
+                className="buttpnlgn"
+              >
+                {"Sign Up"}
+              </Button>
+            </Box>
           </Grid>
           <Grid item>
             <Typography
