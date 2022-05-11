@@ -11,7 +11,6 @@ import NotFoundPage from "./pages/NotFoundPage.js";
 import BadGatewayPage from "./pages/BadGatewayPage.js";
 import DeletedPage from "./pages/DeletedPage.js";
 import ProjectPage from "./pages/ProjectPage.js";
-import AccountPage from "./pages/AccountPage.js";
 import SettingsPage from "./pages/SettingsPage.js";
 import PrivacyPage from "./pages/PrivacyPage.js";
 import TermsPage from "./pages/TermsPage.js";
@@ -59,9 +58,6 @@ function App() {
           </Route>
           <Route path="/groups/:id">
             <GroupPage />
-          </Route>
-          <Route path="/account">
-            <AccountPage />
           </Route>
           <Route path="/settings">
             <SettingsPage />

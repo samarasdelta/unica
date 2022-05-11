@@ -12,7 +12,6 @@ import {
   ListItem,
 } from "@material-ui/core";
 import IconButton from "@material-ui/core/IconButton";
-import PersonIcon from "@material-ui/icons/Person";
 import { Link as RouteLink } from "react-router-dom";
 import SettingsIcon from "@material-ui/icons/Settings";
 import ExitToAppSharpIcon from "@material-ui/icons/ExitToAppSharp";
@@ -61,20 +60,6 @@ export default function TemporaryDrawer(verifiedToken) {
           <ListSubheader align="center">{"User's Settings"}</ListSubheader>
           <Divider />
           <List className={classes.listContent}>
-            <ListItem>
-              <Grid container justifyContent="center">
-                <Button
-                  fullWidth
-                  component={RouteLink}
-                  to="/account"
-                  variant="contained"
-                  color="primary"
-                  startIcon={<PersonIcon />}
-                >
-                  Account
-                </Button>
-              </Grid>
-            </ListItem>
             <ListItem>
               <Grid container justifyContent="center">
                 <Button

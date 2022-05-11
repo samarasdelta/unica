@@ -24,6 +24,7 @@ import {
 } from "../tools/ListItems";
 import Logo from "../images/unicasmall1.png";
 import MoreButton from "../tools/AccountProfileButton";
+import SettingsAccount from "../accountprofile/AccountProfile";
 import { SettingsPassword } from "./settings-password";
 import { CustomThemeContext } from "../tools/themes/CustomThemeProvider";
 import NotificationButton from "../tools/NotificationButton";
@@ -217,6 +218,9 @@ export default function SettingsProfile() {
       </Drawer>
       <div className={classes.appBarSpacer} />
       <Container className={classes.container}>
+        <Box my={2}>
+          <SettingsAccount />
+        </Box>
         <Box>
           <SettingsPassword />
         </Box>
