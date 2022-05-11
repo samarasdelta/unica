@@ -58,7 +58,7 @@ export default function TemporaryDrawer(verifiedToken) {
       <Box mx={2}>
         <Divider />
         <div>
-          <ListSubheader align="center">{"User's settings"}</ListSubheader>
+          <ListSubheader align="center">{"User's Settings"}</ListSubheader>
           <Divider />
           <List className={classes.listContent}>
             <ListItem>

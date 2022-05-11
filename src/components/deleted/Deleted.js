@@ -11,6 +11,7 @@ import {
   Typography,
   Toolbar,
   AppBar,
+  Divider,
   Drawer,
   List,
 } from "@material-ui/core";
@@ -71,6 +72,9 @@ const useStyles = makeStyles((theme) => ({
   },
   menuButtonHidden: {
     display: "none",
+  },
+  section2: {
+    margin: theme.spacing(2, 0, 3),
   },
   title: {
     flexGrow: 1,
@@ -246,6 +250,13 @@ export default function Deleted() {
       <main className={classes.content}>
         <div className={classes.appBarSpacer} />
         <Container className={classes.container}>
+          <Typography style={{ fontSize: "16px" }} color="textSecondary">
+            {
+              "You can see a list of your deleted projects (if any) here and decide whether you want to completely delete them or recover them so you can work on them again."
+            }
+          </Typography>
+          <Divider className={classes.section2} />
+
           <Grid container spacing={2}>
             {/* Project */}
             {projects.map(function (project, i) {

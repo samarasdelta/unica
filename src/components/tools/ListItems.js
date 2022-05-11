@@ -5,8 +5,8 @@ import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import DashboardIcon from "@material-ui/icons/Dashboard";
 import DeleteIcon from "@material-ui/icons/Delete";
-import PersonIcon from "@material-ui/icons/Person";
-import ShareIcon from "@material-ui/icons/Share";
+// import PersonIcon from "@material-ui/icons/Person";
+// import ShareIcon from "@material-ui/icons/Share";
 import GroupWorkIcon from "@material-ui/icons/GroupWork";
 import FindInPageIcon from "@material-ui/icons/FindInPage";
 import Link from "@material-ui/core/Link";
@@ -43,7 +43,7 @@ export const dashboardListItems = (
 
 export const mainListItems = (
   <div>
-    <RouteLink to="yours" style={{ textDecoration: "none", color: "grey" }}>
+    {/* <RouteLink to="yours" style={{ textDecoration: "none", color: "grey" }}>
       <ListItem button>
         <ListItemIcon>
           <PersonIcon />
@@ -59,7 +59,7 @@ export const mainListItems = (
         </ListItemIcon>
         <ListItemText secondary="Shared" />
       </ListItem>
-    </RouteLink>
+    </RouteLink> */}
 
     <RouteLink to="deleted" style={{ textDecoration: "none", color: "grey" }}>
       <ListItem button>

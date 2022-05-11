@@ -136,8 +136,10 @@ const CustomSwitch = withStyles({
   track: {},
 })(SwitchUI);
 
-export default function AccountProfile() {
+export default function AccountProfile(users) {
   const [open, setOpen] = React.useState(false);
+
+  console.log("users: ", users);
 
   // const [fname, setFirstName] = React.useState("");
   // const [sname, setSurName] = React.useState("");
