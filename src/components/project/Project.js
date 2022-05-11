@@ -9,6 +9,7 @@ import {
   makeStyles,
 } from "@material-ui/core";
 import AppBarCustom from "../tools/AppBarCustom";
+import AddAbstract from "../tools/AddAbstract";
 // import DownloadButton from "./DownloadButton";
 import CompileButton from "./buttons/CompileButton";
 import CopyLinkButton from "./buttons/CopyLinkButton";
@@ -137,6 +138,9 @@ const Project = (props) => {
                     justifyContent="flex-end"
                     alignItems="center"
                   >
+                    <Grid item>
+                      <AddAbstract id={props.id} />
+                    </Grid>
                     <Grid item>
                       <Typography
                         style={{
