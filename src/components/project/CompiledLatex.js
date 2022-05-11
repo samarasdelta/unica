@@ -22,12 +22,12 @@ const CompiledLatex = ({ url }) => {
             <li>{"Be sure to save your work by clicking the save button."}</li>
             <li>
               {
-                "If an error occurs during compile process, it will be displayed below."
+                "If an error occurs during compile process, a screen notification will appear."
               }
             </li>
           </span>
         </Typography>
-        <blockquote className="errormsg">{""}</blockquote>
+        {/* <blockquote className="errormsg">{""}</blockquote> */}
       </div>
       <div className="pdf-viewer">
         <object width="100%" height="100%" data={url} type="application/pdf">

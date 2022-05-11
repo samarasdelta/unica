@@ -9,10 +9,8 @@ import ChevronLeft from "@material-ui/icons/ChevronLeft";
 import ChevronRight from "@material-ui/icons/ChevronRight";
 import FirstPage from "@material-ui/icons/FirstPage";
 import LastPage from "@material-ui/icons/LastPage";
-// import IconButton from "@material-ui/core/IconButton";
 import Button from "@material-ui/core/Button";
 import SendIcon from "@material-ui/icons/Send";
-// import Tooltip from "@material-ui/core/Tooltip";
 
 //component icons declaration
 const tableIcons = {
@@ -67,21 +65,42 @@ export default function DataTable() {
           },
           { title: "Category", field: "category" },
           { title: "Owner", field: "owner" },
+          { title: "Email", field: "email" },
         ]}
         data={projects.map((project) => {
           return {
             name: `${project.projectTitle}`,
             category: `${project.projectCategory}`,
             owner: `${project.userFullName}`,
+            email: `${project.userEmail}`,
           };
         })}
-        actions={[
-          {
-            tooltip: "Apply",
-            icon: "save",
-            onClick: (event, rowData) => alert("You saved " + rowData.name),
-          },
-        ]}
+        // detailPanel={[
+        //   {
+        //     tooltip: "Show info",
+        //     render: (rowData) => {
+        //       return (
+        //         <div
+        //           style={{
+        //             height: "120px",
+        //             fontSize: 28,
+        //             textAlign: "center",
+        //             color: "#000",
+        //           }}
+        //         >
+        //           {rowData.email}
+        //         </div>
+        //       );
+        //     },
+        //   },
+        // ]}
+        // actions={[
+        //   {
+        //     tooltip: "Apply",
+        //     icon: "save",
+        //     onClick: (event, rowData) => alert("You saved " + rowData.name),
+        //   },
+        // ]}
         components={{
           Action: (props) => (
             <Button

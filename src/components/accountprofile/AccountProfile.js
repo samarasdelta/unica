@@ -139,9 +139,9 @@ const CustomSwitch = withStyles({
 export default function AccountProfile() {
   const [open, setOpen] = React.useState(false);
 
-  const [fname, setFirstName] = React.useState("");
-  const [sname, setSurName] = React.useState("");
-  const [email, setEmail] = React.useState("");
+  // const [fname, setFirstName] = React.useState("");
+  // const [sname, setSurName] = React.useState("");
+  // const [email, setEmail] = React.useState("");
 
   const { currentTheme, setTheme } = useContext(CustomThemeContext);
   const isDark = Boolean(currentTheme === "dark");
@@ -160,31 +160,15 @@ export default function AccountProfile() {
     setOpen(false);
   };
 
-  const handleFirstNameChange = (e) => {
-    setFirstName(e.target.value);
-  };
-  const handleSurNameChange = (e) => {
-    setSurName(e.target.value);
-  };
-  const handleEmailChange = (e) => {
-    setEmail(e.target.value);
-  };
-
-  const createUser = async () => {
-    await fetch("api/users", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        fname,
-        sname,
-        email,
-      }),
-    });
-
-    window.location.reload();
-  };
+  // const handleFirstNameChange = (e) => {
+  //   setFirstName(e.target.value);
+  // };
+  // const handleSurNameChange = (e) => {
+  //   setSurName(e.target.value);
+  // };
+  // const handleEmailChange = (e) => {
+  //   setEmail(e.target.value);
+  // };
 
   // const UploadButton = () => (
   //   <Button
@@ -280,7 +264,7 @@ export default function AccountProfile() {
                     label="First name"
                     name="fname"
                     variant="outlined"
-                    onInput={handleFirstNameChange}
+                    // onInput={handleFirstNameChange}
                     InputLabelProps={{ shrink: true }}
                   />
                 </Grid>
@@ -290,7 +274,7 @@ export default function AccountProfile() {
                     label="Last name"
                     name="sname"
                     variant="outlined"
-                    onInput={handleSurNameChange}
+                    // onInput={handleSurNameChange}
                     InputLabelProps={{ shrink: true }}
                   />
                 </Grid>
@@ -301,7 +285,7 @@ export default function AccountProfile() {
                     name="email"
                     type="email"
                     variant="outlined"
-                    onInput={handleEmailChange}
+                    // onInput={handleEmailChange}
                     InputLabelProps={{ shrink: true }}
                   />
                 </Grid>
@@ -337,7 +321,7 @@ export default function AccountProfile() {
                 }}
                 color="primary"
                 variant="contained"
-                onClick={createUser}
+                // onClick={updateUser}
               >
                 Save details
               </Button>
