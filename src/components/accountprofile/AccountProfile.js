@@ -14,7 +14,10 @@ export default function AccountProfile() {
   return (
     <div>
       <Card>
-        <CardHeader subheader="The information can be edited" title="Profile" />
+        <CardHeader
+          subheader="The information can be edited"
+          title="Personal info"
+        />
         <Divider />
         <CardContent>
           <Grid container spacing={3}>
