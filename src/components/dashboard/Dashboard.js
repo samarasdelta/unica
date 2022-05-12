@@ -145,7 +145,7 @@ export default function Dashboard() {
   let history = useHistory();
 
   const verifiedToken = localStorage.token;
-  // console.log("verifiedToken", verifiedToken);
+
   const fetchProjects = useCallback(() => {
     fetch("/api/projects", {
       headers: {

@@ -86,7 +86,9 @@ export default function AddAbstract(props) {
         <Divider />
         <DialogContent>
           <DialogContentText variant="subtitle2">
-            {"Here, you can add/edit an abstract for your project."}
+            Here, you can add a summary for your project or edit it. The summary
+            helps prospective collaborators better understand the purpose or the
+            idea behind your project.
           </DialogContentText>
           <TextField
             multiline={true}
