@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect, useContext, useCallback } from "react";
 import {
   makeStyles,
   Grid,
@@ -146,7 +146,7 @@ export default function Dashboard() {
 
   const verifiedToken = localStorage.token;
   // console.log("verifiedToken", verifiedToken);
-  const fetchProjects = () => {
+  const fetchProjects = useCallback(() => {
     fetch("/api/projects", {
       headers: {
         "Content-Type": "application/json;",
@@ -161,10 +161,10 @@ export default function Dashboard() {
         console.log("Error: ", error);
         history.push("/login");
       });
-  };
+  }, [history, verifiedToken]);
   useEffect(() => {
     fetchProjects();
-  });
+  }, [fetchProjects]);
 
   const { currentTheme, setTheme } = useContext(CustomThemeContext);
   const isDark = Boolean(currentTheme === "dark");

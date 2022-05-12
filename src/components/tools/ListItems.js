@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { Link as RouteLink } from "react-router-dom";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
@@ -7,12 +7,12 @@ import DashboardIcon from "@material-ui/icons/Dashboard";
 import DeleteIcon from "@material-ui/icons/Delete";
 // import PersonIcon from "@material-ui/icons/Person";
 // import ShareIcon from "@material-ui/icons/Share";
-import GroupWorkIcon from "@material-ui/icons/GroupWork";
 import FindInPageIcon from "@material-ui/icons/FindInPage";
-import Link from "@material-ui/core/Link";
 import Divider from "@material-ui/core/Divider";
 import NewTeamButtonAPI from "../tools/NewTeamButton";
 import { Typography } from "@material-ui/core";
+import Link from "@material-ui/core/Link";
+import GroupWorkIcon from "@material-ui/icons/GroupWork";
 
 export const DiscoverListItems = (
   <div>
@@ -76,7 +76,7 @@ export function GroupsListItems() {
   const [groups, setGroups] = useState([]);
   const verifiedToken = localStorage.token;
 
-  const fetchGroups = () => {
+  const fetchGroups = useCallback(() => {
     fetch("/api/groups", {
       headers: {
         "Content-Type": "application/json;",
@@ -90,10 +90,10 @@ export function GroupsListItems() {
       .catch((error) => {
         console.log("Error: ", error);
       });
-  };
+  }, [verifiedToken]);
   useEffect(() => {
     fetchGroups();
-  });
+  }, [fetchGroups]);
 
   return (
     <div>
