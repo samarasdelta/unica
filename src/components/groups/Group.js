@@ -10,6 +10,7 @@ import {
   makeStyles,
   Divider,
   Grid,
+  Box,
 } from "@material-ui/core";
 import GroupAddUser from "../tools/GroupAddUser";
 
@@ -31,7 +32,17 @@ const Group = (props) => {
       <AppBarCustom />
       <div>
         <header className="App-header">
-          {`Team Title: ${props.group.groupTitle}`}
+          <Box>
+            <Typography
+              style={{
+                margin: "21px",
+                fontSize: "1.6rem",
+              }}
+              color="textSecondary"
+            >
+              {`Team Title: ${props.group.groupTitle}`}
+            </Typography>
+          </Box>
         </header>
       </div>
       <div>
@@ -52,7 +63,6 @@ const Group = (props) => {
             container
             direction="column"
             justifyContent="center"
-            alignItems="center"
             spacing={(2, 2)}
           >
             <Grid item>
