@@ -141,7 +141,6 @@ export default function Dashboard() {
   const classes = useStyles();
   const [open, setOpen] = React.useState(true);
   const [projects, setProjects] = useState([]);
-  // const [users, setUsers] = useState([]);
   let history = useHistory();
 
   const verifiedToken = localStorage.token;
