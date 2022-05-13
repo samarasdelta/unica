@@ -3,6 +3,7 @@ import { Button } from "@material-ui/core";
 import Snackbar from "@material-ui/core/Snackbar";
 import MuiAlert from "@material-ui/lab/Alert";
 import { makeStyles } from "@material-ui/core/styles";
+import { Save } from "@material-ui/icons";
 import PropTypes from "prop-types";
 
 function Alert(props) {
@@ -41,6 +42,7 @@ const SaveButton = ({ saveProject, text }) => {
         disabled={text === "" ? true : false}
         variant="contained"
         color="primary"
+        startIcon={<Save />}
       >
         Save
       </Button>

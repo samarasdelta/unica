@@ -10,9 +10,10 @@ import {
 } from "@material-ui/core";
 import AppBarCustom from "../tools/AppBarCustom";
 import AddAbstract from "../tools/AddAbstract";
-// import DownloadButton from "./DownloadButton";
+import DownloadButton from "./buttons/DownloadButton";
 import CompileButton from "./buttons/CompileButton";
 import CopyLinkButton from "./buttons/CopyLinkButton";
+import OpenButton from "./buttons/OpenButton";
 import SaveButton from "./buttons/SaveButton";
 import "./democss.css";
 
@@ -50,7 +51,6 @@ const Project = (props) => {
         body: text,
       })
         .then((response) => {
-          // response.headers;
           console.log("response", response);
 
           if (response.ok) {
@@ -121,10 +121,19 @@ const Project = (props) => {
                       <CompileButton compile={compile} />
                     </Grid>
                     <Grid item>
+                      <AddAbstract id={props.id} />
+                    </Grid>
+                    <Grid item>
                       <SaveButton saveProject={saveProject} text={text} />
                     </Grid>
                     <Grid item>
                       <CopyLinkButton link={link} />
+                    </Grid>
+                    <Grid item>
+                      <OpenButton link={link} />
+                    </Grid>
+                    <Grid item>
+                      <DownloadButton link={link} />
                     </Grid>
                   </Grid>
                 </div>
@@ -139,12 +148,9 @@ const Project = (props) => {
                     alignItems="center"
                   >
                     <Grid item>
-                      <AddAbstract id={props.id} />
-                    </Grid>
-                    <Grid item>
                       <Typography
                         style={{
-                          fontSize: "1.2rem",
+                          fontSize: "1.4vw",
                         }}
                         color="textSecondary"
                       >{`Title: `}</Typography>
@@ -153,7 +159,7 @@ const Project = (props) => {
                     <Grid item>
                       <Typography
                         style={{
-                          fontSize: "1.2rem",
+                          fontSize: "1.4vw",
                         }}
                         color="primary"
                       >
@@ -163,7 +169,7 @@ const Project = (props) => {
                     <Grid item>
                       <Typography
                         style={{
-                          fontSize: "1.2rem",
+                          fontSize: "1.4vw",
                         }}
                         color="textSecondary"
                       >
@@ -174,7 +180,7 @@ const Project = (props) => {
                     <Grid item>
                       <Typography
                         style={{
-                          fontSize: "1.2rem",
+                          fontSize: "1.4vw",
                         }}
                         color="primary"
                       >
@@ -182,8 +188,6 @@ const Project = (props) => {
                       </Typography>
                     </Grid>
                   </Grid>
-
-                  {/* </span> */}
                 </header>
               </Grid>
             </Grid>

@@ -2,6 +2,7 @@ import React from "react";
 import { Button } from "@material-ui/core";
 import Snackbar from "@material-ui/core/Snackbar";
 import MuiAlert from "@material-ui/lab/Alert";
+import { FileCopy } from "@material-ui/icons";
 import { makeStyles } from "@material-ui/core/styles";
 import PropTypes from "prop-types";
 
@@ -42,8 +43,9 @@ const CopyLinkButton = ({ link }) => {
         }}
         variant="contained"
         color="primary"
+        startIcon={<FileCopy />}
       >
-        Share PDF
+        Copy
       </Button>
       <Snackbar
         anchorOrigin={{
@@ -55,7 +57,7 @@ const CopyLinkButton = ({ link }) => {
         onClose={handleClose}
       >
         <Alert onClose={handleClose} severity="success">
-          PDF link copied successfully!
+          PDF link copied to clipboard successfully!
         </Alert>
       </Snackbar>
     </div>

@@ -63,16 +63,8 @@ export default function AddAbstract(props) {
   return (
     <div>
       <Button
-        style={{
-          textTransform: "none",
-          height: "22px",
-          fontWeight: "400",
-          fontSize: "1rem",
-        }}
-        type="submit"
-        variant="text"
+        variant="contained"
         color="primary"
-        size="small"
         startIcon={<AddIcon />}
         onClick={openModal}
       >
