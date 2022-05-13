@@ -3,6 +3,7 @@ import Button from "@material-ui/core/Button";
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
 import PropTypes from "prop-types";
+import { GetApp } from "@material-ui/icons";
 
 const DownloadButton = ({ link }) => {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -20,6 +21,7 @@ const DownloadButton = ({ link }) => {
   return (
     <div>
       <Button
+        startIcon={<GetApp />}
         disabled={link === "" ? true : false}
         aria-controls="simple-menu"
         aria-haspopup="true"
