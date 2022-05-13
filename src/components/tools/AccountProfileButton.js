@@ -28,7 +28,7 @@ const useStyles = makeStyles({
   },
 });
 
-export default function TemporaryDrawer(verifiedToken) {
+export default function TemporaryDrawer() {
   const classes = useStyles();
   const [state, setState] = React.useState({
     right: false,
