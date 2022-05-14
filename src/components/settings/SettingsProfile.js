@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+// import React, { useState, useEffect, useContext } from "react";
 import {
   makeStyles,
   Container,
@@ -137,6 +138,26 @@ const CustomSwitch = withStyles({
 
 export default function SettingsProfile() {
   const [open, setOpen] = React.useState(false);
+
+  // const [users, setUsers] = useState([]);
+
+  // useEffect(() => {
+  //   fetch(`/api/users/${id}`)
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       setUsers(data);
+  //     })
+  //     .catch((error) => {
+  //       console.log("Error: ", error);
+  //     });
+  // }, []);
+
+  // const data = {users.map((user) => {
+  //   return {
+  //     id: `${user.userId}`,
+  //   };
+  // })}
+
   const classes = useStyles();
 
   const { currentTheme, setTheme } = useContext(CustomThemeContext);

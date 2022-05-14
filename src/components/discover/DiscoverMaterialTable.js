@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import MaterialTable from "@material-table/core";
 import { forwardRef } from "react";
+import { Typography } from "@material-ui/core";
 import Search from "@material-ui/icons/Search";
 import Clear from "@material-ui/icons/Clear";
 import PropTypes from "prop-types";
@@ -87,22 +88,18 @@ export default function DataTable() {
                     minHeight: "120px",
                     fontSize: 16,
                     textAlign: "start",
-                    color: "#c8c8c8",
                   }}
                 >
-                  <p>Abstract: </p>
+                  <Typography color="secondary">Abstract: </Typography>
                   <div
                     style={{
                       marginLeft: "15px",
                       fontSize: 22,
                       textAlign: "start",
-                      color: "#000",
                     }}
                   >
-                    <p>sample text</p>
+                    <Typography color="textSecondary">{`${data.abstract}`}</Typography>
                   </div>
-
-                  {/* {`${project.projectAbstract}`} */}
                 </div>
               );
             },
