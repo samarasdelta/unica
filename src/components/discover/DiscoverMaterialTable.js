@@ -80,12 +80,12 @@ export default function DataTable() {
         detailPanel={[
           {
             tooltip: "Show info",
-            render: (data) => {
+            render: (rowData) => {
               return (
                 <div
                   style={{
                     margin: "10px",
-                    minHeight: "120px",
+                    minHeight: "60px",
                     fontSize: 16,
                     textAlign: "start",
                   }}
@@ -98,7 +98,7 @@ export default function DataTable() {
                       textAlign: "start",
                     }}
                   >
-                    <Typography color="textSecondary">{`${data.abstract}`}</Typography>
+                    <Typography color="textSecondary">{`${rowData.rowData.abstract}`}</Typography>
                   </div>
                 </div>
               );
