@@ -23,7 +23,7 @@ import {
   DiscoverListItems,
   dashboardListItems,
   mainListItems,
-  GroupsListItems,
+  // GroupsListItems,
 } from "../tools/ListItems";
 import Logo from "../images/unicasmall1.png";
 import DeletedListItem from "./DeletedListItem";
@@ -242,9 +242,9 @@ export default function Deleted() {
           <List>{DiscoverListItems}</List>
           <List>{dashboardListItems}</List>
           <List>{mainListItems}</List>
-          <List>
+          {/* <List>
             <GroupsListItems />
-          </List>{" "}
+          </List> */}
         </div>
       </Drawer>
       <main className={classes.content}>

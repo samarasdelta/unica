@@ -21,7 +21,7 @@ import {
   DiscoverListItems,
   dashboardListItems,
   mainListItems,
-  GroupsListItems,
+  // GroupsListItems,
 } from "../tools/ListItems";
 import Logo from "../images/unicasmall1.png";
 // import DiscoverResults from "./DiscoverListItem";
@@ -206,9 +206,9 @@ export default function Discover() {
         <List>{DiscoverListItems}</List>
         <List>{dashboardListItems}</List>
         <List>{mainListItems}</List>
-        <List>
+        {/* <List>
           <GroupsListItems />
-        </List>
+        </List> */}
       </Drawer>
       <main className={classes.content}>
         <div className={classes.appBarSpacer} />
