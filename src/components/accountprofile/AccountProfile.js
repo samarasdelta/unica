@@ -1,6 +1,5 @@
-// import React from "react";
-// import React, { useEffect, useHistory } from "react";
 import React from "react";
+// import React, { useEffect, useHistory } from "react";
 import {
   Box,
   Grid,
@@ -13,6 +12,57 @@ import {
 } from "@material-ui/core";
 
 export default function AccountProfile() {
+  // const verifiedToken = localStorage.token;
+  // let history = useHistory();
+
+  // const [fname, setFirstName] = React.useState("");
+  // const [sname, setLastName] = React.useState("");
+  // const [email, setEmail] = React.useState("");
+
+  // useEffect(() => {
+  //   fetch(`/api/users/me`, {
+  //     headers: {
+  //       "Content-Type": "application/json;",
+  //       Authorization: `Bearer ${verifiedToken}`,
+  //     },
+  //   })
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       setFirstName(data.userFirstName);
+  //       setLastName(data.userSurName);
+  //       setEmail(data.userEmail);
+  //     })
+  //     .catch((error) => {
+  //       console.log("Error: ", error);
+  //       history.push("/login");
+  //     });
+  // });
+
+  // const updateUser = async () => {
+  //   await fetch(`/api/users/me`, {
+  //     method: "PUT",
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //       Authorization: `Bearer ${verifiedToken}`,
+  //     },
+  //     body: JSON.stringify({
+  //       fname,
+  //       sname,
+  //       email,
+  //     }),
+  //   });
+  // };
+
+  // const handleFirstNameChange = (e) => {
+  //   setFirstName(e.target.value);
+  // };
+  // const handleLastNameChange = (e) => {
+  //   setLastName(e.target.value);
+  // };
+  // const handleEmailChange = (e) => {
+  //   setEmail(e.target.value);
+  // };
+
   return (
     <div>
       <Card>
