@@ -1,5 +1,6 @@
-import React from "react";
-// import React, { useEffect, useHistory, useCallback } from "react";
+// import React from "react";
+import React, { useEffect, useCallback } from "react";
+import { useHistory } from "react-router-dom";
 import {
   Box,
   Grid,
@@ -13,7 +14,30 @@ import {
 
 export default function AccountProfile() {
   const verifiedToken = localStorage.token;
-  // let history = useHistory();
+  let history = useHistory();
+
+  const fetchUser = useCallback(() => {
+    fetch("/api/users/me", {
+      headers: {
+        "Content-Type": "application/json;",
+        Authorization: `Bearer ${verifiedToken}`,
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        setFirstName(data.userFirstName);
+        setLastName(data.userSurName);
+        setEmail(data.userEmail);
+      })
+      .catch((error) => {
+        console.log("Error: ", error);
+        history.push("/login");
+      });
+  }, [history, verifiedToken]);
+  useEffect(() => {
+    fetchUser();
+  }, [fetchUser]);
 
   const [fname, setFirstName] = React.useState("");
   const [sname, setLastName] = React.useState("");
@@ -59,7 +83,7 @@ export default function AccountProfile() {
                 fullWidth
                 type="title"
                 id="title"
-                defaultValue={fname}
+                value={fname}
                 label="First name"
                 name="fname"
                 variant="outlined"
@@ -72,7 +96,7 @@ export default function AccountProfile() {
             <Grid item xs={12}>
               <TextField
                 fullWidth
-                defaultValue={sname}
+                value={sname}
                 label="Last name"
                 name="sname"
                 variant="outlined"
@@ -85,7 +109,7 @@ export default function AccountProfile() {
             <Grid item xs={12}>
               <TextField
                 fullWidth
-                defaultValue={email}
+                value={email}
                 label="Email address"
                 name="email"
                 type="email"
@@ -111,10 +135,9 @@ export default function AccountProfile() {
             type="submit"
             color="primary"
             variant="contained"
-            onClick={updateUser}
-            // onClick={(e) => {
-            //   updateUser();
-            // }}
+            onClick={(e) => {
+              updateUser();
+            }}
           >
             Save details
           </Button>
