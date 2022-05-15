@@ -1,5 +1,5 @@
 import React from "react";
-// import React, { useEffect, useHistory } from "react";
+// import React, { useEffect, useHistory, useCallback } from "react";
 import {
   Box,
   Grid,
@@ -12,56 +12,37 @@ import {
 } from "@material-ui/core";
 
 export default function AccountProfile() {
-  // const verifiedToken = localStorage.token;
+  const verifiedToken = localStorage.token;
   // let history = useHistory();
 
-  // const [fname, setFirstName] = React.useState("");
-  // const [sname, setLastName] = React.useState("");
-  // const [email, setEmail] = React.useState("");
+  const [fname, setFirstName] = React.useState("");
+  const [sname, setLastName] = React.useState("");
+  const [email, setEmail] = React.useState("");
 
-  // useEffect(() => {
-  //   fetch(`/api/users/me`, {
-  //     headers: {
-  //       "Content-Type": "application/json;",
-  //       Authorization: `Bearer ${verifiedToken}`,
-  //     },
-  //   })
-  //     .then((response) => response.json())
-  //     .then((data) => {
-  //       setFirstName(data.userFirstName);
-  //       setLastName(data.userSurName);
-  //       setEmail(data.userEmail);
-  //     })
-  //     .catch((error) => {
-  //       console.log("Error: ", error);
-  //       history.push("/login");
-  //     });
-  // });
+  const updateUser = async () => {
+    await fetch(`/api/users/me`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${verifiedToken}`,
+      },
+      body: JSON.stringify({
+        fname,
+        sname,
+        email,
+      }),
+    });
+  };
 
-  // const updateUser = async () => {
-  //   await fetch(`/api/users/me`, {
-  //     method: "PUT",
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //       Authorization: `Bearer ${verifiedToken}`,
-  //     },
-  //     body: JSON.stringify({
-  //       fname,
-  //       sname,
-  //       email,
-  //     }),
-  //   });
-  // };
-
-  // const handleFirstNameChange = (e) => {
-  //   setFirstName(e.target.value);
-  // };
-  // const handleLastNameChange = (e) => {
-  //   setLastName(e.target.value);
-  // };
-  // const handleEmailChange = (e) => {
-  //   setEmail(e.target.value);
-  // };
+  const handleFirstNameChange = (e) => {
+    setFirstName(e.target.value);
+  };
+  const handleLastNameChange = (e) => {
+    setLastName(e.target.value);
+  };
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
+  };
 
   return (
     <div>
@@ -78,40 +59,40 @@ export default function AccountProfile() {
                 fullWidth
                 type="title"
                 id="title"
-                // defaultValue={fname}
+                defaultValue={fname}
                 label="First name"
                 name="fname"
                 variant="outlined"
-                // onInput={(e) => {
-                //   handleFirstNameChange(e);
-                // }}
+                onInput={(e) => {
+                  handleFirstNameChange(e);
+                }}
                 InputLabelProps={{ shrink: true }}
               />
             </Grid>
             <Grid item xs={12}>
               <TextField
                 fullWidth
-                // defaultValue={sname}
+                defaultValue={sname}
                 label="Last name"
                 name="sname"
                 variant="outlined"
-                // onInput={(e) => {
-                //   handleLastNameChange(e);
-                // }}
+                onInput={(e) => {
+                  handleLastNameChange(e);
+                }}
                 InputLabelProps={{ shrink: true }}
               />
             </Grid>
             <Grid item xs={12}>
               <TextField
                 fullWidth
-                // defaultValue={email}
+                defaultValue={email}
                 label="Email address"
                 name="email"
                 type="email"
                 variant="outlined"
-                // onInput={(e) => {
-                //   handleEmailChange(e);
-                // }}
+                onInput={(e) => {
+                  handleEmailChange(e);
+                }}
                 InputLabelProps={{ shrink: true }}
               />
             </Grid>
@@ -119,18 +100,18 @@ export default function AccountProfile() {
         </CardContent>
         <Divider />
 
-        <Box>
+        <Box m={2}>
           <Button
             style={{
               fontWeight: "400",
               textTransform: "none",
               marginBottom: "15px",
-              marginRight: "15px",
               float: "right",
             }}
+            type="submit"
             color="primary"
             variant="contained"
-            // onClick={updateUser}
+            onClick={updateUser}
             // onClick={(e) => {
             //   updateUser();
             // }}

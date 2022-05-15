@@ -10,8 +10,29 @@ import {
 } from "@material-ui/core";
 
 export const SettingsPassword = () => {
+  const verifiedToken = localStorage.token;
+
+  const [pass, setPassword] = React.useState("");
+
+  const updateUser = async () => {
+    await fetch(`/api/users/me`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${verifiedToken}`,
+      },
+      body: JSON.stringify({
+        pass,
+      }),
+    });
+  };
+
+  const handlePasswordChange = (e) => {
+    setPassword(e.target.value);
+  };
+
   return (
-    <form>
+    <div>
       <Card>
         <CardHeader subheader="Update password" title="Password" />
         <Divider />
@@ -22,10 +43,8 @@ export const SettingsPassword = () => {
             margin="normal"
             helperText="Your current password"
             name="password"
-            // onChange={}
             type="password"
             InputLabelProps={{ shrink: true }}
-            // value={values.password}
             variant="outlined"
           />
           <TextField
@@ -34,10 +53,12 @@ export const SettingsPassword = () => {
             margin="normal"
             helperText="Please specify your new password"
             name="password"
-            // onChange={}
             type="password"
-            // value={values.password}
             variant="outlined"
+            onInput={(e) => {
+              handlePasswordChange(e);
+            }}
+            InputLabelProps={{ shrink: true }}
           />
           <TextField
             fullWidth
@@ -45,30 +66,29 @@ export const SettingsPassword = () => {
             margin="normal"
             name="confirm"
             helperText="Please re-enter your new password"
-            // onChange={}
             type="password"
-            // value={values.confirm}
             variant="outlined"
           />
         </CardContent>
         <Divider />
-        <Box>
+        <Box m={2}>
           <Button
+            disabled={pass === "" ? true : false}
             style={{
               fontWeight: "400",
               textTransform: "none",
-              marginTop: "15px",
               marginBottom: "15px",
-              marginRight: "15px",
               float: "right",
             }}
+            type="submit"
             color="primary"
             variant="contained"
+            onClick={updateUser}
           >
             Update
           </Button>
         </Box>
       </Card>
-    </form>
+    </div>
   );
 };
