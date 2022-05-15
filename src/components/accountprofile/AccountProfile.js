@@ -1,3 +1,5 @@
+// import React from "react";
+// import React, { useEffect, useHistory } from "react";
 import React from "react";
 import {
   Box,
@@ -24,31 +26,42 @@ export default function AccountProfile() {
             <Grid item xs={12}>
               <TextField
                 fullWidth
+                type="title"
+                id="title"
+                // defaultValue={fname}
                 label="First name"
                 name="fname"
                 variant="outlined"
-                // onInput={handleFirstNameChange}
+                // onInput={(e) => {
+                //   handleFirstNameChange(e);
+                // }}
                 InputLabelProps={{ shrink: true }}
               />
             </Grid>
             <Grid item xs={12}>
               <TextField
                 fullWidth
+                // defaultValue={sname}
                 label="Last name"
                 name="sname"
                 variant="outlined"
-                // onInput={handleSurNameChange}
+                // onInput={(e) => {
+                //   handleLastNameChange(e);
+                // }}
                 InputLabelProps={{ shrink: true }}
               />
             </Grid>
             <Grid item xs={12}>
               <TextField
                 fullWidth
+                // defaultValue={email}
                 label="Email address"
                 name="email"
                 type="email"
                 variant="outlined"
-                // onInput={handleEmailChange}
+                // onInput={(e) => {
+                //   handleEmailChange(e);
+                // }}
                 InputLabelProps={{ shrink: true }}
               />
             </Grid>
@@ -68,6 +81,9 @@ export default function AccountProfile() {
             color="primary"
             variant="contained"
             // onClick={updateUser}
+            // onClick={(e) => {
+            //   updateUser();
+            // }}
           >
             Save details
           </Button>

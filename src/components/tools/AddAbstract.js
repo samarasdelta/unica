@@ -18,6 +18,17 @@ const useStyles = makeStyles({
 
 export default function AddAbstract(props) {
   const classes = useStyles();
+  const [open, setOpen] = React.useState(false);
+  const [abstract, setAbstract] = React.useState("");
+
+  const openModal = () => {
+    setOpen(true);
+  };
+
+  const closeModal = () => {
+    setOpen(false);
+  };
+
   const { id } = props;
 
   useEffect(() => {
@@ -30,17 +41,6 @@ export default function AddAbstract(props) {
         console.log("Error: ", error);
       });
   }, [id]);
-
-  const [open, setOpen] = React.useState(false);
-  const [abstract, setAbstract] = React.useState("");
-
-  const openModal = () => {
-    setOpen(true);
-  };
-
-  const closeModal = () => {
-    setOpen(false);
-  };
 
   const handleAbstractChange = (e) => {
     setAbstract(e.target.value);
