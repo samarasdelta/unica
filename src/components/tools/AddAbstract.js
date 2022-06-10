@@ -89,7 +89,7 @@ export default function AddAbstract(props) {
             label="Abstract"
             type="title"
             InputLabelProps={{ shrink: true }}
-            defaultValue={abstract}
+            value={abstract}
             variant="outlined"
             fullWidth
             onInput={(e) => {
