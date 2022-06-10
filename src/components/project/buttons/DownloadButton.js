@@ -7,7 +7,6 @@ import { GetApp } from "@material-ui/icons";
 
 const DownloadButton = ({ link }) => {
   const [anchorEl, setAnchorEl] = React.useState(null);
-
   const handleClick = (event) => {
     console.log("handleClick", event.currentTarget);
     setAnchorEl(event.currentTarget);
@@ -40,7 +39,11 @@ const DownloadButton = ({ link }) => {
       >
         <MenuItem onClick={handleClose}>as .zip</MenuItem>
         <MenuItem onClick={handleClose}>as .tex</MenuItem>
-        <MenuItem onClick={handleClose}>as PDF</MenuItem>
+        <MenuItem onClick={handleClose}>
+          <a href={link} download={link} target="blank">
+            as PDF
+          </a>
+        </MenuItem>
       </Menu>
     </div>
   );

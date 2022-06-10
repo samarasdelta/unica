@@ -10,7 +10,7 @@ import {
 } from "@material-ui/core";
 import AppBarCustom from "../tools/AppBarCustom";
 import AddAbstract from "../tools/AddAbstract";
-import DownloadButton from "./buttons/DownloadButton";
+// import DownloadButton from "./buttons/DownloadButton";
 import CompileButton from "./buttons/CompileButton";
 import CopyLinkButton from "./buttons/CopyLinkButton";
 import OpenButton from "./buttons/OpenButton";
@@ -132,9 +132,9 @@ const Project = (props) => {
                     <Grid item>
                       <OpenButton link={link} />
                     </Grid>
-                    <Grid item>
+                    {/* <Grid item>
                       <DownloadButton link={link} />
-                    </Grid>
+                    </Grid> */}
                   </Grid>
                 </div>
               </Grid>
