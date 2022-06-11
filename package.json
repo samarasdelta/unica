@@ -30,6 +30,7 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3",
     "reactstrap": "^8.5.1",
+    "typeface-poppins": "^1.1.13",
     "yuo": "^0.0.1",
     "yup": "^0.28.5"
   },
