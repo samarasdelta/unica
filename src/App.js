@@ -20,7 +20,7 @@ import SharedPage from "./pages/SharedPage.js";
 
 function App() {
   return (
-    <Router basename={"/~ece00792/unica/"}>
+    <Router>
       <div>
         <Switch>
           <Route path="/502">
