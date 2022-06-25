@@ -25,7 +25,6 @@ export default function AccountProfile() {
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
         setFirstName(data.userFirstName);
         setLastName(data.userSurName);
         setEmail(data.userEmail);

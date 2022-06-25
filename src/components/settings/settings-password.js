@@ -8,9 +8,11 @@ import {
   Divider,
   TextField,
 } from "@material-ui/core";
+import { useHistory } from "react-router-dom";
 
 export const SettingsPassword = () => {
   const verifiedToken = localStorage.token;
+  let history = useHistory();
 
   const [pass, setPassword] = React.useState("");
   const [passConfirm, setPassConfirm] = React.useState("");
@@ -26,6 +28,8 @@ export const SettingsPassword = () => {
         pass,
       }),
     });
+    localStorage.removeItem("token");
+    history.push("/login");
   };
 
   const handlePasswordChange = (e) => {
