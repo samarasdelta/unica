@@ -22,6 +22,7 @@
     "fontsource-roboto": "^3.0.3",
     "formik": "^2.2.9",
     "material-table": "^1.69.3",
+    "moment": "^2.29.3",
     "prettier": "2.1.2",
     "prettier-eslint-cli": "^5.0.0",
     "react": "^16.13.1",
