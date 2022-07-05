@@ -10,10 +10,6 @@ import RestoreIcon from "@material-ui/icons/Restore";
 import Moment from "react-moment";
 import { Button } from "@material-ui/core";
 
-// function preventDefault(event) {
-//   event.preventDefault();
-// }
-
 const useStyles = makeStyles({
   projectContext: {
     flex: 1,
