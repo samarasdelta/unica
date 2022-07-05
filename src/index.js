@@ -15,7 +15,3 @@ ReactDOM.render(
   </CustomThemeProvider>,
   document.getElementById("root")
 );
-
-// {
-//   /* serviceWorker.unregister(); */
-// }
