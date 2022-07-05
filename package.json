@@ -1,6 +1,6 @@
 {
   "name": "unica",
-  "homepage": ".",
+  "homepage": "https://unica-ruby.vercel.app/",
   "version": "0.1.0",
   "private": false,
   "dependencies": {
