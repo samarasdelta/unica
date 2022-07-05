@@ -18,7 +18,7 @@ export const SettingsPassword = () => {
   const [passConfirm, setPassConfirm] = React.useState("");
 
   const updateUser = async () => {
-    await fetch(`/api/users/me`, {
+    await fetch(`${process.env.REACT_APP_API_URL}/api/users/me`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
