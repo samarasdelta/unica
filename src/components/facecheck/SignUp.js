@@ -80,7 +80,7 @@ export default function SignUp() {
 
   const register = async () => {
     try {
-      await fetch("auth/register", {
+      await fetch(`${process.env.REACT_APP_API_URL}/auth/register`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

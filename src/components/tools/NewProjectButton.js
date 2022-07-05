@@ -65,7 +65,7 @@ export default function NewProjectButtonAPI({ fetchProjects }) {
   const verifiedToken = localStorage.token;
 
   const createProject = async () => {
-    await fetch("api/projects", {
+    await fetch(`${process.env.REACT_APP_API_URL}/api/projects`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

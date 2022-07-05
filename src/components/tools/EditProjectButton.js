@@ -26,7 +26,7 @@ export default function EditProjectButtonAPI(props) {
   const { id } = props;
 
   useEffect(() => {
-    fetch(`/api/projects/${id}`)
+    fetch(`${process.env.REACT_APP_API_URL}/api/projects/${id}`)
       .then((response) => response.json())
       .then((data) => {
         setTitle(data.projectTitle);

@@ -43,7 +43,7 @@ const Project = (props) => {
 
   const compile = async () => {
     try {
-      await fetch("/api/latex", {
+      await fetch(`${process.env.REACT_APP_API_URL}/api/latex`, {
         method: "POST",
         headers: {
           "Content-Type": "text/plain",
@@ -67,7 +67,7 @@ const Project = (props) => {
   };
 
   const saveProject = async () => {
-    await fetch(`/api/projects/${id}`, {
+    await fetch(`${process.env.REACT_APP_API_URL}/api/projects/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -86,7 +86,7 @@ const Project = (props) => {
   };
 
   useEffect(() => {
-    fetch(`/api/projects/${id}`)
+    fetch(`${process.env.REACT_APP_API_URL}/api/projects/${id}`)
       .then((response) => response.json())
       .then((data) => {
         setText(data.projectInfo);

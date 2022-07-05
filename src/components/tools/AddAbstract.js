@@ -32,7 +32,7 @@ export default function AddAbstract(props) {
   const { id } = props;
 
   useEffect(() => {
-    fetch(`/api/projects/${id}`)
+    fetch(`${process.env.REACT_APP_API_URL}/api/projects/${id}`)
       .then((response) => response.json())
       .then((data) => {
         setAbstract(data.projectAbstract);

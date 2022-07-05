@@ -69,16 +69,19 @@ export default function LogIn() {
 
   const authenticate = async () => {
     try {
-      const response = await fetch("auth/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          email,
-          pass,
-        }),
-      }).then((response) => response.json());
+      const response = await fetch(
+        `${process.env.REACT_APP_API_URL}/auth/login`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            email,
+            pass,
+          }),
+        }
+      ).then((response) => response.json());
 
       localStorage.setItem("token", response.token);
 
