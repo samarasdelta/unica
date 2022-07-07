@@ -206,9 +206,6 @@ export default function Discover() {
         <List>{DiscoverListItems}</List>
         <List>{dashboardListItems}</List>
         <List>{mainListItems}</List>
-        {/* <List>
-          <GroupsListItems />
-        </List> */}
       </Drawer>
       <main className={classes.content}>
         <div className={classes.appBarSpacer} />
