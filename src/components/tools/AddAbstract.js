@@ -47,7 +47,7 @@ export default function AddAbstract(props) {
   };
 
   const updateAbstract = async () => {
-    await fetch(`/api/projects/${id}`, {
+    await fetch(`${process.env.REACT_APP_API_URL}/api/projects/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

@@ -19,7 +19,7 @@ const useStyles = makeStyles({
 });
 export default function DashboardListItem(props) {
   const deleteProject = async (id) => {
-    await fetch(`api/projects/${id}`, {
+    await fetch(`${process.env.REACT_APP_API_URL}/api/projects/${id}`, {
       method: "DELETE",
     });
 
@@ -31,7 +31,7 @@ export default function DashboardListItem(props) {
     <React.Fragment>
       <Box className={classes.boxSpace}>
         <div>
-          <Link href={`/project/${props.id}`}>
+          <Link href={`${process.env.REACT_APP_API_URL}/project/${props.id}`}>
             <Typography noWrap variant="h5" style={{ fontWeight: "500" }}>
               {props.title}
             </Typography>
