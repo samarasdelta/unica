@@ -49,8 +49,6 @@ export default function DataTable() {
       });
   }, []);
 
-  console.log("process.env:", process.env);
-
   return (
     <div>
       <MaterialTable
