@@ -31,7 +31,8 @@ export default function DashboardListItem(props) {
     <React.Fragment>
       <Box className={classes.boxSpace}>
         <div>
-          <Link href={`${process.env.REACT_APP_API_URL}/project/${props.id}`}>
+          {/* problem here */}
+          <Link href={`/project/${props.id}`}>
             <Typography noWrap variant="h5" style={{ fontWeight: "500" }}>
               {props.title}
             </Typography>
