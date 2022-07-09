@@ -43,7 +43,7 @@ const Project = (props) => {
 
   const compile = async () => {
     try {
-      await fetch(`${process.env.REACT_APP_API_URL}/api/latex`, {
+      await fetch(`https://latexonline.cc/compile?text=${text}`, {
         method: "POST",
         headers: {
           "Content-Type": "text/plain",
