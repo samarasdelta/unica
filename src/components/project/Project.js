@@ -43,7 +43,7 @@ const Project = (props) => {
 
   const compile = async () => {
     try {
-      await fetch(`https://latexonline.cc/compile?text=${text}`, {
+      await fetch("/api/latex", {
         method: "POST",
         headers: {
           "Content-Type": "text/plain",
@@ -51,7 +51,6 @@ const Project = (props) => {
         body: text,
       })
         .then((response) => {
-          console.log("text: ", text);
           console.log("response", response);
 
           if (response.ok) {
@@ -61,7 +60,6 @@ const Project = (props) => {
         .then((response) => response.json())
         .then((data) => {
           setLink(data.pdf);
-          console.log("data", data);
         });
     } catch (error) {
       alert("Your LaTeX code is not correct!");
