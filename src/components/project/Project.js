@@ -51,6 +51,7 @@ const Project = (props) => {
         body: text,
       })
         .then((response) => {
+          console.log("text: ", text);
           console.log("response", response);
 
           if (response.ok) {
@@ -60,6 +61,7 @@ const Project = (props) => {
         .then((response) => response.json())
         .then((data) => {
           setLink(data.pdf);
+          console.log("data", data);
         });
     } catch (error) {
       alert("Your LaTeX code is not correct!");
