@@ -33,7 +33,6 @@ const useStyles = makeStyles({
 const Project = (props) => {
   const { id } = props;
   const classes = useStyles();
-  const fileName = props.project.projectTitle;
 
   const [text, setText] = React.useState("");
   const [link, setLink] = React.useState("");
@@ -74,7 +73,7 @@ const Project = (props) => {
         headers: {
           "Content-Type": "text/plain",
         },
-        body: encodeURIComponent(text, fileName),
+        body: encodeURIComponent(text),
       })
         .then((response) => {
           console.log("response", response);
