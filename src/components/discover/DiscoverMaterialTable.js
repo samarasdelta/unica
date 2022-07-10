@@ -74,7 +74,11 @@ export default function DataTable() {
             category: `${project.projectCategory}`,
             owner: `${project.userFullName}`,
             email: `${project.userEmail}`,
-            abstract: `${project.projectAbstract}`,
+            abstract: `${
+              project.projectAbstract
+                ? `${project.projectAbstract}`
+                : "No abstract to display."
+            }`,
           };
         })}
         detailPanel={[
