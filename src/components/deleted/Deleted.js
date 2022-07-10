@@ -117,7 +117,7 @@ const useStyles = makeStyles((theme) => ({
   },
   fixedHeight: {
     height: 200,
-    minWidth: 580,
+    minWidth: 480,
   },
   Box: {
     paddingTop: 1,

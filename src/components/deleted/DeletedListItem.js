@@ -17,10 +17,6 @@ const useStyles = makeStyles({
   boxSpace: {
     flex: 1,
   },
-
-  customWidth: {
-    maxWidth: "none",
-  },
 });
 
 export default function DeleteListItem(props) {
