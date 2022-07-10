@@ -168,7 +168,10 @@ const Project = (props) => {
                     alignItems="center"
                   >
                     <Grid item>
-                      <CompileButton compile={compile} />
+                      <CompileButton
+                        compile={compile}
+                        saveProject={saveProject}
+                      />
                     </Grid>
                     <Grid item>
                       <AddAbstract id={props.id} />
