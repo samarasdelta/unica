@@ -187,7 +187,7 @@ const Project = (props) => {
                     </Grid>
                     <Grid item>
                       <DownloadButton
-                        link={link}
+                        linked={link}
                         downloadPdf={downloadPdf}
                         downloadTex={downloadTex}
                       />
