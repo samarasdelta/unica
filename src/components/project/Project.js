@@ -10,7 +10,7 @@ import {
 } from "@material-ui/core";
 import AppBarCustom from "../tools/AppBarCustom";
 import AddAbstract from "../tools/AddAbstract";
-// import DownloadButton from "./buttons/DownloadButton";
+import DownloadButton from "./buttons/DownloadButton";
 import CompileButton from "./buttons/CompileButton";
 import CopyLinkButton from "./buttons/CopyLinkButton";
 import OpenButton from "./buttons/OpenButton";
@@ -44,6 +44,56 @@ const Project = (props) => {
   const compile = async () => {
     try {
       await fetch(`${process.env.REACT_APP_API_URL}/api/latex`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "text/plain",
+        },
+        body: text,
+      })
+        .then((response) => {
+          console.log("response", response);
+
+          if (response.ok) {
+            return response;
+          }
+        })
+        .then((response) => response.json())
+        .then((data) => {
+          setLink(data.pdf);
+        });
+    } catch (error) {
+      alert("Your LaTeX code is not correct!");
+    }
+  };
+
+  const downloadPdf = async () => {
+    try {
+      await fetch(`${process.env.REACT_APP_API_URL}/api/latex/download/pdf`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "text/plain",
+        },
+        body: text,
+      })
+        .then((response) => {
+          console.log("response", response);
+
+          if (response.ok) {
+            return response;
+          }
+        })
+        .then((response) => response.json())
+        .then((data) => {
+          setLink(data.pdf);
+        });
+    } catch (error) {
+      alert("Your LaTeX code is not correct!");
+    }
+  };
+
+  const downloadTex = async () => {
+    try {
+      await fetch(`${process.env.REACT_APP_API_URL}/api/latex/download/tex`, {
         method: "POST",
         headers: {
           "Content-Type": "text/plain",
@@ -132,9 +182,13 @@ const Project = (props) => {
                     <Grid item>
                       <OpenButton link={link} />
                     </Grid>
-                    {/* <Grid item>
-                      <DownloadButton link={link} />
-                    </Grid> */}
+                    <Grid item>
+                      <DownloadButton
+                        link={link}
+                        downloadPdf={downloadPdf}
+                        downloadTex={downloadTex}
+                      />
+                    </Grid>
                   </Grid>
                 </div>
               </Grid>

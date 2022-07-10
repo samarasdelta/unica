@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Compile = ({ compile }) => {
+const Compile = ({ compile, saveProject }) => {
   const [spin, setSpin] = React.useState(false);
   const classes = useStyles();
 
@@ -40,6 +40,7 @@ const Compile = ({ compile }) => {
         onClick={() => {
           refreshCanvas();
           compile();
+          saveProject();
         }}
         startIcon={
           <Autorenew
@@ -61,4 +62,5 @@ export default Compile;
 
 Compile.propTypes = {
   compile: PropTypes.func.isRequired,
+  saveProject: PropTypes.func.isRequired,
 };

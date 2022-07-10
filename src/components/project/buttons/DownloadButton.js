@@ -5,15 +5,13 @@ import MenuItem from "@material-ui/core/MenuItem";
 import PropTypes from "prop-types";
 import { GetApp } from "@material-ui/icons";
 
-const DownloadButton = ({ link }) => {
+const DownloadButton = ({ link, downloadPdf, downloadTex }) => {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const handleClick = (event) => {
-    console.log("handleClick", event.currentTarget);
     setAnchorEl(event.currentTarget);
   };
 
   const handleClose = () => {
-    console.log("handleClose");
     setAnchorEl(null);
   };
 
@@ -37,12 +35,21 @@ const DownloadButton = ({ link }) => {
         open={Boolean(anchorEl)}
         onClose={handleClose}
       >
-        <MenuItem onClick={handleClose}>as .zip</MenuItem>
-        <MenuItem onClick={handleClose}>as .tex</MenuItem>
-        <MenuItem onClick={handleClose}>
-          <a href={link} download={link} target="blank">
-            as PDF
-          </a>
+        <MenuItem
+          onClick={() => {
+            handleClose();
+            downloadTex();
+          }}
+        >
+          as .tex
+        </MenuItem>
+        <MenuItem
+          onClick={() => {
+            handleClose();
+            downloadPdf();
+          }}
+        >
+          as .pdf
         </MenuItem>
       </Menu>
     </div>
@@ -53,4 +60,6 @@ export default DownloadButton;
 
 DownloadButton.propTypes = {
   link: PropTypes.string.isRequired,
+  downloadPdf: PropTypes.func.isRequired,
+  downloadTex: PropTypes.func.isRequired,
 };
