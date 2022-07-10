@@ -48,7 +48,7 @@ const Project = (props) => {
         headers: {
           "Content-Type": "text/plain",
         },
-        body: text,
+        body: encodeURIComponent(text),
       })
         .then((response) => {
           console.log("response", response);
