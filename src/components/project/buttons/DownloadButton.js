@@ -5,7 +5,7 @@ import MenuItem from "@material-ui/core/MenuItem";
 import PropTypes from "prop-types";
 import { GetApp } from "@material-ui/icons";
 
-const DownloadButton = ({ linked, downloadPdf, downloadTex }) => {
+const DownloadButton = ({ downloadPdf, downloadTex }) => {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -19,7 +19,7 @@ const DownloadButton = ({ linked, downloadPdf, downloadTex }) => {
     <div>
       <Button
         startIcon={<GetApp />}
-        disabled={linked === "" ? true : false}
+        // disabled={linked === "" ? true : false}
         aria-controls="simple-menu"
         aria-haspopup="true"
         variant="contained"
