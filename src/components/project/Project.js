@@ -32,6 +32,9 @@ const useStyles = makeStyles({
 
 const Project = (props) => {
   const { id } = props;
+  console.log("props.project.projectTitle: ", props.project.projectTitle);
+  const { fileName } = props.project.projectTitle;
+  console.log("fileName: ", fileName);
   const classes = useStyles();
 
   const [text, setText] = React.useState("");
