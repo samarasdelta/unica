@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect, useContext, useCallback } from "react";
 import {
   makeStyles,
   Grid,
@@ -150,7 +150,7 @@ export default function Deleted() {
 
   const verifiedToken = localStorage.token;
 
-  const fetchDeletedProjects = () => {
+  const fetchDeletedProjects = useCallback(() => {
     fetch(`${process.env.REACT_APP_API_URL}/api/projects/deleted`, {
       headers: {
         "Content-Type": "application/json;",
@@ -165,11 +165,11 @@ export default function Deleted() {
         alert("Error: 403 Forbidden", error.message);
         history.push("/login");
       });
-  };
+  }, [history, verifiedToken]);
 
   useEffect(() => {
     fetchDeletedProjects();
-  });
+  }, [fetchDeletedProjects]);
 
   const { currentTheme, setTheme } = useContext(CustomThemeContext);
   const isDark = Boolean(currentTheme === "dark");
