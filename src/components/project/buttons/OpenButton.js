@@ -10,7 +10,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const ShareButton = ({ link, openButton }) => {
+const ShareButton = ({ pdfLink, openButton, link }) => {
   const classes = useStyles();
 
   return (
@@ -20,7 +20,7 @@ const ShareButton = ({ link, openButton }) => {
         disabled={link === "" ? true : false}
         onClick={() => {
           openButton();
-          window.open(`${link}`, "_blank");
+          window.open(`${pdfLink}`, "_blank");
         }}
         variant="contained"
         color="primary"
@@ -35,5 +35,6 @@ export default ShareButton;
 
 ShareButton.propTypes = {
   link: PropTypes.string.isRequired,
+  pdfLink: PropTypes.string.isRequired,
   openButton: PropTypes.func.isRequired,
 };

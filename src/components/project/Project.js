@@ -36,6 +36,7 @@ const Project = (props) => {
 
   const [text, setText] = React.useState("");
   const [link, setLink] = React.useState("");
+  const [pdfLink, setPdfLink] = React.useState("");
 
   const handleTextChange = (e) => {
     setText(e.target.value);
@@ -84,7 +85,7 @@ const Project = (props) => {
         })
         .then((response) => response.json())
         .then((data) => {
-          setLink(data.pdf);
+          setPdfLink(data.pdf);
         });
     } catch (error) {
       alert("Your LaTeX code is not correct!");
@@ -208,7 +209,11 @@ const Project = (props) => {
                       <CopyLinkButton link={link} />
                     </Grid>
                     <Grid item>
-                      <OpenButton link={link} openButton={openButton} />
+                      <OpenButton
+                        link={link}
+                        pdfLink={pdfLink}
+                        openButton={openButton}
+                      />
                     </Grid>
                     <Grid item>
                       <DownloadButton
