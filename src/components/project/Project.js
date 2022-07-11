@@ -209,11 +209,7 @@ const Project = (props) => {
                       <CopyLinkButton link={link} />
                     </Grid>
                     <Grid item>
-                      <OpenButton
-                        link={link}
-                        pdfLink={pdfLink}
-                        openButton={openButton}
-                      />
+                      <OpenButton pdfLink={pdfLink} openButton={openButton} />
                     </Grid>
                     <Grid item>
                       <DownloadButton
