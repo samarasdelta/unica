@@ -85,7 +85,7 @@ const Project = (props) => {
         })
         .then((response) => response.json())
         .then((data) => {
-          setPdfLink(data.pdf);
+          setPdfLink(data.open);
         });
     } catch (error) {
       alert("Your LaTeX code is not correct!");

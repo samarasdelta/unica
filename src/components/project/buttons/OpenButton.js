@@ -17,7 +17,7 @@ const ShareButton = ({ pdfLink, openButton }) => {
     <div className={classes.root}>
       <Button
         startIcon={<OpenInNew />}
-        disabled={pdfLink === "" ? true : false}
+        // disabled={pdfLink === "" ? true : false}
         onClick={() => {
           openButton();
           window.open(`${pdfLink}`, "_blank");
