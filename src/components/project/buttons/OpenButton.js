@@ -10,7 +10,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const ShareButton = ({ link }) => {
+const ShareButton = ({ link, openButton }) => {
   const classes = useStyles();
 
   return (
@@ -19,6 +19,7 @@ const ShareButton = ({ link }) => {
         startIcon={<OpenInNew />}
         disabled={link === "" ? true : false}
         onClick={() => {
+          openButton();
           window.open(`${link}`, "_blank");
         }}
         variant="contained"
@@ -34,4 +35,5 @@ export default ShareButton;
 
 ShareButton.propTypes = {
   link: PropTypes.string.isRequired,
+  openButton: PropTypes.func.isRequired,
 };

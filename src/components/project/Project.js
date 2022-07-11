@@ -66,6 +66,31 @@ const Project = (props) => {
     }
   };
 
+  const openButton = async () => {
+    try {
+      await fetch(`${process.env.REACT_APP_API_URL}/api/latex/open`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "text/plain",
+        },
+        body: encodeURIComponent(text),
+      })
+        .then((response) => {
+          console.log("response", response);
+
+          if (response.ok) {
+            return response;
+          }
+        })
+        .then((response) => response.json())
+        .then((data) => {
+          setLink(data.pdf);
+        });
+    } catch (error) {
+      alert("Your LaTeX code is not correct!");
+    }
+  };
+
   const downloadPdf = async () => {
     try {
       await fetch(`${process.env.REACT_APP_API_URL}/api/latex/download/pdf`, {
@@ -183,7 +208,7 @@ const Project = (props) => {
                       <CopyLinkButton link={link} />
                     </Grid>
                     <Grid item>
-                      <OpenButton link={link} />
+                      <OpenButton link={link} openButton={openButton} />
                     </Grid>
                     <Grid item>
                       <DownloadButton
