@@ -39,7 +39,7 @@ export default function DataTable() {
   const [projects, setProjects] = useState([]);
 
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_API_URL}/api/projects/public`)
+    fetch(`http://localhost:3000/api/projects/public`)
       .then((response) => response.json())
       .then((data) => {
         setProjects(data);

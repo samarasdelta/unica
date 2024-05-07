@@ -70,7 +70,8 @@ export default function LogIn() {
   const authenticate = async () => {
     try {
       const response = await fetch(
-        `${process.env.REACT_APP_API_URL}/auth/login`,
+        // `http://localhost:3000/auth/login`,
+        `http://localhost:3000/auth/login`,
         {
           method: "POST",
           headers: {

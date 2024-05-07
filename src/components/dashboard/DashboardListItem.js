@@ -19,7 +19,7 @@ const useStyles = makeStyles({
 });
 export default function DashboardListItem(props) {
   const deleteProject = async (id) => {
-    await fetch(`${process.env.REACT_APP_API_URL}/api/projects/${id}`, {
+    await fetch(`http://localhost:3000/api/projects/${id}`, {
       method: "DELETE",
     });
 

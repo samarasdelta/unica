@@ -40,7 +40,7 @@ export default function NewTeamButtonAPI({ fetchGroups }) {
   const verifiedToken = localStorage.token;
 
   const createGroup = async () => {
-    await fetch(`${process.env.REACT_APP_API_URL}/api/groups`, {
+    await fetch(`http://localhost:3000/api/groups`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

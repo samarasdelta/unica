@@ -7,7 +7,7 @@ function ProjectPage() {
   const [project, setProject] = useState({});
 
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_API_URL}/api/projects/${id}`)
+    fetch(`http://localhost:3000/api/projects/${id}`)
       .then((response) => response.json())
       .then((data) => {
         setProject(data);

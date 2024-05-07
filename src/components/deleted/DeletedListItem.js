@@ -23,7 +23,7 @@ export default function DeleteListItem(props) {
   const classes = useStyles();
 
   const deletePermaProject = async (id) => {
-    await fetch(`${process.env.REACT_APP_API_URL}/api/projects/${id}`, {
+    await fetch(`http://localhost:3000/api/projects/${id}`, {
       method: "DELETE",
     });
 
@@ -31,7 +31,7 @@ export default function DeleteListItem(props) {
   };
 
   const restoreProject = async (id) => {
-    await fetch(`${process.env.REACT_APP_API_URL}/api/projects/${id}`, {
+    await fetch(`http://localhost:3000/api/projects/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

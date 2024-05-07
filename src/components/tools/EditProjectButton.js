@@ -26,7 +26,7 @@ export default function EditProjectButtonAPI(props) {
   const { id } = props;
 
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_API_URL}/api/projects/${id}`)
+    fetch(`http://localhost:3000/api/projects/${id}`)
       .then((response) => response.json())
       .then((data) => {
         setTitle(data.projectTitle);
@@ -64,7 +64,7 @@ export default function EditProjectButtonAPI(props) {
   };
 
   const updateProject = async () => {
-    await fetch(`${process.env.REACT_APP_API_URL}/api/projects/${id}`, {
+    await fetch(`http://localhost:3000/api/projects/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

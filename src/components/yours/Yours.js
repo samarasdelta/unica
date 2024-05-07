@@ -142,7 +142,7 @@ export default function Dashboard() {
   const [projects, setProjects] = useState([]);
 
   const fetchProjects = () => {
-    fetch(`${process.env.REACT_APP_API_URL}/api/projects`)
+    fetch(`http://localhost:3000/api/projects`)
       .then((response) => response.json())
       .then((data) => {
         setProjects(data);

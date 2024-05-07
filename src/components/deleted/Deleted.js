@@ -151,7 +151,7 @@ export default function Deleted() {
   const verifiedToken = localStorage.token;
 
   const fetchDeletedProjects = useCallback(() => {
-    fetch(`${process.env.REACT_APP_API_URL}/api/projects/deleted`, {
+    fetch(`http://localhost:3000/api/projects/deleted`, {
       headers: {
         "Content-Type": "application/json;",
         Authorization: `Bearer ${verifiedToken}`,

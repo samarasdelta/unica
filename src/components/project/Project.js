@@ -43,7 +43,7 @@ const Project = (props) => {
 
   const compile = async () => {
     try {
-      await fetch(`${process.env.REACT_APP_API_URL}/api/latex`, {
+      await fetch(`http://localhost:3000/api/latex`, {
         method: "POST",
         headers: {
           "Content-Type": "text/plain",
@@ -68,7 +68,7 @@ const Project = (props) => {
 
   const downloadPdf = async () => {
     try {
-      await fetch(`${process.env.REACT_APP_API_URL}/api/latex/download/pdf`, {
+      await fetch(`http://localhost:3000/auth/login/api/latex/download/pdf`, {
         method: "POST",
         headers: {
           "Content-Type": "text/plain",
@@ -93,7 +93,7 @@ const Project = (props) => {
 
   const downloadTex = async () => {
     try {
-      await fetch(`${process.env.REACT_APP_API_URL}/api/latex/download/tex`, {
+      await fetch(`http://localhost:3000/api/latex/download/tex`, {
         method: "POST",
         headers: {
           "Content-Type": "text/plain",
@@ -117,7 +117,7 @@ const Project = (props) => {
   };
 
   const saveProject = async () => {
-    await fetch(`${process.env.REACT_APP_API_URL}/api/projects/${id}`, {
+    await fetch(`http://localhost:3000/api/projects/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -136,7 +136,7 @@ const Project = (props) => {
   };
 
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_API_URL}/api/projects/${id}`)
+    fetch(`http://localhost:3000/api/projects/${id}`)
       .then((response) => response.json())
       .then((data) => {
         setText(data.projectInfo);

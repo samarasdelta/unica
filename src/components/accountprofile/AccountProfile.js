@@ -17,7 +17,7 @@ export default function AccountProfile() {
   let history = useHistory();
 
   const fetchUser = useCallback(() => {
-    fetch(`${process.env.REACT_APP_API_URL}/api/users/me`, {
+    fetch(`http://localhost:3000/api/users/me`, {
       headers: {
         "Content-Type": "application/json;",
         Authorization: `Bearer ${verifiedToken}`,
@@ -43,7 +43,7 @@ export default function AccountProfile() {
   const [email, setEmail] = React.useState("");
 
   const updateUser = async () => {
-    await fetch(`${process.env.REACT_APP_API_URL}/api/users/me`, {
+    await fetch(`http://localhost:3000/api/users/me`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

@@ -146,7 +146,7 @@ export default function Dashboard() {
   const verifiedToken = localStorage.token;
 
   const fetchProjects = useCallback(() => {
-    fetch(`${process.env.REACT_APP_API_URL}/api/projects`, {
+    fetch(`http://localhost:3000/api/projects`, {
       headers: {
         "Content-Type": "application/json;",
         Authorization: `Bearer ${verifiedToken}`,
